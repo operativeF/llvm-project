@@ -102,6 +102,8 @@
 #include <utility>
 #include <vector>
 
+#include <iostream>
+
 using namespace clang;
 using namespace driver;
 using namespace options;
@@ -2077,6 +2079,21 @@ GenerateDependencyOutputArgs(const DependencyOutputOptions &Opts,
       break;
     }
   }
+
+  const char *DepFormat = nullptr;
+  switch (Opts.ModuleDepFormat) {
+    case ModuleDependencyFormat::Trtbd:
+      DepFormat = "trtbd";
+      break;
+    case ModuleDependencyFormat::None:
+      break;
+  }
+  if (DepFormat)
+    GenerateArg(Args, OPT_fdep_format, DepFormat, SA);
+  if (!Opts.ModuleDepFile.empty())
+    GenerateArg(Args, OPT_fdep_file, Opts.ModuleDepFile, SA);
+  if (!Opts.ModuleDepOutput.empty())
+    GenerateArg(Args, OPT_fdep_output, Opts.ModuleDepOutput, SA);
 }
 
 static bool ParseDependencyOutputArgs(DependencyOutputOptions &Opts,
@@ -2141,6 +2158,19 @@ static bool ParseDependencyOutputArgs(DependencyOutputOptions &Opts,
     if (!Val.contains('='))
       Opts.ExtraDeps.emplace_back(std::string(Val), EDK_ModuleFile);
   }
+
+  if (Arg *A = Args.getLastArg(OPT_fdep_format)) {
+    StringRef DepFormat = A->getValue();
+    if (DepFormat == "trtbd")
+      Opts.ModuleDepFormat = ModuleDependencyFormat::Trtbd;
+    else
+      Diags.Report(diag::err_fe_invalid_module_dep_format)
+        << DepFormat;
+  }
+  if (Args.hasArg(OPT_fdep_file))
+    Opts.ModuleDepFile = std::string(Args.getLastArgValue(OPT_fdep_file));
+  if (Args.hasArg(OPT_fdep_output))
+    Opts.ModuleDepOutput = std::string(Args.getLastArgValue(OPT_fdep_output));
 
   return Diags.getNumErrors() == NumErrorsBefore;
 }
@@ -4224,6 +4254,11 @@ static void GeneratePreprocessorArgs(PreprocessorOptions &Opts,
   for (const auto &RF : Opts.RemappedFiles)
     GenerateArg(Args, OPT_remap_file, RF.first + ";" + RF.second, SA);
 
+  if (!Opts.ImportModules) {
+    GenerateArg(Args, OPT_fno_module_import, SA);
+    std::cerr << "importing modules (gen)? " << Opts.ImportModules << std::endl;
+  }
+
   // Don't handle LexEditorPlaceholders. It is implied by the action that is
   // generated elsewhere.
 }
@@ -4311,6 +4346,11 @@ static bool ParsePreprocessorArgs(PreprocessorOptions &Opts, ArgList &Args,
   // "editor placeholder in source file" error in PP only mode.
   if (isStrictlyPreprocessorAction(Action))
     Opts.LexEditorPlaceholders = false;
+
+  for (const auto *A : Args.filtered(OPT_fmodule_import, OPT_fno_module_import)) {
+    Opts.ImportModules = A->getOption().getID() == OPT_fmodule_import;
+    std::cerr << "importing modules? " << Opts.ImportModules << std::endl;
+  }
 
   return Diags.getNumErrors() == NumErrorsBefore;
 }
@@ -4515,6 +4555,16 @@ bool CompilerInvocation::CreateFromArgsImpl(
   if (!Res.getDependencyOutputOpts().OutputFile.empty() &&
       Res.getDependencyOutputOpts().Targets.empty())
     Diags.Report(diag::err_fe_dependency_file_requires_MT);
+
+  if (Res.getDependencyOutputOpts().ModuleDepFormat != ModuleDependencyFormat::None) {
+    if (Res.getDependencyOutputOpts().ModuleDepFile.empty())
+      Diags.Report(diag::err_fe_module_dependency_format_requires_dep_file);
+    if (Res.getDependencyOutputOpts().ModuleDepOutput.empty())
+      Diags.Report(diag::err_fe_module_dependency_format_requires_dep_output);
+  } else {
+    if (!Res.getDependencyOutputOpts().ModuleDepFile.empty())
+      Diags.Report(diag::err_fe_module_dependency_file_requires_dep_format);
+  }
 
   // If sanitizer is enabled, disable OPT_ffine_grained_bitfield_accesses.
   if (Res.getCodeGenOpts().FineGrainedBitfieldAccesses &&

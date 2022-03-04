@@ -55,6 +55,8 @@
 #include "llvm/Support/YAMLParser.h"
 #include <cctype>
 
+#include <iostream>
+
 using namespace clang::driver;
 using namespace clang::driver::tools;
 using namespace clang;
@@ -1277,6 +1279,30 @@ void Clang::AddPreprocessingOptions(Compilation &C, const JobAction &JA,
 
   Args.AddLastArg(CmdArgs, options::OPT_MP);
   Args.AddLastArg(CmdArgs, options::OPT_MV);
+
+  Arg *ArgDepFile = Args.getLastArg(options::OPT_fdep_file);
+  if (ArgDepFile) {
+    C.addFailureResultFile(ArgDepFile->getValue(), &JA);
+    CmdArgs.push_back(Args.MakeArgString(Twine("-fdep-file=") + ArgDepFile->getValue()));
+  }
+
+  Arg *ArgDepOutput = Args.getLastArg(options::OPT_fdep_output);
+  if (ArgDepOutput)
+    CmdArgs.push_back(Args.MakeArgString(Twine("-fdep-output=") + ArgDepOutput->getValue()));
+
+  Arg *ArgDepFormat = Args.getLastArg(options::OPT_fdep_format);
+  if (ArgDepFormat)
+    CmdArgs.push_back(Args.MakeArgString(Twine("-fdep-format=") + ArgDepFormat->getValue()));
+
+  bool ImportModules = true;
+  for (const auto *A : Args.filtered(options::OPT_fmodule_import, options::OPT_fno_module_import)) {
+    ImportModules = A->getOption().getID() == options::OPT_fmodule_import;
+    std::cerr << "importing modules (clang)? " << ImportModules << std::endl;
+  }
+  if (!ImportModules) {
+    CmdArgs.push_back("-fno-module-import");
+    std::cerr << "not importing modules" << std::endl;
+  }
 
   // Add offload include arguments specific for CUDA/HIP.  This must happen
   // before we -I or -include anything else, because we must pick up the

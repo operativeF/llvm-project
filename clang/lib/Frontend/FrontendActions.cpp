@@ -729,6 +729,8 @@ namespace {
                                  bool Complain,
                                  std::string &SuggestedPredefines) override {
       Out.indent(2) << "Preprocessor options:\n";
+      DUMP_BOOLEAN(PPOpts.ImportModules,
+                   "Import modules [-fno-module-import]");
       DUMP_BOOLEAN(PPOpts.UsePredefines,
                    "Uses compiler/target-specific predefines [-undef]");
       DUMP_BOOLEAN(PPOpts.DetailedRecord,

@@ -1446,6 +1446,7 @@ void ASTWriter::WriteControlBlock(Preprocessor &PP, ASTContext &Context,
   Record.push_back(PPOpts.DetailedRecord);
   AddString(PPOpts.ImplicitPCHInclude, Record);
   Record.push_back(static_cast<unsigned>(PPOpts.ObjCXXARCStandardLibrary));
+  Record.push_back(PPOpts.ImportModules);
   Stream.EmitRecord(PREPROCESSOR_OPTIONS, Record);
 
   // Leave the options block.

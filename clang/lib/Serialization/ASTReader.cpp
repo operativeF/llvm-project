@@ -5917,6 +5917,7 @@ bool ASTReader::ParsePreprocessorOptions(const RecordData &Record,
   PPOpts.ImplicitPCHInclude = ReadString(Record, Idx);
   PPOpts.ObjCXXARCStandardLibrary =
     static_cast<ObjCXXARCStandardLibraryKind>(Record[Idx++]);
+  PPOpts.ImportModules = Record[Idx++];
   SuggestedPredefines.clear();
   return Listener.ReadPreprocessorOptions(PPOpts, Complain,
                                           SuggestedPredefines);

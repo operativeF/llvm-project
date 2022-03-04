@@ -29,6 +29,7 @@ add_clang_library(clangFrontend
   LogDiagnosticPrinter.cpp
   ModuleDependencyCollector.cpp
   MultiplexConsumer.cpp
+  P1689ModuleDependencyCollector.cpp
   PrecompiledPreamble.cpp
   PrintPreprocessedOutput.cpp
   SARIFDiagnostic.cpp

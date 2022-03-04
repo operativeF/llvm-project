@@ -68,6 +68,9 @@ public:
   std::vector<std::string> Includes;
   std::vector<std::string> MacroIncludes;
 
+  /// Whether to actually import modules or not.
+  bool ImportModules = true;
+
   /// Initialize the preprocessor with the compiler and target specific
   /// predefines.
   bool UsePredefines = true;

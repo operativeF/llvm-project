@@ -129,6 +129,35 @@ private:
   unsigned InputFileIndex;
 };
 
+/// Collects dependencies for the P1689 output format.
+class P1689ModuleDependencyCollector : public DependencyCollector {
+  ModuleDependencyFormat ModuleDepFormat = ModuleDependencyFormat::None;
+  std::string ModuleDepFile;
+  std::string ModuleDepOutput;
+
+public:
+  P1689ModuleDependencyCollector(const DependencyOutputOptions &Opts);
+  ~P1689ModuleDependencyCollector() override {}
+
+  void attachToPreprocessor(Preprocessor &PP) override;
+  void attachToASTReader(ASTReader &R) override;
+
+  void writeFile();
+
+  struct ModuleInfo {
+    enum class ModuleType {
+      Named,
+      AngleHeader,
+      QuoteHeader
+    };
+    std::string Name;
+    std::string SourcePath;
+    ModuleType Type;
+  };
+  std::vector<ModuleInfo> Provides;
+  std::vector<ModuleInfo> Requires;
+};
+
 /// Collects the dependencies for imported modules into a directory.  Users
 /// should attach to the AST reader whenever a module is loaded.
 class ModuleDependencyCollector : public DependencyCollector {

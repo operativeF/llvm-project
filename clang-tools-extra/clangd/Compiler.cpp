@@ -57,6 +57,8 @@ void disableUnsupportedOptions(CompilerInvocation &CI) {
   CI.getDependencyOutputOpts().HeaderIncludeOutputFile.clear();
   CI.getDependencyOutputOpts().DOTOutputFile.clear();
   CI.getDependencyOutputOpts().ModuleDependencyOutputDir.clear();
+  CI.getDependencyOutputOpts().ModuleDepFormat = ModuleDependencyFormat::None;
+  CI.getDependencyOutputOpts().ModuleDepFile.clear();
 
   // Disable any pch generation/usage operations. Since serialized preamble
   // format is unstable, using an incompatible one might result in unexpected

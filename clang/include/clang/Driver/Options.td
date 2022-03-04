@@ -725,6 +725,21 @@ def MV : Flag<["-"], "MV">, Group<M_Group>, Flags<[CC1Option]>,
     HelpText<"Use NMake/Jom format for the depfile">,
     MarshallingInfoFlag<DependencyOutputOpts<"OutputFormat">, "DependencyOutputFormat::Make">,
     Normalizer<"makeFlagToValueNormalizer(DependencyOutputFormat::NMake)">;
+def fdep_file : Joined<["-"], "fdep-file=">, Group<f_Group>, Flags<[CC1Option]>,
+    HelpText<"File for structured output dependency information">,
+    MetaVarName<"<file>">;
+def fdep_format : Joined<["-"], "fdep-format=">, Group<f_Group>, Flags<[CC1Option]>,
+    HelpText<"Format for structured output dependency information (supported: 'trtbd')">,
+    MetaVarName<"<format>">, Values<"trtbd">;
+def fdep_output : Joined<["-"], "fdep-output=">, Group<f_Group>, Flags<[CC1Option]>,
+    HelpText<"Output file for the compilation step">,
+    MetaVarName<"<file>">;
+def fmodule_import : Flag<["-"], "fmodule-import">, Flags<[CC1Option]>,
+    Group<Preprocessor_Group>, HelpText<"Do not actually import modules">,
+    MarshallingInfoFlag<PreprocessorOpts<"ImportModules">>;
+def fno_module_import : Flag<["-"], "fno-module-import">, Flags<[CC1Option]>,
+    Group<Preprocessor_Group>, HelpText<"Do not actually import modules">,
+    MarshallingInfoNegativeFlag<PreprocessorOpts<"ImportModules">>;
 def Mach : Flag<["-"], "Mach">, Group<Link_Group>;
 def O0 : Flag<["-"], "O0">, Group<O_Group>, Flags<[CC1Option, FC1Option, HelpHidden]>;
 def O4 : Flag<["-"], "O4">, Group<O_Group>, Flags<[CC1Option, FC1Option, HelpHidden]>;
