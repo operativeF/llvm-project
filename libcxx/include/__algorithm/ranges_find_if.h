@@ -60,7 +60,7 @@ struct __fn {
 } // namespace __find_if
 
 inline namespace __cpo {
-  inline constexpr auto find_if = __find_if::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto find_if = __find_if::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

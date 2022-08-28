@@ -59,7 +59,7 @@ __partial_sort_copy(_InputIterator __first, _Sentinel1 __last,
         _IterOps<_AlgPolicy>::next(std::move(__first), std::move(__last)), std::move(__r));
 }
 
-template <class _InputIterator, class _RandomAccessIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _RandomAccessIterator, class _Compare>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _RandomAccessIterator
 partial_sort_copy(_InputIterator __first, _InputIterator __last,
@@ -73,7 +73,7 @@ partial_sort_copy(_InputIterator __first, _InputIterator __last,
   return __result.second;
 }
 
-template <class _InputIterator, class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _RandomAccessIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _RandomAccessIterator
 partial_sort_copy(_InputIterator __first, _InputIterator __last,

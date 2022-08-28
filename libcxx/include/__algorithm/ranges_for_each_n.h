@@ -55,7 +55,7 @@ struct __fn {
 } // namespace __for_each_n
 
 inline namespace __cpo {
-  inline constexpr auto for_each_n = __for_each_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto for_each_n = __for_each_n::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

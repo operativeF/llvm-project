@@ -55,7 +55,7 @@ struct __fn {
 } // namespace __copy
 
 inline namespace __cpo {
-  inline constexpr auto copy = __copy::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto copy = __copy::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

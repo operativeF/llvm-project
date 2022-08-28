@@ -57,7 +57,7 @@ struct __fn {
 } // namespace __none_of
 
 inline namespace __cpo {
-  inline constexpr auto none_of = __none_of::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto none_of = __none_of::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

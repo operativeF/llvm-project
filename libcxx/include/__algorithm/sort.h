@@ -696,13 +696,13 @@ void __sort_impl(_RandomAccessIterator __first, _RandomAccessIterator __last, _C
   }
 }
 
-template <class _RandomAccessIterator, class _Comp>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _Comp>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void sort(_RandomAccessIterator __first, _RandomAccessIterator __last, _Comp __comp) {
   std::__sort_impl<_ClassicAlgPolicy>(std::move(__first), std::move(__last), __comp);
 }
 
-template <class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void sort(_RandomAccessIterator __first, _RandomAccessIterator __last) {
   std::sort(__first, __last, __less<typename iterator_traits<_RandomAccessIterator>::value_type>());

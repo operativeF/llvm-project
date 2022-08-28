@@ -36,7 +36,7 @@ __max_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __comp
     return __first;
 }
 
-template <class _ForwardIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Compare>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 _ForwardIterator
 max_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __comp)
 {
@@ -44,7 +44,7 @@ max_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __comp)
 }
 
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 _ForwardIterator
 max_element(_ForwardIterator __first, _ForwardIterator __last)
 {

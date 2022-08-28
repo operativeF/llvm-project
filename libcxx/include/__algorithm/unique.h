@@ -42,13 +42,13 @@ __unique(_Iter __first, _Sent __last, _BinaryPredicate&& __pred) {
   return std::pair<_Iter, _Iter>(__first, __first);
 }
 
-template <class _ForwardIterator, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _ForwardIterator
 unique(_ForwardIterator __first, _ForwardIterator __last, _BinaryPredicate __pred) {
   return std::__unique<_ClassicAlgPolicy>(std::move(__first), std::move(__last), __pred).first;
 }
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _ForwardIterator
 unique(_ForwardIterator __first, _ForwardIterator __last) {
   return std::unique(__first, __last, __equal_to());

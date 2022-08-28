@@ -45,7 +45,7 @@ __set_difference(
   return std::__copy(std::move(__first1), std::move(__last1), std::move(__result));
 }
 
-template <class _InputIterator1, class _InputIterator2, class _OutputIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _OutputIterator, class _Compare>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator set_difference(
     _InputIterator1 __first1,
     _InputIterator1 __last1,
@@ -57,7 +57,7 @@ inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator set_d
       .second;
 }
 
-template <class _InputIterator1, class _InputIterator2, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _OutputIterator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator set_difference(
     _InputIterator1 __first1,
     _InputIterator1 __last1,

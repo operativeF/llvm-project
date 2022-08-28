@@ -104,7 +104,7 @@ public:
 } // namespace __equal
 
 inline namespace __cpo {
-  inline constexpr auto equal = __equal::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto equal = __equal::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

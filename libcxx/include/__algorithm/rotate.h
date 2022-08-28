@@ -207,7 +207,7 @@ __rotate(_Iterator __first, _Iterator __middle, _Sentinel __last) {
   return _Ret(std::move(__result), std::move(__last_iter));
 }
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 _ForwardIterator
 rotate(_ForwardIterator __first, _ForwardIterator __middle, _ForwardIterator __last)

@@ -65,7 +65,7 @@ struct __fn {
 } // namespace __is_sorted_until
 
 inline namespace __cpo {
-  inline constexpr auto is_sorted_until = __is_sorted_until::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto is_sorted_until = __is_sorted_until::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

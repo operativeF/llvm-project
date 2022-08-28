@@ -96,7 +96,7 @@ pair<_InIter, _OutIter> __copy(_InIter __first, _Sent __last, _OutIter __result)
       std::__rewrap_range<_Sent>(__first, __ret.first), std::__rewrap_iter(__result, __ret.second));
 }
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator
 copy(_InputIterator __first, _InputIterator __last, _OutputIterator __result) {

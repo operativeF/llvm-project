@@ -94,7 +94,7 @@ __unique_copy(_InputIterator __first,
   return pair<_InputIterator, _InputAndOutputIterator>(std::move(__first), std::move(__result));
 }
 
-template <class _InputIterator, class _OutputIterator, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator, class _BinaryPredicate>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator
 unique_copy(_InputIterator __first, _InputIterator __last, _OutputIterator __result, _BinaryPredicate __pred) {
   using __algo_tag = __conditional_t<
@@ -111,7 +111,7 @@ unique_copy(_InputIterator __first, _InputIterator __last, _OutputIterator __res
       .second;
 }
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator
 unique_copy(_InputIterator __first, _InputIterator __last, _OutputIterator __result) {
   return std::unique_copy(std::move(__first), std::move(__last), std::move(__result), __equal_to());

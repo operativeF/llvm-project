@@ -107,7 +107,7 @@ struct __fn {
 } // namespace __set_intersection
 
 inline namespace __cpo {
-  inline constexpr auto set_intersection = __set_intersection::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto set_intersection = __set_intersection::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

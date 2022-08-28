@@ -65,7 +65,7 @@ namespace __remove_copy {
 } // namespace __remove_copy
 
 inline namespace __cpo {
-  inline constexpr auto remove_copy = __remove_copy::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto remove_copy = __remove_copy::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

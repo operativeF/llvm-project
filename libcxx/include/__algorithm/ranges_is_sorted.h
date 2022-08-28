@@ -50,7 +50,7 @@ struct __fn {
 } // namespace __is_sorted
 
 inline namespace __cpo {
-  inline constexpr auto is_sorted = __is_sorted::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto is_sorted = __is_sorted::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

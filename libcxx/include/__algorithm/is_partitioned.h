@@ -17,7 +17,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _InputIterator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _Predicate>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 is_partitioned(_InputIterator __first, _InputIterator __last, _Predicate __pred)
 {

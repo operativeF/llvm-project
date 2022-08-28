@@ -72,7 +72,7 @@ struct __fn {
 } // namespace __partition
 
 inline namespace __cpo {
-  inline constexpr auto partition = __partition::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto partition = __partition::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

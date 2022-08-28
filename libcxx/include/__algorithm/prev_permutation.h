@@ -56,7 +56,7 @@ __prev_permutation(_BidirectionalIterator __first, _Sentinel __last, _Compare&& 
     }
 }
 
-template <class _BidirectionalIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _BidirectionalIterator, class _Compare>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 bool
 prev_permutation(_BidirectionalIterator __first, _BidirectionalIterator __last, _Compare __comp)
@@ -65,7 +65,7 @@ prev_permutation(_BidirectionalIterator __first, _BidirectionalIterator __last, 
       std::move(__first), std::move(__last), static_cast<__comp_ref_type<_Compare> >(__comp)).second;
 }
 
-template <class _BidirectionalIterator>
+_LIBCPP_EXPORT_STD template <class _BidirectionalIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 bool
 prev_permutation(_BidirectionalIterator __first, _BidirectionalIterator __last)

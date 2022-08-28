@@ -60,7 +60,7 @@ struct __fn {
 } // namespace __rotate
 
 inline namespace __cpo {
-  inline constexpr auto rotate = __rotate::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto rotate = __rotate::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

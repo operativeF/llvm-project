@@ -1208,6 +1208,12 @@ _LIBCPP_BEGIN_NAMESPACE_STD _LIBCPP_END_NAMESPACE_STD
 #  define _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(_ClassName) static_assert(true, "")
 #endif
 
+# if _LIBCPP_STD_VER > 20 && defined(_BUILD_STD_MODULE)
+#   define _LIBCPP_EXPORT_STD export
+# else
+#   define _LIBCPP_EXPORT_STD
+# endif
+
 #endif // __cplusplus
 
 #endif // _LIBCPP___CONFIG

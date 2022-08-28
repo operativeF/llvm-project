@@ -81,7 +81,7 @@ struct __fn {
 } // namespace __partial_sort_copy
 
 inline namespace __cpo {
-  inline constexpr auto partial_sort_copy = __partial_sort_copy::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto partial_sort_copy = __partial_sort_copy::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

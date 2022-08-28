@@ -68,7 +68,7 @@ namespace __unique {
 } // namespace __unique
 
 inline namespace __cpo {
-  inline constexpr auto unique = __unique::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto unique = __unique::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

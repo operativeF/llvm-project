@@ -45,7 +45,7 @@ _Iter __min_element(_Iter __first, _Sent __last, _Comp __comp) {
   return std::__min_element<_Comp>(std::move(__first), std::move(__last), __comp, __proj);
 }
 
-template <class _ForwardIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Compare>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 _ForwardIterator
 min_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __comp)
 {
@@ -57,7 +57,7 @@ min_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __comp)
   return std::__min_element<__comp_ref_type<_Compare> >(std::move(__first), std::move(__last), __comp);
 }
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 _ForwardIterator
 min_element(_ForwardIterator __first, _ForwardIterator __last)
 {

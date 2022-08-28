@@ -57,7 +57,7 @@ struct __fn {
 } // namespace __swap_ranges
 
 inline namespace __cpo {
-  inline constexpr auto swap_ranges = __swap_ranges::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto swap_ranges = __swap_ranges::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

@@ -71,7 +71,7 @@ _RandomAccessIterator __partial_sort(_RandomAccessIterator __first, _RandomAcces
   return __last_iter;
 }
 
-template <class _RandomAccessIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _Compare>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 void
 partial_sort(_RandomAccessIterator __first, _RandomAccessIterator __middle, _RandomAccessIterator __last,
@@ -83,7 +83,7 @@ partial_sort(_RandomAccessIterator __first, _RandomAccessIterator __middle, _Ran
   (void)std::__partial_sort<_ClassicAlgPolicy>(std::move(__first), std::move(__middle), std::move(__last), __comp);
 }
 
-template <class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 void
 partial_sort(_RandomAccessIterator __first, _RandomAccessIterator __middle, _RandomAccessIterator __last)

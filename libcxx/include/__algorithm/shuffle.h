@@ -160,7 +160,7 @@ _LIBCPP_HIDE_FROM_ABI _RandomAccessIterator __shuffle(
     return __original_last;
 }
 
-template <class _RandomAccessIterator, class _UniformRandomNumberGenerator>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _UniformRandomNumberGenerator>
 _LIBCPP_HIDE_FROM_ABI void
 shuffle(_RandomAccessIterator __first, _RandomAccessIterator __last, _UniformRandomNumberGenerator&& __g) {
   (void)std::__shuffle<_ClassicAlgPolicy>(

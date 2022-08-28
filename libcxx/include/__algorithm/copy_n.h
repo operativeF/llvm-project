@@ -21,7 +21,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _InputIterator, class _Size, class _OutputIterator>
+_LIBCPP_EXPORT_STD template<class _InputIterator, class _Size, class _OutputIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 typename enable_if
 <
@@ -47,7 +47,7 @@ copy_n(_InputIterator __first, _Size __orig_n, _OutputIterator __result)
     return __result;
 }
 
-template<class _InputIterator, class _Size, class _OutputIterator>
+_LIBCPP_EXPORT_STD template<class _InputIterator, class _Size, class _OutputIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 typename enable_if
 <

@@ -39,7 +39,7 @@ __fill(_RandomAccessIterator __first, _RandomAccessIterator __last, const _Tp& _
     _VSTD::fill_n(__first, __last - __first, __value);
 }
 
-template <class _ForwardIterator, class _Tp>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 void
 fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)

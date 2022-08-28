@@ -87,7 +87,7 @@ struct __fn {
 } // namespace __lexicographical_compare
 
 inline namespace __cpo {
-  inline constexpr auto lexicographical_compare = __lexicographical_compare::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto lexicographical_compare = __lexicographical_compare::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

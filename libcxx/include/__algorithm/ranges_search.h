@@ -124,7 +124,7 @@ struct __fn {
 } // namespace __search
 
 inline namespace __cpo {
-  inline constexpr auto search = __search::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto search = __search::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

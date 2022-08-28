@@ -60,7 +60,7 @@ struct __fn {
 } // namespace __minmax_element
 
 inline namespace __cpo {
-  inline constexpr auto minmax_element = __minmax_element::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto minmax_element = __minmax_element::__fn{};
 } // namespace __cpo
 
 } // namespace ranges

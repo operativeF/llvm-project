@@ -74,7 +74,7 @@ struct __fn {
 } // namespace __remove_if
 
 inline namespace __cpo {
-  inline constexpr auto remove_if = __remove_if::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto remove_if = __remove_if::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

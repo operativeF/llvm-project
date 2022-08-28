@@ -76,7 +76,7 @@ struct __fn {
 } // namespace __min
 
 inline namespace __cpo {
-  inline constexpr auto min = __min::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto min = __min::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

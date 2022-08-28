@@ -83,7 +83,7 @@ pair<_ForwardIterator, _ForwardIterator> __partition(
       std::move(__first), std::move(__last), __pred, __iter_category);
 }
 
-template <class _ForwardIterator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _ForwardIterator
 partition(_ForwardIterator __first, _ForwardIterator __last, _Predicate __pred)

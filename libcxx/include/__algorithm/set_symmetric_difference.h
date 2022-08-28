@@ -64,7 +64,7 @@ __set_symmetric_difference(
       std::move(__first1), std::move(__ret2.first), std::move((__ret2.second)));
 }
 
-template <class _InputIterator1, class _InputIterator2, class _OutputIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _OutputIterator, class _Compare>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator set_symmetric_difference(
     _InputIterator1 __first1,
     _InputIterator1 __last1,
@@ -82,7 +82,7 @@ _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator set_symmetri
       .__out_;
 }
 
-template <class _InputIterator1, class _InputIterator2, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _OutputIterator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _OutputIterator set_symmetric_difference(
     _InputIterator1 __first1,
     _InputIterator1 __last1,

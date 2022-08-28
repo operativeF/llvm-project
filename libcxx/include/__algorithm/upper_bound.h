@@ -44,7 +44,7 @@ __upper_bound(_Iter __first, _Sent __last, const _Tp& __value, _Compare&& __comp
   return __first;
 }
 
-template <class _ForwardIterator, class _Tp, class _Compare>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp, class _Compare>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _ForwardIterator
 upper_bound(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value, _Compare __comp) {
   static_assert(is_copy_constructible<_ForwardIterator>::value,
@@ -53,7 +53,7 @@ upper_bound(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __valu
       std::move(__first), std::move(__last), __value, std::move(__comp), std::__identity());
 }
 
-template <class _ForwardIterator, class _Tp>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _ForwardIterator
 upper_bound(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value) {
   return std::upper_bound(

@@ -38,13 +38,13 @@ void __make_heap(_RandomAccessIterator __first, _RandomAccessIterator __last, _C
   }
 }
 
-template <class _RandomAccessIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _Compare>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void make_heap(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare __comp) {
   std::__make_heap<_ClassicAlgPolicy>(std::move(__first), std::move(__last), __comp);
 }
 
-template <class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void make_heap(_RandomAccessIterator __first, _RandomAccessIterator __last) {
   std::make_heap(std::move(__first), std::move(__last),

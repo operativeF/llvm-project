@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _InputIterator, class _Tp>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _Tp>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
     typename iterator_traits<_InputIterator>::difference_type
     count(_InputIterator __first, _InputIterator __last, const _Tp& __value) {

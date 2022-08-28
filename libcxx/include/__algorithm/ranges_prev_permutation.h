@@ -66,7 +66,7 @@ struct __fn {
 } // namespace __prev_permutation
 
 inline namespace __cpo {
-constexpr inline auto prev_permutation = __prev_permutation::__fn{};
+  _LIBCPP_EXPORT_STD constexpr inline auto prev_permutation = __prev_permutation::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

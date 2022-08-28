@@ -75,7 +75,7 @@ __move_backward(_BidirectionalIterator1 __first, _BidirectionalIterator1 __last,
     }
 }
 
-template <class _BidirectionalIterator1, class _BidirectionalIterator2>
+_LIBCPP_EXPORT_STD template <class _BidirectionalIterator1, class _BidirectionalIterator2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _BidirectionalIterator2
 move_backward(_BidirectionalIterator1 __first, _BidirectionalIterator1 __last,

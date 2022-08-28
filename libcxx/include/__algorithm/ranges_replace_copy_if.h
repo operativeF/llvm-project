@@ -82,7 +82,7 @@ namespace __replace_copy_if {
 } // namespace __replace_copy_if
 
 inline namespace __cpo {
-  inline constexpr auto replace_copy_if = __replace_copy_if::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto replace_copy_if = __replace_copy_if::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

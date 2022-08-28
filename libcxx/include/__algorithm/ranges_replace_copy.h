@@ -80,7 +80,7 @@ namespace __replace_copy {
 } // namespace __replace_copy
 
 inline namespace __cpo {
-  inline constexpr auto replace_copy = __replace_copy::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto replace_copy = __replace_copy::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

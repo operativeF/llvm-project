@@ -80,7 +80,7 @@ struct __fn {
 } // namespace __max
 
 inline namespace __cpo {
-  inline constexpr auto max = __max::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto max = __max::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

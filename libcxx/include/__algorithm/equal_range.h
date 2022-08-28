@@ -57,7 +57,7 @@ __equal_range(_Iter __first, _Sent __last, const _Tp& __value, _Compare&& __comp
   return pair<_Iter, _Iter>(__first, __first);
 }
 
-template <class _ForwardIterator, class _Tp, class _Compare>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp, class _Compare>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 pair<_ForwardIterator, _ForwardIterator>
 equal_range(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value, _Compare __comp) {
   static_assert(__is_callable<_Compare, decltype(*__first), const _Tp&>::value,
@@ -72,7 +72,7 @@ equal_range(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __valu
       std::__identity());
 }
 
-template <class _ForwardIterator, class _Tp>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 pair<_ForwardIterator, _ForwardIterator>
 equal_range(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value) {
   return std::equal_range(

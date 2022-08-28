@@ -78,7 +78,7 @@ pair<_Iter, _Iter> __minmax_element_impl(_Iter __first, _Sent __last, _Comp& __c
   return __result;
 }
 
-template <class _ForwardIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Compare>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14
 pair<_ForwardIterator, _ForwardIterator>
 minmax_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __comp) {
@@ -90,7 +90,7 @@ minmax_element(_ForwardIterator __first, _ForwardIterator __last, _Compare __com
   return std::__minmax_element_impl(__first, __last, __comp, __proj);
 }
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14
 pair<_ForwardIterator, _ForwardIterator> minmax_element(_ForwardIterator __first, _ForwardIterator __last) {
     return std::minmax_element(__first, __last, __less<typename iterator_traits<_ForwardIterator>::value_type>());

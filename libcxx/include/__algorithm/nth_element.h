@@ -239,14 +239,14 @@ void __nth_element_impl(_RandomAccessIterator __first, _RandomAccessIterator __n
   }
 }
 
-template <class _RandomAccessIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _Compare>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void nth_element(_RandomAccessIterator __first, _RandomAccessIterator __nth, _RandomAccessIterator __last,
                  _Compare __comp) {
   std::__nth_element_impl<_ClassicAlgPolicy>(std::move(__first), std::move(__nth), std::move(__last), __comp);
 }
 
-template <class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void nth_element(_RandomAccessIterator __first, _RandomAccessIterator __nth, _RandomAccessIterator __last) {
   std::nth_element(std::move(__first), std::move(__nth), std::move(__last), __less<typename

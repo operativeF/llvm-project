@@ -55,7 +55,7 @@ struct __fn {
 } // namespace __lower_bound
 
 inline namespace __cpo {
-  inline constexpr auto lower_bound = __lower_bound::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto lower_bound = __lower_bound::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

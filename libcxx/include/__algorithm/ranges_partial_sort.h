@@ -67,7 +67,7 @@ struct __fn {
 } // namespace __partial_sort
 
 inline namespace __cpo {
-  inline constexpr auto partial_sort = __partial_sort::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto partial_sort = __partial_sort::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

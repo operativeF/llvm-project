@@ -32,7 +32,7 @@ __fill_n(_OutputIterator __first, _Size __n, const _Tp& __value)
     return __first;
 }
 
-template <class _OutputIterator, class _Size, class _Tp>
+_LIBCPP_EXPORT_STD template <class _OutputIterator, class _Size, class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator
 fill_n(_OutputIterator __first, _Size __n, const _Tp& __value)

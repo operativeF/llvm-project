@@ -51,7 +51,7 @@ struct __fn {
 } // namespace __count
 
 inline namespace __cpo {
-  inline constexpr auto count = __count::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto count = __count::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

@@ -61,7 +61,7 @@ struct __fn {
 } // namespace __count_if
 
 inline namespace __cpo {
-  inline constexpr auto count_if = __count_if::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto count_if = __count_if::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

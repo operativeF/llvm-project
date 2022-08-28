@@ -184,7 +184,7 @@ __is_permutation(_Iter1 __first1, _Sent1 __last1, _Iter2 __first2, _Sent2 __last
 // Public interface
 
 // 2+1 iterators, predicate
-template <class _ForwardIterator1, class _ForwardIterator2, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator1, class _ForwardIterator2, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 is_permutation(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIterator2 __first2,
                _BinaryPredicate __pred) {
@@ -196,7 +196,7 @@ is_permutation(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIt
 }
 
 // 2+1 iterators
-template <class _ForwardIterator1, class _ForwardIterator2>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator1, class _ForwardIterator2>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 is_permutation(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIterator2 __first2) {
   return std::is_permutation(__first1, __last1, __first2, __equal_to());
@@ -205,7 +205,7 @@ is_permutation(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIt
 #if _LIBCPP_STD_VER > 11
 
 // 2+2 iterators
-template <class _ForwardIterator1, class _ForwardIterator2>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator1, class _ForwardIterator2>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 bool is_permutation(
     _ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIterator2 __first2, _ForwardIterator2 __last2) {
   return std::__is_permutation<_ClassicAlgPolicy>(
@@ -219,7 +219,7 @@ _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 }
 
 // 2+2 iterators, predicate
-template <class _ForwardIterator1, class _ForwardIterator2, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator1, class _ForwardIterator2, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 is_permutation(_ForwardIterator1 __first1, _ForwardIterator1 __last1, _ForwardIterator2 __first2,
                _ForwardIterator2 __last2, _BinaryPredicate __pred) {

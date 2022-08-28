@@ -47,7 +47,7 @@ _Iter __lower_bound_impl(_Iter __first, _Sent __last, const _Type& __value, _Com
   return __first;
 }
 
-template <class _ForwardIterator, class _Tp, class _Compare>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp, class _Compare>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 _ForwardIterator lower_bound(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value, _Compare __comp) {
   static_assert(__is_callable<_Compare, decltype(*__first), const _Tp&>::value,
@@ -56,7 +56,7 @@ _ForwardIterator lower_bound(_ForwardIterator __first, _ForwardIterator __last, 
   return std::__lower_bound_impl<_ClassicAlgPolicy>(__first, __last, __value, __comp, __proj);
 }
 
-template <class _ForwardIterator, class _Tp>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 _ForwardIterator lower_bound(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value) {
   return std::lower_bound(__first, __last, __value,

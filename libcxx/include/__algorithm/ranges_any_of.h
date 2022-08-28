@@ -57,7 +57,7 @@ struct __fn {
 } // namespace __any_of
 
 inline namespace __cpo {
-  inline constexpr auto any_of = __any_of::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto any_of = __any_of::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

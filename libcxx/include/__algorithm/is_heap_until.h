@@ -47,14 +47,14 @@ __is_heap_until(_RandomAccessIterator __first, _RandomAccessIterator __last, _Co
     return __last;
 }
 
-template <class _RandomAccessIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _Compare>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _RandomAccessIterator
 is_heap_until(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare __comp)
 {
     return std::__is_heap_until(__first, __last, static_cast<__comp_ref_type<_Compare> >(__comp));
 }
 
-template<class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template<class _RandomAccessIterator>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _RandomAccessIterator
 is_heap_until(_RandomAccessIterator __first, _RandomAccessIterator __last)
 {

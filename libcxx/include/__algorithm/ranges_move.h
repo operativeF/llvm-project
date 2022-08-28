@@ -61,7 +61,7 @@ struct __fn {
 } // namespace __move
 
 inline namespace __cpo {
-  inline constexpr auto move = __move::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto move = __move::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

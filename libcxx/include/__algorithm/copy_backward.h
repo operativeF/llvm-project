@@ -51,7 +51,7 @@ _LIBCPP_HIDE_FROM_ABI constexpr pair<_Iter1, _Iter2> __copy_backward(_Iter1 __fi
 }
 #endif // _LIBCPP_STD_VER > 17
 
-template <class _BidirectionalIterator1, class _BidirectionalIterator2>
+_LIBCPP_EXPORT_STD template <class _BidirectionalIterator1, class _BidirectionalIterator2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 _BidirectionalIterator2
 copy_backward(_BidirectionalIterator1 __first, _BidirectionalIterator1 __last, _BidirectionalIterator2 __result) {
   return std::__copy_backward<_ClassicAlgPolicy>(__first, __last, __result).second;

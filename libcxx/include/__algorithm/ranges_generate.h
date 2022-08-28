@@ -62,7 +62,7 @@ struct __fn {
 } // namespace __generate
 
 inline namespace __cpo {
-  inline constexpr auto generate = __generate::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto generate = __generate::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

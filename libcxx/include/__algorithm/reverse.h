@@ -52,7 +52,7 @@ void __reverse(_BidirectionalIterator __first, _Sentinel __last) {
   std::__reverse_impl<_AlgPolicy>(std::move(__first), std::move(__last), _IterCategory());
 }
 
-template <class _BidirectionalIterator>
+_LIBCPP_EXPORT_STD template <class _BidirectionalIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 void
 reverse(_BidirectionalIterator __first, _BidirectionalIterator __last)

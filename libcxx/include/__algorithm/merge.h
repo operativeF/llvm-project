@@ -45,7 +45,7 @@ __merge(_InputIterator1 __first1, _InputIterator1 __last1,
     return _VSTD::copy(__first2, __last2, __result);
 }
 
-template <class _InputIterator1, class _InputIterator2, class _OutputIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _OutputIterator, class _Compare>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator
 merge(_InputIterator1 __first1, _InputIterator1 __last1,
@@ -54,7 +54,7 @@ merge(_InputIterator1 __first1, _InputIterator1 __last1,
     return _VSTD::__merge<__comp_ref_type<_Compare> >(__first1, __last1, __first2, __last2, __result, __comp);
 }
 
-template <class _InputIterator1, class _InputIterator2, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _OutputIterator>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator
 merge(_InputIterator1 __first1, _InputIterator1 __last1,

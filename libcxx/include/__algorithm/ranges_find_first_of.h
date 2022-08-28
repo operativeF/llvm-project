@@ -90,7 +90,7 @@ struct __fn {
 } // namespace __find_first_of
 
 inline namespace __cpo {
-  inline constexpr auto find_first_of = __find_first_of::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto find_first_of = __find_first_of::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

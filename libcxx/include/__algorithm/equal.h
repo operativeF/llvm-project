@@ -21,7 +21,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2, _BinaryPredicate __pred) {
   for (; __first1 != __last1; ++__first1, (void)++__first2)
@@ -30,7 +30,7 @@ equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first
   return true;
 }
 
-template <class _InputIterator1, class _InputIterator2>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2) {
   return std::equal(__first1, __last1, __first2, __equal_to());
@@ -58,7 +58,7 @@ __equal(_RandomAccessIterator1 __first1, _RandomAccessIterator1 __last1, _Random
                       _BinaryPredicate&>(__first1, __last1, __first2, __pred);
 }
 
-template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2, _InputIterator2 __last2,
       _BinaryPredicate __pred) {
@@ -67,7 +67,7 @@ equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first
       typename iterator_traits<_InputIterator2>::iterator_category());
 }
 
-template <class _InputIterator1, class _InputIterator2>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2, _InputIterator2 __last2) {
   return std::__equal(

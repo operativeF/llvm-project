@@ -21,7 +21,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
     _LIBCPP_CONSTEXPR_SINCE_CXX20 pair<_InputIterator1, _InputIterator2>
     mismatch(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2, _BinaryPredicate __pred) {
@@ -31,7 +31,7 @@ _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
   return pair<_InputIterator1, _InputIterator2>(__first1, __first2);
 }
 
-template <class _InputIterator1, class _InputIterator2>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
     _LIBCPP_CONSTEXPR_SINCE_CXX20 pair<_InputIterator1, _InputIterator2>
     mismatch(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2) {
@@ -39,7 +39,7 @@ _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
 }
 
 #if _LIBCPP_STD_VER > 11
-template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _BinaryPredicate>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
     _LIBCPP_CONSTEXPR_SINCE_CXX20 pair<_InputIterator1, _InputIterator2>
     mismatch(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2, _InputIterator2 __last2,
@@ -50,7 +50,7 @@ _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
   return pair<_InputIterator1, _InputIterator2>(__first1, __first2);
 }
 
-template <class _InputIterator1, class _InputIterator2>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2>
 _LIBCPP_NODISCARD_EXT inline _LIBCPP_INLINE_VISIBILITY
     _LIBCPP_CONSTEXPR_SINCE_CXX20 pair<_InputIterator1, _InputIterator2>
     mismatch(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2, _InputIterator2 __last2) {

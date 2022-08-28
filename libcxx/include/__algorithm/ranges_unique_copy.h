@@ -105,7 +105,7 @@ struct __fn {
 } // namespace __unique_copy
 
 inline namespace __cpo {
-inline constexpr auto unique_copy = __unique_copy::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto unique_copy = __unique_copy::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

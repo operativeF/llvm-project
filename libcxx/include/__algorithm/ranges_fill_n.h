@@ -37,7 +37,7 @@ struct __fn {
 } // namespace __fill_n
 
 inline namespace __cpo {
-  inline constexpr auto fill_n = __fill_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto fill_n = __fill_n::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

@@ -230,13 +230,13 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
   std::__stable_sort<_AlgPolicy, __comp_ref_type<_Compare> >(__first, __last, __comp, __len, __buf.first, __buf.second);
 }
 
-template <class _RandomAccessIterator, class _Compare>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator, class _Compare>
 inline _LIBCPP_HIDE_FROM_ABI
 void stable_sort(_RandomAccessIterator __first, _RandomAccessIterator __last, _Compare __comp) {
   std::__stable_sort_impl<_ClassicAlgPolicy>(std::move(__first), std::move(__last), __comp);
 }
 
-template <class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator>
 inline _LIBCPP_HIDE_FROM_ABI
 void stable_sort(_RandomAccessIterator __first, _RandomAccessIterator __last) {
   std::stable_sort(__first, __last, __less<typename iterator_traits<_RandomAccessIterator>::value_type>());

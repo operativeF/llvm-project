@@ -70,7 +70,7 @@ struct __fn {
 } // namespace __pop_heap
 
 inline namespace __cpo {
-  inline constexpr auto pop_heap = __pop_heap::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto pop_heap = __pop_heap::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

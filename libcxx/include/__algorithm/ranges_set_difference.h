@@ -95,7 +95,7 @@ struct __fn {
 } // namespace __set_difference
 
 inline namespace __cpo {
-  inline constexpr auto set_difference = __set_difference::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto set_difference = __set_difference::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

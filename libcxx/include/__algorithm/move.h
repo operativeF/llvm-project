@@ -108,7 +108,7 @@ __move(_InIter __first, _Sent __last, _OutIter __result) {
   return std::__move_impl<_AlgPolicy>(std::move(__first), std::move(__last), std::move(__result));
 }
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator move(_InputIterator __first, _InputIterator __last, _OutputIterator __result) {
   return std::__move<_ClassicAlgPolicy>(__first, __last, __result).second;

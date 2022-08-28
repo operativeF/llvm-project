@@ -89,7 +89,7 @@ _SampleIterator __sample(_PopulationIterator __first,
 }
 
 #if _LIBCPP_STD_VER > 14
-template <class _PopulationIterator, class _SampleIterator, class _Distance,
+_LIBCPP_EXPORT_STD template <class _PopulationIterator, class _SampleIterator, class _Distance,
           class _UniformRandomNumberGenerator>
 inline _LIBCPP_INLINE_VISIBILITY
 _SampleIterator sample(_PopulationIterator __first,
