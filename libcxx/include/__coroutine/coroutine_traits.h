@@ -40,7 +40,7 @@ struct __coroutine_traits_sfinae<
   using promise_type = typename _Tp::promise_type;
 };
 
-template <class _Ret, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Ret, class... _Args>
 struct coroutine_traits
     : public __coroutine_traits_sfinae<_Ret>
 {

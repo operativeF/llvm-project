@@ -24,10 +24,10 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [coroutine.noop]
 // [coroutine.promise.noop]
-struct noop_coroutine_promise {};
+_LIBCPP_EXPORT_STD struct noop_coroutine_promise {};
 
 // [coroutine.handle.noop]
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle<noop_coroutine_promise> {
 public:
     // [coroutine.handle.noop.conv], conversion
@@ -92,7 +92,7 @@ private:
 #endif // __has_builtin(__builtin_coro_noop)
 };
 
-using noop_coroutine_handle = coroutine_handle<noop_coroutine_promise>;
+_LIBCPP_EXPORT_STD using noop_coroutine_handle = coroutine_handle<noop_coroutine_promise>;
 
 #if defined(_LIBCPP_COMPILER_GCC)
 inline noop_coroutine_handle::__noop_coroutine_frame_ty_
@@ -100,7 +100,7 @@ inline noop_coroutine_handle::__noop_coroutine_frame_ty_
 #endif
 
 // [coroutine.noop.coroutine]
-inline _LIBCPP_HIDE_FROM_ABI
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI
 noop_coroutine_handle noop_coroutine() noexcept { return noop_coroutine_handle(); }
 
 #endif // __has_builtin(__builtin_coro_noop) || defined(_LIBCPP_COMPILER_GCC)

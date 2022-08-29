@@ -21,7 +21,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [coroutine.trivial.awaitables]
-struct suspend_never {
+_LIBCPP_EXPORT_STD struct suspend_never {
     _LIBCPP_HIDE_FROM_ABI
     constexpr bool await_ready() const noexcept { return true; }
     _LIBCPP_HIDE_FROM_ABI
@@ -30,7 +30,7 @@ struct suspend_never {
     constexpr void await_resume() const noexcept {}
 };
 
-struct suspend_always {
+_LIBCPP_EXPORT_STD struct suspend_always {
     _LIBCPP_HIDE_FROM_ABI
     constexpr bool await_ready() const noexcept { return false; }
     _LIBCPP_HIDE_FROM_ABI

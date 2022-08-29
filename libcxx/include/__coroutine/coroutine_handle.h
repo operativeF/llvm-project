@@ -25,10 +25,10 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [coroutine.handle]
-template <class _Promise = void>
+_LIBCPP_EXPORT_STD template <class _Promise = void>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle;
 
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle<void> {
 public:
     // [coroutine.handle.con], construct/reset
@@ -94,16 +94,16 @@ private:
 };
 
 // [coroutine.handle.compare]
-inline _LIBCPP_HIDE_FROM_ABI
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI
 constexpr bool operator==(coroutine_handle<> __x, coroutine_handle<> __y) noexcept {
     return __x.address() == __y.address();
 }
-inline _LIBCPP_HIDE_FROM_ABI
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI
 constexpr strong_ordering operator<=>(coroutine_handle<> __x, coroutine_handle<> __y) noexcept {
     return compare_three_way()(__x.address(), __y.address());
 }
 
-template <class _Promise>
+_LIBCPP_EXPORT_STD template <class _Promise>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle {
 public:
     // [coroutine.handle.con], construct/reset
@@ -189,7 +189,7 @@ private:
 };
 
 // [coroutine.handle.hash]
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct hash<coroutine_handle<_Tp>> {
     _LIBCPP_HIDE_FROM_ABI
     size_t operator()(const coroutine_handle<_Tp>& __v) const noexcept { return hash<void*>()(__v.address()); }
