@@ -20,7 +20,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator
 partial_sum(_InputIterator __first, _InputIterator __last, _OutputIterator __result)
@@ -42,7 +42,7 @@ partial_sum(_InputIterator __first, _InputIterator __last, _OutputIterator __res
     return __result;
 }
 
-template <class _InputIterator, class _OutputIterator, class _BinaryOperation>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator, class _BinaryOperation>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator
 partial_sum(_InputIterator __first, _InputIterator __last, _OutputIterator __result,

@@ -54,7 +54,7 @@ _Tp __gcd(_Tp __m, _Tp __n)
     return __n == 0 ? __m : _VSTD::__gcd<_Tp>(__n, __m % __n);
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
 common_type_t<_Tp,_Up>
 gcd(_Tp __m, _Up __n)
@@ -69,7 +69,7 @@ gcd(_Tp __m, _Up __n)
         static_cast<_Wp>(__ct_abs<_Rp, _Up>()(__n))));
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
 common_type_t<_Tp,_Up>
 lcm(_Tp __m, _Up __n)

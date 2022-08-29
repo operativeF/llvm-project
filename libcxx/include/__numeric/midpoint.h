@@ -24,7 +24,7 @@ _LIBCPP_PUSH_MACROS
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<is_integral_v<_Tp> && !is_same_v<bool, _Tp> && !is_null_pointer_v<_Tp>, _Tp>
 midpoint(_Tp __a, _Tp __b) noexcept
@@ -42,7 +42,7 @@ _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
 }
 
 
-template <class _TPtr>
+_LIBCPP_EXPORT_STD template <class _TPtr>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<is_pointer_v<_TPtr>
              && is_object_v<remove_pointer_t<_TPtr>>
@@ -62,7 +62,7 @@ _LIBCPP_HIDE_FROM_ABI constexpr int __sign(_Tp __val) {
 template <typename _Fp>
 _LIBCPP_HIDE_FROM_ABI constexpr _Fp __fp_abs(_Fp __f) { return __f >= 0 ? __f : -__f; }
 
-template <class _Fp>
+_LIBCPP_EXPORT_STD template <class _Fp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<is_floating_point_v<_Fp>, _Fp>
 midpoint(_Fp __a, _Fp __b) noexcept

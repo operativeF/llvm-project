@@ -20,7 +20,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
 
-template <class _InputIterator, class _OutputIterator, class _Tp,
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator, class _Tp,
           class _BinaryOp, class _UnaryOp>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 _OutputIterator

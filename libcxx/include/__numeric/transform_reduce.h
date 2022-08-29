@@ -21,7 +21,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
-template <class _InputIterator, class _Tp, class _BinaryOp, class _UnaryOp>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _Tp, class _BinaryOp, class _UnaryOp>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 _Tp transform_reduce(_InputIterator __first,
                                                                              _InputIterator __last, _Tp __init,
                                                                              _BinaryOp __b, _UnaryOp __u) {
@@ -30,7 +30,7 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 _Tp transform_reduce(_In
   return __init;
 }
 
-template <class _InputIterator1, class _InputIterator2, class _Tp, class _BinaryOp1, class _BinaryOp2>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _Tp, class _BinaryOp1, class _BinaryOp2>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 _Tp transform_reduce(_InputIterator1 __first1,
                                                                              _InputIterator1 __last1,
                                                                              _InputIterator2 __first2, _Tp __init,
@@ -40,7 +40,7 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 _Tp transform_reduce(_In
   return __init;
 }
 
-template <class _InputIterator1, class _InputIterator2, class _Tp>
+_LIBCPP_EXPORT_STD template <class _InputIterator1, class _InputIterator2, class _Tp>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 _Tp transform_reduce(_InputIterator1 __first1,
                                                                              _InputIterator1 __last1,
                                                                              _InputIterator2 __first2, _Tp __init) {
