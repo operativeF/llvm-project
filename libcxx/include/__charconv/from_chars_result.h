@@ -21,7 +21,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
 
-struct _LIBCPP_TYPE_VIS from_chars_result
+_LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS from_chars_result
 {
     const char* ptr;
     errc ec;
