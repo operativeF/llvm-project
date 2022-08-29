@@ -21,7 +21,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _ToType, class _FromType>
+_LIBCPP_EXPORT_STD template <class _ToType, class _FromType>
   requires(sizeof(_ToType) == sizeof(_FromType) &&
            is_trivially_copyable_v<_ToType> &&
            is_trivially_copyable_v<_FromType>)
