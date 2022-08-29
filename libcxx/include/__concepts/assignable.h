@@ -26,7 +26,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.assignable]
 
-template<class _Lhs, class _Rhs>
+_LIBCPP_EXPORT_STD template<class _Lhs, class _Rhs>
 concept assignable_from =
   is_lvalue_reference_v<_Lhs> &&
   common_reference_with<__make_const_lvalue_ref<_Lhs>, __make_const_lvalue_ref<_Rhs>> &&

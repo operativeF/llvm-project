@@ -22,7 +22,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.derived]
 
-template<class _Dp, class _Bp>
+_LIBCPP_EXPORT_STD template<class _Dp, class _Bp>
 concept derived_from =
   is_base_of_v<_Bp, _Dp> &&
   is_convertible_v<const volatile _Dp*, const volatile _Bp*>;

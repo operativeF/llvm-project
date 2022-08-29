@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 // [concept.constructible]
-template<class _Tp, class... _Args>
+_LIBCPP_EXPORT_STD template<class _Tp, class... _Args>
 concept constructible_from =
     destructible<_Tp> && is_constructible_v<_Tp, _Args...>;
 
@@ -32,17 +32,17 @@ concept constructible_from =
 template<class _Tp>
 concept __default_initializable = requires { ::new _Tp; };
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept default_initializable = constructible_from<_Tp> &&
     requires { _Tp{}; } && __default_initializable<_Tp>;
 
 // [concept.moveconstructible]
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept move_constructible =
   constructible_from<_Tp, _Tp> && convertible_to<_Tp, _Tp>;
 
 // [concept.copyconstructible]
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept copy_constructible =
   move_constructible<_Tp> &&
   constructible_from<_Tp, _Tp&> && convertible_to<_Tp&, _Tp> &&

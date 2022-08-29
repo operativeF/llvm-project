@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.predicate]
 
-template<class _Fn, class... _Args>
+_LIBCPP_EXPORT_STD template<class _Fn, class... _Args>
 concept predicate =
   regular_invocable<_Fn, _Args...> && __boolean_testable<invoke_result_t<_Fn, _Args...>>;
 

@@ -25,7 +25,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 template<class _Tp, class _Up>
 concept __same_as_impl = _IsSame<_Tp, _Up>::value;
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 concept same_as = __same_as_impl<_Tp, _Up> && __same_as_impl<_Up, _Tp>;
 
 #endif // _LIBCPP_STD_VER > 17

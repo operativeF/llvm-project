@@ -24,14 +24,14 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.invocable]
 
-template<class _Fn, class... _Args>
+_LIBCPP_EXPORT_STD template<class _Fn, class... _Args>
 concept invocable = requires(_Fn&& __fn, _Args&&... __args) {
   _VSTD::invoke(_VSTD::forward<_Fn>(__fn), _VSTD::forward<_Args>(__args)...); // not required to be equality preserving
 };
 
 // [concept.regular.invocable]
 
-template<class _Fn, class... _Args>
+_LIBCPP_EXPORT_STD template<class _Fn, class... _Args>
 concept regular_invocable = invocable<_Fn, _Args...>;
 
 #endif // _LIBCPP_STD_VER > 17

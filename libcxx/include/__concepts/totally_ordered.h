@@ -37,10 +37,10 @@ concept __partially_ordered_with =
     { __u >= __t } -> __boolean_testable;
   };
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept totally_ordered = equality_comparable<_Tp> && __partially_ordered_with<_Tp, _Tp>;
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 concept totally_ordered_with =
   totally_ordered<_Tp> && totally_ordered<_Up> &&
   equality_comparable_with<_Tp, _Up> &&

@@ -97,10 +97,10 @@ inline namespace __cpo {
 } // namespace __cpo
 } // namespace ranges
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept swappable = requires(_Tp& __a, _Tp& __b) { ranges::swap(__a, __b); };
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 concept swappable_with =
   common_reference_with<_Tp, _Up> &&
   requires(_Tp&& __t, _Up&& __u) {

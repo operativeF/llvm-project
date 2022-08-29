@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.common]
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 concept common_with =
   same_as<common_type_t<_Tp, _Up>, common_type_t<_Up, _Tp>> &&
   requires {

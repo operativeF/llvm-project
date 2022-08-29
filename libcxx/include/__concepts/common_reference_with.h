@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.commonref]
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 concept common_reference_with =
   same_as<common_reference_t<_Tp, _Up>, common_reference_t<_Up, _Tp>> &&
   convertible_to<_Tp, common_reference_t<_Tp, _Up>> &&

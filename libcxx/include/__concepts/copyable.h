@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concepts.object]
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept copyable =
   copy_constructible<_Tp> &&
   movable<_Tp> &&

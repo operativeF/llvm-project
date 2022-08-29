@@ -34,10 +34,10 @@ concept __weakly_equality_comparable_with =
     { __u != __t } -> __boolean_testable;
   };
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 concept equality_comparable = __weakly_equality_comparable_with<_Tp, _Tp>;
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 concept equality_comparable_with =
   equality_comparable<_Tp> && equality_comparable<_Up> &&
   common_reference_with<__make_const_lvalue_ref<_Tp>, __make_const_lvalue_ref<_Up>> &&

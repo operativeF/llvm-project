@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // [concept.convertible]
 
-template<class _From, class _To>
+_LIBCPP_EXPORT_STD template<class _From, class _To>
 concept convertible_to =
   is_convertible_v<_From, _To> &&
   requires {
