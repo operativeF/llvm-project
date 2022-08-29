@@ -26,8 +26,8 @@ namespace chrono
 {
 
 _LIBCPP_EXPORT_STD struct local_t {};
-template<class Duration>
-_LIBCPP_EXPORT_STD using local_time  = time_point<local_t, Duration>;
+_LIBCPP_EXPORT_STD template<class Duration>
+using local_time  = time_point<local_t, Duration>;
 _LIBCPP_EXPORT_STD using local_seconds = local_time<seconds>;
 _LIBCPP_EXPORT_STD using local_days    = local_time<days>;
 
