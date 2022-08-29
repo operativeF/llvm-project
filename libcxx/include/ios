@@ -238,9 +238,9 @@ storage-class-specifier const error_category& iostream_category() noexcept;
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-typedef ptrdiff_t streamsize;
+_LIBCPP_EXPORT_STD typedef ptrdiff_t streamsize;
 
-class _LIBCPP_TYPE_VIS ios_base
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base
 {
 public:
     class _LIBCPP_EXCEPTION_ABI failure;
@@ -405,13 +405,13 @@ private:
 };
 
 //enum class io_errc
-_LIBCPP_DECLARE_STRONG_ENUM(io_errc)
+_LIBCPP_EXPORT_STD _LIBCPP_DECLARE_STRONG_ENUM(io_errc)
 {
     stream = 1
 };
 _LIBCPP_DECLARE_STRONG_ENUM_EPILOG(io_errc)
 
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS is_error_code_enum<io_errc> : public true_type { };
 
 #ifdef _LIBCPP_CXX03_LANG
@@ -419,24 +419,24 @@ template <>
 struct _LIBCPP_TEMPLATE_VIS is_error_code_enum<io_errc::__lx> : public true_type { };
 #endif
 
-_LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
 const error_category& iostream_category() _NOEXCEPT;
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 error_code
 make_error_code(io_errc __e) _NOEXCEPT
 {
     return error_code(static_cast<int>(__e), iostream_category());
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 error_condition
 make_error_condition(io_errc __e) _NOEXCEPT
 {
     return error_condition(static_cast<int>(__e), iostream_category());
 }
 
-class _LIBCPP_EXCEPTION_ABI ios_base::failure
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI ios_base::failure
     : public system_error
 {
 public:
@@ -456,7 +456,7 @@ void __throw_failure(char const* __msg) {
 #endif
 }
 
-class _LIBCPP_TYPE_VIS ios_base::Init
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base::Init
 {
 public:
     Init();
@@ -465,14 +465,14 @@ public:
 
 // fmtflags
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 ios_base::fmtflags
 ios_base::flags() const
 {
     return __fmtflags_;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 ios_base::fmtflags
 ios_base::flags(fmtflags __fmtfl)
 {
@@ -481,7 +481,7 @@ ios_base::flags(fmtflags __fmtfl)
     return __r;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 ios_base::fmtflags
 ios_base::setf(fmtflags __fmtfl)
 {
@@ -490,14 +490,14 @@ ios_base::setf(fmtflags __fmtfl)
     return __r;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 void
 ios_base::unsetf(fmtflags __mask)
 {
     __fmtflags_ &= ~__mask;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 ios_base::fmtflags
 ios_base::setf(fmtflags __fmtfl, fmtflags __mask)
 {
@@ -509,14 +509,14 @@ ios_base::setf(fmtflags __fmtfl, fmtflags __mask)
 
 // precision
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 streamsize
 ios_base::precision() const
 {
     return __precision_;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 streamsize
 ios_base::precision(streamsize __prec)
 {
@@ -527,14 +527,14 @@ ios_base::precision(streamsize __prec)
 
 // width
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 streamsize
 ios_base::width() const
 {
     return __width_;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 streamsize
 ios_base::width(streamsize __wide)
 {
@@ -545,56 +545,56 @@ ios_base::width(streamsize __wide)
 
 // iostate
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 ios_base::iostate
 ios_base::rdstate() const
 {
     return __rdstate_;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 void
 ios_base::setstate(iostate __state)
 {
     clear(__rdstate_ | __state);
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 bool
 ios_base::good() const
 {
     return __rdstate_ == 0;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 bool
 ios_base::eof() const
 {
     return (__rdstate_ & eofbit) != 0;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 bool
 ios_base::fail() const
 {
     return (__rdstate_ & (failbit | badbit)) != 0;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 bool
 ios_base::bad() const
 {
     return (__rdstate_ & badbit) != 0;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 ios_base::iostate
 ios_base::exceptions() const
 {
     return __exceptions_;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 void
 ios_base::exceptions(iostate __iostate)
 {
@@ -602,7 +602,7 @@ ios_base::exceptions(iostate __iostate)
     clear(__rdstate_);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_ios
     : public ios_base
 {
@@ -691,19 +691,19 @@ private:
     mutable int_type __fill_;
 };
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_ios<_CharT, _Traits>::basic_ios(basic_streambuf<char_type,traits_type>* __sb)
 {
     init(__sb);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 basic_ios<_CharT, _Traits>::~basic_ios()
 {
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 basic_ios<_CharT, _Traits>::init(basic_streambuf<char_type, traits_type>* __sb)
@@ -713,7 +713,7 @@ basic_ios<_CharT, _Traits>::init(basic_streambuf<char_type, traits_type>* __sb)
     __fill_ = traits_type::eof();
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>*
 basic_ios<_CharT, _Traits>::tie() const
@@ -721,7 +721,7 @@ basic_ios<_CharT, _Traits>::tie() const
     return __tie_;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>*
 basic_ios<_CharT, _Traits>::tie(basic_ostream<char_type, traits_type>* __tiestr)
@@ -731,7 +731,7 @@ basic_ios<_CharT, _Traits>::tie(basic_ostream<char_type, traits_type>* __tiestr)
     return __r;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_streambuf<_CharT, _Traits>*
 basic_ios<_CharT, _Traits>::rdbuf() const
@@ -739,7 +739,7 @@ basic_ios<_CharT, _Traits>::rdbuf() const
     return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_streambuf<_CharT, _Traits>*
 basic_ios<_CharT, _Traits>::rdbuf(basic_streambuf<char_type, traits_type>* __sb)
@@ -749,7 +749,7 @@ basic_ios<_CharT, _Traits>::rdbuf(basic_streambuf<char_type, traits_type>* __sb)
     return __r;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 locale
 basic_ios<_CharT, _Traits>::imbue(const locale& __loc)
@@ -761,7 +761,7 @@ basic_ios<_CharT, _Traits>::imbue(const locale& __loc)
     return __r;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 char
 basic_ios<_CharT, _Traits>::narrow(char_type __c, char __dfault) const
@@ -769,7 +769,7 @@ basic_ios<_CharT, _Traits>::narrow(char_type __c, char __dfault) const
     return use_facet<ctype<char_type> >(getloc()).narrow(__c, __dfault);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 _CharT
 basic_ios<_CharT, _Traits>::widen(char __c) const
@@ -777,7 +777,7 @@ basic_ios<_CharT, _Traits>::widen(char __c) const
     return use_facet<ctype<char_type> >(getloc()).widen(__c);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 _CharT
 basic_ios<_CharT, _Traits>::fill() const
@@ -787,7 +787,7 @@ basic_ios<_CharT, _Traits>::fill() const
     return __fill_;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 _CharT
 basic_ios<_CharT, _Traits>::fill(char_type __ch)
@@ -799,7 +799,7 @@ basic_ios<_CharT, _Traits>::fill(char_type __ch)
     return __r;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 basic_ios<_CharT, _Traits>&
 basic_ios<_CharT, _Traits>::copyfmt(const basic_ios& __rhs)
 {
@@ -815,7 +815,7 @@ basic_ios<_CharT, _Traits>::copyfmt(const basic_ios& __rhs)
     return *this;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 basic_ios<_CharT, _Traits>::move(basic_ios& __rhs)
@@ -826,7 +826,7 @@ basic_ios<_CharT, _Traits>::move(basic_ios& __rhs)
     __fill_ = __rhs.__fill_;
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 basic_ios<_CharT, _Traits>::swap(basic_ios& __rhs) _NOEXCEPT
@@ -836,7 +836,7 @@ basic_ios<_CharT, _Traits>::swap(basic_ios& __rhs) _NOEXCEPT
     _VSTD::swap(__fill_, __rhs.__fill_);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 basic_ios<_CharT, _Traits>::set_rdbuf(basic_streambuf<char_type, traits_type>* __sb)
@@ -844,7 +844,7 @@ basic_ios<_CharT, _Traits>::set_rdbuf(basic_streambuf<char_type, traits_type>* _
     ios_base::set_rdbuf(__sb);
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 boolalpha(ios_base& __str)
 {
@@ -852,7 +852,7 @@ boolalpha(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 noboolalpha(ios_base& __str)
 {
@@ -860,7 +860,7 @@ noboolalpha(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 showbase(ios_base& __str)
 {
@@ -868,7 +868,7 @@ showbase(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 noshowbase(ios_base& __str)
 {
@@ -876,7 +876,7 @@ noshowbase(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 showpoint(ios_base& __str)
 {
@@ -884,7 +884,7 @@ showpoint(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 noshowpoint(ios_base& __str)
 {
@@ -892,7 +892,7 @@ noshowpoint(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 showpos(ios_base& __str)
 {
@@ -900,7 +900,7 @@ showpos(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 noshowpos(ios_base& __str)
 {
@@ -908,7 +908,7 @@ noshowpos(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 skipws(ios_base& __str)
 {
@@ -916,7 +916,7 @@ skipws(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 noskipws(ios_base& __str)
 {
@@ -924,7 +924,7 @@ noskipws(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 uppercase(ios_base& __str)
 {
@@ -932,7 +932,7 @@ uppercase(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 nouppercase(ios_base& __str)
 {
@@ -940,7 +940,7 @@ nouppercase(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 unitbuf(ios_base& __str)
 {
@@ -948,7 +948,7 @@ unitbuf(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 nounitbuf(ios_base& __str)
 {
@@ -956,7 +956,7 @@ nounitbuf(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 internal(ios_base& __str)
 {
@@ -964,7 +964,7 @@ internal(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 left(ios_base& __str)
 {
@@ -972,7 +972,7 @@ left(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 right(ios_base& __str)
 {
@@ -980,7 +980,7 @@ right(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 dec(ios_base& __str)
 {
@@ -988,7 +988,7 @@ dec(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 hex(ios_base& __str)
 {
@@ -996,7 +996,7 @@ hex(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 oct(ios_base& __str)
 {
@@ -1004,7 +1004,7 @@ oct(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 fixed(ios_base& __str)
 {
@@ -1012,7 +1012,7 @@ fixed(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 scientific(ios_base& __str)
 {
@@ -1020,7 +1020,7 @@ scientific(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 hexfloat(ios_base& __str)
 {
@@ -1028,7 +1028,7 @@ hexfloat(ios_base& __str)
     return __str;
 }
 
-_LIBCPP_HIDE_FROM_ABI inline
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&
 defaultfloat(ios_base& __str)
 {

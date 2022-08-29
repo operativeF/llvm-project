@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _StateT>
+_LIBCPP_EXPORT_STD template <class _StateT>
 class _LIBCPP_TEMPLATE_VIS fpos {
 private:
   _StateT __st_;
@@ -56,19 +56,19 @@ public:
   }
 };
 
-template <class _StateT>
+_LIBCPP_EXPORT_STD template <class _StateT>
 inline _LIBCPP_HIDE_FROM_ABI
 streamoff operator-(const fpos<_StateT>& __x, const fpos<_StateT>& __y) {
   return streamoff(__x) - streamoff(__y);
 }
 
-template <class _StateT>
+_LIBCPP_EXPORT_STD template <class _StateT>
 inline _LIBCPP_HIDE_FROM_ABI
 bool operator==(const fpos<_StateT>& __x, const fpos<_StateT>& __y) {
   return streamoff(__x) == streamoff(__y);
 }
 
-template <class _StateT>
+_LIBCPP_EXPORT_STD template <class _StateT>
 inline _LIBCPP_HIDE_FROM_ABI
 bool operator!=(const fpos<_StateT>& __x, const fpos<_StateT>& __y) {
   return streamoff(__x) != streamoff(__y);
