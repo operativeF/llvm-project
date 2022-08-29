@@ -26,7 +26,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _IntType = int>
+_LIBCPP_EXPORT_STD template<class _IntType = int>
 class _LIBCPP_TEMPLATE_VIS negative_binomial_distribution
 {
     static_assert(__libcpp_random_is_valid_inttype<_IntType>::value, "IntType must be a supported integer type");
@@ -113,7 +113,7 @@ public:
         {return !(__x == __y);}
 };
 
-template <class _IntType>
+_LIBCPP_EXPORT_STD template <class _IntType>
 template<class _URNG>
 _IntType
 negative_binomial_distribution<_IntType>::operator()(_URNG& __urng, const param_type& __pr)
@@ -143,7 +143,7 @@ negative_binomial_distribution<_IntType>::operator()(_URNG& __urng, const param_
                                             (__k, (1-__p)/__p)(__urng))(__urng);
 }
 
-template <class _CharT, class _Traits, class _IntType>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IntType>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const negative_binomial_distribution<_IntType>& __x)
@@ -157,7 +157,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.k() << __sp << __x.p();
 }
 
-template <class _CharT, class _Traits, class _IntType>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IntType>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            negative_binomial_distribution<_IntType>& __x)

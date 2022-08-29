@@ -25,7 +25,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _Engine, size_t __p, size_t __r>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
 class _LIBCPP_TEMPLATE_VIS discard_block_engine
 {
     _Engine __e_;
@@ -127,13 +127,13 @@ public:
                discard_block_engine<_Eng, _Pp, _Rp>& __x);
 };
 
-template<class _Engine, size_t __p, size_t __r>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
     _LIBCPP_CONSTEXPR const size_t discard_block_engine<_Engine, __p, __r>::block_size;
 
-template<class _Engine, size_t __p, size_t __r>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
     _LIBCPP_CONSTEXPR const size_t discard_block_engine<_Engine, __p, __r>::used_block;
 
-template<class _Engine, size_t __p, size_t __r>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
 typename discard_block_engine<_Engine, __p, __r>::result_type
 discard_block_engine<_Engine, __p, __r>::operator()()
 {
@@ -146,7 +146,7 @@ discard_block_engine<_Engine, __p, __r>::operator()()
     return __e_();
 }
 
-template<class _Eng, size_t _Pp, size_t _Rp>
+_LIBCPP_EXPORT_STD template<class _Eng, size_t _Pp, size_t _Rp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const discard_block_engine<_Eng, _Pp, _Rp>& __x,
@@ -155,7 +155,7 @@ operator==(const discard_block_engine<_Eng, _Pp, _Rp>& __x,
     return __x.__n_ == __y.__n_ && __x.__e_ == __y.__e_;
 }
 
-template<class _Eng, size_t _Pp, size_t _Rp>
+_LIBCPP_EXPORT_STD template<class _Eng, size_t _Pp, size_t _Rp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const discard_block_engine<_Eng, _Pp, _Rp>& __x,
@@ -164,7 +164,7 @@ operator!=(const discard_block_engine<_Eng, _Pp, _Rp>& __x,
     return !(__x == __y);
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Eng, size_t _Pp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
@@ -178,7 +178,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.__e_ << __sp << __x.__n_;
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Eng, size_t _Pp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,

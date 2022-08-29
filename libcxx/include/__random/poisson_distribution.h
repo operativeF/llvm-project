@@ -28,7 +28,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _IntType = int>
+_LIBCPP_EXPORT_STD template<class _IntType = int>
 class _LIBCPP_TEMPLATE_VIS poisson_distribution
 {
     static_assert(__libcpp_random_is_valid_inttype<_IntType>::value, "IntType must be a supported integer type");
@@ -119,7 +119,7 @@ public:
         {return !(__x == __y);}
 };
 
-template<class _IntType>
+_LIBCPP_EXPORT_STD template<class _IntType>
 poisson_distribution<_IntType>::param_type::param_type(double __mean)
     // According to the standard `inf` is a valid input, but it causes the
     // distribution to hang, so we replace it with the maximum representable
@@ -154,7 +154,7 @@ poisson_distribution<_IntType>::param_type::param_type(double __mean)
     }
 }
 
-template <class _IntType>
+_LIBCPP_EXPORT_STD template <class _IntType>
 template<class _URNG>
 _IntType
 poisson_distribution<_IntType>::operator()(_URNG& __urng, const param_type& __pr)
@@ -244,7 +244,7 @@ poisson_distribution<_IntType>::operator()(_URNG& __urng, const param_type& __pr
     return _VSTD::__clamp_to_integral<result_type>(__tx);
 }
 
-template <class _CharT, class _Traits, class _IntType>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IntType>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const poisson_distribution<_IntType>& __x)
@@ -256,7 +256,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.mean();
 }
 
-template <class _CharT, class _Traits, class _IntType>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IntType>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            poisson_distribution<_IntType>& __x)

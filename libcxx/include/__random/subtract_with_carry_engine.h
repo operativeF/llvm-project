@@ -29,35 +29,35 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
 class _LIBCPP_TEMPLATE_VIS subtract_with_carry_engine;
 
-template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
+_LIBCPP_EXPORT_STD template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(
     const subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __x,
     const subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __y);
 
-template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
+_LIBCPP_EXPORT_STD template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(
     const subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __x,
     const subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __y);
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __x);
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __x);
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
 class _LIBCPP_TEMPLATE_VIS subtract_with_carry_engine
 {
 public:
@@ -163,20 +163,20 @@ private:
         void __seed(_Sseq& __q, integral_constant<unsigned, 2>);
 };
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const size_t subtract_with_carry_engine<_UIntType, __w, __s, __r>::word_size;
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const size_t subtract_with_carry_engine<_UIntType, __w, __s, __r>::short_lag;
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const size_t subtract_with_carry_engine<_UIntType, __w, __s, __r>::long_lag;
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const typename subtract_with_carry_engine<_UIntType, __w, __s, __r>::result_type
     subtract_with_carry_engine<_UIntType, __w, __s, __r>::default_seed;
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
 void
 subtract_with_carry_engine<_UIntType, __w, __s, __r>::seed(result_type __sd,
         integral_constant<unsigned, 1>)
@@ -189,7 +189,7 @@ subtract_with_carry_engine<_UIntType, __w, __s, __r>::seed(result_type __sd,
     __i_ = 0;
 }
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
 void
 subtract_with_carry_engine<_UIntType, __w, __s, __r>::seed(result_type __sd,
         integral_constant<unsigned, 2>)
@@ -237,7 +237,7 @@ subtract_with_carry_engine<_UIntType, __w, __s, __r>::__seed(_Sseq& __q,
     __i_ = 0;
 }
 
-template<class _UIntType, size_t __w, size_t __s, size_t __r>
+_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
 _UIntType
 subtract_with_carry_engine<_UIntType, __w, __s, __r>::operator()()
 {
@@ -250,7 +250,7 @@ subtract_with_carry_engine<_UIntType, __w, __s, __r>::operator()()
     return __xr;
 }
 
-template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
+_LIBCPP_EXPORT_STD template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(
     const subtract_with_carry_engine<_UInt, _Wp, _Sp, _Rp>& __x,
@@ -293,7 +293,7 @@ operator==(
                        __x.__x_ + (_Rp - (__y.__i_ + __j)));
 }
 
-template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
+_LIBCPP_EXPORT_STD template<class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(
@@ -303,7 +303,7 @@ operator!=(
     return !(__x == __y);
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
@@ -323,7 +323,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os;
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Sp, size_t _Rp>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,

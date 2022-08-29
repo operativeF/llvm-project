@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if !defined(_LIBCPP_HAS_NO_RANDOM_DEVICE)
 
-class _LIBCPP_TYPE_VIS random_device
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS random_device
 {
 #ifdef _LIBCPP_USING_DEV_RANDOM
     int __f_;

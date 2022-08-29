@@ -23,7 +23,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-class _LIBCPP_TEMPLATE_VIS bernoulli_distribution
+_LIBCPP_EXPORT_STD class _LIBCPP_TEMPLATE_VIS bernoulli_distribution
 {
 public:
     // types
@@ -99,7 +99,7 @@ public:
         {return !(__x == __y);}
 };
 
-template<class _URNG>
+_LIBCPP_EXPORT_STD template<class _URNG>
 inline
 bernoulli_distribution::result_type
 bernoulli_distribution::operator()(_URNG& __g, const param_type& __p)
@@ -109,7 +109,7 @@ bernoulli_distribution::operator()(_URNG& __g, const param_type& __p)
     return __gen(__g) < __p.p();
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const bernoulli_distribution& __x)
 {
@@ -122,7 +122,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const bernoulli_distribution& _
     return __os << __x.p();
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is, bernoulli_distribution& __x)
 {

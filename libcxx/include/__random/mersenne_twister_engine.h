@@ -28,12 +28,12 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
 class _LIBCPP_TEMPLATE_VIS mersenne_twister_engine;
 
-template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
+_LIBCPP_EXPORT_STD template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
 _LIBCPP_HIDE_FROM_ABI bool
@@ -42,7 +42,7 @@ operator==(const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _D
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __y);
 
-template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
+_LIBCPP_EXPORT_STD template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
 _LIBCPP_INLINE_VISIBILITY
@@ -52,7 +52,7 @@ operator!=(const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _D
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __y);
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
@@ -61,7 +61,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __x);
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
@@ -70,7 +70,7 @@ operator>>(basic_istream<_CharT, _Traits>& __is,
            mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                    _Bp, _Tp, _Cp, _Lp, _Fp>& __x);
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
 class _LIBCPP_TEMPLATE_VIS mersenne_twister_engine
@@ -244,91 +244,91 @@ private:
         __rshift(result_type) {return result_type(0);}
 };
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::word_size;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::state_size;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::shift_size;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::mask_bits;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const typename mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::xor_mask;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_u;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const typename mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_d;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_s;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const typename mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_b;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_t;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const typename mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_c;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const size_t
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::tempering_l;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const typename mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::initialization_multiplier;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
     _LIBCPP_CONSTEXPR const typename mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type
     mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::default_seed;
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
 void
@@ -393,7 +393,7 @@ mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b,
     }
 }
 
-template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
+_LIBCPP_EXPORT_STD template <class _UIntType, size_t __w, size_t __n, size_t __m, size_t __r,
           _UIntType __a, size_t __u, _UIntType __d, size_t __s,
           _UIntType __b, size_t __t, _UIntType __c, size_t __l, _UIntType __f>
 _UIntType
@@ -413,7 +413,7 @@ mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b,
     return __z ^ __rshift<__l>(__z);
 }
 
-template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
+_LIBCPP_EXPORT_STD template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
 _LIBCPP_HIDE_FROM_ABI bool
@@ -457,7 +457,7 @@ operator==(const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _D
                        __x.__x_ + (_Np - (__y.__i_ + __j)));
 }
 
-template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
+_LIBCPP_EXPORT_STD template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
 inline _LIBCPP_INLINE_VISIBILITY
@@ -470,7 +470,7 @@ operator!=(const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _D
     return !(__x == __y);
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
@@ -492,7 +492,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os;
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
@@ -516,12 +516,12 @@ operator>>(basic_istream<_CharT, _Traits>& __is,
     return __is;
 }
 
-typedef mersenne_twister_engine<uint_fast32_t, 32, 624, 397, 31,
+_LIBCPP_EXPORT_STD typedef mersenne_twister_engine<uint_fast32_t, 32, 624, 397, 31,
                                 0x9908b0df, 11, 0xffffffff,
                                 7,  0x9d2c5680,
                                 15, 0xefc60000,
                                 18, 1812433253>                         mt19937;
-typedef mersenne_twister_engine<uint_fast64_t, 64, 312, 156, 31,
+_LIBCPP_EXPORT_STD typedef mersenne_twister_engine<uint_fast64_t, 64, 312, 156, 31,
                                 0xb5026f5aa96619e9ULL, 29, 0x5555555555555555ULL,
                                 17, 0x71d67fffeda60000ULL,
                                 37, 0xfff7eee000000000ULL,

@@ -186,23 +186,23 @@ struct __lce_ta<__a, __c, __m, (unsigned short)(~0), __b>
     }
 };
 
-template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
 class _LIBCPP_TEMPLATE_VIS linear_congruential_engine;
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Up, _Up _Ap, _Up _Cp, _Up _Np>
 _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const linear_congruential_engine<_Up, _Ap, _Cp, _Np>&);
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Up, _Up _Ap, _Up _Cp, _Up _Np>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            linear_congruential_engine<_Up, _Ap, _Cp, _Np>& __x);
 
-template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
 class _LIBCPP_TEMPLATE_VIS linear_congruential_engine
 {
 public:
@@ -313,19 +313,19 @@ private:
                linear_congruential_engine<_Up, _Ap, _Cp, _Np>& __x);
 };
 
-template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::multiplier;
 
-template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::increment;
 
-template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::modulus;
 
-template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::default_seed;
 
@@ -356,7 +356,7 @@ linear_congruential_engine<_UIntType, __a, __c, __m>::__seed(_Sseq& __q,
     __x_ = __c == 0 && __s == 0 ? result_type(1) : __s;
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>&
@@ -370,7 +370,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.__x_;
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
@@ -386,9 +386,9 @@ operator>>(basic_istream<_CharT, _Traits>& __is,
     return __is;
 }
 
-typedef linear_congruential_engine<uint_fast32_t, 16807, 0, 2147483647>
+_LIBCPP_EXPORT_STD typedef linear_congruential_engine<uint_fast32_t, 16807, 0, 2147483647>
                                                                    minstd_rand0;
-typedef linear_congruential_engine<uint_fast32_t, 48271, 0, 2147483647>
+_LIBCPP_EXPORT_STD typedef linear_congruential_engine<uint_fast32_t, 48271, 0, 2147483647>
                                                                     minstd_rand;
 
 _LIBCPP_END_NAMESPACE_STD

@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-typedef shuffle_order_engine<minstd_rand0, 256> knuth_b;
+_LIBCPP_EXPORT_STD typedef shuffle_order_engine<minstd_rand0, 256> knuth_b;
 
 _LIBCPP_END_NAMESPACE_STD
 

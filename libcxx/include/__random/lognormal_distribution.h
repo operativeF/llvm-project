@@ -160,7 +160,7 @@ operator>>(basic_istream<_CharT, _Traits>& __is,
 
 #else // _LIBCPP_ABI_OLD_LOGNORMAL_DISTRIBUTION
 
-template<class _RealType = double>
+_LIBCPP_EXPORT_STD template<class _RealType = double>
 class _LIBCPP_TEMPLATE_VIS lognormal_distribution
 {
 public:
@@ -272,7 +272,7 @@ public:
                lognormal_distribution<_RT>& __x);
 };
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
@@ -281,7 +281,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.__nd_;
 }
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,

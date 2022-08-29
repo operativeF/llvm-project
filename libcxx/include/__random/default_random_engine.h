@@ -18,7 +18,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-typedef minstd_rand default_random_engine;
+_LIBCPP_EXPORT_STD typedef minstd_rand default_random_engine;
 
 _LIBCPP_END_NAMESPACE_STD
 

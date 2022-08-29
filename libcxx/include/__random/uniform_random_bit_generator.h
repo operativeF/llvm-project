@@ -27,7 +27,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 // [rand.req.urng]
-template<class _Gen>
+_LIBCPP_EXPORT_STD template<class _Gen>
 concept uniform_random_bit_generator =
   invocable<_Gen&> && unsigned_integral<invoke_result_t<_Gen&>> &&
   requires {

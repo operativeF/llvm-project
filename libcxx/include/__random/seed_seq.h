@@ -25,7 +25,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-class _LIBCPP_TEMPLATE_VIS seed_seq
+_LIBCPP_EXPORT_STD class _LIBCPP_TEMPLATE_VIS seed_seq
 {
 public:
     // types
@@ -83,7 +83,7 @@ seed_seq::__init(_InputIterator __first, _InputIterator __last)
         __v_.push_back(*__s & 0xFFFFFFFF);
 }
 
-template<class _RandomAccessIterator>
+_LIBCPP_EXPORT_STD template<class _RandomAccessIterator>
 void
 seed_seq::generate(_RandomAccessIterator __first, _RandomAccessIterator __last)
 {

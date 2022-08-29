@@ -50,7 +50,7 @@ public:
     typedef __uratio<num, den> type;
 };
 
-template<class _Engine, size_t __k>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __k>
 class _LIBCPP_TEMPLATE_VIS shuffle_order_engine
 {
     static_assert(0 < __k, "shuffle_order_engine invalid parameters");
@@ -211,10 +211,10 @@ private:
         }
 };
 
-template<class _Engine, size_t __k>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __k>
     _LIBCPP_CONSTEXPR const size_t shuffle_order_engine<_Engine, __k>::table_size;
 
-template<class _Eng, size_t _Kp>
+_LIBCPP_EXPORT_STD template<class _Eng, size_t _Kp>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(
     const shuffle_order_engine<_Eng, _Kp>& __x,
@@ -224,7 +224,7 @@ operator==(
            __x.__e_ == __y.__e_;
 }
 
-template<class _Eng, size_t _Kp>
+_LIBCPP_EXPORT_STD template<class _Eng, size_t _Kp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(
@@ -234,7 +234,7 @@ operator!=(
     return !(__x == __y);
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Eng, size_t _Kp>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
@@ -251,7 +251,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __sp << __x.__y_;
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Eng, size_t _Kp>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,

@@ -24,7 +24,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _IntType = int>
+_LIBCPP_EXPORT_STD template<class _IntType = int>
 class _LIBCPP_TEMPLATE_VIS binomial_distribution
 {
     static_assert(__libcpp_random_is_valid_inttype<_IntType>::value, "IntType must be a supported integer type");
@@ -126,7 +126,7 @@ inline _LIBCPP_INLINE_VISIBILITY double __libcpp_lgamma(double __d) {
 #endif
 }
 
-template<class _IntType>
+_LIBCPP_EXPORT_STD template<class _IntType>
 binomial_distribution<_IntType>::param_type::param_type(result_type __t, double __p)
     : __t_(__t), __p_(__p)
 {
@@ -143,7 +143,7 @@ binomial_distribution<_IntType>::param_type::param_type(result_type __t, double 
 
 // Reference: Kemp, C.D. (1986). `A modal method for generating binomial
 //           variables', Commun. Statist. - Theor. Meth. 15(3), 805-813.
-template<class _IntType>
+_LIBCPP_EXPORT_STD template<class _IntType>
 template<class _URNG>
 _IntType
 binomial_distribution<_IntType>::operator()(_URNG& __g, const param_type& __pr)
@@ -188,7 +188,7 @@ binomial_distribution<_IntType>::operator()(_URNG& __g, const param_type& __pr)
     }
 }
 
-template <class _CharT, class _Traits, class _IntType>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IntType>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const binomial_distribution<_IntType>& __x)
@@ -202,7 +202,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.t() << __sp << __x.p();
 }
 
-template <class _CharT, class _Traits, class _IntType>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IntType>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            binomial_distribution<_IntType>& __x)

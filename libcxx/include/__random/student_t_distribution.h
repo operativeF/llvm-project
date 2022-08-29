@@ -26,7 +26,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _RealType = double>
+_LIBCPP_EXPORT_STD template<class _RealType = double>
 class _LIBCPP_TEMPLATE_VIS student_t_distribution
 {
 public:
@@ -107,7 +107,7 @@ public:
         {return !(__x == __y);}
 };
 
-template <class _RealType>
+_LIBCPP_EXPORT_STD template <class _RealType>
 template<class _URNG>
 _RealType
 student_t_distribution<_RealType>::operator()(_URNG& __g, const param_type& __p)
@@ -117,7 +117,7 @@ student_t_distribution<_RealType>::operator()(_URNG& __g, const param_type& __p)
     return __nd_(__g) * _VSTD::sqrt(__p.n()/__gd(__g));
 }
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const student_t_distribution<_RT>& __x)
@@ -130,7 +130,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os;
 }
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            student_t_distribution<_RT>& __x)

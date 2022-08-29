@@ -152,7 +152,7 @@ __independent_bits_engine<_Engine, _UIntType>::__eval(true_type)
     return _Sp;
 }
 
-template<class _IntType = int>
+_LIBCPP_EXPORT_STD template<class _IntType = int>
 class uniform_int_distribution
 {
     static_assert(__libcpp_random_is_valid_inttype<_IntType>::value, "IntType must be a supported integer type");
@@ -226,7 +226,7 @@ public:
             {return !(__x == __y);}
 };
 
-template<class _IntType>
+_LIBCPP_EXPORT_STD template<class _IntType>
 template<class _URNG>
 typename uniform_int_distribution<_IntType>::result_type
 uniform_int_distribution<_IntType>::operator()(_URNG& __g, const param_type& __p)
@@ -254,7 +254,7 @@ _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
     return static_cast<result_type>(__u + __p.a());
 }
 
-template <class _CharT, class _Traits, class _IT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IT>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const uniform_int_distribution<_IT>& __x)
@@ -267,7 +267,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.a() << __sp << __x.b();
 }
 
-template <class _CharT, class _Traits, class _IT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _IT>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            uniform_int_distribution<_IT>& __x)

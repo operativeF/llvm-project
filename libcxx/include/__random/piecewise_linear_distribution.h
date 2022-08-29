@@ -26,7 +26,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _RealType = double>
+_LIBCPP_EXPORT_STD template<class _RealType = double>
 class _LIBCPP_TEMPLATE_VIS piecewise_linear_distribution
 {
 public:
@@ -165,7 +165,7 @@ public:
                piecewise_linear_distribution<_RT>& __x);
 };
 
-template<class _RealType>
+_LIBCPP_EXPORT_STD template<class _RealType>
 typename piecewise_linear_distribution<_RealType>::param_type &
 piecewise_linear_distribution<_RealType>::param_type::operator=
                                                        (const param_type& __rhs)
@@ -207,7 +207,7 @@ piecewise_linear_distribution<_RealType>::param_type::__init()
         __densities_[__i] /= _Sp;
 }
 
-template<class _RealType>
+_LIBCPP_EXPORT_STD template<class _RealType>
 piecewise_linear_distribution<_RealType>::param_type::param_type()
     : __b_(2),
       __densities_(2, 1.0),
@@ -216,7 +216,7 @@ piecewise_linear_distribution<_RealType>::param_type::param_type()
     __b_[1] = 1;
 }
 
-template<class _RealType>
+_LIBCPP_EXPORT_STD template<class _RealType>
 template<class _InputIteratorB, class _InputIteratorW>
 piecewise_linear_distribution<_RealType>::param_type::param_type(
         _InputIteratorB __f_b, _InputIteratorB __l_b, _InputIteratorW __f_w)
@@ -241,7 +241,7 @@ piecewise_linear_distribution<_RealType>::param_type::param_type(
 
 #ifndef _LIBCPP_CXX03_LANG
 
-template<class _RealType>
+_LIBCPP_EXPORT_STD template<class _RealType>
 template<class _UnaryOperation>
 piecewise_linear_distribution<_RealType>::param_type::param_type(
         initializer_list<result_type> __bl, _UnaryOperation __fw)
@@ -266,7 +266,7 @@ piecewise_linear_distribution<_RealType>::param_type::param_type(
 
 #endif // _LIBCPP_CXX03_LANG
 
-template<class _RealType>
+_LIBCPP_EXPORT_STD template<class _RealType>
 template<class _UnaryOperation>
 piecewise_linear_distribution<_RealType>::param_type::param_type(
         size_t __nw, result_type __xmin, result_type __xmax, _UnaryOperation __fw)
@@ -285,7 +285,7 @@ piecewise_linear_distribution<_RealType>::param_type::param_type(
     __init();
 }
 
-template<class _RealType>
+_LIBCPP_EXPORT_STD template<class _RealType>
 template<class _URNG>
 _RealType
 piecewise_linear_distribution<_RealType>::operator()(_URNG& __g, const param_type& __p)
@@ -309,7 +309,7 @@ piecewise_linear_distribution<_RealType>::operator()(_URNG& __g, const param_typ
         __deltad;
 }
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const piecewise_linear_distribution<_RT>& __x)
@@ -335,7 +335,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os;
 }
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            piecewise_linear_distribution<_RT>& __x)

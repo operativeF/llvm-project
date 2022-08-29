@@ -26,7 +26,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // generate_canonical
 
-template<class _RealType, size_t __bits, class _URNG>
+_LIBCPP_EXPORT_STD template<class _RealType, size_t __bits, class _URNG>
 _LIBCPP_HIDE_FROM_ABI _RealType
 generate_canonical(_URNG& __g)
 {

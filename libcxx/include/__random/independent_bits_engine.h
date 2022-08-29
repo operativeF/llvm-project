@@ -26,7 +26,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _Engine, size_t __w, class _UIntType>
+_LIBCPP_EXPORT_STD template<class _Engine, size_t __w, class _UIntType>
 class _LIBCPP_TEMPLATE_VIS independent_bits_engine
 {
     template <class _UInt, _UInt _R0, size_t _Wp, size_t _Mp>
@@ -218,7 +218,7 @@ independent_bits_engine<_Engine, __w, _UIntType>::__eval(true_type)
     return _Sp;
 }
 
-template<class _Eng, size_t _Wp, class _UInt>
+_LIBCPP_EXPORT_STD template<class _Eng, size_t _Wp, class _UInt>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(
@@ -228,7 +228,7 @@ operator==(
     return __x.base() == __y.base();
 }
 
-template<class _Eng, size_t _Wp, class _UInt>
+_LIBCPP_EXPORT_STD template<class _Eng, size_t _Wp, class _UInt>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(
@@ -238,7 +238,7 @@ operator!=(
     return !(__x == __y);
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Eng, size_t _Wp, class _UInt>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
@@ -247,7 +247,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os << __x.base();
 }
 
-template <class _CharT, class _Traits,
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits,
           class _Eng, size_t _Wp, class _UInt>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,

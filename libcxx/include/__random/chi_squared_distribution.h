@@ -23,7 +23,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _RealType = double>
+_LIBCPP_EXPORT_STD template<class _RealType = double>
 class _LIBCPP_TEMPLATE_VIS chi_squared_distribution
 {
 public:
@@ -106,7 +106,7 @@ public:
         {return !(__x == __y);}
 };
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const chi_squared_distribution<_RT>& __x)
@@ -119,7 +119,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os,
     return __os;
 }
 
-template <class _CharT, class _Traits, class _RT>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _RT>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            chi_squared_distribution<_RT>& __x)
