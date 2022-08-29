@@ -25,7 +25,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
 
-struct equal_to {
+_LIBCPP_EXPORT_STD struct equal_to {
   template <class _Tp, class _Up>
   requires equality_comparable_with<_Tp, _Up>
   [[nodiscard]] constexpr bool operator()(_Tp &&__t, _Up &&__u) const
@@ -36,7 +36,7 @@ struct equal_to {
   using is_transparent = void;
 };
 
-struct not_equal_to {
+_LIBCPP_EXPORT_STD struct not_equal_to {
   template <class _Tp, class _Up>
   requires equality_comparable_with<_Tp, _Up>
   [[nodiscard]] constexpr bool operator()(_Tp &&__t, _Up &&__u) const
@@ -47,7 +47,7 @@ struct not_equal_to {
   using is_transparent = void;
 };
 
-struct less {
+_LIBCPP_EXPORT_STD struct less {
   template <class _Tp, class _Up>
   requires totally_ordered_with<_Tp, _Up>
   [[nodiscard]] constexpr bool operator()(_Tp &&__t, _Up &&__u) const
@@ -58,7 +58,7 @@ struct less {
   using is_transparent = void;
 };
 
-struct less_equal {
+_LIBCPP_EXPORT_STD struct less_equal {
   template <class _Tp, class _Up>
   requires totally_ordered_with<_Tp, _Up>
   [[nodiscard]] constexpr bool operator()(_Tp &&__t, _Up &&__u) const
@@ -69,7 +69,7 @@ struct less_equal {
   using is_transparent = void;
 };
 
-struct greater {
+_LIBCPP_EXPORT_STD struct greater {
   template <class _Tp, class _Up>
   requires totally_ordered_with<_Tp, _Up>
   [[nodiscard]] constexpr bool operator()(_Tp &&__t, _Up &&__u) const
@@ -80,7 +80,7 @@ struct greater {
   using is_transparent = void;
 };
 
-struct greater_equal {
+_LIBCPP_EXPORT_STD struct greater_equal {
   template <class _Tp, class _Up>
   requires totally_ordered_with<_Tp, _Up>
   [[nodiscard]] constexpr bool operator()(_Tp &&__t, _Up &&__u) const

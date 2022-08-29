@@ -30,16 +30,16 @@ template <class _Tp>
 struct decay;
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct unwrap_reference : __unwrap_reference<_Tp> { };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 using unwrap_reference_t = typename unwrap_reference<_Tp>::type;
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct unwrap_ref_decay : unwrap_reference<typename decay<_Tp>::type> { };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 using unwrap_ref_decay_t = typename unwrap_ref_decay<_Tp>::type;
 #endif // > C++17
 

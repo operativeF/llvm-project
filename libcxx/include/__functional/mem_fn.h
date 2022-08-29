@@ -46,7 +46,7 @@ public:
     }
 };
 
-template<class _Rp, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Rp, class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 __mem_fn<_Rp _Tp::*>
 mem_fn(_Rp _Tp::* __pm) _NOEXCEPT

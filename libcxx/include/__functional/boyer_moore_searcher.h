@@ -96,7 +96,7 @@ public:
   }
 };
 
-template <class _RandomAccessIterator1,
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator1,
           class _Hash = hash<typename iterator_traits<_RandomAccessIterator1>::value_type>,
           class _BinaryPredicate = equal_to<>>
 class _LIBCPP_TEMPLATE_VIS boyer_moore_searcher {
@@ -225,7 +225,7 @@ private:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(boyer_moore_searcher);
 
-template <class _RandomAccessIterator1,
+_LIBCPP_EXPORT_STD template <class _RandomAccessIterator1,
           class _Hash = hash<typename iterator_traits<_RandomAccessIterator1>::value_type>,
           class _BinaryPredicate = equal_to<>>
 class _LIBCPP_TEMPLATE_VIS boyer_moore_horspool_searcher {

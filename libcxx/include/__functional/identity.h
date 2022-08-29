@@ -30,7 +30,7 @@ struct __identity {
 
 #if _LIBCPP_STD_VER > 17
 
-struct identity {
+_LIBCPP_EXPORT_STD struct identity {
     template<class _Tp>
     _LIBCPP_NODISCARD_EXT constexpr _Tp&& operator()(_Tp&& __t) const noexcept
     {

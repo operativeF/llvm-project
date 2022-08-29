@@ -26,7 +26,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 14
 
 // default searcher
-template<class _ForwardIterator, class _BinaryPredicate = equal_to<>>
+_LIBCPP_EXPORT_STD template<class _ForwardIterator, class _BinaryPredicate = equal_to<>>
 class _LIBCPP_TEMPLATE_VIS default_searcher {
 public:
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20

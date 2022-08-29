@@ -484,46 +484,46 @@ struct __invoke_void_return_wrapper<_Ret, true>
 
 // is_invocable
 
-template <class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class ..._Args>
 struct _LIBCPP_TEMPLATE_VIS is_invocable
     : integral_constant<bool, __invokable<_Fn, _Args...>::value> {};
 
-template <class _Ret, class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Ret, class _Fn, class ..._Args>
 struct _LIBCPP_TEMPLATE_VIS is_invocable_r
     : integral_constant<bool, __invokable_r<_Ret, _Fn, _Args...>::value> {};
 
-template <class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class ..._Args>
 inline constexpr bool is_invocable_v = is_invocable<_Fn, _Args...>::value;
 
-template <class _Ret, class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Ret, class _Fn, class ..._Args>
 inline constexpr bool is_invocable_r_v = is_invocable_r<_Ret, _Fn, _Args...>::value;
 
 // is_nothrow_invocable
 
-template <class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class ..._Args>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_invocable
     : integral_constant<bool, __nothrow_invokable<_Fn, _Args...>::value> {};
 
-template <class _Ret, class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Ret, class _Fn, class ..._Args>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_invocable_r
     : integral_constant<bool, __nothrow_invokable_r<_Ret, _Fn, _Args...>::value> {};
 
-template <class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class ..._Args>
 inline constexpr bool is_nothrow_invocable_v = is_nothrow_invocable<_Fn, _Args...>::value;
 
-template <class _Ret, class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Ret, class _Fn, class ..._Args>
 inline constexpr bool is_nothrow_invocable_r_v = is_nothrow_invocable_r<_Ret, _Fn, _Args...>::value;
 
-template <class _Fn, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class... _Args>
 struct _LIBCPP_TEMPLATE_VIS invoke_result
     : __invoke_of<_Fn, _Args...>
 {
 };
 
-template <class _Fn, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class... _Args>
 using invoke_result_t = typename invoke_result<_Fn, _Args...>::type;
 
-template <class _Fn, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Fn, class ..._Args>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 invoke_result_t<_Fn, _Args...>
 invoke(_Fn&& __f, _Args&&... __args)
     noexcept(is_nothrow_invocable_v<_Fn, _Args...>)
