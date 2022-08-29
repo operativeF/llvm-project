@@ -49,7 +49,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<view _View>
+  _LIBCPP_EXPORT_STD template<view _View>
   class drop_view
     : public view_interface<drop_view<_View>>
   {
@@ -292,7 +292,7 @@ struct __fn {
 } // namespace __drop
 
 inline namespace __cpo {
-  inline constexpr auto drop = __drop::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto drop = __drop::__fn{};
 } // namespace __cpo
 } // namespace views
 

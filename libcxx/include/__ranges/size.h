@@ -28,7 +28,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<class>
+  _LIBCPP_EXPORT_STD template<class>
   inline constexpr bool disable_sized_range = false;
 } // namespace ranges
 
@@ -109,7 +109,7 @@ struct __fn {
 } // namespace __size
 
 inline namespace __cpo {
-  inline constexpr auto size = __size::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto size = __size::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
@@ -132,7 +132,7 @@ struct __fn {
 } // namespace __ssize
 
 inline namespace __cpo {
-  inline constexpr auto ssize = __ssize::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto ssize = __ssize::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

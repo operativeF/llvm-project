@@ -56,7 +56,7 @@ concept __transform_view_constraints =
   regular_invocable<_Fn&, range_reference_t<_View>> &&
   __can_reference<invoke_result_t<_Fn&, range_reference_t<_View>>>;
 
-template<input_range _View, copy_constructible _Fn>
+_LIBCPP_EXPORT_STD template<input_range _View, copy_constructible _Fn>
   requires __transform_view_constraints<_View, _Fn>
 class transform_view : public view_interface<transform_view<_View, _Fn>> {
   template<bool> class __iterator;
@@ -428,7 +428,7 @@ namespace __transform {
 } // namespace __transform
 
 inline namespace __cpo {
-  inline constexpr auto transform = __transform::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto transform = __transform::__fn{};
 } // namespace __cpo
 } // namespace views
 

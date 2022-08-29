@@ -31,7 +31,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<range _Rp>
+  _LIBCPP_EXPORT_STD template<range _Rp>
     requires movable<_Rp> && (!__is_std_initializer_list<remove_cvref_t<_Rp>>)
   class owning_view : public view_interface<owning_view<_Rp>> {
     _Rp __r_ = _Rp();

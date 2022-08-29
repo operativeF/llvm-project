@@ -122,7 +122,7 @@ _LIBCPP_HIDE_FROM_ABI constexpr _Tp __abs(_Tp __t) {
   return __t < 0 ? -__t : __t;
 }
 
-template <input_range... _Views>
+_LIBCPP_EXPORT_STD template <input_range... _Views>
   requires(view<_Views> && ...) && (sizeof...(_Views) > 0)
 class zip_view : public view_interface<zip_view<_Views...>> {
 
@@ -497,7 +497,7 @@ struct __fn {
 
 } // namespace __zip
 inline namespace __cpo {
-  inline constexpr auto zip = __zip::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto zip = __zip::__fn{};
 } // namespace __cpo
 } // namespace views
 } // namespace ranges

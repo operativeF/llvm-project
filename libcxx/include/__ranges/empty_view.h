@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<class _Tp>
+  _LIBCPP_EXPORT_STD template<class _Tp>
     requires is_object_v<_Tp>
   class empty_view : public view_interface<empty_view<_Tp>> {
   public:
@@ -39,7 +39,7 @@ namespace ranges {
 
   namespace views {
 
-  template <class _Tp>
+  _LIBCPP_EXPORT_STD template <class _Tp>
   inline constexpr empty_view<_Tp> empty{};
 
   } // namespace views

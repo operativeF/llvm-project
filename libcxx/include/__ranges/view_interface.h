@@ -32,7 +32,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
 
-template<class _Derived>
+_LIBCPP_EXPORT_STD template<class _Derived>
   requires is_class_v<_Derived> && same_as<_Derived, remove_cv_t<_Derived>>
 class view_interface {
   _LIBCPP_HIDE_FROM_ABI

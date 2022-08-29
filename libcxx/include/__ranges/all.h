@@ -68,10 +68,10 @@ namespace __all {
 } // namespace __all
 
 inline namespace __cpo {
-  inline constexpr auto all = __all::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto all = __all::__fn{};
 } // namespace __cpo
 
-template<ranges::viewable_range _Range>
+_LIBCPP_EXPORT_STD template<ranges::viewable_range _Range>
 using all_t = decltype(views::all(declval<_Range>()));
 
 } // namespace ranges::views

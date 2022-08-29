@@ -91,7 +91,7 @@ struct __fn {
 } // namespace __rbegin
 
 inline namespace __cpo {
-  inline constexpr auto rbegin = __rbegin::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto rbegin = __rbegin::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
@@ -119,7 +119,7 @@ struct __fn {
 } // namespace __crbegin
 
 inline namespace __cpo {
-  inline constexpr auto crbegin = __crbegin::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto crbegin = __crbegin::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

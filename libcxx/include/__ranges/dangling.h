@@ -24,12 +24,12 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-struct dangling {
+_LIBCPP_EXPORT_STD struct dangling {
   dangling() = default;
   _LIBCPP_HIDE_FROM_ABI constexpr dangling(auto&&...) noexcept {}
 };
 
-template <range _Rp>
+_LIBCPP_EXPORT_STD template <range _Rp>
 using borrowed_iterator_t = _If<borrowed_range<_Rp>, iterator_t<_Rp>, dangling>;
 
 // borrowed_subrange_t defined in <__ranges/subrange.h>

@@ -69,7 +69,7 @@ namespace __counted {
 } // namespace __counted
 
 inline namespace __cpo {
-  inline constexpr auto counted = __counted::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto counted = __counted::__fn{};
 } // namespace __cpo
 
 } // namespace ranges::views

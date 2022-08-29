@@ -45,7 +45,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<input_range _View, indirect_unary_predicate<iterator_t<_View>> _Pred>
+  _LIBCPP_EXPORT_STD template<input_range _View, indirect_unary_predicate<iterator_t<_View>> _Pred>
     requires view<_View> && is_object_v<_Pred>
   class filter_view : public view_interface<filter_view<_View, _Pred>> {
     _LIBCPP_NO_UNIQUE_ADDRESS _View __base_ = _View();
@@ -249,7 +249,7 @@ namespace __filter {
 } // namespace __filter
 
 inline namespace __cpo {
-  inline constexpr auto filter = __filter::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto filter = __filter::__fn{};
 } // namespace __cpo
 } // namespace views
 

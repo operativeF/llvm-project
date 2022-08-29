@@ -69,9 +69,9 @@ namespace ranges {
     __convertible_to_non_slicing<_Iter, tuple_element_t<0, _Pair>> &&
     convertible_to<_Sent, tuple_element_t<1, _Pair>>;
 
-  enum class _LIBCPP_ENUM_VIS subrange_kind : bool { unsized, sized };
+  _LIBCPP_EXPORT_STD enum class _LIBCPP_ENUM_VIS subrange_kind : bool { unsized, sized };
 
-  template<input_or_output_iterator _Iter, sentinel_for<_Iter> _Sent = _Iter,
+  _LIBCPP_EXPORT_STD template<input_or_output_iterator _Iter, sentinel_for<_Iter> _Sent = _Iter,
            subrange_kind _Kind = sized_sentinel_for<_Sent, _Iter>
              ? subrange_kind::sized
              : subrange_kind::unsized>
@@ -231,7 +231,7 @@ namespace ranges {
   subrange(_Range&&, make_unsigned_t<range_difference_t<_Range>>)
     -> subrange<iterator_t<_Range>, sentinel_t<_Range>, subrange_kind::sized>;
 
-  template<size_t _Index, class _Iter, class _Sent, subrange_kind _Kind>
+  _LIBCPP_EXPORT_STD template<size_t _Index, class _Iter, class _Sent, subrange_kind _Kind>
     requires ((_Index == 0 && copyable<_Iter>) || _Index == 1)
   _LIBCPP_HIDE_FROM_ABI
   constexpr auto get(const subrange<_Iter, _Sent, _Kind>& __subrange) {
@@ -241,7 +241,7 @@ namespace ranges {
       return __subrange.end();
   }
 
-  template<size_t _Index, class _Iter, class _Sent, subrange_kind _Kind>
+  _LIBCPP_EXPORT_STD template<size_t _Index, class _Iter, class _Sent, subrange_kind _Kind>
     requires (_Index < 2)
   _LIBCPP_HIDE_FROM_ABI
   constexpr auto get(subrange<_Iter, _Sent, _Kind>&& __subrange) {
@@ -254,7 +254,7 @@ namespace ranges {
   template<class _Ip, class _Sp, subrange_kind _Kp>
   inline constexpr bool enable_borrowed_range<subrange<_Ip, _Sp, _Kp>> = true;
 
-  template<range _Rp>
+  _LIBCPP_EXPORT_STD template<range _Rp>
   using borrowed_subrange_t = _If<borrowed_range<_Rp>, subrange<iterator_t<_Rp>>, dangling>;
 } // namespace ranges
 

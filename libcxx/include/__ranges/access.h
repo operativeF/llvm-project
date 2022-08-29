@@ -91,14 +91,14 @@ namespace __begin {
 } // namespace __begin
 
 inline namespace __cpo {
-  inline constexpr auto begin = __begin::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto begin = __begin::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
 // [range.range]
 
 namespace ranges {
-  template <class _Tp>
+  _LIBCPP_EXPORT_STD template <class _Tp>
   using iterator_t = decltype(ranges::begin(declval<_Tp&>()));
 } // namespace ranges
 
@@ -157,7 +157,7 @@ namespace __end {
 } // namespace __end
 
 inline namespace __cpo {
-  inline constexpr auto end = __end::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto end = __end::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
@@ -185,7 +185,7 @@ namespace __cbegin {
 } // namespace __cbegin
 
 inline namespace __cpo {
-  inline constexpr auto cbegin = __cbegin::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto cbegin = __cbegin::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
@@ -213,7 +213,7 @@ namespace __cend {
 } // namespace __cend
 
 inline namespace __cpo {
-  inline constexpr auto cend = __cend::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto cend = __cend::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

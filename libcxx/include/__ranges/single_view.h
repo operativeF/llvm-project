@@ -28,7 +28,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<copy_constructible _Tp>
+  _LIBCPP_EXPORT_STD template<copy_constructible _Tp>
     requires is_object_v<_Tp>
   class single_view : public view_interface<single_view<_Tp>> {
     __copyable_box<_Tp> __value_;
@@ -88,7 +88,7 @@ struct __fn : __range_adaptor_closure<__fn> {
 } // namespace __single_view
 
 inline namespace __cpo {
-  inline constexpr auto single = __single_view::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto single = __single_view::__fn{};
 } // namespace __cpo
 
 } // namespace views

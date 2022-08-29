@@ -28,7 +28,7 @@ namespace ranges {
 
 // [range.range], ranges
 
-template <class>
+_LIBCPP_EXPORT_STD template <class>
 inline constexpr bool enable_borrowed_range = false;
 
 } // namespace ranges

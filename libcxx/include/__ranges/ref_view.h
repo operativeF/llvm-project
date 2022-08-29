@@ -35,7 +35,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<range _Range>
+  _LIBCPP_EXPORT_STD template<range _Range>
     requires is_object_v<_Range>
   class ref_view : public view_interface<ref_view<_Range>> {
     _Range *__range_;

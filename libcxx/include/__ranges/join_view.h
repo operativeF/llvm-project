@@ -62,7 +62,7 @@ namespace ranges {
     >;
   };
 
-  template<input_range _View>
+  _LIBCPP_EXPORT_STD template<input_range _View>
     requires view<_View> && input_range<range_reference_t<_View>>
   class join_view
     : public view_interface<join_view<_View>> {
@@ -359,7 +359,7 @@ struct __fn : __range_adaptor_closure<__fn> {
 };
 } // namespace __join_view
 inline namespace __cpo {
-  inline constexpr auto join = __join_view::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto join = __join_view::__fn{};
 } // namespace __cpo
 } // namespace views
 } // namespace ranges

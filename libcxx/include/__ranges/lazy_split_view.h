@@ -57,7 +57,7 @@ concept __tiny_range =
   requires { typename __require_constant<remove_reference_t<_Range>::size()>; } &&
   (remove_reference_t<_Range>::size() <= 1);
 
-template <input_range _View, forward_range _Pattern>
+_LIBCPP_EXPORT_STD template <input_range _View, forward_range _Pattern>
   requires view<_View> && view<_Pattern> &&
            indirectly_comparable<iterator_t<_View>, iterator_t<_Pattern>, ranges::equal_to> &&
            (forward_range<_View> || __tiny_range<_Pattern>)
@@ -452,7 +452,7 @@ struct __fn : __range_adaptor_closure<__fn> {
 } // namespace __lazy_split_view
 
 inline namespace __cpo {
-  inline constexpr auto lazy_split = __lazy_split_view::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto lazy_split = __lazy_split_view::__fn{};
 } // namespace __cpo
 } // namespace views
 

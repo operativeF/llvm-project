@@ -51,7 +51,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
 
-template<view _View>
+_LIBCPP_EXPORT_STD template<view _View>
 class take_view : public view_interface<take_view<_View>> {
   _LIBCPP_NO_UNIQUE_ADDRESS _View __base_ = _View();
   range_difference_t<_View> __count_ = 0;
@@ -325,7 +325,7 @@ struct __fn {
 } // namespace __take
 
 inline namespace __cpo {
-  inline constexpr auto take = __take::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto take = __take::__fn{};
 } // namespace __cpo
 } // namespace views
 

@@ -35,7 +35,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
 
-template<view _View>
+_LIBCPP_EXPORT_STD template<view _View>
   requires (!common_range<_View> && copyable<iterator_t<_View>>)
 class common_view : public view_interface<common_view<_View>> {
   _View __base_ = _View();
@@ -124,7 +124,7 @@ namespace __common {
 } // namespace __common
 
 inline namespace __cpo {
-  inline constexpr auto common = __common::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto common = __common::__fn{};
 } // namespace __cpo
 } // namespace views
 } // namespace ranges

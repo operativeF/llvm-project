@@ -36,7 +36,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-  template<view _View>
+  _LIBCPP_EXPORT_STD template<view _View>
     requires bidirectional_range<_View>
   class reverse_view : public view_interface<reverse_view<_View>> {
     // We cache begin() whenever ranges::next is not guaranteed O(1) to provide an
@@ -178,7 +178,7 @@ namespace ranges {
   } // namespace __reverse
 
   inline namespace __cpo {
-    inline constexpr auto reverse = __reverse::__fn{};
+    _LIBCPP_EXPORT_STD inline constexpr auto reverse = __reverse::__fn{};
   } // namespace __cpo
   } // namespace views
 } // namespace ranges

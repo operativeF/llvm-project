@@ -90,7 +90,7 @@ namespace ranges {
     using iterator_category = input_iterator_tag;
   };
 
-  template <weakly_incrementable _Start, semiregular _BoundSentinel = unreachable_sentinel_t>
+  _LIBCPP_EXPORT_STD template <weakly_incrementable _Start, semiregular _BoundSentinel = unreachable_sentinel_t>
     requires __weakly_equality_comparable_with<_Start, _BoundSentinel> && copyable<_Start>
   class iota_view : public view_interface<iota_view<_Start, _BoundSentinel>> {
     struct __iterator : public __iota_iterator_category<_Start> {
@@ -397,7 +397,7 @@ namespace ranges {
 } // namespace __iota
 
 inline namespace __cpo {
-  inline constexpr auto iota = __iota::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto iota = __iota::__fn{};
 } // namespace __cpo
 } // namespace views
 } // namespace ranges
