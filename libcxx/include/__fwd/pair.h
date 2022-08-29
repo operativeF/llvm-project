@@ -17,7 +17,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class, class>
+_LIBCPP_EXPORT_STD template <class, class>
 struct _LIBCPP_TEMPLATE_VIS pair;
 
 _LIBCPP_END_NAMESPACE_STD
