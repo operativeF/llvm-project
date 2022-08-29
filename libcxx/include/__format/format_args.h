@@ -26,7 +26,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _Context>
+_LIBCPP_EXPORT_STD template <class _Context>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT basic_format_args {
 public:
   _LIBCPP_HIDE_FROM_ABI basic_format_args() noexcept = default;

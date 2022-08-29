@@ -73,14 +73,14 @@ public:
   __format_spec::__parser<_CharT> __parser_;
 };
 
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<char, char> : public __formatter_char<char> {};
 
 #  ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<char, wchar_t> : public __formatter_char<wchar_t> {};
 
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<wchar_t, wchar_t> : public __formatter_char<wchar_t> {
 };
 

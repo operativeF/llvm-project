@@ -22,7 +22,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT basic_format_parse_context {
 public:
   using char_type = _CharT;
@@ -90,9 +90,9 @@ private:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(basic_format_parse_context);
 
-using format_parse_context = basic_format_parse_context<char>;
+_LIBCPP_EXPORT_STD using format_parse_context = basic_format_parse_context<char>;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-using wformat_parse_context = basic_format_parse_context<wchar_t>;
+_LIBCPP_EXPORT_STD using wformat_parse_context = basic_format_parse_context<wchar_t>;
 #endif
 
 #endif //_LIBCPP_STD_VER > 17

@@ -35,7 +35,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <__fmt_char_type _CharT>
+_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<bool, _CharT> {
 public:
   _LIBCPP_HIDE_FROM_ABI constexpr auto

@@ -738,13 +738,13 @@ public:
   __format_spec::__parser<_CharT> __parser_;
 };
 
-template <__fmt_char_type _CharT>
+_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<float, _CharT>
     : public __formatter_floating_point<_CharT> {};
-template <__fmt_char_type _CharT>
+_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<double, _CharT>
     : public __formatter_floating_point<_CharT> {};
-template <__fmt_char_type _CharT>
+_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<long double, _CharT>
     : public __formatter_floating_point<_CharT> {};
 

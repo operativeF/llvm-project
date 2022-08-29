@@ -223,7 +223,7 @@ public:
       : __handle_(std::forward<__handle>(__value)) {}
 };
 
-template <class _Context>
+_LIBCPP_EXPORT_STD template <class _Context>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT basic_format_arg {
 public:
   class _LIBCPP_TEMPLATE_VIS handle;
@@ -258,7 +258,7 @@ public:
       : __value_(__value), __type_(__type) {}
 };
 
-template <class _Context>
+_LIBCPP_EXPORT_STD template <class _Context>
 class _LIBCPP_TEMPLATE_VIS basic_format_arg<_Context>::handle {
 public:
   _LIBCPP_HIDE_FROM_ABI
@@ -275,7 +275,7 @@ private:
 
 // This function is user facing, so it must wrap the non-standard types of
 // the "variant" in a handle to stay conforming. See __arg_t for more details.
-template <class _Visitor, class _Context>
+_LIBCPP_EXPORT_STD template <class _Visitor, class _Context>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_AVAILABILITY_FORMAT decltype(auto)
 visit_format_arg(_Visitor&& __vis, basic_format_arg<_Context> __arg) {
   switch (__arg.__type_) {

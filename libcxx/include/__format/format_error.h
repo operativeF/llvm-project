@@ -22,7 +22,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-class _LIBCPP_EXCEPTION_ABI format_error : public runtime_error {
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI format_error : public runtime_error {
 public:
   _LIBCPP_HIDE_FROM_ABI explicit format_error(const string& __s)
       : runtime_error(__s) {}

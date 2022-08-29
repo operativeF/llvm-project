@@ -33,7 +33,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _OutIt, class _CharT>
+_LIBCPP_EXPORT_STD template <class _OutIt, class _CharT>
 requires output_iterator<_OutIt, const _CharT&>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT basic_format_context;
 
@@ -61,15 +61,15 @@ __format_context_create(
 }
 #endif
 
-using format_context =
+_LIBCPP_EXPORT_STD using format_context =
     basic_format_context<back_insert_iterator<__format::__output_buffer<char>>,
                          char>;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-using wformat_context = basic_format_context<
+_LIBCPP_EXPORT_STD using wformat_context = basic_format_context<
     back_insert_iterator<__format::__output_buffer<wchar_t>>, wchar_t>;
 #endif
 
-template <class _OutIt, class _CharT>
+_LIBCPP_EXPORT_STD template <class _OutIt, class _CharT>
 requires output_iterator<_OutIt, const _CharT&>
 class
     // clang-format off
