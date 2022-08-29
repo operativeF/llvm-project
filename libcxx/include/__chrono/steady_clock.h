@@ -24,7 +24,7 @@ namespace chrono
 {
 
 #ifndef _LIBCPP_HAS_NO_MONOTONIC_CLOCK
-class _LIBCPP_TYPE_VIS steady_clock
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS steady_clock
 {
 public:
     typedef nanoseconds                                   duration;

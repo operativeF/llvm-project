@@ -25,14 +25,14 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-struct local_t {};
+_LIBCPP_EXPORT_STD struct local_t {};
 template<class Duration>
-using local_time  = time_point<local_t, Duration>;
-using local_seconds = local_time<seconds>;
-using local_days    = local_time<days>;
+_LIBCPP_EXPORT_STD using local_time  = time_point<local_t, Duration>;
+_LIBCPP_EXPORT_STD using local_seconds = local_time<seconds>;
+_LIBCPP_EXPORT_STD using local_days    = local_time<days>;
 
-struct last_spec { _LIBCPP_HIDE_FROM_ABI explicit last_spec() = default; };
-inline constexpr last_spec last{};
+_LIBCPP_EXPORT_STD struct last_spec { _LIBCPP_HIDE_FROM_ABI explicit last_spec() = default; };
+_LIBCPP_EXPORT_STD inline constexpr last_spec last{};
 
 
 } // namespace chrono

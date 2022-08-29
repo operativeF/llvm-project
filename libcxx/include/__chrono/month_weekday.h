@@ -25,7 +25,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class month_weekday {
+_LIBCPP_EXPORT_STD class month_weekday {
 private:
     chrono::month __m_;
     chrono::weekday_indexed __wdi_;
@@ -37,32 +37,32 @@ public:
     _LIBCPP_HIDE_FROM_ABI inline constexpr bool                                 ok() const noexcept { return __m_.ok() && __wdi_.ok(); }
 };
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const month_weekday& __lhs, const month_weekday& __rhs) noexcept
 { return __lhs.month() == __rhs.month() && __lhs.weekday_indexed() == __rhs.weekday_indexed(); }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator!=(const month_weekday& __lhs, const month_weekday& __rhs) noexcept
 { return !(__lhs == __rhs); }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday operator/(const month& __lhs, const weekday_indexed& __rhs) noexcept
 { return month_weekday{__lhs, __rhs}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday operator/(int __lhs, const weekday_indexed& __rhs) noexcept
 { return month_weekday{month(__lhs), __rhs}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday operator/(const weekday_indexed& __lhs, const month& __rhs) noexcept
 { return month_weekday{__rhs, __lhs}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday operator/(const weekday_indexed& __lhs, int __rhs) noexcept
 { return month_weekday{month(__rhs), __lhs}; }
 
 
-class month_weekday_last {
+_LIBCPP_EXPORT_STD class month_weekday_last {
     chrono::month        __m_;
     chrono::weekday_last __wdl_;
   public:
@@ -73,28 +73,28 @@ class month_weekday_last {
     _LIBCPP_HIDE_FROM_ABI inline constexpr bool                           ok() const noexcept { return __m_.ok() && __wdl_.ok(); }
 };
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const month_weekday_last& __lhs, const month_weekday_last& __rhs) noexcept
 { return __lhs.month() == __rhs.month() && __lhs.weekday_last() == __rhs.weekday_last(); }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator!=(const month_weekday_last& __lhs, const month_weekday_last& __rhs) noexcept
 { return !(__lhs == __rhs); }
 
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday_last operator/(const month& __lhs, const weekday_last& __rhs) noexcept
 { return month_weekday_last{__lhs, __rhs}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday_last operator/(int __lhs, const weekday_last& __rhs) noexcept
 { return month_weekday_last{month(__lhs), __rhs}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday_last operator/(const weekday_last& __lhs, const month& __rhs) noexcept
 { return month_weekday_last{__rhs, __lhs}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month_weekday_last operator/(const weekday_last& __lhs, int __rhs) noexcept
 { return month_weekday_last{month(__rhs), __lhs}; }
 } // namespace chrono

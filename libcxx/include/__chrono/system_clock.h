@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class _LIBCPP_TYPE_VIS system_clock
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS system_clock
 {
 public:
     typedef microseconds                     duration;
@@ -40,10 +40,10 @@ public:
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _Duration>
+_LIBCPP_EXPORT_STD template <class _Duration>
 using sys_time    = time_point<system_clock, _Duration>;
-using sys_seconds = sys_time<seconds>;
-using sys_days    = sys_time<days>;
+_LIBCPP_EXPORT_STD using sys_seconds = sys_time<seconds>;
+_LIBCPP_EXPORT_STD using sys_days    = sys_time<days>;
 
 #endif
 

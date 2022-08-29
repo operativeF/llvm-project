@@ -25,7 +25,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class day {
+_LIBCPP_EXPORT_STD class day {
 private:
     unsigned char __d_;
 public:
@@ -42,36 +42,36 @@ public:
   };
 
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const day& __lhs, const day& __rhs) noexcept
 { return static_cast<unsigned>(__lhs) == static_cast<unsigned>(__rhs); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const day& __lhs, const day& __rhs) noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const day& __lhs, const day& __rhs) noexcept {
   return static_cast<unsigned>(__lhs) <=> static_cast<unsigned>(__rhs);
 }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 day operator+ (const day& __lhs, const days& __rhs) noexcept
 { return day(static_cast<unsigned>(__lhs) + __rhs.count()); }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 day operator+ (const days& __lhs, const day& __rhs) noexcept
 { return __rhs + __lhs; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 day operator- (const day& __lhs, const days& __rhs) noexcept
 { return __lhs + -__rhs; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 days operator-(const day& __lhs, const day& __rhs) noexcept
 { return days(static_cast<int>(static_cast<unsigned>(__lhs)) -
               static_cast<int>(static_cast<unsigned>(__rhs))); }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 day& day::operator+=(const days& __dd) noexcept
 { *this = *this + __dd; return *this; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 day& day::operator-=(const days& __dd) noexcept
 { *this = *this - __dd; return *this; }
 

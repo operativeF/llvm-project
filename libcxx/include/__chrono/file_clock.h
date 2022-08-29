@@ -35,9 +35,9 @@ namespace chrono
 {
 
 // [time.clock.file], type file_clock
-using file_clock = _VSTD_FS::_FilesystemClock;
+_LIBCPP_EXPORT_STD using file_clock = _VSTD_FS::_FilesystemClock;
 
-template<class _Duration>
+_LIBCPP_EXPORT_STD template<class _Duration>
 using file_time = time_point<file_clock, _Duration>;
 
 } // namespace chrono

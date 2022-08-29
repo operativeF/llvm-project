@@ -29,7 +29,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class year {
+_LIBCPP_EXPORT_STD class year {
 private:
     short __y_;
 public:
@@ -53,40 +53,40 @@ public:
 };
 
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const year& __lhs, const year& __rhs) noexcept
 { return static_cast<int>(__lhs) == static_cast<int>(__rhs); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const year& __lhs, const year& __rhs) noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const year& __lhs, const year& __rhs) noexcept {
     return static_cast<int>(__lhs) <=> static_cast<int>(__rhs);
 }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
-year operator+ (const year& __lhs, const years& __rhs) noexcept
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+year operator+(const year& __lhs, const years& __rhs) noexcept
 { return year(static_cast<int>(__lhs) + __rhs.count()); }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
-year operator+ (const years& __lhs, const year& __rhs) noexcept
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+year operator+(const years& __lhs, const year& __rhs) noexcept
 { return __rhs + __lhs; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
-year operator- (const year& __lhs, const years& __rhs) noexcept
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+year operator-(const year& __lhs, const years& __rhs) noexcept
 { return __lhs + -__rhs; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 years operator-(const year& __lhs, const year& __rhs) noexcept
 { return years{static_cast<int>(__lhs) - static_cast<int>(__rhs)}; }
 
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year& year::operator+=(const years& __dy) noexcept
 { *this = *this + __dy; return *this; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year& year::operator-=(const years& __dy) noexcept
 { *this = *this - __dy; return *this; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool year::ok() const noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool year::ok() const noexcept {
   static_assert(static_cast<int>(std::numeric_limits<decltype(__y_)>::max()) == static_cast<int>(max()));
   return static_cast<int>(min()) <= __y_;
 }

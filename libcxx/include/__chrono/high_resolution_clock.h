@@ -24,7 +24,7 @@ namespace chrono
 {
 
 #ifndef _LIBCPP_HAS_NO_MONOTONIC_CLOCK
-typedef steady_clock high_resolution_clock;
+_LIBCPP_EXPORT_STD typedef steady_clock high_resolution_clock;
 #else
 typedef system_clock high_resolution_clock;
 #endif

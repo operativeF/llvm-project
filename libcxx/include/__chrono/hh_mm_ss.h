@@ -27,7 +27,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-template <class _Duration>
+_LIBCPP_EXPORT_STD template <class _Duration>
 class hh_mm_ss
 {
 private:
@@ -86,17 +86,17 @@ private:
     precision       __f_;
 };
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool is_am(const hours& __h) noexcept { return __h >= hours( 0) && __h < hours(12); }
-_LIBCPP_HIDE_FROM_ABI constexpr bool is_pm(const hours& __h) noexcept { return __h >= hours(12) && __h < hours(24); }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool is_am(const hours& __h) noexcept { return __h >= hours( 0) && __h < hours(12); }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool is_pm(const hours& __h) noexcept { return __h >= hours(12) && __h < hours(24); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr hours make12(const hours& __h) noexcept
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr hours make12(const hours& __h) noexcept
 {
     if      (__h == hours( 0)) return hours(12);
     else if (__h <= hours(12)) return __h;
     else                       return __h - hours(12);
 }
 
-_LIBCPP_HIDE_FROM_ABI constexpr hours make24(const hours& __h, bool __is_pm) noexcept
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr hours make24(const hours& __h, bool __is_pm) noexcept
 {
     if (__is_pm)
         return __h == hours(12) ? __h : __h + hours(12);

@@ -27,7 +27,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class year_month {
+_LIBCPP_EXPORT_STD class year_month {
     chrono::year  __y_;
     chrono::month __m_;
 public:
@@ -43,23 +43,23 @@ public:
     _LIBCPP_HIDE_FROM_ABI inline constexpr bool ok() const noexcept { return __y_.ok() && __m_.ok(); }
 };
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year_month operator/(const year& __y, const month& __m) noexcept { return year_month{__y, __m}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year_month operator/(const year& __y, int __m) noexcept { return year_month{__y, month(__m)}; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const year_month& __lhs, const year_month& __rhs) noexcept
 { return __lhs.year() == __rhs.year() && __lhs.month() == __rhs.month(); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const year_month& __lhs, const year_month& __rhs) noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const year_month& __lhs, const year_month& __rhs) noexcept {
     if (auto __c = __lhs.year() <=> __rhs.year(); __c != 0)
       return __c;
     return __lhs.month() <=> __rhs.month();
 }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 year_month operator+(const year_month& __lhs, const months& __rhs) noexcept
 {
     int __dmi = static_cast<int>(static_cast<unsigned>(__lhs.month())) - 1 + __rhs.count();
@@ -68,27 +68,27 @@ year_month operator+(const year_month& __lhs, const months& __rhs) noexcept
     return (__lhs.year() + years(__dy)) / month(static_cast<unsigned>(__dmi));
 }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 year_month operator+(const months& __lhs, const year_month& __rhs) noexcept
 { return __rhs + __lhs; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 year_month operator+(const year_month& __lhs, const years& __rhs) noexcept
 { return (__lhs.year() + __rhs) / __lhs.month(); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 year_month operator+(const years& __lhs, const year_month& __rhs) noexcept
 { return __rhs + __lhs; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 months operator-(const year_month& __lhs, const year_month& __rhs) noexcept
 { return (__lhs.year() - __rhs.year()) + months(static_cast<unsigned>(__lhs.month()) - static_cast<unsigned>(__rhs.month())); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 year_month operator-(const year_month& __lhs, const months& __rhs) noexcept
 { return __lhs + -__rhs; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr
 year_month operator-(const year_month& __lhs, const years& __rhs) noexcept
 { return __lhs + -__rhs; }
 

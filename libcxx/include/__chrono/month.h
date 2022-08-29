@@ -25,7 +25,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class month {
+_LIBCPP_EXPORT_STD class month {
 private:
     unsigned char __m_;
 public:
@@ -42,15 +42,15 @@ public:
 };
 
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const month& __lhs, const month& __rhs) noexcept
 { return static_cast<unsigned>(__lhs) == static_cast<unsigned>(__rhs); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const month& __lhs, const month& __rhs) noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const month& __lhs, const month& __rhs) noexcept {
     return static_cast<unsigned>(__lhs) <=> static_cast<unsigned>(__rhs);
 }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month operator+ (const month& __lhs, const months& __rhs) noexcept
 {
     auto const __mu = static_cast<long long>(static_cast<unsigned>(__lhs)) + (__rhs.count() - 1);
@@ -58,41 +58,41 @@ month operator+ (const month& __lhs, const months& __rhs) noexcept
     return month{static_cast<unsigned>(__mu - __yr * 12 + 1)};
 }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month operator+ (const months& __lhs, const month& __rhs) noexcept
 { return __rhs + __lhs; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month operator- (const month& __lhs, const months& __rhs) noexcept
 { return __lhs + -__rhs; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 months operator-(const month& __lhs, const month& __rhs) noexcept
 {
     auto const __dm = static_cast<unsigned>(__lhs) - static_cast<unsigned>(__rhs);
     return months(__dm <= 11 ? __dm : __dm + 12);
 }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month& month::operator+=(const months& __dm) noexcept
 { *this = *this + __dm; return *this; }
 
-_LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 month& month::operator-=(const months& __dm) noexcept
 { *this = *this - __dm; return *this; }
 
-inline constexpr month January{1};
-inline constexpr month February{2};
-inline constexpr month March{3};
-inline constexpr month April{4};
-inline constexpr month May{5};
-inline constexpr month June{6};
-inline constexpr month July{7};
-inline constexpr month August{8};
-inline constexpr month September{9};
-inline constexpr month October{10};
-inline constexpr month November{11};
-inline constexpr month December{12};
+_LIBCPP_EXPORT_STD inline constexpr month January{1};
+_LIBCPP_EXPORT_STD inline constexpr month February{2};
+_LIBCPP_EXPORT_STD inline constexpr month March{3};
+_LIBCPP_EXPORT_STD inline constexpr month April{4};
+_LIBCPP_EXPORT_STD inline constexpr month May{5};
+_LIBCPP_EXPORT_STD inline constexpr month June{6};
+_LIBCPP_EXPORT_STD inline constexpr month July{7};
+_LIBCPP_EXPORT_STD inline constexpr month August{8};
+_LIBCPP_EXPORT_STD inline constexpr month September{9};
+_LIBCPP_EXPORT_STD inline constexpr month October{10};
+_LIBCPP_EXPORT_STD inline constexpr month November{11};
+_LIBCPP_EXPORT_STD inline constexpr month December{12};
 
 } // namespace chrono
 

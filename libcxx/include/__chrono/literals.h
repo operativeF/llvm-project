@@ -26,12 +26,12 @@ inline namespace literals
 {
   inline namespace chrono_literals
   {
-    _LIBCPP_HIDE_FROM_ABI constexpr chrono::day operator ""d(unsigned long long __d) noexcept
+    _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr chrono::day operator ""d(unsigned long long __d) noexcept
     {
         return chrono::day(static_cast<unsigned>(__d));
     }
 
-    _LIBCPP_HIDE_FROM_ABI constexpr chrono::year operator ""y(unsigned long long __y) noexcept
+    _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr chrono::year operator ""y(unsigned long long __y) noexcept
     {
         return chrono::year(static_cast<int>(__y));
     }
