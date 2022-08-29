@@ -27,7 +27,7 @@ _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 // file, and the executable bit is always returned as set. When setting
 // permissions, as long as the write bit is set for either owner, group or
 // others, the readonly flag is cleared.
-enum class _LIBCPP_ENUM_VIS perms : unsigned {
+_LIBCPP_EXPORT_STD enum class _LIBCPP_ENUM_VIS perms : unsigned {
   none = 0,
 
   owner_read = 0400,
@@ -54,36 +54,36 @@ enum class _LIBCPP_ENUM_VIS perms : unsigned {
   unknown = 0xFFFF,
 };
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr perms operator&(perms __lhs, perms __rhs) {
   return static_cast<perms>(static_cast<unsigned>(__lhs) &
                             static_cast<unsigned>(__rhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr perms operator|(perms __lhs, perms __rhs) {
   return static_cast<perms>(static_cast<unsigned>(__lhs) |
                             static_cast<unsigned>(__rhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr perms operator^(perms __lhs, perms __rhs) {
   return static_cast<perms>(static_cast<unsigned>(__lhs) ^
                             static_cast<unsigned>(__rhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr perms operator~(perms __lhs) {
   return static_cast<perms>(~static_cast<unsigned>(__lhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline perms& operator&=(perms& __lhs, perms __rhs) { return __lhs = __lhs & __rhs; }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline perms& operator|=(perms& __lhs, perms __rhs) { return __lhs = __lhs | __rhs; }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline perms& operator^=(perms& __lhs, perms __rhs) { return __lhs = __lhs ^ __rhs; }
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_POP

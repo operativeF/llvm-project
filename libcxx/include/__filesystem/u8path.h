@@ -33,7 +33,7 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
-template <class _InputIt>
+_LIBCPP_EXPORT_STD template <class _InputIt>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
     typename enable_if<__is_pathable<_InputIt>::value, path>::type
     u8path(_InputIt __f, _InputIt __l) {
@@ -57,7 +57,7 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
 }
 
 #if defined(_LIBCPP_WIN32API)
-template <class _InputIt>
+_LIBCPP_EXPORT_STD template <class _InputIt>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
     typename enable_if<__is_pathable<_InputIt>::value, path>::type
     u8path(_InputIt __f, _NullSentinel) {
@@ -80,7 +80,7 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
 }
 #endif /* _LIBCPP_WIN32API */
 
-template <class _Source>
+_LIBCPP_EXPORT_STD template <class _Source>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
     typename enable_if<__is_pathable<_Source>::value, path>::type
     u8path(const _Source& __s) {

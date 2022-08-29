@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
-enum class _LIBCPP_ENUM_VIS copy_options : unsigned short {
+_LIBCPP_EXPORT_STD enum class _LIBCPP_ENUM_VIS copy_options : unsigned short {
   none = 0,
   skip_existing = 1,
   overwrite_existing = 2,
@@ -37,40 +37,40 @@ enum class _LIBCPP_ENUM_VIS copy_options : unsigned short {
   __in_recursive_copy = 512,
 };
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr copy_options operator&(copy_options __lhs, copy_options __rhs) {
   return static_cast<copy_options>(static_cast<unsigned short>(__lhs) &
                                    static_cast<unsigned short>(__rhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr copy_options operator|(copy_options __lhs, copy_options __rhs) {
   return static_cast<copy_options>(static_cast<unsigned short>(__lhs) |
                                    static_cast<unsigned short>(__rhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr copy_options operator^(copy_options __lhs, copy_options __rhs) {
   return static_cast<copy_options>(static_cast<unsigned short>(__lhs) ^
                                    static_cast<unsigned short>(__rhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr copy_options operator~(copy_options __lhs) {
   return static_cast<copy_options>(~static_cast<unsigned short>(__lhs));
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline copy_options& operator&=(copy_options& __lhs, copy_options __rhs) {
   return __lhs = __lhs & __rhs;
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline copy_options& operator|=(copy_options& __lhs, copy_options __rhs) {
   return __lhs = __lhs | __rhs;
 }
 
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline copy_options& operator^=(copy_options& __lhs, copy_options __rhs) {
   return __lhs = __lhs ^ __rhs;
 }

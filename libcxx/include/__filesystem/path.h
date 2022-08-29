@@ -439,7 +439,7 @@ struct _PathExport<char8_t> {
 #endif /* !_LIBCPP_HAS_NO_CHAR8_T */
 #endif /* _LIBCPP_WIN32API */
 
-class _LIBCPP_TYPE_VIS path {
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS path {
   template <class _SourceOrIter, class _Tp = path&>
   using _EnableIfPathable =
       typename enable_if<__is_pathable<_SourceOrIter>::value, _Tp>::type;
@@ -1075,11 +1075,11 @@ private:
   string_type __pn_;
 };
 
-inline _LIBCPP_HIDE_FROM_ABI void swap(path& __lhs, path& __rhs) noexcept {
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI void swap(path& __lhs, path& __rhs) noexcept {
   __lhs.swap(__rhs);
 }
 
-_LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
 size_t hash_value(const path& __p) noexcept;
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_POP

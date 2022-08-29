@@ -34,7 +34,7 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
 class _LIBCPP_HIDDEN __dir_stream;
-class directory_iterator {
+_LIBCPP_EXPORT_STD class directory_iterator {
 public:
   typedef directory_entry value_type;
   typedef ptrdiff_t difference_type;
@@ -121,25 +121,25 @@ private:
   shared_ptr<__dir_stream> __imp_;
 };
 
-inline _LIBCPP_HIDE_FROM_ABI bool
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI bool
 operator==(const directory_iterator& __lhs,
            const directory_iterator& __rhs) noexcept {
   return __lhs.__imp_ == __rhs.__imp_;
 }
 
-inline _LIBCPP_HIDE_FROM_ABI bool
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI bool
 operator!=(const directory_iterator& __lhs,
            const directory_iterator& __rhs) noexcept {
   return !(__lhs == __rhs);
 }
 
 // enable directory_iterator range-based for statements
-inline _LIBCPP_HIDE_FROM_ABI directory_iterator
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI directory_iterator
 begin(directory_iterator __iter) noexcept {
   return __iter;
 }
 
-inline _LIBCPP_HIDE_FROM_ABI directory_iterator
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI directory_iterator
 end(directory_iterator) noexcept {
   return directory_iterator();
 }
@@ -150,11 +150,11 @@ _LIBCPP_END_NAMESPACE_FILESYSTEM
 
 #if _LIBCPP_STD_VER > 17
 
-template <>
+_LIBCPP_EXPORT_STD template <>
 _LIBCPP_AVAILABILITY_FILESYSTEM
 inline constexpr bool _VSTD::ranges::enable_borrowed_range<_VSTD_FS::directory_iterator> = true;
 
-template <>
+_LIBCPP_EXPORT_STD template <>
 _LIBCPP_AVAILABILITY_FILESYSTEM
 inline constexpr bool _VSTD::ranges::enable_view<_VSTD_FS::directory_iterator> = true;
 

@@ -23,7 +23,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
-typedef chrono::time_point<_FilesystemClock> file_time_type;
+_LIBCPP_EXPORT_STD typedef chrono::time_point<_FilesystemClock> file_time_type;
 
 _LIBCPP_END_NAMESPACE_FILESYSTEM
 
