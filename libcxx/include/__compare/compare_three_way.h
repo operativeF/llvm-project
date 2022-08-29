@@ -22,7 +22,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-struct _LIBCPP_TEMPLATE_VIS compare_three_way
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS compare_three_way
 {
     template<class _T1, class _T2>
         requires three_way_comparable_with<_T1, _T2>

@@ -31,10 +31,10 @@ struct _LIBCPP_HIDE_FROM_ABI __compare_three_way_result<_Tp, _Up, decltype(
     using type = decltype(declval<__make_const_lvalue_ref<_Tp>>() <=> declval<__make_const_lvalue_ref<_Up>>());
 };
 
-template<class _Tp, class _Up = _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up = _Tp>
 struct _LIBCPP_TEMPLATE_VIS compare_three_way_result : __compare_three_way_result<_Tp, _Up, void> { };
 
-template<class _Tp, class _Up = _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up = _Tp>
 using compare_three_way_result_t = typename compare_three_way_result<_Tp, _Up>::type;
 
 #endif // _LIBCPP_STD_VER > 17

@@ -31,7 +31,7 @@ template<class _Tp, class _Cat>
 concept __compares_as =
   same_as<common_comparison_category_t<_Tp, _Cat>, _Cat>;
 
-template<class _Tp, class _Cat = partial_ordering>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Cat = partial_ordering>
 concept three_way_comparable =
   __weakly_equality_comparable_with<_Tp, _Tp> &&
   __partially_ordered_with<_Tp, _Tp> &&
@@ -39,7 +39,7 @@ concept three_way_comparable =
     { __a <=> __b } -> __compares_as<_Cat>;
   };
 
-template<class _Tp, class _Up, class _Cat = partial_ordering>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up, class _Cat = partial_ordering>
 concept three_way_comparable_with =
   three_way_comparable<_Tp, _Cat> &&
   three_way_comparable<_Up, _Cat> &&

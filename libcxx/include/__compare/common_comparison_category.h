@@ -79,12 +79,12 @@ constexpr auto __get_comp_type() {
 } // namespace __comp_detail
 
 // [cmp.common], common comparison category type
-template<class... _Ts>
+_LIBCPP_EXPORT_STD template<class... _Ts>
 struct _LIBCPP_TEMPLATE_VIS common_comparison_category {
   using type = decltype(__comp_detail::__get_comp_type<_Ts...>());
 };
 
-template<class... _Ts>
+_LIBCPP_EXPORT_STD template<class... _Ts>
 using common_comparison_category_t = typename common_comparison_category<_Ts...>::type;
 
 #endif // _LIBCPP_STD_VER > 17
