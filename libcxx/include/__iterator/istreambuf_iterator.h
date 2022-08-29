@@ -23,7 +23,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
-template<class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS istreambuf_iterator
 #if _LIBCPP_STD_VER <= 14 || !defined(_LIBCPP_ABI_NO_ITERATOR_BASES)
     : public iterator<input_iterator_tag, _CharT,
@@ -100,7 +100,7 @@ public:
 #endif // _LIBCPP_STD_VER > 17
 };
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 bool operator==(const istreambuf_iterator<_CharT,_Traits>& __a,
                 const istreambuf_iterator<_CharT,_Traits>& __b)

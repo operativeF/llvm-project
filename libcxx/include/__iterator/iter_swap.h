@@ -86,11 +86,11 @@ namespace __iter_swap {
 } // namespace __iter_swap
 
 inline namespace __cpo {
-  inline constexpr auto iter_swap = __iter_swap::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto iter_swap = __iter_swap::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
-template<class _I1, class _I2 = _I1>
+_LIBCPP_EXPORT_STD template<class _I1, class _I2 = _I1>
 concept indirectly_swappable =
   indirectly_readable<_I1> && indirectly_readable<_I2> &&
   requires(const _I1 __i1, const _I2 __i2) {

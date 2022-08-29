@@ -54,7 +54,7 @@ void __advance(_RandIter& __i, typename iterator_traits<_RandIter>::difference_t
   __i += __n;
 }
 
-template <
+_LIBCPP_EXPORT_STD template <
     class _InputIter, class _Distance,
     class _IntegralDistance = decltype(_VSTD::__convert_to_integral(declval<_Distance>())),
     class = __enable_if_t<is_integral<_IntegralDistance>::value> >
@@ -190,7 +190,7 @@ public:
 } // namespace __advance
 
 inline namespace __cpo {
-  inline constexpr auto advance = __advance::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto advance = __advance::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

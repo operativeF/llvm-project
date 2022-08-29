@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _Input1, class _Input2, class _Output,
+_LIBCPP_EXPORT_STD template <class _Input1, class _Input2, class _Output,
           class _Comp = ranges::less, class _Proj1 = identity, class _Proj2 = identity>
 concept mergeable =
     input_iterator<_Input1> &&

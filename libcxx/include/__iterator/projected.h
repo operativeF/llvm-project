@@ -22,13 +22,13 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template<indirectly_readable _It, indirectly_regular_unary_invocable<_It> _Proj>
+_LIBCPP_EXPORT_STD template<indirectly_readable _It, indirectly_regular_unary_invocable<_It> _Proj>
 struct projected {
   using value_type = remove_cvref_t<indirect_result_t<_Proj&, _It>>;
   indirect_result_t<_Proj&, _It> operator*() const; // not defined
 };
 
-template<weakly_incrementable _It, class _Proj>
+_LIBCPP_EXPORT_STD template<weakly_incrementable _It, class _Proj>
 struct incrementable_traits<projected<_It, _Proj>> {
   using difference_type = iter_difference_t<_It>;
 };

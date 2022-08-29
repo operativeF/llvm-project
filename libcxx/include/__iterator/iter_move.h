@@ -84,11 +84,11 @@ struct __fn {
 } // namespace __iter_move
 
 inline namespace __cpo {
-  inline constexpr auto iter_move = __iter_move::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto iter_move = __iter_move::__fn{};
 } // namespace __cpo
 } // namespace ranges
 
-template<__dereferenceable _Tp>
+_LIBCPP_EXPORT_STD template<__dereferenceable _Tp>
   requires requires(_Tp& __t) { { ranges::iter_move(__t) } -> __can_reference; }
 using iter_rvalue_reference_t = decltype(ranges::iter_move(declval<_Tp&>()));
 

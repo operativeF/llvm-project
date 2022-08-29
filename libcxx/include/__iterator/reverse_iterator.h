@@ -39,7 +39,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 class _LIBCPP_TEMPLATE_VIS reverse_iterator
 #if _LIBCPP_STD_VER <= 14 || !defined(_LIBCPP_ABI_NO_ITERATOR_BASES)
     : public iterator<typename iterator_traits<_Iter>::iterator_category,
@@ -201,7 +201,7 @@ struct __is_reverse_iterator : false_type {};
 template <class _Iter>
 struct __is_reverse_iterator<reverse_iterator<_Iter> > : true_type {};
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool
 operator==(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -214,7 +214,7 @@ operator==(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& 
     return __x.base() == __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool
 operator<(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -227,7 +227,7 @@ operator<(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& _
     return __x.base() > __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool
 operator!=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -240,7 +240,7 @@ operator!=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& 
     return __x.base() != __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool
 operator>(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -253,7 +253,7 @@ operator>(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& _
     return __x.base() < __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool
 operator>=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -266,7 +266,7 @@ operator>=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& 
     return __x.base() <= __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool
 operator<=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -280,7 +280,7 @@ operator<=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& 
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Iter1, three_way_comparable_with<_Iter1> _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, three_way_comparable_with<_Iter1> _Iter2>
 _LIBCPP_HIDE_FROM_ABI constexpr
 compare_three_way_result_t<_Iter1, _Iter2>
 operator<=>(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -290,7 +290,7 @@ operator<=>(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>&
 #endif // _LIBCPP_STD_VER > 17
 
 #ifndef _LIBCPP_CXX03_LANG
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 auto
 operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
@@ -308,7 +308,7 @@ operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& _
 }
 #endif
 
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 reverse_iterator<_Iter>
 operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_iterator<_Iter>& __x)
@@ -317,13 +317,13 @@ operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_i
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
   requires (!sized_sentinel_for<_Iter1, _Iter2>)
 inline constexpr bool disable_sized_sentinel_for<reverse_iterator<_Iter1>, reverse_iterator<_Iter2>> = true;
 #endif // _LIBCPP_STD_VER > 17
 
 #if _LIBCPP_STD_VER > 11
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 reverse_iterator<_Iter> make_reverse_iterator(_Iter __i)
 {

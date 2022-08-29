@@ -44,7 +44,7 @@ __distance(_RandIter __first, _RandIter __last, random_access_iterator_tag)
     return __last - __first;
 }
 
-template <class _InputIter>
+_LIBCPP_EXPORT_STD template <class _InputIter>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
 typename iterator_traits<_InputIter>::difference_type
 distance(_InputIter __first, _InputIter __last)
@@ -96,7 +96,7 @@ struct __fn {
 } // namespace __distance
 
 inline namespace __cpo {
-  inline constexpr auto distance = __distance::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto distance = __distance::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

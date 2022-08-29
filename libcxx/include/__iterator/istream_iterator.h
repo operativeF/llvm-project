@@ -25,7 +25,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
-template <class _Tp, class _CharT = char,
+_LIBCPP_EXPORT_STD template <class _Tp, class _CharT = char,
           class _Traits = char_traits<_CharT>, class _Distance = ptrdiff_t>
 class _LIBCPP_TEMPLATE_VIS istream_iterator
 #if _LIBCPP_STD_VER <= 14 || !defined(_LIBCPP_ABI_NO_ITERATOR_BASES)
@@ -80,7 +80,7 @@ public:
 #endif // _LIBCPP_STD_VER > 17
 };
 
-template <class _Tp, class _CharT, class _Traits, class _Distance>
+_LIBCPP_EXPORT_STD template <class _Tp, class _CharT, class _Traits, class _Distance>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const istream_iterator<_Tp, _CharT, _Traits, _Distance>& __x,

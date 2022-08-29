@@ -62,7 +62,7 @@ struct __counted_iterator_value_type<_Iter> {
   using value_type = iter_value_t<_Iter>;
 };
 
-template<input_or_output_iterator _Iter>
+_LIBCPP_EXPORT_STD template<input_or_output_iterator _Iter>
 class counted_iterator
   : public __counted_iterator_concept<_Iter>
   , public __counted_iterator_category<_Iter>
@@ -294,7 +294,7 @@ public:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(counted_iterator);
 
-template<input_iterator _Iter>
+_LIBCPP_EXPORT_STD template<input_iterator _Iter>
   requires same_as<_ITER_TRAITS<_Iter>, iterator_traits<_Iter>>
 struct iterator_traits<counted_iterator<_Iter>> : iterator_traits<_Iter> {
   using pointer = conditional_t<contiguous_iterator<_Iter>,

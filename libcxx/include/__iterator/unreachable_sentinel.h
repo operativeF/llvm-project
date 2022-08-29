@@ -21,7 +21,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-struct unreachable_sentinel_t {
+_LIBCPP_EXPORT_STD struct unreachable_sentinel_t {
   template<weakly_incrementable _Iter>
   _LIBCPP_HIDE_FROM_ABI
   friend constexpr bool operator==(unreachable_sentinel_t, const _Iter&) noexcept {
@@ -29,7 +29,7 @@ struct unreachable_sentinel_t {
   }
 };
 
-inline constexpr unreachable_sentinel_t unreachable_sentinel{};
+_LIBCPP_EXPORT_STD inline constexpr unreachable_sentinel_t unreachable_sentinel{};
 
 #endif // _LIBCPP_STD_VER > 17
 

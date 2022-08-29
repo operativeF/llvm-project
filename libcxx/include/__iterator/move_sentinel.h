@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <semiregular _Sent>
+_LIBCPP_EXPORT_STD template <semiregular _Sent>
 class _LIBCPP_TEMPLATE_VIS move_sentinel
 {
 public:

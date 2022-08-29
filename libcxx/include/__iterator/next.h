@@ -24,7 +24,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _InputIter>
+_LIBCPP_EXPORT_STD template <class _InputIter>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX17
     typename enable_if<__is_cpp17_input_iterator<_InputIter>::value, _InputIter>::type
     next(_InputIter __x, typename iterator_traits<_InputIter>::difference_type __n = 1) {
@@ -73,7 +73,7 @@ struct __fn {
 } // namespace __next
 
 inline namespace __cpo {
-  inline constexpr auto next = __next::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto next = __next::__fn{};
 } // namespace __cpo
 } // namespace ranges
 

@@ -46,21 +46,21 @@ concept __dereferenceable = requires(_Tp& __t) {
 };
 
 // [iterator.traits]
-template<__dereferenceable _Tp>
+_LIBCPP_EXPORT_STD template<__dereferenceable _Tp>
 using iter_reference_t = decltype(*declval<_Tp&>());
 
 #endif // _LIBCPP_STD_VER > 17
 
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 struct _LIBCPP_TEMPLATE_VIS iterator_traits;
 
-struct _LIBCPP_TEMPLATE_VIS input_iterator_tag {};
-struct _LIBCPP_TEMPLATE_VIS output_iterator_tag {};
-struct _LIBCPP_TEMPLATE_VIS forward_iterator_tag       : public input_iterator_tag {};
-struct _LIBCPP_TEMPLATE_VIS bidirectional_iterator_tag : public forward_iterator_tag {};
-struct _LIBCPP_TEMPLATE_VIS random_access_iterator_tag : public bidirectional_iterator_tag {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS input_iterator_tag {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS output_iterator_tag {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS forward_iterator_tag       : public input_iterator_tag {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS bidirectional_iterator_tag : public forward_iterator_tag {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS random_access_iterator_tag : public bidirectional_iterator_tag {};
 #if _LIBCPP_STD_VER > 17
-struct _LIBCPP_TEMPLATE_VIS contiguous_iterator_tag    : public random_access_iterator_tag {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS contiguous_iterator_tag    : public random_access_iterator_tag {};
 #endif
 
 template <class _Iter>
@@ -363,7 +363,7 @@ struct __iterator_traits<_Ip> {
   using reference         = void;
 };
 
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 struct iterator_traits : __iterator_traits<_Ip> {
   using __primary_template = iterator_traits;
 };
@@ -407,7 +407,7 @@ struct _LIBCPP_TEMPLATE_VIS iterator_traits
 };
 #endif // _LIBCPP_STD_VER > 17
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 #if _LIBCPP_STD_VER > 17
 requires is_object_v<_Tp>
 #endif

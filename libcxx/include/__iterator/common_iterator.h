@@ -40,7 +40,7 @@ concept __can_use_postfix_proxy =
   constructible_from<iter_value_t<_Iter>, iter_reference_t<_Iter>> &&
   move_constructible<iter_value_t<_Iter>>;
 
-template<input_or_output_iterator _Iter, sentinel_for<_Iter> _Sent>
+_LIBCPP_EXPORT_STD template<input_or_output_iterator _Iter, sentinel_for<_Iter> _Sent>
   requires (!same_as<_Iter, _Sent> && copyable<_Iter>)
 class common_iterator {
   struct __proxy {
@@ -232,7 +232,7 @@ public:
   }
 };
 
-template<class _Iter, class _Sent>
+_LIBCPP_EXPORT_STD template<class _Iter, class _Sent>
 struct incrementable_traits<common_iterator<_Iter, _Sent>> {
   using difference_type = iter_difference_t<_Iter>;
 };
@@ -258,7 +258,7 @@ struct __arrow_type_or_void<_Iter, _Sent> {
     using type = decltype(declval<const common_iterator<_Iter, _Sent>&>().operator->());
 };
 
-template<input_iterator _Iter, class _Sent>
+_LIBCPP_EXPORT_STD template<input_iterator _Iter, class _Sent>
 struct iterator_traits<common_iterator<_Iter, _Sent>> {
   using iterator_concept = _If<forward_iterator<_Iter>,
                                forward_iterator_tag,

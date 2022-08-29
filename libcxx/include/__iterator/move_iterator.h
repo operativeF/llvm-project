@@ -53,7 +53,7 @@ concept __move_iter_comparable = requires {
 };
 #endif // _LIBCPP_STD_VER > 17
 
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 class _LIBCPP_TEMPLATE_VIS move_iterator
 #if _LIBCPP_STD_VER > 17
     : public __move_iter_category_base<_Iter>
@@ -224,7 +224,7 @@ private:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(move_iterator);
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool operator==(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 {
@@ -240,28 +240,28 @@ bool operator!=(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& _
 }
 #endif // _LIBCPP_STD_VER <= 17
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool operator<(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 {
     return __x.base() < __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool operator>(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 {
     return __x.base() > __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool operator<=(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 {
     return __x.base() <= __y.base();
 }
 
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool operator>=(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 {
@@ -269,7 +269,7 @@ bool operator>=(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& _
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Iter1, three_way_comparable_with<_Iter1> _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, three_way_comparable_with<_Iter1> _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI constexpr
 auto operator<=>(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
     -> compare_three_way_result_t<_Iter1, _Iter2>
@@ -279,7 +279,7 @@ auto operator<=>(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& 
 #endif // _LIBCPP_STD_VER > 17
 
 #ifndef _LIBCPP_CXX03_LANG
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 auto operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
     -> decltype(__x.base() - __y.base())
@@ -297,7 +297,7 @@ operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 #endif // !_LIBCPP_CXX03_LANG
 
 #if _LIBCPP_STD_VER > 17
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 inline _LIBCPP_HIDE_FROM_ABI constexpr
 move_iterator<_Iter> operator+(iter_difference_t<_Iter> __n, const move_iterator<_Iter>& __x)
     requires requires { { __x.base() + __n } -> same_as<_Iter>; }
@@ -314,7 +314,7 @@ operator+(typename move_iterator<_Iter>::difference_type __n, const move_iterato
 }
 #endif // _LIBCPP_STD_VER > 17
 
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 move_iterator<_Iter>
 make_move_iterator(_Iter __i)

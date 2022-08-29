@@ -56,14 +56,14 @@ concept __indirectly_readable_impl =
   common_reference_with<iter_reference_t<_In>&&, iter_rvalue_reference_t<_In>&&> &&
   common_reference_with<iter_rvalue_reference_t<_In>&&, const iter_value_t<_In>&>;
 
-template<class _In>
+_LIBCPP_EXPORT_STD template<class _In>
 concept indirectly_readable = __indirectly_readable_impl<remove_cvref_t<_In>>;
 
-template<indirectly_readable _Tp>
+_LIBCPP_EXPORT_STD template<indirectly_readable _Tp>
 using iter_common_reference_t = common_reference_t<iter_reference_t<_Tp>, iter_value_t<_Tp>&>;
 
 // [iterator.concept.writable]
-template<class _Out, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Out, class _Tp>
 concept indirectly_writable =
   requires(_Out&& __o, _Tp&& __t) {
     *__o = _VSTD::forward<_Tp>(__t);                        // not required to be equality-preserving
@@ -79,7 +79,7 @@ concept __integer_like = integral<_Tp> && !same_as<_Tp, bool>;
 template<class _Tp>
 concept __signed_integer_like = signed_integral<_Tp>;
 
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept weakly_incrementable =
   // TODO: remove this once the clang bug is fixed (bugs.llvm.org/PR48173).
   !same_as<_Ip, bool> && // Currently, clang does not handle bool correctly.
@@ -92,7 +92,7 @@ concept weakly_incrementable =
   };
 
 // [iterator.concept.inc]
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept incrementable =
   regular<_Ip> &&
   weakly_incrementable<_Ip> &&
@@ -101,7 +101,7 @@ concept incrementable =
   };
 
 // [iterator.concept.iterator]
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept input_or_output_iterator =
   requires(_Ip __i) {
     { *__i } -> __can_reference;
@@ -109,16 +109,16 @@ concept input_or_output_iterator =
   weakly_incrementable<_Ip>;
 
 // [iterator.concept.sentinel]
-template<class _Sp, class _Ip>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Ip>
 concept sentinel_for =
   semiregular<_Sp> &&
   input_or_output_iterator<_Ip> &&
   __weakly_equality_comparable_with<_Sp, _Ip>;
 
-template<class, class>
+_LIBCPP_EXPORT_STD template<class, class>
 inline constexpr bool disable_sized_sentinel_for = false;
 
-template<class _Sp, class _Ip>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Ip>
 concept sized_sentinel_for =
   sentinel_for<_Sp, _Ip> &&
   !disable_sized_sentinel_for<remove_cv_t<_Sp>, remove_cv_t<_Ip>> &&
@@ -128,7 +128,7 @@ concept sized_sentinel_for =
   };
 
 // [iterator.concept.input]
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept input_iterator =
   input_or_output_iterator<_Ip> &&
   indirectly_readable<_Ip> &&
@@ -136,7 +136,7 @@ concept input_iterator =
   derived_from<_ITER_CONCEPT<_Ip>, input_iterator_tag>;
 
 // [iterator.concept.output]
-template<class _Ip, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Ip, class _Tp>
 concept output_iterator =
   input_or_output_iterator<_Ip> &&
   indirectly_writable<_Ip, _Tp> &&
@@ -145,7 +145,7 @@ concept output_iterator =
   };
 
 // [iterator.concept.forward]
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept forward_iterator =
   input_iterator<_Ip> &&
   derived_from<_ITER_CONCEPT<_Ip>, forward_iterator_tag> &&
@@ -153,7 +153,7 @@ concept forward_iterator =
   sentinel_for<_Ip, _Ip>;
 
 // [iterator.concept.bidir]
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept bidirectional_iterator =
   forward_iterator<_Ip> &&
   derived_from<_ITER_CONCEPT<_Ip>, bidirectional_iterator_tag> &&
@@ -162,7 +162,7 @@ concept bidirectional_iterator =
     { __i-- } -> same_as<_Ip>;
   };
 
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept random_access_iterator =
   bidirectional_iterator<_Ip> &&
   derived_from<_ITER_CONCEPT<_Ip>, random_access_iterator_tag> &&
@@ -177,7 +177,7 @@ concept random_access_iterator =
     {  __j[__n]  } -> same_as<iter_reference_t<_Ip>>;
   };
 
-template<class _Ip>
+_LIBCPP_EXPORT_STD template<class _Ip>
 concept contiguous_iterator =
   random_access_iterator<_Ip> &&
   derived_from<_ITER_CONCEPT<_Ip>, contiguous_iterator_tag> &&
@@ -191,7 +191,7 @@ template<class _Ip>
 concept __has_arrow = input_iterator<_Ip> && (is_pointer_v<_Ip> || requires(_Ip __i) { __i.operator->(); });
 
 // [indirectcallable.indirectinvocable]
-template<class _Fp, class _It>
+_LIBCPP_EXPORT_STD template<class _Fp, class _It>
 concept indirectly_unary_invocable =
   indirectly_readable<_It> &&
   copy_constructible<_Fp> &&
@@ -202,7 +202,7 @@ concept indirectly_unary_invocable =
     invoke_result_t<_Fp&, iter_value_t<_It>&>,
     invoke_result_t<_Fp&, iter_reference_t<_It>>>;
 
-template<class _Fp, class _It>
+_LIBCPP_EXPORT_STD template<class _Fp, class _It>
 concept indirectly_regular_unary_invocable =
   indirectly_readable<_It> &&
   copy_constructible<_Fp> &&
@@ -213,7 +213,7 @@ concept indirectly_regular_unary_invocable =
     invoke_result_t<_Fp&, iter_value_t<_It>&>,
     invoke_result_t<_Fp&, iter_reference_t<_It>>>;
 
-template<class _Fp, class _It>
+_LIBCPP_EXPORT_STD template<class _Fp, class _It>
 concept indirect_unary_predicate =
   indirectly_readable<_It> &&
   copy_constructible<_Fp> &&
@@ -221,7 +221,7 @@ concept indirect_unary_predicate =
   predicate<_Fp&, iter_reference_t<_It>> &&
   predicate<_Fp&, iter_common_reference_t<_It>>;
 
-template<class _Fp, class _It1, class _It2>
+_LIBCPP_EXPORT_STD template<class _Fp, class _It1, class _It2>
 concept indirect_binary_predicate =
   indirectly_readable<_It1> && indirectly_readable<_It2> &&
   copy_constructible<_Fp> &&
@@ -231,7 +231,7 @@ concept indirect_binary_predicate =
   predicate<_Fp&, iter_reference_t<_It1>, iter_reference_t<_It2>> &&
   predicate<_Fp&, iter_common_reference_t<_It1>, iter_common_reference_t<_It2>>;
 
-template<class _Fp, class _It1, class _It2 = _It1>
+_LIBCPP_EXPORT_STD template<class _Fp, class _It1, class _It2 = _It1>
 concept indirect_equivalence_relation =
   indirectly_readable<_It1> && indirectly_readable<_It2> &&
   copy_constructible<_Fp> &&
@@ -241,7 +241,7 @@ concept indirect_equivalence_relation =
   equivalence_relation<_Fp&, iter_reference_t<_It1>, iter_reference_t<_It2>> &&
   equivalence_relation<_Fp&, iter_common_reference_t<_It1>, iter_common_reference_t<_It2>>;
 
-template<class _Fp, class _It1, class _It2 = _It1>
+_LIBCPP_EXPORT_STD template<class _Fp, class _It1, class _It2 = _It1>
 concept indirect_strict_weak_order =
   indirectly_readable<_It1> && indirectly_readable<_It2> &&
   copy_constructible<_Fp> &&
@@ -251,16 +251,16 @@ concept indirect_strict_weak_order =
   strict_weak_order<_Fp&, iter_reference_t<_It1>, iter_reference_t<_It2>> &&
   strict_weak_order<_Fp&, iter_common_reference_t<_It1>, iter_common_reference_t<_It2>>;
 
-template<class _Fp, class... _Its>
+_LIBCPP_EXPORT_STD template<class _Fp, class... _Its>
   requires (indirectly_readable<_Its> && ...) && invocable<_Fp, iter_reference_t<_Its>...>
 using indirect_result_t = invoke_result_t<_Fp, iter_reference_t<_Its>...>;
 
-template<class _In, class _Out>
+_LIBCPP_EXPORT_STD template<class _In, class _Out>
 concept indirectly_movable =
   indirectly_readable<_In> &&
   indirectly_writable<_Out, iter_rvalue_reference_t<_In>>;
 
-template<class _In, class _Out>
+_LIBCPP_EXPORT_STD template<class _In, class _Out>
 concept indirectly_movable_storable =
   indirectly_movable<_In, _Out> &&
   indirectly_writable<_Out, iter_value_t<_In>> &&
@@ -268,12 +268,12 @@ concept indirectly_movable_storable =
   constructible_from<iter_value_t<_In>, iter_rvalue_reference_t<_In>> &&
   assignable_from<iter_value_t<_In>&, iter_rvalue_reference_t<_In>>;
 
-template<class _In, class _Out>
+_LIBCPP_EXPORT_STD template<class _In, class _Out>
 concept indirectly_copyable =
   indirectly_readable<_In> &&
   indirectly_writable<_Out, iter_reference_t<_In>>;
 
-template<class _In, class _Out>
+_LIBCPP_EXPORT_STD template<class _In, class _Out>
 concept indirectly_copyable_storable =
   indirectly_copyable<_In, _Out> &&
   indirectly_writable<_Out, iter_value_t<_In>&> &&

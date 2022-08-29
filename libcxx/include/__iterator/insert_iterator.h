@@ -33,7 +33,7 @@ using __insert_iterator_iter_t = typename _Container::iterator;
 #endif
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
-template <class _Container>
+_LIBCPP_EXPORT_STD template <class _Container>
 class _LIBCPP_TEMPLATE_VIS insert_iterator
 #if _LIBCPP_STD_VER <= 14 || !defined(_LIBCPP_ABI_NO_ITERATOR_BASES)
     : public iterator<output_iterator_tag, void, void, void, void>
@@ -68,7 +68,7 @@ public:
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20 insert_iterator& operator++(int)    {return *this;}
 };
 
-template <class _Container>
+_LIBCPP_EXPORT_STD template <class _Container>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 insert_iterator<_Container>
 inserter(_Container& __x, __insert_iterator_iter_t<_Container> __i)

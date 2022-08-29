@@ -25,7 +25,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _Iter, class _Comp = ranges::less, class _Proj = identity>
+_LIBCPP_EXPORT_STD template <class _Iter, class _Comp = ranges::less, class _Proj = identity>
 concept sortable =
   permutable<_Iter> &&
   indirect_strict_weak_order<_Comp, projected<_Iter, _Proj>>;

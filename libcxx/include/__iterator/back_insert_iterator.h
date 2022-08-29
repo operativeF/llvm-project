@@ -24,7 +24,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
-template <class _Container>
+_LIBCPP_EXPORT_STD template <class _Container>
 class _LIBCPP_TEMPLATE_VIS back_insert_iterator
 #if _LIBCPP_STD_VER <= 14 || !defined(_LIBCPP_ABI_NO_ITERATOR_BASES)
     : public iterator<output_iterator_tag, void, void, void, void>
@@ -60,7 +60,7 @@ public:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(back_insert_iterator);
 
-template <class _Container>
+_LIBCPP_EXPORT_STD template <class _Container>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 back_insert_iterator<_Container>
 back_inserter(_Container& __x)
