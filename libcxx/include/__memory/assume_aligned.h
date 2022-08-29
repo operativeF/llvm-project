@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
 
-template <size_t _Np, class _Tp>
+_LIBCPP_EXPORT_STD template <size_t _Np, class _Tp>
 [[nodiscard]]
 _LIBCPP_HIDE_FROM_ABI
 constexpr _Tp* assume_aligned(_Tp* __ptr) {

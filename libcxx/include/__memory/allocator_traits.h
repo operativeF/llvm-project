@@ -224,7 +224,7 @@ struct __has_select_on_container_copy_construction<_Alloc, decltype(
 
 _LIBCPP_SUPPRESS_DEPRECATED_POP
 
-template <class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Alloc>
 struct _LIBCPP_TEMPLATE_VIS allocator_traits
 {
     using allocator_type = _Alloc;
@@ -360,7 +360,7 @@ using __rebind_alloc = typename _Traits::template rebind_alloc<_Tp>::other;
 template <class _Tp>
 struct __is_default_allocator : false_type { };
 
-template <class> class allocator;
+_LIBCPP_EXPORT_STD template <class> class allocator;
 
 template <class _Tp>
 struct __is_default_allocator<allocator<_Tp> > : true_type { };

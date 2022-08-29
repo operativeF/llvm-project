@@ -106,7 +106,7 @@ __libcpp_atomic_refcount_decrement(_Tp& __t) _NOEXCEPT
 #endif
 }
 
-class _LIBCPP_EXCEPTION_ABI bad_weak_ptr
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_weak_ptr
     : public std::exception
 {
 public:
@@ -126,7 +126,7 @@ void __throw_bad_weak_ptr()
 #endif
 }
 
-template<class _Tp> class _LIBCPP_TEMPLATE_VIS weak_ptr;
+_LIBCPP_EXPORT_STD template<class _Tp> class _LIBCPP_TEMPLATE_VIS weak_ptr;
 
 class _LIBCPP_TYPE_VIS __shared_count
 {
@@ -343,7 +343,7 @@ private:
 };
 
 struct __shared_ptr_dummy_rebind_allocator_type;
-template <>
+_LIBCPP_EXPORT_STD template <>
 class _LIBCPP_TEMPLATE_VIS allocator<__shared_ptr_dummy_rebind_allocator_type>
 {
 public:
@@ -354,7 +354,7 @@ public:
     };
 };
 
-template<class _Tp> class _LIBCPP_TEMPLATE_VIS enable_shared_from_this;
+_LIBCPP_EXPORT_STD template<class _Tp> class _LIBCPP_TEMPLATE_VIS enable_shared_from_this;
 
 template<class _Tp, class _Up>
 struct __compatible_with
@@ -398,7 +398,7 @@ struct __shared_ptr_deleter_ctor_reqs
 #  define _LIBCPP_SHARED_PTR_TRIVIAL_ABI
 #endif
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 class _LIBCPP_SHARED_PTR_TRIVIAL_ABI _LIBCPP_TEMPLATE_VIS shared_ptr
 {
 public:
@@ -918,16 +918,16 @@ private:
 };
 
 #if _LIBCPP_STD_VER > 14
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 shared_ptr(weak_ptr<_Tp>) -> shared_ptr<_Tp>;
-template<class _Tp, class _Dp>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Dp>
 shared_ptr(unique_ptr<_Tp, _Dp>) -> shared_ptr<_Tp>;
 #endif
 
 //
 // std::allocate_shared and std::make_shared
 //
-template<class _Tp, class _Alloc, class ..._Args, class = __enable_if_t<!is_array<_Tp>::value> >
+_LIBCPP_EXPORT_STD template<class _Tp, class _Alloc, class ..._Args, class = __enable_if_t<!is_array<_Tp>::value> >
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> allocate_shared(const _Alloc& __a, _Args&& ...__args)
 {
@@ -939,7 +939,7 @@ shared_ptr<_Tp> allocate_shared(const _Alloc& __a, _Args&& ...__args)
     return shared_ptr<_Tp>::__create_with_control_block((*__control_block).__get_elem(), _VSTD::addressof(*__control_block));
 }
 
-template<class _Tp, class ..._Args, class = __enable_if_t<!is_array<_Tp>::value> >
+_LIBCPP_EXPORT_STD template<class _Tp, class ..._Args, class = __enable_if_t<!is_array<_Tp>::value> >
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> make_shared(_Args&& ...__args)
 {
@@ -1102,56 +1102,56 @@ shared_ptr<_Array> __allocate_shared_bounded_array(const _Alloc& __a, _Arg&& ...
 
 #if _LIBCPP_STD_VER > 17
 
-template<class _Tp, class _Alloc, class = __enable_if_t<is_bounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Alloc, class = __enable_if_t<is_bounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> allocate_shared(const _Alloc& __a)
 {
     return std::__allocate_shared_bounded_array<_Tp>(__a);
 }
 
-template<class _Tp, class _Alloc, class = __enable_if_t<is_bounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Alloc, class = __enable_if_t<is_bounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> allocate_shared(const _Alloc& __a, const remove_extent_t<_Tp>& __u)
 {
     return std::__allocate_shared_bounded_array<_Tp>(__a, __u);
 }
 
-template<class _Tp, class _Alloc, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Alloc, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> allocate_shared(const _Alloc& __a, size_t __n)
 {
     return std::__allocate_shared_unbounded_array<_Tp>(__a, __n);
 }
 
-template<class _Tp, class _Alloc, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Alloc, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> allocate_shared(const _Alloc& __a, size_t __n, const remove_extent_t<_Tp>& __u)
 {
     return std::__allocate_shared_unbounded_array<_Tp>(__a, __n, __u);
 }
 
-template<class _Tp, class = __enable_if_t<is_bounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class = __enable_if_t<is_bounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> make_shared()
 {
     return std::__allocate_shared_bounded_array<_Tp>(allocator<_Tp>());
 }
 
-template<class _Tp, class = __enable_if_t<is_bounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class = __enable_if_t<is_bounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> make_shared(const remove_extent_t<_Tp>& __u)
 {
     return std::__allocate_shared_bounded_array<_Tp>(allocator<_Tp>(), __u);
 }
 
-template<class _Tp, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> make_shared(size_t __n)
 {
     return std::__allocate_shared_unbounded_array<_Tp>(allocator<_Tp>(), __n);
 }
 
-template<class _Tp, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
+_LIBCPP_EXPORT_STD template<class _Tp, class = __enable_if_t<is_unbounded_array<_Tp>::value>>
 _LIBCPP_HIDE_FROM_ABI
 shared_ptr<_Tp> make_shared(size_t __n, const remove_extent_t<_Tp>& __u)
 {
@@ -1160,7 +1160,7 @@ shared_ptr<_Tp> make_shared(size_t __n, const remove_extent_t<_Tp>& __u)
 
 #endif // _LIBCPP_STD_VER > 17
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
@@ -1219,7 +1219,7 @@ operator>=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
 #endif // _LIBCPP_STD_VER <= 17
 
 #if _LIBCPP_STD_VER > 17
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 _LIBCPP_HIDE_FROM_ABI strong_ordering
 operator<=>(shared_ptr<_Tp> const& __x, shared_ptr<_Up> const& __y) noexcept
 {
@@ -1227,7 +1227,7 @@ operator<=>(shared_ptr<_Tp> const& __x, shared_ptr<_Up> const& __y) noexcept
 }
 #endif
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
@@ -1328,7 +1328,7 @@ operator>=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
 #endif // _LIBCPP_STD_VER <= 17
 
 #if _LIBCPP_STD_VER > 17
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI strong_ordering
 operator<=>(shared_ptr<_Tp> const& __x, nullptr_t) noexcept
 {
@@ -1336,7 +1336,7 @@ operator<=>(shared_ptr<_Tp> const& __x, nullptr_t) noexcept
 }
 #endif
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(shared_ptr<_Tp>& __x, shared_ptr<_Tp>& __y) _NOEXCEPT
@@ -1344,7 +1344,7 @@ swap(shared_ptr<_Tp>& __x, shared_ptr<_Tp>& __y) _NOEXCEPT
     __x.swap(__y);
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 shared_ptr<_Tp>
 static_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
@@ -1354,7 +1354,7 @@ static_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
                                typename shared_ptr<_Tp>::element_type*>(__r.get()));
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 shared_ptr<_Tp>
 dynamic_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
@@ -1364,7 +1364,7 @@ dynamic_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
     return __p ? shared_ptr<_Tp>(__r, __p) : shared_ptr<_Tp>();
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 _LIBCPP_HIDE_FROM_ABI shared_ptr<_Tp>
 const_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
 {
@@ -1372,7 +1372,7 @@ const_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
     return shared_ptr<_Tp>(__r, const_cast<_RTp*>(__r.get()));
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 _LIBCPP_HIDE_FROM_ABI shared_ptr<_Tp>
 reinterpret_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
 {
@@ -1383,7 +1383,7 @@ reinterpret_pointer_cast(const shared_ptr<_Up>& __r) _NOEXCEPT
 
 #ifndef _LIBCPP_NO_RTTI
 
-template<class _Dp, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Dp, class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _Dp*
 get_deleter(const shared_ptr<_Tp>& __p) _NOEXCEPT
@@ -1393,7 +1393,7 @@ get_deleter(const shared_ptr<_Tp>& __p) _NOEXCEPT
 
 #endif // _LIBCPP_NO_RTTI
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 class _LIBCPP_SHARED_PTR_TRIVIAL_ABI _LIBCPP_TEMPLATE_VIS weak_ptr
 {
 public:
@@ -1483,11 +1483,11 @@ public:
 };
 
 #if _LIBCPP_STD_VER > 14
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 weak_ptr(shared_ptr<_Tp>) -> weak_ptr<_Tp>;
 #endif
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 _LIBCPP_CONSTEXPR
 weak_ptr<_Tp>::weak_ptr() _NOEXCEPT
@@ -1496,7 +1496,7 @@ weak_ptr<_Tp>::weak_ptr() _NOEXCEPT
 {
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr const& __r) _NOEXCEPT
     : __ptr_(__r.__ptr_),
@@ -1506,7 +1506,7 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr const& __r) _NOEXCEPT
         __cntrl_->__add_weak();
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 template<class _Yp>
 inline
 weak_ptr<_Tp>::weak_ptr(shared_ptr<_Yp> const& __r,
@@ -1519,7 +1519,7 @@ weak_ptr<_Tp>::weak_ptr(shared_ptr<_Yp> const& __r,
         __cntrl_->__add_weak();
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 template<class _Yp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp> const& __r,
@@ -1532,7 +1532,7 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp> const& __r,
         __cntrl_->__add_weak();
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr&& __r) _NOEXCEPT
     : __ptr_(__r.__ptr_),
@@ -1542,7 +1542,7 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr&& __r) _NOEXCEPT
     __r.__cntrl_ = nullptr;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 template<class _Yp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp>&& __r,
@@ -1555,14 +1555,14 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp>&& __r,
     __r.__cntrl_ = nullptr;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 weak_ptr<_Tp>::~weak_ptr()
 {
     if (__cntrl_)
         __cntrl_->__release_weak();
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 weak_ptr<_Tp>&
 weak_ptr<_Tp>::operator=(weak_ptr const& __r) _NOEXCEPT
@@ -1571,7 +1571,7 @@ weak_ptr<_Tp>::operator=(weak_ptr const& __r) _NOEXCEPT
     return *this;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 template<class _Yp>
 inline
 typename enable_if
@@ -1585,7 +1585,7 @@ weak_ptr<_Tp>::operator=(weak_ptr<_Yp> const& __r) _NOEXCEPT
     return *this;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 weak_ptr<_Tp>&
 weak_ptr<_Tp>::operator=(weak_ptr&& __r) _NOEXCEPT
@@ -1594,7 +1594,7 @@ weak_ptr<_Tp>::operator=(weak_ptr&& __r) _NOEXCEPT
     return *this;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 template<class _Yp>
 inline
 typename enable_if
@@ -1608,7 +1608,7 @@ weak_ptr<_Tp>::operator=(weak_ptr<_Yp>&& __r) _NOEXCEPT
     return *this;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 template<class _Yp>
 inline
 typename enable_if
@@ -1622,7 +1622,7 @@ weak_ptr<_Tp>::operator=(shared_ptr<_Yp> const& __r) _NOEXCEPT
     return *this;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 void
 weak_ptr<_Tp>::swap(weak_ptr& __r) _NOEXCEPT
@@ -1631,7 +1631,7 @@ weak_ptr<_Tp>::swap(weak_ptr& __r) _NOEXCEPT
     _VSTD::swap(__cntrl_, __r.__cntrl_);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
@@ -1639,7 +1639,7 @@ swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
     __x.swap(__y);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline
 void
 weak_ptr<_Tp>::reset() _NOEXCEPT
@@ -1647,7 +1647,7 @@ weak_ptr<_Tp>::reset() _NOEXCEPT
     weak_ptr().swap(*this);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 shared_ptr<_Tp>
 weak_ptr<_Tp>::lock() const _NOEXCEPT
 {
@@ -1659,13 +1659,13 @@ weak_ptr<_Tp>::lock() const _NOEXCEPT
 }
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp = void> struct owner_less;
+_LIBCPP_EXPORT_STD template <class _Tp = void> struct owner_less;
 #else
 template <class _Tp> struct owner_less;
 #endif
 
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS owner_less<shared_ptr<_Tp> >
     : __binary_function<shared_ptr<_Tp>, shared_ptr<_Tp>, bool>
 {
@@ -1680,7 +1680,7 @@ struct _LIBCPP_TEMPLATE_VIS owner_less<shared_ptr<_Tp> >
         {return __x.owner_before(__y);}
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS owner_less<weak_ptr<_Tp> >
     : __binary_function<weak_ptr<_Tp>, weak_ptr<_Tp>, bool>
 {
@@ -1696,7 +1696,7 @@ struct _LIBCPP_TEMPLATE_VIS owner_less<weak_ptr<_Tp> >
 };
 
 #if _LIBCPP_STD_VER > 14
-template <>
+_LIBCPP_EXPORT_STD template <>
 struct _LIBCPP_TEMPLATE_VIS owner_less<void>
 {
     template <class _Tp, class _Up>
@@ -1719,7 +1719,7 @@ struct _LIBCPP_TEMPLATE_VIS owner_less<void>
 };
 #endif
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 class _LIBCPP_TEMPLATE_VIS enable_shared_from_this
 {
     mutable weak_ptr<_Tp> __weak_this_;
@@ -1754,9 +1754,9 @@ public:
     template <class _Up> friend class shared_ptr;
 };
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS hash;
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS hash;
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS hash<shared_ptr<_Tp> >
 {
 #if _LIBCPP_STD_VER <= 17 || defined(_LIBCPP_ENABLE_CXX20_REMOVED_BINDER_TYPEDEFS)
@@ -1771,7 +1771,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<shared_ptr<_Tp> >
     }
 };
 
-template<class _CharT, class _Traits, class _Yp>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Yp>
 inline _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, shared_ptr<_Yp> const& __p);
@@ -1797,7 +1797,7 @@ private:
 _LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 __sp_mut& __get_sp_mut(const void*);
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 atomic_is_lock_free(const shared_ptr<_Tp>*)
@@ -1805,7 +1805,7 @@ atomic_is_lock_free(const shared_ptr<_Tp>*)
     return false;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 _LIBCPP_HIDE_FROM_ABI shared_ptr<_Tp>
 atomic_load(const shared_ptr<_Tp>* __p)
@@ -1817,7 +1817,7 @@ atomic_load(const shared_ptr<_Tp>* __p)
     return __q;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 shared_ptr<_Tp>
@@ -1826,7 +1826,7 @@ atomic_load_explicit(const shared_ptr<_Tp>* __p, memory_order)
     return atomic_load(__p);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 _LIBCPP_HIDE_FROM_ABI void
 atomic_store(shared_ptr<_Tp>* __p, shared_ptr<_Tp> __r)
@@ -1837,7 +1837,7 @@ atomic_store(shared_ptr<_Tp>* __p, shared_ptr<_Tp> __r)
     __m.unlock();
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 void
@@ -1846,7 +1846,7 @@ atomic_store_explicit(shared_ptr<_Tp>* __p, shared_ptr<_Tp> __r, memory_order)
     atomic_store(__p, __r);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 _LIBCPP_HIDE_FROM_ABI shared_ptr<_Tp>
 atomic_exchange(shared_ptr<_Tp>* __p, shared_ptr<_Tp> __r)
@@ -1858,7 +1858,7 @@ atomic_exchange(shared_ptr<_Tp>* __p, shared_ptr<_Tp> __r)
     return __r;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 shared_ptr<_Tp>
@@ -1867,7 +1867,7 @@ atomic_exchange_explicit(shared_ptr<_Tp>* __p, shared_ptr<_Tp> __r, memory_order
     return atomic_exchange(__p, __r);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 _LIBCPP_HIDE_FROM_ABI bool
 atomic_compare_exchange_strong(shared_ptr<_Tp>* __p, shared_ptr<_Tp>* __v, shared_ptr<_Tp> __w)
@@ -1888,7 +1888,7 @@ atomic_compare_exchange_strong(shared_ptr<_Tp>* __p, shared_ptr<_Tp>* __v, share
     return false;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 bool
@@ -1897,7 +1897,7 @@ atomic_compare_exchange_weak(shared_ptr<_Tp>* __p, shared_ptr<_Tp>* __v, shared_
     return atomic_compare_exchange_strong(__p, __v, __w);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 bool
@@ -1907,7 +1907,7 @@ atomic_compare_exchange_strong_explicit(shared_ptr<_Tp>* __p, shared_ptr<_Tp>* _
     return atomic_compare_exchange_strong(__p, __v, __w);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 bool

@@ -64,7 +64,7 @@ __uninitialized_copy(_InputIterator __ifirst, _Sentinel1 __ilast,
   return pair<_InputIterator, _ForwardIterator>(_VSTD::move(__ifirst), _VSTD::move(__idx));
 }
 
-template <class _InputIterator, class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _ForwardIterator>
 _LIBCPP_HIDE_FROM_ABI
 _ForwardIterator uninitialized_copy(_InputIterator __ifirst, _InputIterator __ilast,
                                     _ForwardIterator __ofirst) {
@@ -96,7 +96,7 @@ __uninitialized_copy_n(_InputIterator __ifirst, _Size __n,
   return pair<_InputIterator, _ForwardIterator>(_VSTD::move(__ifirst), _VSTD::move(__idx));
 }
 
-template <class _InputIterator, class _Size, class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _Size, class _ForwardIterator>
 inline _LIBCPP_HIDE_FROM_ABI _ForwardIterator uninitialized_copy_n(_InputIterator __ifirst, _Size __n,
                                                                    _ForwardIterator __ofirst) {
   typedef typename iterator_traits<_ForwardIterator>::value_type _ValueType;
@@ -130,7 +130,7 @@ _ForwardIterator __uninitialized_fill(_ForwardIterator __first, _Sentinel __last
     return __idx;
 }
 
-template <class _ForwardIterator, class _Tp>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Tp>
 inline _LIBCPP_HIDE_FROM_ABI
 void uninitialized_fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __x)
 {
@@ -163,7 +163,7 @@ _ForwardIterator __uninitialized_fill_n(_ForwardIterator __first, _Size __n, con
     return __idx;
 }
 
-template <class _ForwardIterator, class _Size, class _Tp>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Size, class _Tp>
 inline _LIBCPP_HIDE_FROM_ABI
 _ForwardIterator uninitialized_fill_n(_ForwardIterator __first, _Size __n, const _Tp& __x)
 {
@@ -194,7 +194,7 @@ _ForwardIterator __uninitialized_default_construct(_ForwardIterator __first, _Se
     return __idx;
 }
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 inline _LIBCPP_HIDE_FROM_ABI
 void uninitialized_default_construct(_ForwardIterator __first, _ForwardIterator __last) {
     using _ValueType = typename iterator_traits<_ForwardIterator>::value_type;
@@ -223,7 +223,7 @@ _ForwardIterator __uninitialized_default_construct_n(_ForwardIterator __first, _
     return __idx;
 }
 
-template <class _ForwardIterator, class _Size>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Size>
 inline _LIBCPP_HIDE_FROM_ABI
 _ForwardIterator uninitialized_default_construct_n(_ForwardIterator __first, _Size __n) {
     using _ValueType = typename iterator_traits<_ForwardIterator>::value_type;
@@ -251,7 +251,7 @@ _ForwardIterator __uninitialized_value_construct(_ForwardIterator __first, _Sent
     return __idx;
 }
 
-template <class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator>
 inline _LIBCPP_HIDE_FROM_ABI
 void uninitialized_value_construct(_ForwardIterator __first, _ForwardIterator __last) {
     using _ValueType = typename iterator_traits<_ForwardIterator>::value_type;
@@ -280,7 +280,7 @@ _ForwardIterator __uninitialized_value_construct_n(_ForwardIterator __first, _Si
     return __idx;
 }
 
-template <class _ForwardIterator, class _Size>
+_LIBCPP_EXPORT_STD template <class _ForwardIterator, class _Size>
 inline _LIBCPP_HIDE_FROM_ABI
 _ForwardIterator uninitialized_value_construct_n(_ForwardIterator __first, _Size __n) {
     using _ValueType = typename iterator_traits<_ForwardIterator>::value_type;
@@ -311,7 +311,7 @@ __uninitialized_move(_InputIterator __ifirst, _Sentinel1 __ilast,
   return {_VSTD::move(__ifirst), _VSTD::move(__idx)};
 }
 
-template <class _InputIterator, class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _ForwardIterator>
 inline _LIBCPP_HIDE_FROM_ABI _ForwardIterator uninitialized_move(_InputIterator __ifirst, _InputIterator __ilast,
                                                                  _ForwardIterator __ofirst) {
   using _ValueType = typename iterator_traits<_ForwardIterator>::value_type;
@@ -344,7 +344,7 @@ __uninitialized_move_n(_InputIterator __ifirst, _Size __n,
   return {_VSTD::move(__ifirst), _VSTD::move(__idx)};
 }
 
-template <class _InputIterator, class _Size, class _ForwardIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _Size, class _ForwardIterator>
 inline _LIBCPP_HIDE_FROM_ABI pair<_InputIterator, _ForwardIterator>
 uninitialized_move_n(_InputIterator __ifirst, _Size __n, _ForwardIterator __ofirst) {
   using _ValueType = typename iterator_traits<_ForwardIterator>::value_type;

@@ -61,7 +61,7 @@ struct __fn {
 } // namespace __uninitialized_default_construct
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_default_construct = __uninitialized_default_construct::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_default_construct = __uninitialized_default_construct::__fn{};
 } // namespace __cpo
 
 // uninitialized_default_construct_n
@@ -81,7 +81,7 @@ struct __fn {
 } // namespace __uninitialized_default_construct_n
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_default_construct_n = __uninitialized_default_construct_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_default_construct_n = __uninitialized_default_construct_n::__fn{};
 } // namespace __cpo
 
 // uninitialized_value_construct
@@ -108,7 +108,7 @@ struct __fn {
 } // namespace __uninitialized_value_construct
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_value_construct = __uninitialized_value_construct::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_value_construct = __uninitialized_value_construct::__fn{};
 } // namespace __cpo
 
 // uninitialized_value_construct_n
@@ -128,7 +128,7 @@ struct __fn {
 } // namespace __uninitialized_value_construct_n
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_value_construct_n = __uninitialized_value_construct_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_value_construct_n = __uninitialized_value_construct_n::__fn{};
 } // namespace __cpo
 
 // uninitialized_fill
@@ -155,7 +155,7 @@ struct __fn {
 } // namespace __uninitialized_fill
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_fill = __uninitialized_fill::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_fill = __uninitialized_fill::__fn{};
 } // namespace __cpo
 
 // uninitialized_fill_n
@@ -176,12 +176,12 @@ struct __fn {
 } // namespace __uninitialized_fill_n
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_fill_n = __uninitialized_fill_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_fill_n = __uninitialized_fill_n::__fn{};
 } // namespace __cpo
 
 // uninitialized_copy
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 using uninitialized_copy_result = in_out_result<_InputIterator, _OutputIterator>;
 
 namespace __uninitialized_copy {
@@ -213,12 +213,12 @@ struct __fn {
 } // namespace __uninitialized_copy
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_copy = __uninitialized_copy::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_copy = __uninitialized_copy::__fn{};
 } // namespace __cpo
 
 // uninitialized_copy_n
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 using uninitialized_copy_n_result = in_out_result<_InputIterator, _OutputIterator>;
 
 namespace __uninitialized_copy_n {
@@ -241,12 +241,12 @@ struct __fn {
 } // namespace __uninitialized_copy_n
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_copy_n = __uninitialized_copy_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_copy_n = __uninitialized_copy_n::__fn{};
 } // namespace __cpo
 
 // uninitialized_move
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 using uninitialized_move_result = in_out_result<_InputIterator, _OutputIterator>;
 
 namespace __uninitialized_move {
@@ -278,12 +278,12 @@ struct __fn {
 } // namespace __uninitialized_move
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_move = __uninitialized_move::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_move = __uninitialized_move::__fn{};
 } // namespace __cpo
 
 // uninitialized_move_n
 
-template <class _InputIterator, class _OutputIterator>
+_LIBCPP_EXPORT_STD template <class _InputIterator, class _OutputIterator>
 using uninitialized_move_n_result = in_out_result<_InputIterator, _OutputIterator>;
 
 namespace __uninitialized_move_n {
@@ -307,7 +307,7 @@ struct __fn {
 } // namespace __uninitialized_move_n
 
 inline namespace __cpo {
-  inline constexpr auto uninitialized_move_n = __uninitialized_move_n::__fn{};
+  _LIBCPP_EXPORT_STD inline constexpr auto uninitialized_move_n = __uninitialized_move_n::__fn{};
 } // namespace __cpo
 
 } // namespace ranges

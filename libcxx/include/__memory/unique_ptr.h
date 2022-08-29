@@ -30,7 +30,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS default_delete {
     static_assert(!is_function<_Tp>::value,
                   "default_delete cannot be instantiated for function types");
@@ -50,7 +50,7 @@ struct _LIBCPP_TEMPLATE_VIS default_delete {
   }
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS default_delete<_Tp[]> {
 private:
   template <class _Up>
@@ -104,7 +104,7 @@ struct __unique_ptr_deleter_sfinae<_Deleter&> {
 #  define _LIBCPP_UNIQUE_PTR_TRIVIAL_ABI
 #endif
 
-template <class _Tp, class _Dp = default_delete<_Tp> >
+_LIBCPP_EXPORT_STD template <class _Tp, class _Dp = default_delete<_Tp> >
 class _LIBCPP_UNIQUE_PTR_TRIVIAL_ABI _LIBCPP_TEMPLATE_VIS unique_ptr {
 public:
   typedef _Tp element_type;
@@ -287,7 +287,7 @@ public:
 };
 
 
-template <class _Tp, class _Dp>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Dp>
 class _LIBCPP_UNIQUE_PTR_TRIVIAL_ABI _LIBCPP_TEMPLATE_VIS unique_ptr<_Tp[], _Dp> {
 public:
   typedef _Tp element_type;
@@ -493,14 +493,14 @@ public:
   }
 };
 
-template <class _Tp, class _Dp>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Dp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23
     typename enable_if< __is_swappable<_Dp>::value, void >::type
     swap(unique_ptr<_Tp, _Dp>& __x, unique_ptr<_Tp, _Dp>& __y) _NOEXCEPT {
   __x.swap(__y);
 }
 
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator==(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {
   return __x.get() == __y.get();
@@ -513,7 +513,7 @@ bool
 operator!=(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {return !(__x == __y);}
 #endif
 
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y)
@@ -524,24 +524,24 @@ operator< (const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y)
     return less<_Vp>()(__x.get(), __y.get());
 }
 
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {return __y < __x;}
 
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {return !(__y < __x);}
 
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {return !(__x < __y);}
 
 
 #if _LIBCPP_STD_VER > 17
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 requires three_way_comparable_with<typename unique_ptr<_T1, _D1>::pointer,
                                    typename unique_ptr<_T2, _D2>::pointer>
 _LIBCPP_HIDE_FROM_ABI
@@ -552,7 +552,7 @@ operator<=>(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {
 }
 #endif
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator==(const unique_ptr<_T1, _D1>& __x, nullptr_t) _NOEXCEPT {
   return !__x;
@@ -584,58 +584,58 @@ operator!=(nullptr_t, const unique_ptr<_T1, _D1>& __x) _NOEXCEPT
 }
 #endif // _LIBCPP_STD_VER <= 17
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator<(const unique_ptr<_T1, _D1>& __x, nullptr_t) {
   typedef typename unique_ptr<_T1, _D1>::pointer _P1;
   return less<_P1>()(__x.get(), nullptr);
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator<(nullptr_t, const unique_ptr<_T1, _D1>& __x) {
   typedef typename unique_ptr<_T1, _D1>::pointer _P1;
   return less<_P1>()(nullptr, __x.get());
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator>(const unique_ptr<_T1, _D1>& __x, nullptr_t) {
   return nullptr < __x;
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator>(nullptr_t, const unique_ptr<_T1, _D1>& __x) {
   return __x < nullptr;
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator<=(const unique_ptr<_T1, _D1>& __x, nullptr_t) {
   return !(nullptr < __x);
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator<=(nullptr_t, const unique_ptr<_T1, _D1>& __x) {
   return !(__x < nullptr);
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator>=(const unique_ptr<_T1, _D1>& __x, nullptr_t) {
   return !(__x < nullptr);
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 bool
 operator>=(nullptr_t, const unique_ptr<_T1, _D1>& __x) {
   return !(nullptr < __x);
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
   requires three_way_comparable<
       typename unique_ptr<_T1, _D1>::pointer> _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX23
       compare_three_way_result_t<typename unique_ptr<_T1, _D1>::pointer>
@@ -683,9 +683,9 @@ template<class _Tp, class... _Args>
 
 #endif // _LIBCPP_STD_VER > 11
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS hash;
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS hash;
 
-template <class _Tp, class _Dp>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Dp>
 #ifdef _LIBCPP_CXX03_LANG
 struct _LIBCPP_TEMPLATE_VIS hash<unique_ptr<_Tp, _Dp> >
 #else

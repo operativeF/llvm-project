@@ -20,13 +20,13 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 20
-template <class _Pointer>
+_LIBCPP_EXPORT_STD template <class _Pointer>
 struct allocation_result {
   _Pointer ptr;
   size_t count;
 };
 
-template <class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Alloc>
 [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr
 allocation_result<typename allocator_traits<_Alloc>::pointer> allocate_at_least(_Alloc& __alloc, size_t __n) {
   if constexpr (requires { __alloc.allocate_at_least(__n); }) {
@@ -36,7 +36,7 @@ allocation_result<typename allocator_traits<_Alloc>::pointer> allocate_at_least(
   }
 }
 
-template <class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Alloc>
 [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr
 auto __allocate_at_least(_Alloc& __alloc, size_t __n) {
   return std::allocate_at_least(__alloc, __n);

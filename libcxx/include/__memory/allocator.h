@@ -25,7 +25,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp> class allocator;
+_LIBCPP_EXPORT_STD template <class _Tp> class allocator;
 
 #if _LIBCPP_STD_VER <= 17 || defined(_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_VOID_SPECIALIZATION)
 // These specializations shouldn't be marked _LIBCPP_DEPRECATED_IN_CXX17.
@@ -83,7 +83,7 @@ struct __non_trivial_if<true, _Unique> {
 // Note: For ABI compatibility between C++20 and previous standards, we make
 //       allocator<void> trivial in C++20.
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS allocator
     : private __non_trivial_if<!is_void<_Tp>::value, allocator<_Tp> >
 {
@@ -172,7 +172,7 @@ public:
 #endif
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS allocator<const _Tp>
     : private __non_trivial_if<!is_void<_Tp>::value, allocator<const _Tp> >
 {
@@ -257,11 +257,11 @@ public:
 #endif
 };
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 bool operator==(const allocator<_Tp>&, const allocator<_Up>&) _NOEXCEPT {return true;}
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 bool operator!=(const allocator<_Tp>&, const allocator<_Up>&) _NOEXCEPT {return false;}
 

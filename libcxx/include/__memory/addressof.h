@@ -18,7 +18,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_CONSTEXPR_SINCE_CXX17
 _LIBCPP_NO_CFI _LIBCPP_INLINE_VISIBILITY
 _Tp*
@@ -68,7 +68,7 @@ addressof(__unsafe_unretained _Tp& __x) _NOEXCEPT
 #endif
 
 #if !defined(_LIBCPP_CXX03_LANG)
-template <class _Tp> _Tp* addressof(const _Tp&&) noexcept = delete;
+_LIBCPP_EXPORT_STD template <class _Tp> _Tp* addressof(const _Tp&&) noexcept = delete;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

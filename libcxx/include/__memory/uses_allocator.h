@@ -43,14 +43,14 @@ struct __uses_allocator<_Tp, _Alloc, false>
 {
 };
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 struct _LIBCPP_TEMPLATE_VIS uses_allocator
     : public __uses_allocator<_Tp, _Alloc>
 {
 };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline constexpr size_t uses_allocator_v = uses_allocator<_Tp, _Alloc>::value;
 #endif
 

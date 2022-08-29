@@ -126,7 +126,7 @@ public:
         {return pointer::pointer_to(__r);}
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS pointer_traits<_Tp*>
 {
     typedef _Tp*      pointer;
@@ -217,13 +217,13 @@ struct __to_address_helper<_Pointer, decltype((void)pointer_traits<_Pointer>::to
 };
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY constexpr
 auto to_address(_Tp *__p) noexcept {
     return _VSTD::__to_address(__p);
 }
 
-template <class _Pointer>
+_LIBCPP_EXPORT_STD template <class _Pointer>
 inline _LIBCPP_INLINE_VISIBILITY constexpr
 auto to_address(const _Pointer& __p) noexcept -> decltype(std::__to_address(__p)) {
     return _VSTD::__to_address(__p);

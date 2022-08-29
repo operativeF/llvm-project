@@ -22,7 +22,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI _LIBCPP_NO_CFI _LIBCPP_DEPRECATED_IN_CXX17
 pair<_Tp*, ptrdiff_t>
 get_temporary_buffer(ptrdiff_t __n) _NOEXCEPT
@@ -67,7 +67,7 @@ get_temporary_buffer(ptrdiff_t __n) _NOEXCEPT
     return __r;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_IN_CXX17
 void return_temporary_buffer(_Tp* __p) _NOEXCEPT
 {
