@@ -125,14 +125,14 @@ void __throw_bad_any_cast()
 }
 
 // Forward declarations
-class _LIBCPP_TEMPLATE_VIS any;
+_LIBCPP_EXPORT_STD class _LIBCPP_TEMPLATE_VIS any;
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 _LIBCPP_INLINE_VISIBILITY
 add_pointer_t<add_const_t<_ValueType>>
 any_cast(any const *) _NOEXCEPT;
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 _LIBCPP_INLINE_VISIBILITY
 add_pointer_t<_ValueType> any_cast(any *) _NOEXCEPT;
 
@@ -188,7 +188,7 @@ namespace __any_imp
 
 } // namespace __any_imp
 
-class _LIBCPP_TEMPLATE_VIS any
+_LIBCPP_EXPORT_STD class _LIBCPP_TEMPLATE_VIS any
 {
 public:
   // construct/destruct
@@ -582,25 +582,25 @@ void any::swap(any & __rhs) _NOEXCEPT
 
 // 6.4 Non-member functions
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 void swap(any & __lhs, any & __rhs) _NOEXCEPT
 {
     __lhs.swap(__rhs);
 }
 
-template <class _Tp, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class ..._Args>
 inline _LIBCPP_INLINE_VISIBILITY
 any make_any(_Args&&... __args) {
     return any(in_place_type<_Tp>, _VSTD::forward<_Args>(__args)...);
 }
 
-template <class _Tp, class _Up, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up, class ..._Args>
 inline _LIBCPP_INLINE_VISIBILITY
 any make_any(initializer_list<_Up> __il, _Args&&... __args) {
     return any(in_place_type<_Tp>, __il, _VSTD::forward<_Args>(__args)...);
 }
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_THROW_BAD_ANY_CAST
 _ValueType any_cast(any const & __v)
@@ -615,7 +615,7 @@ _ValueType any_cast(any const & __v)
     return static_cast<_ValueType>(*__tmp);
 }
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_THROW_BAD_ANY_CAST
 _ValueType any_cast(any & __v)
@@ -630,7 +630,7 @@ _ValueType any_cast(any & __v)
     return static_cast<_ValueType>(*__tmp);
 }
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_AVAILABILITY_THROW_BAD_ANY_CAST
 _ValueType any_cast(any && __v)
@@ -645,7 +645,7 @@ _ValueType any_cast(any && __v)
     return static_cast<_ValueType>(_VSTD::move(*__tmp));
 }
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 inline _LIBCPP_INLINE_VISIBILITY
 add_pointer_t<add_const_t<_ValueType>>
 any_cast(any const * __any) _NOEXCEPT
@@ -667,7 +667,7 @@ _RetType __pointer_or_func_cast(void*, /*IsFunction*/true_type) noexcept {
   return nullptr;
 }
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 _LIBCPP_HIDE_FROM_ABI
 add_pointer_t<_ValueType>
 any_cast(any * __any) _NOEXCEPT
