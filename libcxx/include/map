@@ -964,7 +964,7 @@ public:
     template <class, class, class> friend class _LIBCPP_TEMPLATE_VIS __tree_const_iterator;
 };
 
-template <class _Key, class _Tp, class _Compare = less<_Key>,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare = less<_Key>,
           class _Allocator = allocator<pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS map
 {
@@ -1668,7 +1668,7 @@ map<_Key, _Tp, _Compare, _Allocator>::at(const key_type& __k) const
 }
 
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1677,7 +1677,7 @@ operator==(const map<_Key, _Tp, _Compare, _Allocator>& __x,
     return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1686,7 +1686,7 @@ operator< (const map<_Key, _Tp, _Compare, _Allocator>& __x,
     return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1695,7 +1695,7 @@ operator!=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
     return !(__x == __y);
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1704,7 +1704,7 @@ operator> (const map<_Key, _Tp, _Compare, _Allocator>& __x,
     return __y < __x;
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1713,7 +1713,7 @@ operator>=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
     return !(__x < __y);
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1722,7 +1722,7 @@ operator<=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
     return !(__y < __x);
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -1733,7 +1733,7 @@ swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Key, class _Tp, class _Compare, class _Allocator,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator,
           class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename map<_Key, _Tp, _Compare, _Allocator>::size_type
@@ -1743,7 +1743,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 #endif
 
 
-template <class _Key, class _Tp, class _Compare = less<_Key>,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare = less<_Key>,
           class _Allocator = allocator<pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS multimap
 {
@@ -2262,7 +2262,7 @@ multimap<_Key, _Tp, _Compare, _Allocator>::multimap(multimap&& __m, const alloca
 }
 #endif
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2271,7 +2271,7 @@ operator==(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
     return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2280,7 +2280,7 @@ operator< (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
     return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2289,7 +2289,7 @@ operator!=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
     return !(__x == __y);
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2298,7 +2298,7 @@ operator> (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
     return __y < __x;
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2307,7 +2307,7 @@ operator>=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
     return !(__x < __y);
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2316,7 +2316,7 @@ operator<=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
     return !(__y < __x);
 }
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
@@ -2327,7 +2327,7 @@ swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Key, class _Tp, class _Compare, class _Allocator,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator,
           class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename multimap<_Key, _Tp, _Compare, _Allocator>::size_type
