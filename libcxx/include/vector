@@ -334,7 +334,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, class _Allocator /* = allocator<_Tp> */>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator /* = allocator<_Tp> */>
 class _LIBCPP_TEMPLATE_VIS vector
 {
 private:
@@ -3172,7 +3172,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<vector<bool, _Allocator> >
         {return __vec.__hash_code();}
 };
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 bool
@@ -3182,7 +3182,7 @@ operator==(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __
     return __sz == __y.size() && std::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 bool
@@ -3191,7 +3191,7 @@ operator!=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __
     return !(__x == __y);
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 bool
@@ -3200,7 +3200,7 @@ operator< (const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __
     return std::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 bool
@@ -3209,7 +3209,7 @@ operator> (const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __
     return __y < __x;
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 bool
@@ -3218,7 +3218,7 @@ operator>=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __
     return !(__x < __y);
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 bool
@@ -3227,7 +3227,7 @@ operator<=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __
     return !(__y < __x);
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI
 void
@@ -3238,7 +3238,7 @@ swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp, class _Allocator, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Up>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI typename vector<_Tp, _Allocator>::size_type
 erase(vector<_Tp, _Allocator>& __c, const _Up& __v) {
@@ -3247,7 +3247,7 @@ erase(vector<_Tp, _Allocator>& __c, const _Up& __v) {
   return __old_size - __c.size();
 }
 
-template <class _Tp, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Predicate>
 _LIBCPP_CONSTEXPR_SINCE_CXX20
 inline _LIBCPP_HIDE_FROM_ABI typename vector<_Tp, _Allocator>::size_type
 erase_if(vector<_Tp, _Allocator>& __c, _Predicate __pred) {
