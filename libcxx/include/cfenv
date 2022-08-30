@@ -71,20 +71,20 @@ int feupdateenv(const fenv_t* envp);
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-using ::fenv_t _LIBCPP_USING_IF_EXISTS;
-using ::fexcept_t _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fenv_t _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fexcept_t _LIBCPP_USING_IF_EXISTS;
 
-using ::feclearexcept _LIBCPP_USING_IF_EXISTS;
-using ::fegetexceptflag _LIBCPP_USING_IF_EXISTS;
-using ::feraiseexcept _LIBCPP_USING_IF_EXISTS;
-using ::fesetexceptflag _LIBCPP_USING_IF_EXISTS;
-using ::fetestexcept _LIBCPP_USING_IF_EXISTS;
-using ::fegetround _LIBCPP_USING_IF_EXISTS;
-using ::fesetround _LIBCPP_USING_IF_EXISTS;
-using ::fegetenv _LIBCPP_USING_IF_EXISTS;
-using ::feholdexcept _LIBCPP_USING_IF_EXISTS;
-using ::fesetenv _LIBCPP_USING_IF_EXISTS;
-using ::feupdateenv _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::feclearexcept _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fegetexceptflag _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::feraiseexcept _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fesetexceptflag _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fetestexcept _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fegetround _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fesetround _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fegetenv _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::feholdexcept _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::fesetenv _LIBCPP_USING_IF_EXISTS;
+_LIBCPP_EXPORT_STD using ::feupdateenv _LIBCPP_USING_IF_EXISTS;
 
 _LIBCPP_END_NAMESPACE_STD
 
