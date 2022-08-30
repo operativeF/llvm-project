@@ -117,7 +117,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-enum float_round_style
+_LIBCPP_EXPORT_STD enum float_round_style
 {
     round_indeterminate       = -1,
     round_toward_zero         =  0,
@@ -126,7 +126,7 @@ enum float_round_style
     round_toward_neg_infinity =  3
 };
 
-enum float_denorm_style
+_LIBCPP_EXPORT_STD enum float_denorm_style
 {
     denorm_indeterminate = -1,
     denorm_absent = 0,
@@ -445,7 +445,7 @@ protected:
     static _LIBCPP_CONSTEXPR const float_round_style round_style = round_to_nearest;
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS numeric_limits
     : private __libcpp_numeric_limits<__remove_cv_t<_Tp> >
 {
