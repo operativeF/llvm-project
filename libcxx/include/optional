@@ -215,13 +215,13 @@ void __throw_bad_optional_access() {
 #endif
 }
 
-struct nullopt_t
+_LIBCPP_EXPORT_STD struct nullopt_t
 {
     struct __secret_tag { _LIBCPP_INLINE_VISIBILITY explicit __secret_tag() = default; };
     _LIBCPP_INLINE_VISIBILITY constexpr explicit nullopt_t(__secret_tag, __secret_tag) noexcept {}
 };
 
-inline constexpr nullopt_t nullopt{nullopt_t::__secret_tag{}, nullopt_t::__secret_tag{}};
+_LIBCPP_EXPORT_STD inline constexpr nullopt_t nullopt{nullopt_t::__secret_tag{}, nullopt_t::__secret_tag{}};
 
 struct __optional_construct_from_invoke_tag {};
 
@@ -621,13 +621,13 @@ using __optional_sfinae_assign_base_t = __sfinae_assign_base<
     (is_move_constructible<_Tp>::value && is_move_assignable<_Tp>::value)
 >;
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 class optional;
 template <class _Tp>
 struct __is_std_optional : false_type {};
 template <class _Tp> struct __is_std_optional<optional<_Tp>> : true_type {};
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class optional
     : private __optional_move_assign_base<_Tp>
     , private __optional_sfinae_ctor_base_t<_Tp>
@@ -1182,7 +1182,7 @@ template<class _Tp>
 #endif
 
 // Comparisons between optionals
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() ==
@@ -1198,7 +1198,7 @@ operator==(const optional<_Tp>& __x, const optional<_Up>& __y)
     return *__x == *__y;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() !=
@@ -1214,7 +1214,7 @@ operator!=(const optional<_Tp>& __x, const optional<_Up>& __y)
     return *__x != *__y;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() <
@@ -1230,7 +1230,7 @@ operator<(const optional<_Tp>& __x, const optional<_Up>& __y)
     return *__x < *__y;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() >
@@ -1246,7 +1246,7 @@ operator>(const optional<_Tp>& __x, const optional<_Up>& __y)
     return *__x > *__y;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() <=
@@ -1262,7 +1262,7 @@ operator<=(const optional<_Tp>& __x, const optional<_Up>& __y)
     return *__x <= *__y;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() >=
@@ -1279,7 +1279,7 @@ operator>=(const optional<_Tp>& __x, const optional<_Up>& __y)
 }
 
 // Comparisons with nullopt
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator==(const optional<_Tp>& __x, nullopt_t) noexcept
@@ -1287,7 +1287,7 @@ operator==(const optional<_Tp>& __x, nullopt_t) noexcept
     return !static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator==(nullopt_t, const optional<_Tp>& __x) noexcept
@@ -1295,7 +1295,7 @@ operator==(nullopt_t, const optional<_Tp>& __x) noexcept
     return !static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator!=(const optional<_Tp>& __x, nullopt_t) noexcept
@@ -1303,7 +1303,7 @@ operator!=(const optional<_Tp>& __x, nullopt_t) noexcept
     return static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator!=(nullopt_t, const optional<_Tp>& __x) noexcept
@@ -1311,7 +1311,7 @@ operator!=(nullopt_t, const optional<_Tp>& __x) noexcept
     return static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator<(const optional<_Tp>&, nullopt_t) noexcept
@@ -1319,7 +1319,7 @@ operator<(const optional<_Tp>&, nullopt_t) noexcept
     return false;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator<(nullopt_t, const optional<_Tp>& __x) noexcept
@@ -1327,7 +1327,7 @@ operator<(nullopt_t, const optional<_Tp>& __x) noexcept
     return static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator<=(const optional<_Tp>& __x, nullopt_t) noexcept
@@ -1335,7 +1335,7 @@ operator<=(const optional<_Tp>& __x, nullopt_t) noexcept
     return !static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator<=(nullopt_t, const optional<_Tp>&) noexcept
@@ -1343,7 +1343,7 @@ operator<=(nullopt_t, const optional<_Tp>&) noexcept
     return true;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator>(const optional<_Tp>& __x, nullopt_t) noexcept
@@ -1351,7 +1351,7 @@ operator>(const optional<_Tp>& __x, nullopt_t) noexcept
     return static_cast<bool>(__x);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator>(nullopt_t, const optional<_Tp>&) noexcept
@@ -1359,7 +1359,7 @@ operator>(nullopt_t, const optional<_Tp>&) noexcept
     return false;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator>=(const optional<_Tp>&, nullopt_t) noexcept
@@ -1367,7 +1367,7 @@ operator>=(const optional<_Tp>&, nullopt_t) noexcept
     return true;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 bool
 operator>=(nullopt_t, const optional<_Tp>& __x) noexcept
@@ -1376,7 +1376,7 @@ operator>=(nullopt_t, const optional<_Tp>& __x) noexcept
 }
 
 // Comparisons with T
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() ==
@@ -1388,7 +1388,7 @@ operator==(const optional<_Tp>& __x, const _Up& __v)
     return static_cast<bool>(__x) ? *__x == __v : false;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() ==
@@ -1400,7 +1400,7 @@ operator==(const _Tp& __v, const optional<_Up>& __x)
     return static_cast<bool>(__x) ? __v == *__x : false;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() !=
@@ -1412,7 +1412,7 @@ operator!=(const optional<_Tp>& __x, const _Up& __v)
     return static_cast<bool>(__x) ? *__x != __v : true;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() !=
@@ -1424,7 +1424,7 @@ operator!=(const _Tp& __v, const optional<_Up>& __x)
     return static_cast<bool>(__x) ? __v != *__x : true;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() <
@@ -1436,7 +1436,7 @@ operator<(const optional<_Tp>& __x, const _Up& __v)
     return static_cast<bool>(__x) ? *__x < __v : true;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() <
@@ -1448,7 +1448,7 @@ operator<(const _Tp& __v, const optional<_Up>& __x)
     return static_cast<bool>(__x) ? __v < *__x : false;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() <=
@@ -1460,7 +1460,7 @@ operator<=(const optional<_Tp>& __x, const _Up& __v)
     return static_cast<bool>(__x) ? *__x <= __v : true;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() <=
@@ -1472,7 +1472,7 @@ operator<=(const _Tp& __v, const optional<_Up>& __x)
     return static_cast<bool>(__x) ? __v <= *__x : false;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() >
@@ -1484,7 +1484,7 @@ operator>(const optional<_Tp>& __x, const _Up& __v)
     return static_cast<bool>(__x) ? *__x > __v : false;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() >
@@ -1496,7 +1496,7 @@ operator>(const _Tp& __v, const optional<_Up>& __x)
     return static_cast<bool>(__x) ? __v > *__x : true;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() >=
@@ -1508,7 +1508,7 @@ operator>=(const optional<_Tp>& __x, const _Up& __v)
     return static_cast<bool>(__x) ? *__x >= __v : false;
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY constexpr
 enable_if_t<
     is_convertible_v<decltype(declval<const _Tp&>() >=
@@ -1521,7 +1521,7 @@ operator>=(const _Tp& __v, const optional<_Up>& __x)
 }
 
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 enable_if_t<
     is_move_constructible_v<_Tp> && is_swappable_v<_Tp>,
@@ -1532,21 +1532,21 @@ swap(optional<_Tp>& __x, optional<_Tp>& __y) noexcept(noexcept(__x.swap(__y)))
     __x.swap(__y);
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY constexpr
 optional<decay_t<_Tp>> make_optional(_Tp&& __v)
 {
     return optional<decay_t<_Tp>>(_VSTD::forward<_Tp>(__v));
 }
 
-template <class _Tp, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class... _Args>
 _LIBCPP_INLINE_VISIBILITY constexpr
 optional<_Tp> make_optional(_Args&&... __args)
 {
     return optional<_Tp>(in_place, _VSTD::forward<_Args>(__args)...);
 }
 
-template <class _Tp, class _Up, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up, class... _Args>
 _LIBCPP_INLINE_VISIBILITY constexpr
 optional<_Tp> make_optional(initializer_list<_Up> __il,  _Args&&... __args)
 {
