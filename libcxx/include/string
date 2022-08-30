@@ -606,28 +606,28 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 // basic_string
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 basic_string<_CharT, _Traits, _Allocator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __x,
           const basic_string<_CharT, _Traits, _Allocator>& __y);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDDEN _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const _CharT* __x, const basic_string<_CharT,_Traits,_Allocator>& __y);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(_CharT __x, const basic_string<_CharT,_Traits,_Allocator>& __y);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __x, const _CharT* __y);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __x, _CharT __y);
@@ -653,7 +653,7 @@ struct __can_be_converted_to_string_view : public _BoolConstant<
 
 struct __uninitialized_size_tag {};
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 class basic_string
 {
 public:
@@ -4005,7 +4005,7 @@ basic_string<_CharT, _Traits, _Allocator>::__clear_and_shrink() _NOEXCEPT
 
 // operator==
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_CONSTEXPR_SINCE_CXX20 _LIBCPP_HIDE_FROM_ABI
 bool
 operator==(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4021,7 +4021,7 @@ operator==(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
 #endif
 }
 
-template<class _Allocator>
+_LIBCPP_EXPORT_STD template<class _Allocator>
 inline _LIBCPP_CONSTEXPR_SINCE_CXX20 _LIBCPP_HIDE_FROM_ABI
 bool
 operator==(const basic_string<char, char_traits<char>, _Allocator>& __lhs,
@@ -4041,7 +4041,7 @@ operator==(const basic_string<char, char_traits<char>, _Allocator>& __lhs,
 }
 
 #if _LIBCPP_STD_VER <= 17
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator==(const _CharT* __lhs,
@@ -4055,7 +4055,7 @@ operator==(const _CharT* __lhs,
 }
 #endif // _LIBCPP_STD_VER <= 17
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_CONSTEXPR_SINCE_CXX20 _LIBCPP_HIDE_FROM_ABI
 bool
 operator==(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
@@ -4074,14 +4074,14 @@ operator==(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI constexpr auto operator<=>(
     const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     const basic_string<_CharT, _Traits, _Allocator>& __rhs) noexcept {
     return basic_string_view<_CharT, _Traits>(__lhs) <=> basic_string_view<_CharT, _Traits>(__rhs);
 }
 
-template <class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI constexpr auto
 operator<=>(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs) {
     return basic_string_view<_CharT, _Traits>(__lhs) <=> basic_string_view<_CharT, _Traits>(__rhs);
@@ -4235,7 +4235,7 @@ operator>=(const _CharT* __lhs,
 
 // operator +
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4254,7 +4254,7 @@ operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return __r;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDDEN _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& __rhs)
@@ -4272,7 +4272,7 @@ operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& _
     return __r;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
@@ -4289,7 +4289,7 @@ operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
     return __r;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs)
@@ -4307,7 +4307,7 @@ operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* 
     return __r;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
@@ -4326,7 +4326,7 @@ operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
 
 #ifndef _LIBCPP_CXX03_LANG
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const basic_string<_CharT, _Traits, _Allocator>& __rhs)
@@ -4334,7 +4334,7 @@ operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const basic_string<
     return std::move(__lhs.append(__rhs));
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
@@ -4342,7 +4342,7 @@ operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, basic_string<_
     return std::move(__rhs.insert(0, __lhs));
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
@@ -4350,7 +4350,7 @@ operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, basic_string<_CharT
     return std::move(__lhs.append(__rhs));
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(const _CharT* __lhs , basic_string<_CharT,_Traits,_Allocator>&& __rhs)
@@ -4358,7 +4358,7 @@ operator+(const _CharT* __lhs , basic_string<_CharT,_Traits,_Allocator>&& __rhs)
     return std::move(__rhs.insert(0, __lhs));
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(_CharT __lhs, basic_string<_CharT,_Traits,_Allocator>&& __rhs)
@@ -4367,7 +4367,7 @@ operator+(_CharT __lhs, basic_string<_CharT,_Traits,_Allocator>&& __rhs)
     return std::move(__rhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const _CharT* __rhs)
@@ -4375,7 +4375,7 @@ operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const _CharT* __rhs
     return std::move(__lhs.append(__rhs));
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 basic_string<_CharT, _Traits, _Allocator>
 operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, _CharT __rhs)
@@ -4388,7 +4388,7 @@ operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, _CharT __rhs)
 
 // swap
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 void
 swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4398,46 +4398,46 @@ swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
     __lhs.swap(__rhs);
 }
 
-_LIBCPP_FUNC_VIS int                stoi  (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS long               stol  (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS unsigned long      stoul (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS long long          stoll (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS unsigned long long stoull(const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS int                stoi  (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long               stol  (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unsigned long      stoul (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long long          stoll (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unsigned long long stoull(const string& __str, size_t* __idx = nullptr, int __base = 10);
 
-_LIBCPP_FUNC_VIS float       stof (const string& __str, size_t* __idx = nullptr);
-_LIBCPP_FUNC_VIS double      stod (const string& __str, size_t* __idx = nullptr);
-_LIBCPP_FUNC_VIS long double stold(const string& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS float       stof (const string& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS double      stod (const string& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long double stold(const string& __str, size_t* __idx = nullptr);
 
-_LIBCPP_FUNC_VIS string to_string(int __val);
-_LIBCPP_FUNC_VIS string to_string(unsigned __val);
-_LIBCPP_FUNC_VIS string to_string(long __val);
-_LIBCPP_FUNC_VIS string to_string(unsigned long __val);
-_LIBCPP_FUNC_VIS string to_string(long long __val);
-_LIBCPP_FUNC_VIS string to_string(unsigned long long __val);
-_LIBCPP_FUNC_VIS string to_string(float __val);
-_LIBCPP_FUNC_VIS string to_string(double __val);
-_LIBCPP_FUNC_VIS string to_string(long double __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(int __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(unsigned __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(unsigned long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(long long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(unsigned long long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(float __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(double __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(long double __val);
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-_LIBCPP_FUNC_VIS int                stoi  (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS long               stol  (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS unsigned long      stoul (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS long long          stoll (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_FUNC_VIS unsigned long long stoull(const wstring& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS int                stoi  (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long               stol  (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unsigned long      stoul (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long long          stoll (const wstring& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unsigned long long stoull(const wstring& __str, size_t* __idx = nullptr, int __base = 10);
 
-_LIBCPP_FUNC_VIS float       stof (const wstring& __str, size_t* __idx = nullptr);
-_LIBCPP_FUNC_VIS double      stod (const wstring& __str, size_t* __idx = nullptr);
-_LIBCPP_FUNC_VIS long double stold(const wstring& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS float       stof (const wstring& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS double      stod (const wstring& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long double stold(const wstring& __str, size_t* __idx = nullptr);
 
-_LIBCPP_FUNC_VIS wstring to_wstring(int __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(unsigned __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(long __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(unsigned long __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(long long __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(unsigned long long __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(float __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(double __val);
-_LIBCPP_FUNC_VIS wstring to_wstring(long double __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(int __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(unsigned __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(unsigned long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(long long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(unsigned long long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(float __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(double __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wstring to_wstring(long double __val);
 #endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 
 template<class _CharT, class _Traits, class _Allocator>
@@ -4472,41 +4472,41 @@ template <class _Allocator>
 struct hash<basic_string<wchar_t, char_traits<wchar_t>, _Allocator> > : __string_hash<wchar_t, _Allocator> {};
 #endif
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const basic_string<_CharT, _Traits, _Allocator>& __str);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            basic_string<_CharT, _Traits, _Allocator>& __str);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>& __is,
         basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>& __is,
         basic_string<_CharT, _Traits, _Allocator>& __str);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>&& __is,
         basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm);
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>&& __is,
         basic_string<_CharT, _Traits, _Allocator>& __str);
 
 #if _LIBCPP_STD_VER > 17
-template <class _CharT, class _Traits, class _Allocator, class _Up>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator, class _Up>
 inline _LIBCPP_HIDE_FROM_ABI
     typename basic_string<_CharT, _Traits, _Allocator>::size_type
     erase(basic_string<_CharT, _Traits, _Allocator>& __str, const _Up& __v) {
@@ -4515,7 +4515,7 @@ inline _LIBCPP_HIDE_FROM_ABI
   return __old_size - __str.size();
 }
 
-template <class _CharT, class _Traits, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator, class _Predicate>
 inline _LIBCPP_HIDE_FROM_ABI
     typename basic_string<_CharT, _Traits, _Allocator>::size_type
     erase_if(basic_string<_CharT, _Traits, _Allocator>& __str,
@@ -4569,14 +4569,14 @@ inline namespace literals
 {
   inline namespace string_literals
   {
-    inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
+    _LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
     basic_string<char> operator "" s( const char *__str, size_t __len )
     {
         return basic_string<char> (__str, __len);
     }
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-    inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
+    _LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
     basic_string<wchar_t> operator "" s( const wchar_t *__str, size_t __len )
     {
         return basic_string<wchar_t> (__str, __len);
@@ -4584,20 +4584,20 @@ inline namespace literals
 #endif
 
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
-    inline _LIBCPP_HIDE_FROM_ABI constexpr
+    _LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI constexpr
     basic_string<char8_t> operator "" s(const char8_t *__str, size_t __len)
     {
         return basic_string<char8_t> (__str, __len);
     }
 #endif
 
-    inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
+    _LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
     basic_string<char16_t> operator "" s( const char16_t *__str, size_t __len )
     {
         return basic_string<char16_t> (__str, __len);
     }
 
-    inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
+    _LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
     basic_string<char32_t> operator "" s( const char32_t *__str, size_t __len )
     {
         return basic_string<char32_t> (__str, __len);

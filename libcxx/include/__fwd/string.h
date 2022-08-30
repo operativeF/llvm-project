@@ -18,7 +18,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 struct _LIBCPP_TEMPLATE_VIS char_traits;
 template <>
 struct char_traits<char>;
@@ -38,43 +38,43 @@ template <>
 struct char_traits<wchar_t>;
 #endif
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS allocator;
 
-template <class _CharT, class _Traits = char_traits<_CharT>, class _Allocator = allocator<_CharT> >
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT>, class _Allocator = allocator<_CharT> >
 class _LIBCPP_TEMPLATE_VIS basic_string;
 
-using string = basic_string<char>;
+_LIBCPP_EXPORT_STD using string = basic_string<char>;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-using wstring = basic_string<wchar_t>;
+_LIBCPP_EXPORT_STD using wstring = basic_string<wchar_t>;
 #endif
 
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
-using u8string = basic_string<char8_t>;
+_LIBCPP_EXPORT_STD using u8string = basic_string<char8_t>;
 #endif
 
-using u16string = basic_string<char16_t>;
-using u32string = basic_string<char32_t>;
+_LIBCPP_EXPORT_STD using u16string = basic_string<char16_t>;
+_LIBCPP_EXPORT_STD using u32string = basic_string<char32_t>;
 
 #if _LIBCPP_STD_VER >= 17
 
 namespace pmr {
-template <class _CharT, class _Traits = char_traits<_CharT>>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT>>
 using basic_string = std::basic_string<_CharT, _Traits, polymorphic_allocator<_CharT>>;
 
-using string = basic_string<char>;
+_LIBCPP_EXPORT_STD using string = basic_string<char>;
 
 #  ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-using wstring = basic_string<wchar_t>;
+_LIBCPP_EXPORT_STD using wstring = basic_string<wchar_t>;
 #  endif
 
 #  ifndef _LIBCPP_HAS_NO_CHAR8_T
-using u8string = basic_string<char8_t>;
+_LIBCPP_EXPORT_STD using u8string = basic_string<char8_t>;
 #  endif
 
-using u16string = basic_string<char16_t>;
-using u32string = basic_string<char32_t>;
+_LIBCPP_EXPORT_STD using u16string = basic_string<char16_t>;
+_LIBCPP_EXPORT_STD using u32string = basic_string<char32_t>;
 
 } // namespace pmr
 
