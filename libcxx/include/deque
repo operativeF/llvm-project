@@ -214,7 +214,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, class _Allocator = allocator<_Tp> > class _LIBCPP_TEMPLATE_VIS deque;
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator = allocator<_Tp> > class _LIBCPP_TEMPLATE_VIS deque;
 
 template <class _ValueType, class _Pointer, class _Reference, class _MapPointer,
           class _DiffType, _DiffType _BlockSize>
@@ -937,7 +937,7 @@ move_backward(__deque_iterator<_V1, _P1, _R1, _M1, _D1, _B1> __f,
     return __r;
 }
 
-template <class _Tp, class _Allocator /*= allocator<_Tp>*/>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator /*= allocator<_Tp>*/>
 class _LIBCPP_TEMPLATE_VIS deque
 {
 public:
@@ -2845,7 +2845,7 @@ deque<_Tp, _Allocator>::clear() _NOEXCEPT
     }
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator==(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
@@ -2854,7 +2854,7 @@ operator==(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
     return __sz == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator!=(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
@@ -2862,7 +2862,7 @@ operator!=(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
     return !(__x == __y);
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator< (const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
@@ -2870,7 +2870,7 @@ operator< (const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
     return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator> (const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
@@ -2878,7 +2878,7 @@ operator> (const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
     return __y < __x;
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator>=(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
@@ -2886,7 +2886,7 @@ operator>=(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
     return !(__x < __y);
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator<=(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
@@ -2894,7 +2894,7 @@ operator<=(const deque<_Tp, _Allocator>& __x, const deque<_Tp, _Allocator>& __y)
     return !(__y < __x);
 }
 
-template <class _Tp, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 void
 swap(deque<_Tp, _Allocator>& __x, deque<_Tp, _Allocator>& __y)
@@ -2904,7 +2904,7 @@ swap(deque<_Tp, _Allocator>& __x, deque<_Tp, _Allocator>& __y)
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp, class _Allocator, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Up>
 inline _LIBCPP_HIDE_FROM_ABI typename deque<_Tp, _Allocator>::size_type
 erase(deque<_Tp, _Allocator>& __c, const _Up& __v) {
   auto __old_size = __c.size();
@@ -2912,7 +2912,7 @@ erase(deque<_Tp, _Allocator>& __c, const _Up& __v) {
   return __old_size - __c.size();
 }
 
-template <class _Tp, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Predicate>
 inline _LIBCPP_HIDE_FROM_ABI typename deque<_Tp, _Allocator>::size_type
 erase_if(deque<_Tp, _Allocator>& __c, _Predicate __pred) {
   auto __old_size = __c.size();
