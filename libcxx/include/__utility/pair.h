@@ -42,7 +42,7 @@ struct __non_trivially_copyable_base {
 };
 #endif
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 struct _LIBCPP_TEMPLATE_VIS pair
 #if defined(_LIBCPP_DEPRECATED_ABI_DISABLE_PAIR_TRIVIAL_COPY_CTOR)
 : private __non_trivially_copyable_base<_T1, _T2>
@@ -409,7 +409,7 @@ pair(_T1, _T2) -> pair<_T1, _T2>;
 
 // [pairs.spec], specialized algorithms
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 bool
 operator==(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
@@ -419,7 +419,7 @@ operator==(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 _LIBCPP_HIDE_FROM_ABI constexpr
 common_comparison_category_t<
         __synth_three_way_result<_T1>,
@@ -492,7 +492,7 @@ struct common_type<pair<_T1, _T2>, pair<_U1, _U2>> {
 };
 #endif // _LIBCPP_STD_VER > 20
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 typename enable_if
 <
@@ -508,7 +508,7 @@ swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
 }
 
 #if _LIBCPP_STD_VER > 20
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
   requires (__is_swappable<const _T1>::value &&
             __is_swappable<const _T2>::value)
 _LIBCPP_HIDE_FROM_ABI constexpr
@@ -519,7 +519,7 @@ void swap(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
 }
 #endif
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 pair<typename __unwrap_ref_decay<_T1>::type, typename __unwrap_ref_decay<_T2>::type>
 make_pair(_T1&& __t1, _T2&& __t2)
@@ -528,11 +528,11 @@ make_pair(_T1&& __t1, _T2&& __t2)
                (_VSTD::forward<_T1>(__t1), _VSTD::forward<_T2>(__t2));
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
   struct _LIBCPP_TEMPLATE_VIS tuple_size<pair<_T1, _T2> >
     : public integral_constant<size_t, 2> {};
 
-template <size_t _Ip, class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _T1, class _T2>
 struct _LIBCPP_TEMPLATE_VIS tuple_element<_Ip, pair<_T1, _T2> >
 {
     static_assert(_Ip < 2, "Index out of bounds in std::tuple_element<std::pair<T1, T2>>");
@@ -608,7 +608,7 @@ struct __get_pair<1>
     get(const pair<_T1, _T2>&& __p) _NOEXCEPT {return _VSTD::forward<const _T2>(__p.second);}
 };
 
-template <size_t _Ip, class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 typename tuple_element<_Ip, pair<_T1, _T2> >::type&
 get(pair<_T1, _T2>& __p) _NOEXCEPT
@@ -616,7 +616,7 @@ get(pair<_T1, _T2>& __p) _NOEXCEPT
     return __get_pair<_Ip>::get(__p);
 }
 
-template <size_t _Ip, class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 const typename tuple_element<_Ip, pair<_T1, _T2> >::type&
 get(const pair<_T1, _T2>& __p) _NOEXCEPT
@@ -624,7 +624,7 @@ get(const pair<_T1, _T2>& __p) _NOEXCEPT
     return __get_pair<_Ip>::get(__p);
 }
 
-template <size_t _Ip, class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 typename tuple_element<_Ip, pair<_T1, _T2> >::type&&
 get(pair<_T1, _T2>&& __p) _NOEXCEPT
@@ -632,7 +632,7 @@ get(pair<_T1, _T2>&& __p) _NOEXCEPT
     return __get_pair<_Ip>::get(_VSTD::move(__p));
 }
 
-template <size_t _Ip, class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 const typename tuple_element<_Ip, pair<_T1, _T2> >::type&&
 get(const pair<_T1, _T2>&& __p) _NOEXCEPT
@@ -641,56 +641,56 @@ get(const pair<_T1, _T2>&& __p) _NOEXCEPT
 }
 
 #if _LIBCPP_STD_VER > 11
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 & get(pair<_T1, _T2>& __p) _NOEXCEPT
 {
     return __get_pair<0>::get(__p);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 const & get(pair<_T1, _T2> const& __p) _NOEXCEPT
 {
     return __get_pair<0>::get(__p);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 && get(pair<_T1, _T2>&& __p) _NOEXCEPT
 {
     return __get_pair<0>::get(_VSTD::move(__p));
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 const && get(pair<_T1, _T2> const&& __p) _NOEXCEPT
 {
     return __get_pair<0>::get(_VSTD::move(__p));
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 & get(pair<_T2, _T1>& __p) _NOEXCEPT
 {
     return __get_pair<1>::get(__p);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 const & get(pair<_T2, _T1> const& __p) _NOEXCEPT
 {
     return __get_pair<1>::get(__p);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 && get(pair<_T2, _T1>&& __p) _NOEXCEPT
 {
     return __get_pair<1>::get(_VSTD::move(__p));
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY
 constexpr _T1 const && get(pair<_T2, _T1> const&& __p) _NOEXCEPT
 {

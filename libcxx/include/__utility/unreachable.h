@@ -29,7 +29,7 @@ _LIBCPP_NORETURN _LIBCPP_HIDE_FROM_ABI inline void __libcpp_unreachable()
 
 #if _LIBCPP_STD_VER > 20
 
-[[noreturn]] _LIBCPP_HIDE_FROM_ABI inline void unreachable() { __libcpp_unreachable(); }
+_LIBCPP_EXPORT_STD [[noreturn]] _LIBCPP_HIDE_FROM_ABI inline void unreachable() { __libcpp_unreachable(); }
 
 #endif // _LIBCPP_STD_VER > 20
 

@@ -28,7 +28,7 @@ __to_underlying(_Tp __val) noexcept {
 #endif // !_LIBCPP_CXX03_LANG
 
 #if _LIBCPP_STD_VER > 20
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_NODISCARD_EXT _LIBCPP_INLINE_VISIBILITY constexpr underlying_type_t<_Tp>
 to_underlying(_Tp __val) noexcept {
   return _VSTD::__to_underlying(__val);

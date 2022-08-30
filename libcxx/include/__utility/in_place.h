@@ -20,23 +20,23 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
 
-struct _LIBCPP_TYPE_VIS in_place_t {
+_LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS in_place_t {
     explicit in_place_t() = default;
 };
-inline constexpr in_place_t in_place{};
+_LIBCPP_EXPORT_STD inline constexpr in_place_t in_place{};
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS in_place_type_t {
     explicit in_place_type_t() = default;
 };
 template <class _Tp>
-inline constexpr in_place_type_t<_Tp> in_place_type{};
+_LIBCPP_EXPORT_STD inline constexpr in_place_type_t<_Tp> in_place_type{};
 
-template <size_t _Idx>
+_LIBCPP_EXPORT_STD template <size_t _Idx>
 struct _LIBCPP_TEMPLATE_VIS in_place_index_t {
     explicit in_place_index_t() = default;
 };
-template <size_t _Idx>
+_LIBCPP_EXPORT_STD template <size_t _Idx>
 inline constexpr in_place_index_t<_Idx> in_place_index{};
 
 template <class _Tp> struct __is_inplace_type_imp : false_type {};

@@ -20,13 +20,13 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 // Suppress deprecation notice for volatile-qualified return type resulting
 // from volatile-qualified types _Tp.
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _Tp&& __declval(int);
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _Tp __declval(long);
 _LIBCPP_SUPPRESS_DEPRECATED_POP
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 decltype(__declval<_Tp>(0)) declval() _NOEXCEPT;
 
 _LIBCPP_END_NAMESPACE_STD

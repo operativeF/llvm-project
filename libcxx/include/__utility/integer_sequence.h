@@ -86,7 +86,7 @@ using __make_indices_imp =
 
 #if _LIBCPP_STD_VER > 11
 
-template<class _Tp, _Tp... _Ip>
+_LIBCPP_EXPORT_STD template<class _Tp, _Tp... _Ip>
 struct _LIBCPP_TEMPLATE_VIS integer_sequence
 {
     typedef _Tp value_type;
@@ -99,7 +99,7 @@ struct _LIBCPP_TEMPLATE_VIS integer_sequence
     size() noexcept { return sizeof...(_Ip); }
 };
 
-template<size_t... _Ip>
+_LIBCPP_EXPORT_STD template<size_t... _Ip>
     using index_sequence = integer_sequence<size_t, _Ip...>;
 
 #if __has_builtin(__make_integer_seq) && !defined(_LIBCPP_TESTING_FALLBACK_MAKE_INTEGER_SEQUENCE)
@@ -128,13 +128,13 @@ using __make_integer_sequence _LIBCPP_NODEBUG = typename __make_integer_sequence
 
 #endif
 
-template<class _Tp, _Tp _Np>
+_LIBCPP_EXPORT_STD template<class _Tp, _Tp _Np>
     using make_integer_sequence = __make_integer_sequence<_Tp, _Np>;
 
-template<size_t _Np>
+_LIBCPP_EXPORT_STD template<size_t _Np>
     using make_index_sequence = make_integer_sequence<size_t, _Np>;
 
-template<class... _Tp>
+_LIBCPP_EXPORT_STD template<class... _Tp>
     using index_sequence_for = make_index_sequence<sizeof...(_Tp)>;
 
 #endif // _LIBCPP_STD_VER > 11
