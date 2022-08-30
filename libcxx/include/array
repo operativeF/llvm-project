@@ -146,7 +146,7 @@ template <size_t I, class T, size_t N> const T&& get(const array<T, N>&&) noexce
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 struct _LIBCPP_TEMPLATE_VIS array
 {
     // types:
@@ -384,7 +384,7 @@ array(_Tp, _Args...)
   -> array<_Tp, 1 + sizeof...(_Args)>;
 #endif
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 operator==(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
@@ -392,7 +392,7 @@ operator==(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
     return _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 operator!=(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
@@ -400,7 +400,7 @@ operator!=(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
     return !(__x == __y);
 }
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 operator<(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
@@ -409,7 +409,7 @@ operator<(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
                                           __y.begin(), __y.end());
 }
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 operator>(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
@@ -417,7 +417,7 @@ operator>(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
     return __y < __x;
 }
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 operator<=(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
@@ -425,7 +425,7 @@ operator<=(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
     return !(__y < __x);
 }
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 bool
 operator>=(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
@@ -433,7 +433,7 @@ operator>=(const array<_Tp, _Size>& __x, const array<_Tp, _Size>& __y)
     return !(__x < __y);
 }
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 __enable_if_t<_Size == 0 || __is_swappable<_Tp>::value, void>
 swap(array<_Tp, _Size>& __x, array<_Tp, _Size>& __y)
@@ -453,7 +453,7 @@ struct _LIBCPP_TEMPLATE_VIS tuple_element<_Ip, array<_Tp, _Size> >
     typedef _Tp type;
 };
 
-template <size_t _Ip, class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 _Tp&
 get(array<_Tp, _Size>& __a) _NOEXCEPT
@@ -462,7 +462,7 @@ get(array<_Tp, _Size>& __a) _NOEXCEPT
     return __a.__elems_[_Ip];
 }
 
-template <size_t _Ip, class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 const _Tp&
 get(const array<_Tp, _Size>& __a) _NOEXCEPT
@@ -471,7 +471,7 @@ get(const array<_Tp, _Size>& __a) _NOEXCEPT
     return __a.__elems_[_Ip];
 }
 
-template <size_t _Ip, class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 _Tp&&
 get(array<_Tp, _Size>&& __a) _NOEXCEPT
@@ -480,7 +480,7 @@ get(array<_Tp, _Size>&& __a) _NOEXCEPT
     return _VSTD::move(__a.__elems_[_Ip]);
 }
 
-template <size_t _Ip, class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _Tp, size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 const _Tp&&
 get(const array<_Tp, _Size>&& __a) _NOEXCEPT
@@ -503,7 +503,7 @@ __to_array_rvalue_impl(_Tp(&&__arr)[_Size], index_sequence<_Index...>) {
   return {{_VSTD::move(__arr[_Index])...}};
 }
 
-template <typename _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <typename _Tp, size_t _Size>
 _LIBCPP_INLINE_VISIBILITY constexpr array<remove_cv_t<_Tp>, _Size>
 to_array(_Tp (&__arr)[_Size]) noexcept(is_nothrow_constructible_v<_Tp, _Tp&>) {
   static_assert(
@@ -515,7 +515,7 @@ to_array(_Tp (&__arr)[_Size]) noexcept(is_nothrow_constructible_v<_Tp, _Tp&>) {
   return _VSTD::__to_array_lvalue_impl(__arr, make_index_sequence<_Size>());
 }
 
-template <typename _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <typename _Tp, size_t _Size>
 _LIBCPP_INLINE_VISIBILITY constexpr array<remove_cv_t<_Tp>, _Size>
 to_array(_Tp(&&__arr)[_Size]) noexcept(is_nothrow_move_constructible_v<_Tp>) {
   static_assert(
