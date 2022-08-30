@@ -496,10 +496,10 @@ template <class Value, class Hash, class Pred, class Alloc>
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 class unordered_multiset;
 
-template <class _Value, class _Hash = hash<_Value>, class _Pred = equal_to<_Value>,
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash = hash<_Value>, class _Pred = equal_to<_Value>,
           class _Alloc = allocator<_Value> >
 class _LIBCPP_TEMPLATE_VIS unordered_set
 {
@@ -1110,7 +1110,7 @@ unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator __first,
         __table_.__insert_unique(*__first);
 }
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
@@ -1121,7 +1121,7 @@ swap(unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Value, class _Hash, class _Pred, class _Alloc,
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc,
           class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type
@@ -1131,7 +1131,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 }
 #endif
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
            const unordered_set<_Value, _Hash, _Pred, _Alloc>& __y)
@@ -1150,7 +1150,7 @@ operator==(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
     return true;
 }
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
@@ -1159,7 +1159,7 @@ operator!=(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
     return !(__x == __y);
 }
 
-template <class _Value, class _Hash = hash<_Value>, class _Pred = equal_to<_Value>,
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash = hash<_Value>, class _Pred = equal_to<_Value>,
           class _Alloc = allocator<_Value> >
 class _LIBCPP_TEMPLATE_VIS unordered_multiset
 {
@@ -1748,7 +1748,7 @@ unordered_multiset<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator __first,
         __table_.__insert_multi(*__first);
 }
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
@@ -1759,7 +1759,7 @@ swap(unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Value, class _Hash, class _Pred, class _Alloc,
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc,
           class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename unordered_multiset<_Value, _Hash, _Pred, _Alloc>::size_type
@@ -1769,7 +1769,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 }
 #endif
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
            const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __y)
@@ -1792,7 +1792,7 @@ operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
     return true;
 }
 
-template <class _Value, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Value, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
