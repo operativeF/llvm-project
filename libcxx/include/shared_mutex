@@ -178,7 +178,7 @@ __shared_mutex_base
 
 
 #if _LIBCPP_STD_VER > 14
-class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX shared_mutex
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX shared_mutex
 {
     __shared_mutex_base __base_;
 public:
@@ -204,7 +204,7 @@ public:
 #endif
 
 
-class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX shared_timed_mutex
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX shared_timed_mutex
 {
     __shared_mutex_base __base_;
 public:
@@ -307,7 +307,7 @@ shared_timed_mutex::try_lock_shared_until(
     return true;
 }
 
-template <class _Mutex>
+_LIBCPP_EXPORT_STD template <class _Mutex>
 class shared_lock
 {
 public:
@@ -494,7 +494,7 @@ shared_lock<_Mutex>::unlock()
     __owns_ = false;
 }
 
-template <class _Mutex>
+_LIBCPP_EXPORT_STD template <class _Mutex>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(shared_lock<_Mutex>& __x, shared_lock<_Mutex>& __y) _NOEXCEPT
