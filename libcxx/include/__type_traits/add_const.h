@@ -17,7 +17,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-_LIBCPP_EXPORT_STDtemplate <class _Tp> struct _LIBCPP_TEMPLATE_VIS add_const {
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS add_const {
   typedef _LIBCPP_NODEBUG const _Tp type;
 };
 
