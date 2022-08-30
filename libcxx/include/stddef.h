@@ -47,7 +47,7 @@ Types:
 #  endif
 
 #ifdef __cplusplus
-    typedef decltype(nullptr) nullptr_t;
+    _LIBCPP_EXPORT_STD typedef decltype(nullptr) nullptr_t;
 #endif
 
 #endif // _LIBCPP_STDDEF_H
