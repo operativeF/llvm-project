@@ -213,13 +213,13 @@ struct _LIBCPP_TEMPLATE_VIS hash<__thread_id>
     }
 };
 
-template<class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits>
 _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, __thread_id __id)
 {return __os << __id.__id_;}
 
-class _LIBCPP_TYPE_VIS thread
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS thread
 {
     __libcpp_thread_t __t_;
 
@@ -350,13 +350,13 @@ thread::thread(_Fp __f)
 
 #endif // _LIBCPP_CXX03_LANG
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 void swap(thread& __x, thread& __y) _NOEXCEPT {__x.swap(__y);}
 
 namespace this_thread
 {
 
-_LIBCPP_FUNC_VIS void sleep_for(const chrono::nanoseconds& __ns);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS void sleep_for(const chrono::nanoseconds& __ns);
 
 template <class _Rep, class _Period>
 _LIBCPP_HIDE_FROM_ABI void
@@ -382,7 +382,7 @@ sleep_for(const chrono::duration<_Rep, _Period>& __d)
     }
 }
 
-template <class _Clock, class _Duration>
+_LIBCPP_EXPORT_STD template <class _Clock, class _Duration>
 _LIBCPP_HIDE_FROM_ABI void
 sleep_until(const chrono::time_point<_Clock, _Duration>& __t)
 {
@@ -401,7 +401,7 @@ sleep_until(const chrono::time_point<chrono::steady_clock, _Duration>& __t)
     this_thread::sleep_for(__t - chrono::steady_clock::now());
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 void yield() _NOEXCEPT {__libcpp_thread_yield();}
 
 } // namespace this_thread
