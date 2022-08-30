@@ -644,7 +644,7 @@ __forward_list_base<_Tp, _Alloc>::clear() _NOEXCEPT
     __before_begin()->__next_ = nullptr;
 }
 
-template <class _Tp, class _Alloc /*= allocator<_Tp>*/>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc /*= allocator<_Tp>*/>
 class _LIBCPP_TEMPLATE_VIS forward_list
     : private __forward_list_base<_Tp, _Alloc>
 {
@@ -1694,7 +1694,7 @@ forward_list<_Tp, _Alloc>::reverse() _NOEXCEPT
     }
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 _LIBCPP_HIDE_FROM_ABI
 bool operator==(const forward_list<_Tp, _Alloc>& __x,
                 const forward_list<_Tp, _Alloc>& __y)
@@ -1711,7 +1711,7 @@ bool operator==(const forward_list<_Tp, _Alloc>& __x,
     return (__ix == __ex) == (__iy == __ey);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool operator!=(const forward_list<_Tp, _Alloc>& __x,
                 const forward_list<_Tp, _Alloc>& __y)
@@ -1719,7 +1719,7 @@ bool operator!=(const forward_list<_Tp, _Alloc>& __x,
     return !(__x == __y);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool operator< (const forward_list<_Tp, _Alloc>& __x,
                 const forward_list<_Tp, _Alloc>& __y)
@@ -1728,7 +1728,7 @@ bool operator< (const forward_list<_Tp, _Alloc>& __x,
                                          __y.begin(), __y.end());
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool operator> (const forward_list<_Tp, _Alloc>& __x,
                 const forward_list<_Tp, _Alloc>& __y)
@@ -1736,7 +1736,7 @@ bool operator> (const forward_list<_Tp, _Alloc>& __x,
     return __y < __x;
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool operator>=(const forward_list<_Tp, _Alloc>& __x,
                 const forward_list<_Tp, _Alloc>& __y)
@@ -1744,7 +1744,7 @@ bool operator>=(const forward_list<_Tp, _Alloc>& __x,
     return !(__x < __y);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool operator<=(const forward_list<_Tp, _Alloc>& __x,
                 const forward_list<_Tp, _Alloc>& __y)
@@ -1752,7 +1752,7 @@ bool operator<=(const forward_list<_Tp, _Alloc>& __x,
     return !(__y < __x);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(forward_list<_Tp, _Alloc>& __x, forward_list<_Tp, _Alloc>& __y)
@@ -1762,14 +1762,14 @@ swap(forward_list<_Tp, _Alloc>& __x, forward_list<_Tp, _Alloc>& __y)
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename forward_list<_Tp, _Allocator>::size_type
     erase_if(forward_list<_Tp, _Allocator>& __c, _Predicate __pred) {
   return __c.remove_if(__pred);
 }
 
-template <class _Tp, class _Allocator, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
     typename forward_list<_Tp, _Allocator>::size_type
     erase(forward_list<_Tp, _Allocator>& __c, const _Up& __v) {
