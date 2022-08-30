@@ -199,7 +199,7 @@ concept __span_compatible_iterator = contiguous_iterator<_It> && __span_array_co
 template <class _Sentinel, class _It>
 concept __span_compatible_sentinel_for = sized_sentinel_for<_Sentinel, _It> && !is_convertible_v<_Sentinel, size_t>;
 
-template <typename _Tp, size_t _Extent>
+_LIBCPP_EXPORT_STD template <typename _Tp, size_t _Extent>
 class _LIBCPP_TEMPLATE_VIS span {
 public:
 //  constants and types
@@ -556,12 +556,12 @@ template <class _ElementType, size_t _Extent>
 inline constexpr bool ranges::enable_view<span<_ElementType, _Extent>> = true;
 
 //  as_bytes & as_writable_bytes
-template <class _Tp, size_t _Extent>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Extent>
 _LIBCPP_INLINE_VISIBILITY
 auto as_bytes(span<_Tp, _Extent> __s) noexcept
 { return __s.__as_bytes(); }
 
-template <class _Tp, size_t _Extent> requires(!is_const_v<_Tp>)
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Extent> requires(!is_const_v<_Tp>)
 _LIBCPP_INLINE_VISIBILITY
 auto as_writable_bytes(span<_Tp, _Extent> __s) noexcept
 { return __s.__as_writable_bytes(); }
