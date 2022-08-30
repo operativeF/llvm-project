@@ -243,19 +243,19 @@ template <class T, class Container, class Compare>
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, class _Container = deque<_Tp> > class _LIBCPP_TEMPLATE_VIS queue;
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container = deque<_Tp> > class _LIBCPP_TEMPLATE_VIS queue;
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y);
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y);
 
-template <class _Tp, class _Container /*= deque<_Tp>*/>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container /*= deque<_Tp>*/>
 class _LIBCPP_TEMPLATE_VIS queue
 {
 public:
@@ -425,7 +425,7 @@ queue(_InputIterator, _InputIterator, _Alloc)
     -> queue<__iter_value_type<_InputIterator>, deque<__iter_value_type<_InputIterator>, _Alloc>>;
 #endif
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
@@ -433,7 +433,7 @@ operator==(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
     return __x.c == __y.c;
 }
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
@@ -441,7 +441,7 @@ operator< (const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
     return __x.c < __y.c;
 }
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
@@ -449,7 +449,7 @@ operator!=(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
     return !(__x == __y);
 }
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
@@ -457,7 +457,7 @@ operator> (const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
     return __y < __x;
 }
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
@@ -465,7 +465,7 @@ operator>=(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
     return !(__x < __y);
 }
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
@@ -473,7 +473,7 @@ operator<=(const queue<_Tp, _Container>& __x,const queue<_Tp, _Container>& __y)
     return !(__y < __x);
 }
 
-template <class _Tp, class _Container>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container>
 inline _LIBCPP_INLINE_VISIBILITY
 __enable_if_t<__is_swappable<_Container>::value, void>
 swap(queue<_Tp, _Container>& __x, queue<_Tp, _Container>& __y)
@@ -488,7 +488,7 @@ struct _LIBCPP_TEMPLATE_VIS uses_allocator<queue<_Tp, _Container>, _Alloc>
 {
 };
 
-template <class _Tp, class _Container = vector<_Tp>,
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container = vector<_Tp>,
           class _Compare = less<typename _Container::value_type> >
 class _LIBCPP_TEMPLATE_VIS priority_queue
 {
@@ -937,7 +937,7 @@ priority_queue<_Tp, _Container, _Compare>::swap(priority_queue& __q)
     swap(comp, __q.comp);
 }
 
-template <class _Tp, class _Container, class _Compare>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Container, class _Compare>
 inline _LIBCPP_INLINE_VISIBILITY
 __enable_if_t<
     __is_swappable<_Container>::value && __is_swappable<_Compare>::value,
