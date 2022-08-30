@@ -114,7 +114,7 @@ struct __std_exception_data {
   bool _DoFree;
 };
 
-class exception { // base of all library exceptions
+_LIBCPP_EXPORT_STD class exception { // base of all library exceptions
 public:
   exception() _NOEXCEPT : __data_() {}
 
@@ -144,7 +144,7 @@ public:
 // On all other platforms, we define our own std::exception and std::bad_exception types
 // regardless of whether exceptions are turned on as a language feature.
 
-class _LIBCPP_EXCEPTION_ABI exception {
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI exception {
 public:
   _LIBCPP_INLINE_VISIBILITY exception() _NOEXCEPT {}
   _LIBCPP_INLINE_VISIBILITY exception(const exception&) _NOEXCEPT = default;
@@ -153,7 +153,7 @@ public:
   virtual const char* what() const _NOEXCEPT;
 };
 
-class _LIBCPP_EXCEPTION_ABI bad_exception : public exception {
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_exception : public exception {
 public:
   _LIBCPP_INLINE_VISIBILITY bad_exception() _NOEXCEPT {}
   ~bad_exception() _NOEXCEPT override;
@@ -164,28 +164,28 @@ public:
 #if _LIBCPP_STD_VER <= 14 \
     || defined(_LIBCPP_ENABLE_CXX17_REMOVED_UNEXPECTED_FUNCTIONS) \
     || defined(_LIBCPP_BUILDING_LIBRARY)
-typedef void (*unexpected_handler)();
-_LIBCPP_FUNC_VIS unexpected_handler set_unexpected(unexpected_handler) _NOEXCEPT;
-_LIBCPP_FUNC_VIS unexpected_handler get_unexpected() _NOEXCEPT;
-_LIBCPP_NORETURN _LIBCPP_FUNC_VIS void unexpected();
+_LIBCPP_EXPORT_STD typedef void (*unexpected_handler)();
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unexpected_handler set_unexpected(unexpected_handler) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unexpected_handler get_unexpected() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void unexpected();
 #endif
 
-typedef void (*terminate_handler)();
-_LIBCPP_FUNC_VIS terminate_handler set_terminate(terminate_handler) _NOEXCEPT;
-_LIBCPP_FUNC_VIS terminate_handler get_terminate() _NOEXCEPT;
-_LIBCPP_NORETURN _LIBCPP_FUNC_VIS void terminate() _NOEXCEPT;
+_LIBCPP_EXPORT_STD typedef void (*terminate_handler)();
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS terminate_handler set_terminate(terminate_handler) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS terminate_handler get_terminate() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void terminate() _NOEXCEPT;
 
-_LIBCPP_FUNC_VIS bool uncaught_exception() _NOEXCEPT;
-_LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_UNCAUGHT_EXCEPTIONS int uncaught_exceptions() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS bool uncaught_exception() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_UNCAUGHT_EXCEPTIONS int uncaught_exceptions() _NOEXCEPT;
 
-class _LIBCPP_TYPE_VIS exception_ptr;
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS exception_ptr;
 
-_LIBCPP_FUNC_VIS exception_ptr current_exception() _NOEXCEPT;
-_LIBCPP_NORETURN _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS exception_ptr current_exception() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
 
 #ifndef _LIBCPP_ABI_MICROSOFT
 
-class _LIBCPP_TYPE_VIS exception_ptr
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS exception_ptr
 {
     void* __ptr_;
 public:
@@ -211,7 +211,7 @@ public:
     friend _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
 };
 
-template<class _Ep>
+_LIBCPP_EXPORT_STD template<class _Ep>
 _LIBCPP_INLINE_VISIBILITY exception_ptr
 make_exception_ptr(_Ep __e) _NOEXCEPT
 {
@@ -232,7 +232,7 @@ make_exception_ptr(_Ep __e) _NOEXCEPT
 
 #else // _LIBCPP_ABI_MICROSOFT
 
-class _LIBCPP_TYPE_VIS exception_ptr
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS exception_ptr
 {
 _LIBCPP_DIAGNOSTIC_PUSH
 _LIBCPP_CLANG_DIAGNOSTIC_IGNORED("-Wunused-private-field")
@@ -249,24 +249,24 @@ public:
     explicit operator bool() const _NOEXCEPT;
 };
 
-_LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
 bool operator==(const exception_ptr& __x, const exception_ptr& __y) _NOEXCEPT;
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 bool operator!=(const exception_ptr& __x, const exception_ptr& __y) _NOEXCEPT
     {return !(__x == __y);}
 
-_LIBCPP_FUNC_VIS void swap(exception_ptr&, exception_ptr&) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS void swap(exception_ptr&, exception_ptr&) _NOEXCEPT;
 
 _LIBCPP_FUNC_VIS exception_ptr __copy_exception_ptr(void *__except, const void* __ptr);
-_LIBCPP_FUNC_VIS exception_ptr current_exception() _NOEXCEPT;
-_LIBCPP_NORETURN _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS exception_ptr current_exception() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
 
 // This is a built-in template function which automagically extracts the required
 // information.
 template <class _E> void *__GetExceptionInfo(_E);
 
-template<class _Ep>
+_LIBCPP_EXPORT_STD template<class _Ep>
 _LIBCPP_INLINE_VISIBILITY exception_ptr
 make_exception_ptr(_Ep __e) _NOEXCEPT
 {
@@ -276,7 +276,7 @@ make_exception_ptr(_Ep __e) _NOEXCEPT
 #endif // _LIBCPP_ABI_MICROSOFT
 // nested_exception
 
-class _LIBCPP_EXCEPTION_ABI nested_exception
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI nested_exception
 {
     exception_ptr __ptr_;
 public:
@@ -325,7 +325,7 @@ struct __throw_with_nested<_Tp, _Up, false> {
 };
 #endif
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_NORETURN _LIBCPP_HIDE_FROM_ABI
 void
 throw_with_nested(_Tp&& __t)
@@ -350,7 +350,7 @@ struct __can_dynamic_cast : _BoolConstant<
                  (!is_base_of<_To, _From>::value ||
                    is_convertible<const _From*, const _To*>::value)> {};
 
-template <class _Ep>
+_LIBCPP_EXPORT_STD template <class _Ep>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 rethrow_if_nested(const _Ep& __e,
@@ -361,7 +361,7 @@ rethrow_if_nested(const _Ep& __e,
         __nep->rethrow_nested();
 }
 
-template <class _Ep>
+_LIBCPP_EXPORT_STD template <class _Ep>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 rethrow_if_nested(const _Ep&,
