@@ -125,7 +125,7 @@ int __countl_zero(_Tp __t) _NOEXCEPT
 
 #if _LIBCPP_STD_VER > 17
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr _Tp rotl(_Tp __t, unsigned int __cnt) noexcept {
   const unsigned int __dig = numeric_limits<_Tp>::digits;
   if ((__cnt % __dig) == 0)
@@ -133,22 +133,22 @@ _LIBCPP_HIDE_FROM_ABI constexpr _Tp rotl(_Tp __t, unsigned int __cnt) noexcept {
   return (__t << (__cnt % __dig)) | (__t >> (__dig - (__cnt % __dig)));
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr _Tp rotr(_Tp __t, unsigned int __cnt) noexcept {
   return std::__rotr(__t, __cnt);
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr int countl_zero(_Tp __t) noexcept {
   return std::__countl_zero(__t);
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr int countl_one(_Tp __t) noexcept {
   return __t != numeric_limits<_Tp>::max() ? std::countl_zero(static_cast<_Tp>(~__t)) : numeric_limits<_Tp>::digits;
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr int countr_zero(_Tp __t) noexcept {
   if (__t == 0)
     return numeric_limits<_Tp>::digits;
@@ -170,12 +170,12 @@ _LIBCPP_HIDE_FROM_ABI constexpr int countr_zero(_Tp __t) noexcept {
   }
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr int countr_one(_Tp __t) noexcept {
   return __t != numeric_limits<_Tp>::max() ? std::countr_zero(static_cast<_Tp>(~__t)) : numeric_limits<_Tp>::digits;
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr int popcount(_Tp __t) noexcept {
   if (sizeof(_Tp) <= sizeof(unsigned int))
     return std::__libcpp_popcount(static_cast<unsigned int>(__t));
@@ -193,7 +193,7 @@ _LIBCPP_HIDE_FROM_ABI constexpr int popcount(_Tp __t) noexcept {
   }
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr bool has_single_bit(_Tp __t) noexcept {
   return __t != 0 && (((__t & (__t - 1)) == 0));
 }
@@ -204,12 +204,12 @@ _LIBCPP_HIDE_FROM_ABI constexpr _Tp __bit_log2(_Tp __t) noexcept {
   return numeric_limits<_Tp>::digits - 1 - std::countl_zero(__t);
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr _Tp bit_floor(_Tp __t) noexcept {
   return __t == 0 ? 0 : _Tp{1} << std::__bit_log2(__t);
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr _Tp bit_ceil(_Tp __t) noexcept {
   if (__t < 2)
     return 1;
@@ -225,12 +225,12 @@ _LIBCPP_HIDE_FROM_ABI constexpr _Tp bit_ceil(_Tp __t) noexcept {
   }
 }
 
-template <__libcpp_unsigned_integer _Tp>
+_LIBCPP_EXPORT_STD template <__libcpp_unsigned_integer _Tp>
 _LIBCPP_HIDE_FROM_ABI constexpr int bit_width(_Tp __t) noexcept {
   return __t == 0 ? 0 : std::__bit_log2(__t) + 1;
 }
 
-enum class endian {
+_LIBCPP_EXPORT_STD enum class endian {
   little = 0xDEAD,
   big = 0xFACE,
 #  if defined(_LIBCPP_LITTLE_ENDIAN)
