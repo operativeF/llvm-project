@@ -23,13 +23,13 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
 
-struct _LIBCPP_TEMPLATE_VIS monostate {};
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS monostate {};
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool operator==(monostate, monostate) noexcept { return true; }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool operator==(monostate, monostate) noexcept { return true; }
 
 #  if _LIBCPP_STD_VER > 17
 
-_LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(monostate, monostate) noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(monostate, monostate) noexcept {
   return strong_ordering::equal;
 }
 
