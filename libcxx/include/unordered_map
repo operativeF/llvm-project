@@ -1017,10 +1017,10 @@ public:
     template <class> friend class _LIBCPP_TEMPLATE_VIS __hash_const_local_iterator;
 };
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 class unordered_multimap;
 
-template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = equal_to<_Key>,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = equal_to<_Key>,
           class _Alloc = allocator<pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS unordered_map
 {
@@ -1864,7 +1864,7 @@ unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const key_type& __k) const
     return __i->second;
 }
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
@@ -1875,7 +1875,7 @@ swap(unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc,
           class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::size_type
@@ -1885,7 +1885,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 }
 #endif
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
            const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
@@ -1904,7 +1904,7 @@ operator==(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
     return true;
 }
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
@@ -1913,7 +1913,7 @@ operator!=(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
     return !(__x == __y);
 }
 
-template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = equal_to<_Key>,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = equal_to<_Key>,
           class _Alloc = allocator<pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS unordered_multimap
 {
@@ -2574,7 +2574,7 @@ unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::insert(_InputIterator __fir
         __table_.__insert_multi(*__first);
 }
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
@@ -2585,7 +2585,7 @@ swap(unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc,
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc,
           class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::size_type
@@ -2595,7 +2595,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 }
 #endif
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 _LIBCPP_HIDE_FROM_ABI bool
 operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
            const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
@@ -2618,7 +2618,7 @@ operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
     return true;
 }
 
-template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
