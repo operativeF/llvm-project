@@ -807,7 +807,7 @@ __list_imp<_Tp, _Alloc>::swap(__list_imp& __c)
 #endif
 }
 
-template <class _Tp, class _Alloc /*= allocator<_Tp>*/>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc /*= allocator<_Tp>*/>
 class _LIBCPP_TEMPLATE_VIS list
     : private __list_imp<_Tp, _Alloc>
 {
@@ -2281,7 +2281,7 @@ list<_Tp, _Alloc>::__subscriptable(const const_iterator*, ptrdiff_t) const
 
 #endif // _LIBCPP_ENABLE_DEBUG_MODE
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
@@ -2289,7 +2289,7 @@ operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
     return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
@@ -2297,7 +2297,7 @@ operator< (const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
     return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
@@ -2305,7 +2305,7 @@ operator!=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
     return !(__x == __y);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
@@ -2313,7 +2313,7 @@ operator> (const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
     return __y < __x;
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
@@ -2321,7 +2321,7 @@ operator>=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
     return !(__x < __y);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
@@ -2329,7 +2329,7 @@ operator<=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
     return !(__y < __x);
 }
 
-template <class _Tp, class _Alloc>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(list<_Tp, _Alloc>& __x, list<_Tp, _Alloc>& __y)
@@ -2339,13 +2339,13 @@ swap(list<_Tp, _Alloc>& __x, list<_Tp, _Alloc>& __y)
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Tp, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY typename list<_Tp, _Allocator>::size_type
 erase_if(list<_Tp, _Allocator>& __c, _Predicate __pred) {
   return __c.remove_if(__pred);
 }
 
-template <class _Tp, class _Allocator, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Allocator, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY typename list<_Tp, _Allocator>::size_type
 erase(list<_Tp, _Allocator>& __c, const _Up& __v) {
   return _VSTD::erase_if(__c, [&](auto& __elem) { return __elem == __v; });
