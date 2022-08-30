@@ -214,7 +214,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_filebuf
     : public basic_streambuf<_CharT, _Traits>
 {
@@ -506,7 +506,7 @@ basic_filebuf<_CharT, _Traits>::swap(basic_filebuf& __rhs)
     }
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(basic_filebuf<_CharT, _Traits>& __x, basic_filebuf<_CharT, _Traits>& __y)
@@ -1146,7 +1146,7 @@ basic_filebuf<_CharT, _Traits>::__write_mode()
 
 // basic_ifstream
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_ifstream
     : public basic_istream<_CharT, _Traits>
 {
@@ -1269,7 +1269,7 @@ basic_ifstream<_CharT, _Traits>::swap(basic_ifstream& __rhs)
     __sb_.swap(__rhs.__sb_);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(basic_ifstream<_CharT, _Traits>& __x, basic_ifstream<_CharT, _Traits>& __y)
@@ -1346,7 +1346,7 @@ basic_ifstream<_CharT, _Traits>::close()
 
 // basic_ofstream
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_ofstream
     : public basic_ostream<_CharT, _Traits>
 {
@@ -1470,7 +1470,7 @@ basic_ofstream<_CharT, _Traits>::swap(basic_ofstream& __rhs)
     __sb_.swap(__rhs.__sb_);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(basic_ofstream<_CharT, _Traits>& __x, basic_ofstream<_CharT, _Traits>& __y)
@@ -1547,7 +1547,7 @@ basic_ofstream<_CharT, _Traits>::close()
 
 // basic_fstream
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_fstream
     : public basic_iostream<_CharT, _Traits>
 {
@@ -1671,7 +1671,7 @@ basic_fstream<_CharT, _Traits>::swap(basic_fstream& __rhs)
     __sb_.swap(__rhs.__sb_);
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(basic_fstream<_CharT, _Traits>& __x, basic_fstream<_CharT, _Traits>& __y)
