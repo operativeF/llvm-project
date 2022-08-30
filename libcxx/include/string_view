@@ -255,7 +255,7 @@ inline size_t __char_traits_length_checked(const typename _Traits::char_type* __
   return _LIBCPP_ASSERT(__s != nullptr, "null pointer passed to non-null argument of char_traits<...>::length"), _Traits::length(__s);
 }
 
-template<class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits>
 class basic_string_view {
 public:
     // types
@@ -743,7 +743,7 @@ template <ranges::contiguous_range _Range>
 
 // [string.view.comparison]
 // operator ==
-template<class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits>
 _LIBCPP_CONSTEXPR_SINCE_CXX14 _LIBCPP_INLINE_VISIBILITY
 bool operator==(basic_string_view<_CharT, _Traits> __lhs,
                 basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
@@ -754,7 +754,7 @@ bool operator==(basic_string_view<_CharT, _Traits> __lhs,
 
 // The dummy default template parameters are used to work around a MSVC issue with mangling, see VSO-409326 for details.
 // This applies to the other sufficient overloads below for the other comparison operators.
-template<class _CharT, class _Traits, int = 1>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, int = 1>
 _LIBCPP_CONSTEXPR_SINCE_CXX14 _LIBCPP_INLINE_VISIBILITY
 bool operator==(basic_string_view<_CharT, _Traits> __lhs,
                 __type_identity_t<basic_string_view<_CharT, _Traits> > __rhs) _NOEXCEPT
@@ -765,7 +765,7 @@ bool operator==(basic_string_view<_CharT, _Traits> __lhs,
 
 #if _LIBCPP_STD_VER < 20
 // This overload is automatically generated in C++20.
-template<class _CharT, class _Traits, int = 2>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, int = 2>
 _LIBCPP_CONSTEXPR_SINCE_CXX14 _LIBCPP_INLINE_VISIBILITY
 bool operator==(__type_identity_t<basic_string_view<_CharT, _Traits> > __lhs,
                 basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
@@ -779,7 +779,7 @@ bool operator==(__type_identity_t<basic_string_view<_CharT, _Traits> > __lhs,
 
 #if _LIBCPP_STD_VER > 17
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI constexpr auto
 operator<=>(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) noexcept {
     if constexpr (requires { typename _Traits::comparison_category; }) {
@@ -793,7 +793,7 @@ operator<=>(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, 
     }
 }
 
-template <class _CharT, class _Traits, int = 1>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, int = 1>
 _LIBCPP_HIDE_FROM_ABI constexpr auto operator<=>(
     basic_string_view<_CharT, _Traits> __lhs, type_identity_t<basic_string_view<_CharT, _Traits>> __rhs) noexcept {
     if constexpr (requires { typename _Traits::comparison_category; }) {
@@ -942,7 +942,7 @@ bool operator>=(__type_identity_t<basic_string_view<_CharT, _Traits> > __lhs,
 
 #endif //  _LIBCPP_STD_VER > 17
 
-template<class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            basic_string_view<_CharT, _Traits> __str);
@@ -981,14 +981,14 @@ inline namespace literals
 {
   inline namespace string_view_literals
   {
-    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+    _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     basic_string_view<char> operator "" sv(const char *__str, size_t __len) _NOEXCEPT
     {
         return basic_string_view<char> (__str, __len);
     }
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+    _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     basic_string_view<wchar_t> operator "" sv(const wchar_t *__str, size_t __len) _NOEXCEPT
     {
         return basic_string_view<wchar_t> (__str, __len);
@@ -996,20 +996,20 @@ inline namespace literals
 #endif
 
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
-    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+    _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     basic_string_view<char8_t> operator "" sv(const char8_t *__str, size_t __len) _NOEXCEPT
     {
         return basic_string_view<char8_t> (__str, __len);
     }
 #endif
 
-    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+    _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     basic_string_view<char16_t> operator "" sv(const char16_t *__str, size_t __len) _NOEXCEPT
     {
         return basic_string_view<char16_t> (__str, __len);
     }
 
-    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+    _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     basic_string_view<char32_t> operator "" sv(const char32_t *__str, size_t __len) _NOEXCEPT
     {
         return basic_string_view<char32_t> (__str, __len);
