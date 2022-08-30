@@ -62,7 +62,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-class latch
+_LIBCPP_EXPORT_STD class latch
 {
     __atomic_base<ptrdiff_t> __a_;
 
