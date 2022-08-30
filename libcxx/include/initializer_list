@@ -55,7 +55,7 @@ namespace std  // purposefully not versioned
 
 #ifndef _LIBCPP_CXX03_LANG
 
-template<class _Ep>
+_LIBCPP_EXPORT_STD template<class _Ep>
 class _LIBCPP_TEMPLATE_VIS initializer_list
 {
     const _Ep* __begin_;
@@ -93,7 +93,7 @@ public:
     const _Ep* end()   const _NOEXCEPT {return __begin_ + __size_;}
 };
 
-template<class _Ep>
+_LIBCPP_EXPORT_STD template<class _Ep>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX14
 const _Ep*
@@ -102,7 +102,7 @@ begin(initializer_list<_Ep> __il) _NOEXCEPT
     return __il.begin();
 }
 
-template<class _Ep>
+_LIBCPP_EXPORT_STD template<class _Ep>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX14
 const _Ep*
