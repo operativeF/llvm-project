@@ -109,19 +109,19 @@ struct __libcpp_locale_guard {
 };
 #endif
 
-class _LIBCPP_TYPE_VIS locale;
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS locale;
 
-template <class _Facet>
+_LIBCPP_EXPORT_STD template <class _Facet>
 _LIBCPP_INLINE_VISIBILITY
 bool
 has_facet(const locale&) _NOEXCEPT;
 
-template <class _Facet>
+_LIBCPP_EXPORT_STD template <class _Facet>
 _LIBCPP_INLINE_VISIBILITY
 const _Facet&
 use_facet(const locale&);
 
-class _LIBCPP_TYPE_VIS locale
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS locale
 {
 public:
     // types:
@@ -238,7 +238,7 @@ locale::combine(const locale& __other) const
     return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
 }
 
-template <class _Facet>
+_LIBCPP_EXPORT_STD template <class _Facet>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 has_facet(const locale& __l)  _NOEXCEPT
@@ -246,7 +246,7 @@ has_facet(const locale& __l)  _NOEXCEPT
     return __l.has_facet(_Facet::id);
 }
 
-template <class _Facet>
+_LIBCPP_EXPORT_STD template <class _Facet>
 inline _LIBCPP_INLINE_VISIBILITY
 const _Facet&
 use_facet(const locale& __l)
@@ -256,7 +256,7 @@ use_facet(const locale& __l)
 
 // template <class _CharT> class collate;
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 class _LIBCPP_TEMPLATE_VIS collate
     : public locale::facet
 {
@@ -346,7 +346,7 @@ extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS collate<wchar_t>;
 
 // template <class CharT> class collate_byname;
 
-template <class _CharT> class _LIBCPP_TEMPLATE_VIS collate_byname;
+_LIBCPP_EXPORT_STD template <class _CharT> class _LIBCPP_TEMPLATE_VIS collate_byname;
 
 template <>
 class _LIBCPP_TYPE_VIS collate_byname<char>
@@ -401,7 +401,7 @@ locale::operator()(const basic_string<_CharT, _Traits, _Allocator>& __x,
 
 // template <class charT> class ctype
 
-class _LIBCPP_TYPE_VIS ctype_base
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ctype_base
 {
 public:
 #if defined(_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE)
@@ -557,7 +557,7 @@ public:
                   "__regex_word can't overlap other bits");
 };
 
-template <class _CharT> class _LIBCPP_TEMPLATE_VIS ctype;
+_LIBCPP_EXPORT_STD template <class _CharT> class _LIBCPP_TEMPLATE_VIS ctype;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>
@@ -790,7 +790,7 @@ protected:
 
 // template <class CharT> class ctype_byname;
 
-template <class _CharT> class _LIBCPP_TEMPLATE_VIS ctype_byname;
+_LIBCPP_EXPORT_STD template <class _CharT> class _LIBCPP_TEMPLATE_VIS ctype_byname;
 
 template <>
 class _LIBCPP_TYPE_VIS ctype_byname<char>
@@ -838,7 +838,7 @@ protected:
 };
 #endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isspace(_CharT __c, const locale& __loc)
@@ -846,7 +846,7 @@ isspace(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::space, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isprint(_CharT __c, const locale& __loc)
@@ -854,7 +854,7 @@ isprint(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::print, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 iscntrl(_CharT __c, const locale& __loc)
@@ -862,7 +862,7 @@ iscntrl(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::cntrl, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isupper(_CharT __c, const locale& __loc)
@@ -870,7 +870,7 @@ isupper(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::upper, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 islower(_CharT __c, const locale& __loc)
@@ -878,7 +878,7 @@ islower(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::lower, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isalpha(_CharT __c, const locale& __loc)
@@ -886,7 +886,7 @@ isalpha(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::alpha, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isdigit(_CharT __c, const locale& __loc)
@@ -894,7 +894,7 @@ isdigit(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::digit, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 ispunct(_CharT __c, const locale& __loc)
@@ -902,7 +902,7 @@ ispunct(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::punct, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isxdigit(_CharT __c, const locale& __loc)
@@ -910,7 +910,7 @@ isxdigit(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::xdigit, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isalnum(_CharT __c, const locale& __loc)
@@ -918,7 +918,7 @@ isalnum(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::alnum, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 isgraph(_CharT __c, const locale& __loc)
@@ -926,7 +926,7 @@ isgraph(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).is(ctype_base::graph, __c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 _CharT
 toupper(_CharT __c, const locale& __loc)
@@ -934,7 +934,7 @@ toupper(_CharT __c, const locale& __loc)
     return use_facet<ctype<_CharT> >(__loc).toupper(__c);
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 _CharT
 tolower(_CharT __c, const locale& __loc)
@@ -944,7 +944,7 @@ tolower(_CharT __c, const locale& __loc)
 
 // codecvt_base
 
-class _LIBCPP_TYPE_VIS codecvt_base
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS codecvt_base
 {
 public:
     _LIBCPP_INLINE_VISIBILITY codecvt_base() {}
@@ -953,7 +953,7 @@ public:
 
 // template <class internT, class externT, class stateT> class codecvt;
 
-template <class _InternT, class _ExternT, class _StateT> class _LIBCPP_TEMPLATE_VIS codecvt;
+_LIBCPP_EXPORT_STD template <class _InternT, class _ExternT, class _StateT> class _LIBCPP_TEMPLATE_VIS codecvt;
 
 // template <> class codecvt<char, char, mbstate_t>
 
@@ -1480,7 +1480,7 @@ protected:
 
 // template <class _InternT, class _ExternT, class _StateT> class codecvt_byname
 
-template <class _InternT, class _ExternT, class _StateT>
+_LIBCPP_EXPORT_STD template <class _InternT, class _ExternT, class _StateT>
 class _LIBCPP_TEMPLATE_VIS codecvt_byname
     : public codecvt<_InternT, _ExternT, _StateT>
 {
@@ -1703,7 +1703,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 
 // template <class charT> class numpunct
 
-template <class _CharT> class _LIBCPP_TEMPLATE_VIS numpunct;
+_LIBCPP_EXPORT_STD template <class _CharT> class _LIBCPP_TEMPLATE_VIS numpunct;
 
 template <>
 class _LIBCPP_TYPE_VIS numpunct<char>
@@ -1771,7 +1771,7 @@ protected:
 
 // template <class charT> class numpunct_byname
 
-template <class _CharT> class _LIBCPP_TEMPLATE_VIS numpunct_byname;
+_LIBCPP_EXPORT_STD template <class _CharT> class _LIBCPP_TEMPLATE_VIS numpunct_byname;
 
 template <>
 class _LIBCPP_TYPE_VIS numpunct_byname<char>
