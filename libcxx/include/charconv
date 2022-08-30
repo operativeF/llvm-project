@@ -110,8 +110,8 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
 
-to_chars_result to_chars(char*, char*, bool, int = 10) = delete;
-from_chars_result from_chars(const char*, const char*, bool, int = 10) = delete;
+_LIBCPP_EXPORT_STD to_chars_result to_chars(char*, char*, bool, int = 10) = delete;
+_LIBCPP_EXPORT_STD from_chars_result from_chars(const char*, const char*, bool, int = 10) = delete;
 
 namespace __itoa
 {
