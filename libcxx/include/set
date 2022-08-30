@@ -507,10 +507,10 @@ erase_if(multiset<Key, Compare, Allocator>& c, Predicate pred);  // C++20
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 class multiset;
 
-template <class _Key, class _Compare = less<_Key>,
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare = less<_Key>,
           class _Allocator = allocator<_Key> >
 class _LIBCPP_TEMPLATE_VIS set
 {
@@ -973,7 +973,7 @@ set<_Key, _Compare, _Allocator>::set(set&& __s, const allocator_type& __a)
 
 #endif // _LIBCPP_CXX03_LANG
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const set<_Key, _Compare, _Allocator>& __x,
@@ -982,7 +982,7 @@ operator==(const set<_Key, _Compare, _Allocator>& __x,
     return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const set<_Key, _Compare, _Allocator>& __x,
@@ -991,7 +991,7 @@ operator< (const set<_Key, _Compare, _Allocator>& __x,
     return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const set<_Key, _Compare, _Allocator>& __x,
@@ -1000,7 +1000,7 @@ operator!=(const set<_Key, _Compare, _Allocator>& __x,
     return !(__x == __y);
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const set<_Key, _Compare, _Allocator>& __x,
@@ -1009,7 +1009,7 @@ operator> (const set<_Key, _Compare, _Allocator>& __x,
     return __y < __x;
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const set<_Key, _Compare, _Allocator>& __x,
@@ -1018,7 +1018,7 @@ operator>=(const set<_Key, _Compare, _Allocator>& __x,
     return !(__x < __y);
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const set<_Key, _Compare, _Allocator>& __x,
@@ -1028,7 +1028,7 @@ operator<=(const set<_Key, _Compare, _Allocator>& __x,
 }
 
 // specialized algorithms:
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(set<_Key, _Compare, _Allocator>& __x,
@@ -1039,7 +1039,7 @@ swap(set<_Key, _Compare, _Allocator>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Key, class _Compare, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator, class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename set<_Key, _Compare, _Allocator>::size_type
     erase_if(set<_Key, _Compare, _Allocator>& __c, _Predicate __pred) {
@@ -1047,7 +1047,7 @@ inline _LIBCPP_INLINE_VISIBILITY
 }
 #endif
 
-template <class _Key, class _Compare = less<_Key>,
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare = less<_Key>,
           class _Allocator = allocator<_Key> >
 class _LIBCPP_TEMPLATE_VIS multiset
 {
@@ -1509,7 +1509,7 @@ multiset<_Key, _Compare, _Allocator>::multiset(multiset&& __s, const allocator_t
 
 #endif // _LIBCPP_CXX03_LANG
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(const multiset<_Key, _Compare, _Allocator>& __x,
@@ -1518,7 +1518,7 @@ operator==(const multiset<_Key, _Compare, _Allocator>& __x,
     return __x.size() == __y.size() && _VSTD::equal(__x.begin(), __x.end(), __y.begin());
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator< (const multiset<_Key, _Compare, _Allocator>& __x,
@@ -1527,7 +1527,7 @@ operator< (const multiset<_Key, _Compare, _Allocator>& __x,
     return _VSTD::lexicographical_compare(__x.begin(), __x.end(), __y.begin(), __y.end());
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const multiset<_Key, _Compare, _Allocator>& __x,
@@ -1536,7 +1536,7 @@ operator!=(const multiset<_Key, _Compare, _Allocator>& __x,
     return !(__x == __y);
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator> (const multiset<_Key, _Compare, _Allocator>& __x,
@@ -1545,7 +1545,7 @@ operator> (const multiset<_Key, _Compare, _Allocator>& __x,
     return __y < __x;
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const multiset<_Key, _Compare, _Allocator>& __x,
@@ -1554,7 +1554,7 @@ operator>=(const multiset<_Key, _Compare, _Allocator>& __x,
     return !(__x < __y);
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const multiset<_Key, _Compare, _Allocator>& __x,
@@ -1563,7 +1563,7 @@ operator<=(const multiset<_Key, _Compare, _Allocator>& __x,
     return !(__y < __x);
 }
 
-template <class _Key, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(multiset<_Key, _Compare, _Allocator>& __x,
@@ -1574,7 +1574,7 @@ swap(multiset<_Key, _Compare, _Allocator>& __x,
 }
 
 #if _LIBCPP_STD_VER > 17
-template <class _Key, class _Compare, class _Allocator, class _Predicate>
+_LIBCPP_EXPORT_STD template <class _Key, class _Compare, class _Allocator, class _Predicate>
 inline _LIBCPP_INLINE_VISIBILITY
     typename multiset<_Key, _Compare, _Allocator>::size_type
     erase_if(multiset<_Key, _Compare, _Allocator>& __c, _Predicate __pred) {
