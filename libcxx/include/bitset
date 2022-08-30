@@ -672,10 +672,10 @@ __bitset<0, 0>::__bitset(unsigned long long) _NOEXCEPT
 {
 }
 
-template <size_t _Size> class _LIBCPP_TEMPLATE_VIS bitset;
+_LIBCPP_EXPORT_STD template <size_t _Size> class _LIBCPP_TEMPLATE_VIS bitset;
 template <size_t _Size> struct hash<bitset<_Size> >;
 
-template <size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Size>
 class _LIBCPP_TEMPLATE_VIS bitset
     : private __bitset<_Size == 0 ? 0 : (_Size - 1) / (sizeof(size_t) * CHAR_BIT) + 1, _Size>
 {
@@ -1101,7 +1101,7 @@ bitset<_Size>::operator>>(size_t __pos) const _NOEXCEPT
     return __r;
 }
 
-template <size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23
 bitset<_Size>
 operator&(const bitset<_Size>& __x, const bitset<_Size>& __y) _NOEXCEPT
@@ -1111,7 +1111,7 @@ operator&(const bitset<_Size>& __x, const bitset<_Size>& __y) _NOEXCEPT
     return __r;
 }
 
-template <size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23
 bitset<_Size>
 operator|(const bitset<_Size>& __x, const bitset<_Size>& __y) _NOEXCEPT
@@ -1121,7 +1121,7 @@ operator|(const bitset<_Size>& __x, const bitset<_Size>& __y) _NOEXCEPT
     return __r;
 }
 
-template <size_t _Size>
+_LIBCPP_EXPORT_STD template <size_t _Size>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23
 bitset<_Size>
 operator^(const bitset<_Size>& __x, const bitset<_Size>& __y) _NOEXCEPT
@@ -1140,11 +1140,11 @@ struct _LIBCPP_TEMPLATE_VIS hash<bitset<_Size> >
         {return __bs.__hash_code();}
 };
 
-template <class _CharT, class _Traits, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, size_t _Size>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is, bitset<_Size>& __x);
 
-template <class _CharT, class _Traits, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, size_t _Size>
 _LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const bitset<_Size>& __x);
 
