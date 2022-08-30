@@ -35,7 +35,7 @@ struct _IfImpl<false> {
 template <bool _Cond, class _IfRes, class _ElseRes>
 using _If _LIBCPP_NODEBUG = typename _IfImpl<_Cond>::template _Select<_IfRes, _ElseRes>;
 
-template <bool _Bp, class _If, class _Then>
+_LIBCPP_EXPORT_STD template <bool _Bp, class _If, class _Then>
 struct _LIBCPP_TEMPLATE_VIS conditional {
   using type _LIBCPP_NODEBUG = _If;
 };
@@ -45,7 +45,7 @@ struct _LIBCPP_TEMPLATE_VIS conditional<false, _If, _Then> {
 };
 
 #if _LIBCPP_STD_VER > 11
-template <bool _Bp, class _IfRes, class _ElseRes>
+_LIBCPP_EXPORT_STD template <bool _Bp, class _IfRes, class _ElseRes>
 using conditional_t _LIBCPP_NODEBUG = typename conditional<_Bp, _IfRes, _ElseRes>::type;
 #endif
 

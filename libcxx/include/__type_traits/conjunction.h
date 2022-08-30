@@ -39,7 +39,7 @@ using _And _LIBCPP_NODEBUG = decltype(__and_helper<_Pred...>(0));
 
 #if _LIBCPP_STD_VER > 14
 
-template <class...>
+_LIBCPP_EXPORT_STD template <class...>
 struct conjunction : true_type {};
 
 template <class _Arg>
@@ -48,7 +48,7 @@ struct conjunction<_Arg> : _Arg {};
 template <class _Arg, class... _Args>
 struct conjunction<_Arg, _Args...> : conditional_t<!bool(_Arg::value), _Arg, conjunction<_Args...>> {};
 
-template <class... _Args>
+_LIBCPP_EXPORT_STD template <class... _Args>
 inline constexpr bool conjunction_v = conjunction<_Args...>::value;
 
 #endif // _LIBCPP_STD_VER > 14

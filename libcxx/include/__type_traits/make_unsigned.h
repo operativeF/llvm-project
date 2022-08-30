@@ -80,7 +80,7 @@ struct make_unsigned {
 };
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using make_unsigned_t = __make_unsigned_t<_Tp>;
+_LIBCPP_EXPORT_STD template <class _Tp> using make_unsigned_t = __make_unsigned_t<_Tp>;
 #endif
 
 #ifndef _LIBCPP_CXX03_LANG

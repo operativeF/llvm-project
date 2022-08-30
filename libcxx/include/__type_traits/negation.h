@@ -22,9 +22,9 @@ template <class _Pred>
 struct _Not : _BoolConstant<!_Pred::value> {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct negation : _Not<_Tp> {};
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline constexpr bool negation_v = !_Tp::value;
 #endif // _LIBCPP_STD_VER > 14
 

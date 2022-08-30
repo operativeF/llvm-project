@@ -33,7 +33,7 @@ inline constexpr bool is_array_v = __is_array(_Tp);
 
 #else
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_array
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_array
     : public false_type {};
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_array<_Tp[]>
     : public true_type {};
@@ -41,7 +41,7 @@ template <class _Tp, size_t _Np> struct _LIBCPP_TEMPLATE_VIS is_array<_Tp[_Np]>
     : public true_type {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_array_v = is_array<_Tp>::value;
 #endif
 

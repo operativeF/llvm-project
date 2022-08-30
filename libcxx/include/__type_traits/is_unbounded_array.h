@@ -23,10 +23,10 @@ template <class _Tp> struct _LIBCPP_TEMPLATE_VIS __libcpp_is_unbounded_array<_Tp
 
 #if _LIBCPP_STD_VER > 17
 
-template <class>     struct _LIBCPP_TEMPLATE_VIS is_unbounded_array        : false_type {};
+_LIBCPP_EXPORT_STD template <class>     struct _LIBCPP_TEMPLATE_VIS is_unbounded_array        : false_type {};
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_unbounded_array<_Tp[]> : true_type {};
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr
 bool is_unbounded_array_v  = is_unbounded_array<_Tp>::value;
 

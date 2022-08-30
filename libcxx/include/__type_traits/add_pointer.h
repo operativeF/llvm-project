@@ -47,7 +47,7 @@ struct add_pointer {
 };
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using add_pointer_t = __add_pointer_t<_Tp>;
+_LIBCPP_EXPORT_STD template <class _Tp> using add_pointer_t = __add_pointer_t<_Tp>;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

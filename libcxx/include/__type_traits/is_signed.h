@@ -20,11 +20,11 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_signed)
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_signed : _BoolConstant<__is_signed(_Tp)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_signed_v = __is_signed(_Tp);
 #endif
 
@@ -41,10 +41,10 @@ struct __libcpp_is_signed : public __libcpp_is_signed_impl<_Tp> {};
 
 template <class _Tp> struct __libcpp_is_signed<_Tp, false> : public false_type {};
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_signed : public __libcpp_is_signed<_Tp> {};
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_signed : public __libcpp_is_signed<_Tp> {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_signed_v = is_signed<_Tp>::value;
 #endif
 

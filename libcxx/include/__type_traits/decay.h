@@ -52,7 +52,7 @@ public:
                      >::type type;
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS decay
 {
 private:
@@ -63,7 +63,7 @@ public:
 #endif // __has_builtin(__decay)
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using decay_t = typename decay<_Tp>::type;
+_LIBCPP_EXPORT_STD template <class _Tp> using decay_t = typename decay<_Tp>::type;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

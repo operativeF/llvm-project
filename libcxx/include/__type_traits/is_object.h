@@ -24,24 +24,24 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_object)
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_object : _BoolConstant<__is_object(_Tp)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_object_v = __is_object(_Tp);
 #endif
 
 #else // __has_builtin(__is_object)
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_object
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_object
     : public integral_constant<bool, is_scalar<_Tp>::value ||
                                      is_array<_Tp>::value  ||
                                      is_union<_Tp>::value  ||
                                      is_class<_Tp>::value  > {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_object_v = is_object<_Tp>::value;
 #endif
 

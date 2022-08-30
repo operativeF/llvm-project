@@ -27,11 +27,11 @@ template <class _Tp> struct _LIBCPP_TEMPLATE_VIS __is_nullptr_t
     : public __is_nullptr_t_impl<__remove_cv_t<_Tp> > {};
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_null_pointer
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_null_pointer
     : public __is_nullptr_t_impl<__remove_cv_t<_Tp> > {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_null_pointer_v = is_null_pointer<_Tp>::value;
 #endif
 #endif // _LIBCPP_STD_VER > 11

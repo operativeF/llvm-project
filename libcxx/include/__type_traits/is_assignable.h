@@ -18,11 +18,11 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 struct _LIBCPP_TEMPLATE_VIS is_assignable : _BoolConstant<__is_assignable(_Tp, _Up)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp, class _Arg>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Arg>
 inline constexpr bool is_assignable_v = __is_assignable(_Tp, _Arg);
 #endif
 

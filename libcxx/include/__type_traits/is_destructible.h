@@ -24,11 +24,11 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_destructible)
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_destructible : _BoolConstant<__is_destructible(_Tp)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_destructible_v = __is_destructible(_Tp);
 #endif
 
@@ -78,7 +78,7 @@ struct __destructible_false<_Tp, false> : public __destructible_imp<_Tp, is_refe
 template <class _Tp>
 struct __destructible_false<_Tp, true> : public false_type {};
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct is_destructible
     : public __destructible_false<_Tp, is_function<_Tp>::value> {};
 
@@ -91,7 +91,7 @@ struct is_destructible<void>
     : public false_type {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_destructible_v = is_destructible<_Tp>::value;
 #endif
 

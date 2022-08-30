@@ -18,7 +18,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 17
-_LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline constexpr bool is_constant_evaluated() noexcept {
   return __builtin_is_constant_evaluated();
 }

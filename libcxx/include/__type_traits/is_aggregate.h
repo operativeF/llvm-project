@@ -20,10 +20,10 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER > 14
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS
 is_aggregate : public integral_constant<bool, __is_aggregate(_Tp)> {};
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_aggregate_v = __is_aggregate(_Tp);
 
 #endif // _LIBCPP_STD_VER > 14

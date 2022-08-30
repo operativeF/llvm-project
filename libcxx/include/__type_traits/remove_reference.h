@@ -19,7 +19,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__remove_reference_t)
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct remove_reference {
   using type _LIBCPP_NODEBUG = __remove_reference_t(_Tp);
 };
@@ -27,7 +27,7 @@ struct remove_reference {
 template <class _Tp>
 using __libcpp_remove_reference_t = __remove_reference_t(_Tp);
 #else
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_reference        {typedef _LIBCPP_NODEBUG _Tp type;};
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_reference        {typedef _LIBCPP_NODEBUG _Tp type;};
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_reference<_Tp&>  {typedef _LIBCPP_NODEBUG _Tp type;};
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_reference<_Tp&&> {typedef _LIBCPP_NODEBUG _Tp type;};
 
@@ -36,7 +36,7 @@ using __libcpp_remove_reference_t = typename remove_reference<_Tp>::type;
 #endif // __has_builtin(__remove_reference_t)
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using remove_reference_t = __libcpp_remove_reference_t<_Tp>;
+_LIBCPP_EXPORT_STD template <class _Tp> using remove_reference_t = __libcpp_remove_reference_t<_Tp>;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

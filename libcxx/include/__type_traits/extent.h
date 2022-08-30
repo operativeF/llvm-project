@@ -21,12 +21,12 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__array_extent)
 
-template<class _Tp, size_t _Dim = 0>
+_LIBCPP_EXPORT_STD template<class _Tp, size_t _Dim = 0>
 struct _LIBCPP_TEMPLATE_VIS extent
     : integral_constant<size_t, __array_extent(_Tp, _Dim)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp, unsigned _Ip = 0>
+_LIBCPP_EXPORT_STD template <class _Tp, unsigned _Ip = 0>
 inline constexpr size_t extent_v = __array_extent(_Tp, _Ip);
 #endif
 

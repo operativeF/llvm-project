@@ -17,7 +17,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, _Tp __v>
+_LIBCPP_EXPORT_STD template <class _Tp, _Tp __v>
 struct _LIBCPP_TEMPLATE_VIS integral_constant
 {
   static _LIBCPP_CONSTEXPR const _Tp      value = __v;
@@ -34,10 +34,10 @@ struct _LIBCPP_TEMPLATE_VIS integral_constant
 template <class _Tp, _Tp __v>
 _LIBCPP_CONSTEXPR const _Tp integral_constant<_Tp, __v>::value;
 
-typedef integral_constant<bool, true>  true_type;
-typedef integral_constant<bool, false> false_type;
+_LIBCPP_EXPORT_STD typedef integral_constant<bool, true>  true_type;
+_LIBCPP_EXPORT_STD typedef integral_constant<bool, false> false_type;
 
-template <bool _Val>
+_LIBCPP_EXPORT_STD template <bool _Val>
 using _BoolConstant _LIBCPP_NODEBUG = integral_constant<bool, _Val>;
 
 #if _LIBCPP_STD_VER > 14

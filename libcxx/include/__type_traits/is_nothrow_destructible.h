@@ -40,7 +40,7 @@ struct __libcpp_is_nothrow_destructible<true, _Tp>
 {
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_destructible
     : public __libcpp_is_nothrow_destructible<is_destructible<_Tp>::value, _Tp>
 {
@@ -73,14 +73,14 @@ template <class _Tp> struct __libcpp_nothrow_destructor
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_nothrow_destructible
     : public __libcpp_nothrow_destructor<__remove_all_extents_t<_Tp> > {};
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_destructible<_Tp[]>
     : public false_type {};
 
 #endif
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_nothrow_destructible_v = is_nothrow_destructible<_Tp>::value;
 #endif
 

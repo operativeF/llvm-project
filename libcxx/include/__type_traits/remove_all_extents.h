@@ -19,7 +19,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__remove_all_extents)
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct remove_all_extents {
   using type _LIBCPP_NODEBUG = __remove_all_extents(_Tp);
 };
@@ -27,7 +27,7 @@ struct remove_all_extents {
 template <class _Tp>
 using __remove_all_extents_t = __remove_all_extents(_Tp);
 #else
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_all_extents
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_all_extents
     {typedef _Tp type;};
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS remove_all_extents<_Tp[]>
     {typedef typename remove_all_extents<_Tp>::type type;};
@@ -39,7 +39,7 @@ using __remove_all_extents_t = typename remove_all_extents<_Tp>::type;
 #endif // __has_builtin(__remove_all_extents)
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using remove_all_extents_t = __remove_all_extents_t<_Tp>;
+_LIBCPP_EXPORT_STD template <class _Tp> using remove_all_extents_t = __remove_all_extents_t<_Tp>;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

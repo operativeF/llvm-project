@@ -18,13 +18,16 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_pod
+#if _LIBCPP_STD_VER <= 17 || defined(_LIBCPP_ENABLE_CXX20_REMOVED_TYPE_TRAITS)
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_DEPRECATED_IN_CXX20 _LIBCPP_TEMPLATE_VIS is_pod
     : public integral_constant<bool, __is_pod(_Tp)> {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
-inline constexpr bool is_pod_v = __is_pod(_Tp);
+_LIBCPP_EXPORT_STD template <class _Tp>
+_LIBCPP_DEPRECATED_IN_CXX20 inline constexpr bool is_pod_v = __is_pod(_Tp);
 #endif
+
+#endif // _LIBCPP_STD_VER <= 17 || defined(_LIBCPP_ENABLE_CXX20_REMOVED_TYPE_TRAITS)
 
 _LIBCPP_END_NAMESPACE_STD
 

@@ -18,11 +18,11 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 struct _LIBCPP_TEMPLATE_VIS is_same : _BoolConstant<__is_same(_Tp, _Up)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline constexpr bool is_same_v = __is_same(_Tp, _Up);
 #endif
 

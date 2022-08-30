@@ -62,7 +62,7 @@ struct __common_type_impl {};
 # define _LIBCPP_OPTIONAL_PACK(...) , __VA_ARGS__
 template <class... _Tp>
 struct __common_types;
-template <class... _Tp>
+_LIBCPP_EXPORT_STD template <class... _Tp>
 struct _LIBCPP_TEMPLATE_VIS common_type;
 #else
 # define _LIBCPP_OPTIONAL_PACK(...)
@@ -126,7 +126,7 @@ struct _LIBCPP_TEMPLATE_VIS
 #undef _LIBCPP_OPTIONAL_PACK
 
 #if _LIBCPP_STD_VER > 11
-template <class ..._Tp> using common_type_t = typename common_type<_Tp...>::type;
+_LIBCPP_EXPORT_STD template <class ..._Tp> using common_type_t = typename common_type<_Tp...>::type;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

@@ -26,7 +26,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_convertible_to) && !defined(_LIBCPP_USE_IS_CONVERTIBLE_FALLBACK)
 
-template <class _T1, class _T2> struct _LIBCPP_TEMPLATE_VIS is_convertible
+_LIBCPP_EXPORT_STD template <class _T1, class _T2> struct _LIBCPP_TEMPLATE_VIS is_convertible
     : public integral_constant<bool, __is_convertible_to(_T1, _T2)> {};
 
 #else  // __has_builtin(__is_convertible_to) && !defined(_LIBCPP_USE_IS_CONVERTIBLE_FALLBACK)
@@ -89,7 +89,7 @@ template <class _T1, class _T2> struct __is_convertible<_T1, _T2, 1, 3> : public
 template <class _T1, class _T2> struct __is_convertible<_T1, _T2, 2, 3> : public false_type {};
 template <class _T1, class _T2> struct __is_convertible<_T1, _T2, 3, 3> : public true_type {};
 
-template <class _T1, class _T2> struct _LIBCPP_TEMPLATE_VIS is_convertible
+_LIBCPP_EXPORT_STD template <class _T1, class _T2> struct _LIBCPP_TEMPLATE_VIS is_convertible
     : public __is_convertible<_T1, _T2>
 {
     static const size_t __complete_check1 = __is_convertible_check<_T1>::__v;
@@ -99,7 +99,7 @@ template <class _T1, class _T2> struct _LIBCPP_TEMPLATE_VIS is_convertible
 #endif // __has_builtin(__is_convertible_to) && !defined(_LIBCPP_USE_IS_CONVERTIBLE_FALLBACK)
 
 #if _LIBCPP_STD_VER > 14
-template <class _From, class _To>
+_LIBCPP_EXPORT_STD template <class _From, class _To>
 inline constexpr bool is_convertible_v = is_convertible<_From, _To>::value;
 #endif
 

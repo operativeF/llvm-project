@@ -18,12 +18,12 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_polymorphic
     : public integral_constant<bool, __is_polymorphic(_Tp)> {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_polymorphic_v = __is_polymorphic(_Tp);
 #endif
 

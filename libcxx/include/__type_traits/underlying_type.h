@@ -29,11 +29,11 @@ struct __underlying_type_impl<_Tp, true>
     typedef __underlying_type(_Tp) type;
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct underlying_type : __underlying_type_impl<_Tp, is_enum<_Tp>::value> {};
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using underlying_type_t = typename underlying_type<_Tp>::type;
+_LIBCPP_EXPORT_STD template <class _Tp> using underlying_type_t = typename underlying_type<_Tp>::type;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

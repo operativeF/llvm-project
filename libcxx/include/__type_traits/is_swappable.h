@@ -48,7 +48,7 @@ _LIBCPP_CONSTEXPR_SINCE_CXX20 __swap_result_t<_Tp>
 swap(_Tp& __x, _Tp& __y) _NOEXCEPT_(is_nothrow_move_constructible<_Tp>::value &&
                                     is_nothrow_move_assignable<_Tp>::value);
 
-template<class _Tp, size_t _Np>
+_LIBCPP_EXPORT_STD template<class _Tp, size_t _Np>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
 typename enable_if<
     __is_swappable<_Tp>::value
@@ -110,13 +110,13 @@ struct __is_nothrow_swappable
 
 #if _LIBCPP_STD_VER > 14
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 struct _LIBCPP_TEMPLATE_VIS is_swappable_with
     : public integral_constant<bool, __detail::__swappable_with<_Tp, _Up>::value>
 {
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_swappable
     : public __conditional_t<
         __libcpp_is_referenceable<_Tp>::value,
@@ -128,13 +128,13 @@ struct _LIBCPP_TEMPLATE_VIS is_swappable
 {
 };
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_swappable_with
     : public integral_constant<bool, __detail::__nothrow_swappable_with<_Tp, _Up>::value>
 {
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_swappable
     : public __conditional_t<
         __libcpp_is_referenceable<_Tp>::value,
@@ -146,16 +146,16 @@ struct _LIBCPP_TEMPLATE_VIS is_nothrow_swappable
 {
 };
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline constexpr bool is_swappable_with_v = is_swappable_with<_Tp, _Up>::value;
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_swappable_v = is_swappable<_Tp>::value;
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline constexpr bool is_nothrow_swappable_with_v = is_nothrow_swappable_with<_Tp, _Up>::value;
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_nothrow_swappable_v = is_nothrow_swappable<_Tp>::value;
 
 #endif // _LIBCPP_STD_VER > 14

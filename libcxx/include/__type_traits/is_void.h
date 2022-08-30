@@ -20,21 +20,21 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_void)
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_void : _BoolConstant<__is_void(_Tp)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_void_v = __is_void(_Tp);
 #endif
 
 #else
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_void
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_void
     : public is_same<__remove_cv_t<_Tp>, void> {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_void_v = is_void<_Tp>::value;
 #endif
 

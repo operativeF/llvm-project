@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp> class _LIBCPP_TEMPLATE_VIS reference_wrapper;
+_LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS reference_wrapper;
 
 template <class _Tp> struct __is_reference_wrapper_impl : public false_type {};
 template <class _Tp> struct __is_reference_wrapper_impl<reference_wrapper<_Tp> > : public true_type {};

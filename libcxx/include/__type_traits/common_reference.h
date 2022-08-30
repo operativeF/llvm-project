@@ -106,10 +106,10 @@ struct __common_ref {};
 
 // Note C: For the common_reference trait applied to a parameter pack [...]
 
-template <class...>
+_LIBCPP_EXPORT_STD template <class...>
 struct common_reference;
 
-template <class... _Types>
+_LIBCPP_EXPORT_STD template <class... _Types>
 using common_reference_t = typename common_reference<_Types...>::type;
 
 // bullet 1 - sizeof...(T) == 0

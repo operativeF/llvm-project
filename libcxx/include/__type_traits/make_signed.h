@@ -78,7 +78,7 @@ struct make_signed {
 };
 
 #if _LIBCPP_STD_VER > 11
-template <class _Tp> using make_signed_t = __make_signed_t<_Tp>;
+_LIBCPP_EXPORT_STD template <class _Tp> using make_signed_t = __make_signed_t<_Tp>;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

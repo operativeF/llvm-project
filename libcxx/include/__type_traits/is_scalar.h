@@ -24,11 +24,11 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_scalar)
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_scalar : _BoolConstant<__is_scalar(_Tp)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_scalar_v = __is_scalar(_Tp);
 #endif
 
@@ -39,7 +39,7 @@ template <class _Tp> struct __is_block : false_type {};
 template <class _Rp, class ..._Args> struct __is_block<_Rp (^)(_Args...)> : true_type {};
 #endif
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_scalar
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_scalar
     : public integral_constant<bool, is_arithmetic<_Tp>::value     ||
                                      is_member_pointer<_Tp>::value ||
                                      is_pointer<_Tp>::value        ||
@@ -50,7 +50,7 @@ template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_scalar
 template <> struct _LIBCPP_TEMPLATE_VIS is_scalar<nullptr_t> : public true_type {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_scalar_v = is_scalar<_Tp>::value;
 #endif
 

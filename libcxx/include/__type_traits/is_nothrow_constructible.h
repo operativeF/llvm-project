@@ -20,7 +20,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__is_nothrow_constructible)
 
-template <
+_LIBCPP_EXPORT_STD template <
     class _Tp, class... _Args>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_constructible
     : public integral_constant<bool, __is_nothrow_constructible(_Tp, _Args...)> {};
@@ -49,7 +49,7 @@ struct __libcpp_is_nothrow_constructible</*is constructible*/false, _IsReference
 {
 };
 
-template <class _Tp, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class... _Args>
 struct _LIBCPP_TEMPLATE_VIS is_nothrow_constructible
     : __libcpp_is_nothrow_constructible<is_constructible<_Tp, _Args...>::value, is_reference<_Tp>::value, _Tp, _Args...>
 {
@@ -65,7 +65,7 @@ struct _LIBCPP_TEMPLATE_VIS is_nothrow_constructible<_Tp[_Ns]>
 
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp, class ..._Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class ..._Args>
 inline constexpr bool is_nothrow_constructible_v = is_nothrow_constructible<_Tp, _Args...>::value;
 #endif
 

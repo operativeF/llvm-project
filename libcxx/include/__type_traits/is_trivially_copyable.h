@@ -18,12 +18,12 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_trivially_copyable
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS is_trivially_copyable
     : public integral_constant<bool, __is_trivially_copyable(_Tp)>
     {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_trivially_copyable_v = __is_trivially_copyable(_Tp);
 #endif
 

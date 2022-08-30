@@ -45,10 +45,10 @@ using _Or _LIBCPP_NODEBUG = typename _OrImpl<sizeof...(_Args) != 0>::template _R
 
 #if _LIBCPP_STD_VER > 14
 
-template <class... _Args>
+_LIBCPP_EXPORT_STD template <class... _Args>
 struct disjunction : _Or<_Args...> {};
 
-template <class... _Args>
+_LIBCPP_EXPORT_STD template <class... _Args>
 inline constexpr bool disjunction_v = _Or<_Args...>::value;
 
 #endif // _LIBCPP_STD_VER > 14
