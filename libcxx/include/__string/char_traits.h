@@ -38,7 +38,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 struct char_traits;
 /*
 The Standard does not define the base template for char_traits because it is impossible to provide
