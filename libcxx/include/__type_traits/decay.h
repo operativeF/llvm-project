@@ -26,7 +26,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if __has_builtin(__decay)
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct decay {
   using type _LIBCPP_NODEBUG = __decay(_Tp);
 };
