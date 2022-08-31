@@ -163,20 +163,20 @@ private:
         void __seed(_Sseq& __q, integral_constant<unsigned, 2>);
 };
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const size_t subtract_with_carry_engine<_UIntType, __w, __s, __r>::word_size;
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const size_t subtract_with_carry_engine<_UIntType, __w, __s, __r>::short_lag;
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const size_t subtract_with_carry_engine<_UIntType, __w, __s, __r>::long_lag;
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
     _LIBCPP_CONSTEXPR const typename subtract_with_carry_engine<_UIntType, __w, __s, __r>::result_type
     subtract_with_carry_engine<_UIntType, __w, __s, __r>::default_seed;
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
 void
 subtract_with_carry_engine<_UIntType, __w, __s, __r>::seed(result_type __sd,
         integral_constant<unsigned, 1>)
@@ -189,7 +189,7 @@ subtract_with_carry_engine<_UIntType, __w, __s, __r>::seed(result_type __sd,
     __i_ = 0;
 }
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
 void
 subtract_with_carry_engine<_UIntType, __w, __s, __r>::seed(result_type __sd,
         integral_constant<unsigned, 2>)
@@ -237,7 +237,7 @@ subtract_with_carry_engine<_UIntType, __w, __s, __r>::__seed(_Sseq& __q,
     __i_ = 0;
 }
 
-_LIBCPP_EXPORT_STD template<class _UIntType, size_t __w, size_t __s, size_t __r>
+template<class _UIntType, size_t __w, size_t __s, size_t __r>
 _UIntType
 subtract_with_carry_engine<_UIntType, __w, __s, __r>::operator()()
 {
