@@ -42,7 +42,7 @@ template <class>
 using __swap_result_t = void;
 #endif
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR_SINCE_CXX20 __swap_result_t<_Tp>
 swap(_Tp& __x, _Tp& __y) _NOEXCEPT_(is_nothrow_move_constructible<_Tp>::value &&
