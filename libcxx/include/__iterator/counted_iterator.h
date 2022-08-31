@@ -294,7 +294,7 @@ public:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(counted_iterator);
 
-_LIBCPP_EXPORT_STD template<input_iterator _Iter>
+template<input_iterator _Iter>
   requires same_as<_ITER_TRAITS<_Iter>, iterator_traits<_Iter>>
 struct iterator_traits<counted_iterator<_Iter>> : iterator_traits<_Iter> {
   using pointer = conditional_t<contiguous_iterator<_Iter>,
