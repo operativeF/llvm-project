@@ -165,7 +165,7 @@ public:
                piecewise_constant_distribution<_RT>& __x);
 };
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 typename piecewise_constant_distribution<_RealType>::param_type &
 piecewise_constant_distribution<_RealType>::param_type::operator=
                                                        (const param_type& __rhs)
@@ -203,7 +203,7 @@ piecewise_constant_distribution<_RealType>::param_type::__init()
     // __densities_ now contains __densities_
 }
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 piecewise_constant_distribution<_RealType>::param_type::param_type()
     : __b_(2),
       __densities_(1, 1.0),
@@ -212,7 +212,7 @@ piecewise_constant_distribution<_RealType>::param_type::param_type()
     __b_[1] = 1;
 }
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 template<class _InputIteratorB, class _InputIteratorW>
 piecewise_constant_distribution<_RealType>::param_type::param_type(
         _InputIteratorB __f_b, _InputIteratorB __l_b, _InputIteratorW __f_w)
@@ -237,7 +237,7 @@ piecewise_constant_distribution<_RealType>::param_type::param_type(
 
 #ifndef _LIBCPP_CXX03_LANG
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 template<class _UnaryOperation>
 piecewise_constant_distribution<_RealType>::param_type::param_type(
         initializer_list<result_type> __bl, _UnaryOperation __fw)
@@ -262,7 +262,7 @@ piecewise_constant_distribution<_RealType>::param_type::param_type(
 
 #endif // _LIBCPP_CXX03_LANG
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 template<class _UnaryOperation>
 piecewise_constant_distribution<_RealType>::param_type::param_type(
         size_t __nw, result_type __xmin, result_type __xmax, _UnaryOperation __fw)
@@ -280,7 +280,7 @@ piecewise_constant_distribution<_RealType>::param_type::param_type(
     __init();
 }
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 template<class _URNG>
 _RealType
 piecewise_constant_distribution<_RealType>::operator()(_URNG& __g, const param_type& __p)
