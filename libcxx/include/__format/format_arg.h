@@ -258,7 +258,7 @@ public:
       : __value_(__value), __type_(__type) {}
 };
 
-_LIBCPP_EXPORT_STD template <class _Context>
+template <class _Context>
 class _LIBCPP_TEMPLATE_VIS basic_format_arg<_Context>::handle {
 public:
   _LIBCPP_HIDE_FROM_ABI
