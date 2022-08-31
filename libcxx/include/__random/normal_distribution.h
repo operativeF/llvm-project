@@ -127,7 +127,7 @@ public:
                normal_distribution<_RT>& __x);
 };
 
-_LIBCPP_EXPORT_STD template <class _RealType>
+template <class _RealType>
 template<class _URNG>
 _RealType
 normal_distribution<_RealType>::operator()(_URNG& __g, const param_type& __p)
