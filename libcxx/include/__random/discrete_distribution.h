@@ -153,7 +153,7 @@ public:
                discrete_distribution<_IT>& __x);
 };
 
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 template<class _UnaryOperation>
 discrete_distribution<_IntType>::param_type::param_type(size_t __nw,
                                                         double __xmin,
@@ -194,7 +194,7 @@ discrete_distribution<_IntType>::param_type::__init()
     }
 }
 
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 vector<double>
 discrete_distribution<_IntType>::param_type::probabilities() const
 {
@@ -208,7 +208,7 @@ discrete_distribution<_IntType>::param_type::probabilities() const
     return __p;
 }
 
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 template<class _URNG>
 _IntType
 discrete_distribution<_IntType>::operator()(_URNG& __g, const param_type& __p)
