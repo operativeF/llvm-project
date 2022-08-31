@@ -226,7 +226,7 @@ public:
             {return !(__x == __y);}
 };
 
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 template<class _URNG>
 typename uniform_int_distribution<_IntType>::result_type
 uniform_int_distribution<_IntType>::operator()(_URNG& __g, const param_type& __p)
