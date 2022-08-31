@@ -59,43 +59,43 @@ public:
 };
 
 // Signed integral types.
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<signed char, _CharT>
     : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<short, _CharT> : public __formatter_integer<_CharT> {
 };
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<int, _CharT> : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<long, _CharT> : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<long long, _CharT>
     : public __formatter_integer<_CharT> {};
 #  ifndef _LIBCPP_HAS_NO_INT128
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<__int128_t, _CharT>
     : public __formatter_integer<_CharT> {};
 #  endif
 
 // Unsigned integral types.
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<unsigned char, _CharT>
     : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<unsigned short, _CharT>
     : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<unsigned, _CharT>
     : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<unsigned long, _CharT>
     : public __formatter_integer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<unsigned long long, _CharT>
     : public __formatter_integer<_CharT> {};
 #  ifndef _LIBCPP_HAS_NO_INT128
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<__uint128_t, _CharT>
     : public __formatter_integer<_CharT> {};
 #  endif
