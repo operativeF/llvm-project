@@ -37,31 +37,31 @@ concept __has_member_element_type = requires { typename _Tp::element_type; };
 
 _LIBCPP_EXPORT_STD template<class> struct indirectly_readable_traits {};
 
-_LIBCPP_EXPORT_STD template<class _Ip>
+template<class _Ip>
 requires is_array_v<_Ip>
 struct indirectly_readable_traits<_Ip> {
   using value_type = remove_cv_t<remove_extent_t<_Ip>>;
 };
 
-_LIBCPP_EXPORT_STD template<class _Ip>
+template<class _Ip>
 struct indirectly_readable_traits<const _Ip> : indirectly_readable_traits<_Ip> {};
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 struct indirectly_readable_traits<_Tp*> : __cond_value_type<_Tp> {};
 
-_LIBCPP_EXPORT_STD template<__has_member_value_type _Tp>
+template<__has_member_value_type _Tp>
 struct indirectly_readable_traits<_Tp>
   : __cond_value_type<typename _Tp::value_type> {};
 
-_LIBCPP_EXPORT_STD template<__has_member_element_type _Tp>
+template<__has_member_element_type _Tp>
 struct indirectly_readable_traits<_Tp>
   : __cond_value_type<typename _Tp::element_type> {};
 
-_LIBCPP_EXPORT_STD template<__has_member_value_type _Tp>
+template<__has_member_value_type _Tp>
   requires __has_member_element_type<_Tp>
 struct indirectly_readable_traits<_Tp> {};
 
-_LIBCPP_EXPORT_STD template<__has_member_value_type _Tp>
+template<__has_member_value_type _Tp>
   requires __has_member_element_type<_Tp> &&
            same_as<remove_cv_t<typename _Tp::element_type>,
                    remove_cv_t<typename _Tp::value_type>>
