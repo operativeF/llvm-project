@@ -50,7 +50,7 @@ struct _LIBCPP_TEMPLATE_VIS default_delete {
   }
 };
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS default_delete<_Tp[]> {
 private:
   template <class _Up>
@@ -287,7 +287,7 @@ public:
 };
 
 
-_LIBCPP_EXPORT_STD template <class _Tp, class _Dp>
+template <class _Tp, class _Dp>
 class _LIBCPP_UNIQUE_PTR_TRIVIAL_ABI _LIBCPP_TEMPLATE_VIS unique_ptr<_Tp[], _Dp> {
 public:
   typedef _Tp element_type;
@@ -685,7 +685,7 @@ template<class _Tp, class... _Args>
 
 _LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS hash;
 
-_LIBCPP_EXPORT_STD template <class _Tp, class _Dp>
+template <class _Tp, class _Dp>
 #ifdef _LIBCPP_CXX03_LANG
 struct _LIBCPP_TEMPLATE_VIS hash<unique_ptr<_Tp, _Dp> >
 #else
