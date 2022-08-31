@@ -99,7 +99,7 @@ public:
         {return !(__x == __y);}
 };
 
-_LIBCPP_EXPORT_STD template<class _URNG>
+template<class _URNG>
 inline
 bernoulli_distribution::result_type
 bernoulli_distribution::operator()(_URNG& __g, const param_type& __p)
