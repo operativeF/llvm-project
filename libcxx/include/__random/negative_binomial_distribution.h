@@ -113,7 +113,7 @@ public:
         {return !(__x == __y);}
 };
 
-_LIBCPP_EXPORT_STD template <class _IntType>
+template <class _IntType>
 template<class _URNG>
 _IntType
 negative_binomial_distribution<_IntType>::operator()(_URNG& __urng, const param_type& __pr)
