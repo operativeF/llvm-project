@@ -56,7 +56,7 @@ struct incrementable_traits<_Tp> {
   using difference_type = make_signed_t<decltype(declval<_Tp>() - declval<_Tp>())>;
 };
 
-template <class>
+_LIBCPP_EXPORT_STD template <class>
 struct iterator_traits;
 
 // Let `RI` be `remove_cvref_t<I>`. The type `iter_difference_t<I>` denotes
