@@ -317,7 +317,7 @@ operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_i
 }
 
 #if _LIBCPP_STD_VER > 17
-_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
+template <class _Iter1, class _Iter2>
   requires (!sized_sentinel_for<_Iter1, _Iter2>)
 inline constexpr bool disable_sized_sentinel_for<reverse_iterator<_Iter1>, reverse_iterator<_Iter2>> = true;
 #endif // _LIBCPP_STD_VER > 17
