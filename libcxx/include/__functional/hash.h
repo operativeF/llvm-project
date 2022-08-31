@@ -396,7 +396,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<_Tp*>
     }
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<bool>
     : public __unary_function<bool, size_t>
 {
@@ -404,7 +404,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<bool>
     size_t operator()(bool __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<char>
     : public __unary_function<char, size_t>
 {
@@ -412,7 +412,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<char>
     size_t operator()(char __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<signed char>
     : public __unary_function<signed char, size_t>
 {
@@ -420,7 +420,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<signed char>
     size_t operator()(signed char __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<unsigned char>
     : public __unary_function<unsigned char, size_t>
 {
@@ -429,7 +429,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<unsigned char>
 };
 
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<char8_t>
     : public __unary_function<char8_t, size_t>
 {
@@ -438,7 +438,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<char8_t>
 };
 #endif // !_LIBCPP_HAS_NO_CHAR8_T
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<char16_t>
     : public __unary_function<char16_t, size_t>
 {
@@ -446,7 +446,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<char16_t>
     size_t operator()(char16_t __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<char32_t>
     : public __unary_function<char32_t, size_t>
 {
@@ -455,7 +455,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<char32_t>
 };
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<wchar_t>
     : public __unary_function<wchar_t, size_t>
 {
@@ -464,7 +464,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<wchar_t>
 };
 #endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<short>
     : public __unary_function<short, size_t>
 {
@@ -472,7 +472,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<short>
     size_t operator()(short __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<unsigned short>
     : public __unary_function<unsigned short, size_t>
 {
@@ -480,7 +480,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<unsigned short>
     size_t operator()(unsigned short __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<int>
     : public __unary_function<int, size_t>
 {
@@ -488,7 +488,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<int>
     size_t operator()(int __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<unsigned int>
     : public __unary_function<unsigned int, size_t>
 {
@@ -496,7 +496,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<unsigned int>
     size_t operator()(unsigned int __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<long>
     : public __unary_function<long, size_t>
 {
@@ -504,7 +504,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<long>
     size_t operator()(long __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<unsigned long>
     : public __unary_function<unsigned long, size_t>
 {
@@ -512,13 +512,13 @@ struct _LIBCPP_TEMPLATE_VIS hash<unsigned long>
     size_t operator()(unsigned long __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<long long>
     : public __scalar_hash<long long>
 {
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<unsigned long long>
     : public __scalar_hash<unsigned long long>
 {
@@ -526,13 +526,13 @@ struct _LIBCPP_TEMPLATE_VIS hash<unsigned long long>
 
 #ifndef _LIBCPP_HAS_NO_INT128
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<__int128_t>
     : public __scalar_hash<__int128_t>
 {
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<__uint128_t>
     : public __scalar_hash<__uint128_t>
 {
@@ -540,7 +540,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<__uint128_t>
 
 #endif
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<float>
     : public __scalar_hash<float>
 {
@@ -554,7 +554,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<float>
     }
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<double>
     : public __scalar_hash<double>
 {
@@ -568,7 +568,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<double>
     }
 };
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<long double>
     : public __scalar_hash<long double>
 {
@@ -636,14 +636,14 @@ struct _LIBCPP_TEMPLATE_VIS __enum_hash<_Tp, false> {
     __enum_hash& operator=(__enum_hash const&) = delete;
 };
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS hash : public __enum_hash<_Tp>
 {
 };
 
 #if _LIBCPP_STD_VER > 14
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS hash<nullptr_t>
   : public __unary_function<nullptr_t, size_t>
 {
