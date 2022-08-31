@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 _LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS allocator_arg_t { explicit allocator_arg_t() = default; };
 
 #if defined(_LIBCPP_CXX03_LANG) || defined(_LIBCPP_BUILDING_LIBRARY)
-extern _LIBCPP_EXPORTED_FROM_ABI const allocator_arg_t allocator_arg;
+_LIBCPP_EXPORT_STD extern _LIBCPP_EXPORTED_FROM_ABI const allocator_arg_t allocator_arg;
 #else
 _LIBCPP_EXPORT_STD /* inline */ constexpr allocator_arg_t allocator_arg = allocator_arg_t();
 #endif
