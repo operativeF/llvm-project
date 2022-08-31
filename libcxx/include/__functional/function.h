@@ -74,7 +74,7 @@ void __throw_bad_function_call()
 #endif
 }
 
-template<class _Fp> class _LIBCPP_TEMPLATE_VIS function; // undefined
+_LIBCPP_EXPORT_STD template<class _Fp> class _LIBCPP_TEMPLATE_VIS function; // undefined
 
 namespace __function
 {
@@ -957,7 +957,7 @@ public:
 
 } // namespace __function
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 class _LIBCPP_TEMPLATE_VIS function<_Rp(_ArgTypes...)>
     : public __function::__maybe_derive_from_unary_function<_Rp(_ArgTypes...)>,
       public __function::__maybe_derive_from_binary_function<_Rp(_ArgTypes...)>
@@ -1060,7 +1060,7 @@ public:
 };
 
 #if _LIBCPP_STD_VER >= 17
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._Ap>
+template<class _Rp, class ..._Ap>
 function(_Rp(*)(_Ap...)) -> function<_Rp(_Ap...)>;
 
 template<class _Fp>
@@ -1102,11 +1102,11 @@ struct __strip_signature<_Rp (_Gp::*) (_Ap...) volatile & noexcept> { using type
 template<class _Rp, class _Gp, class ..._Ap>
 struct __strip_signature<_Rp (_Gp::*) (_Ap...) const volatile & noexcept> { using type = _Rp(_Ap...); };
 
-_LIBCPP_EXPORT_STD template<class _Fp, class _Stripped = typename __strip_signature<decltype(&_Fp::operator())>::type>
+template<class _Fp, class _Stripped = typename __strip_signature<decltype(&_Fp::operator())>::type>
 function(_Fp) -> function<_Stripped>;
 #endif // _LIBCPP_STD_VER >= 17
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 function<_Rp(_ArgTypes...)>::function(const function& __f) : __f_(__f.__f_) {}
 
 #if _LIBCPP_STD_VER <= 14
@@ -1116,7 +1116,7 @@ function<_Rp(_ArgTypes...)>::function(allocator_arg_t, const _Alloc&,
                                      const function& __f) : __f_(__f.__f_) {}
 #endif
 
-_LIBCPP_EXPORT_STD template <class _Rp, class... _ArgTypes>
+template <class _Rp, class... _ArgTypes>
 function<_Rp(_ArgTypes...)>::function(function&& __f) _NOEXCEPT
     : __f_(_VSTD::move(__f.__f_)) {}
 
@@ -1128,7 +1128,7 @@ function<_Rp(_ArgTypes...)>::function(allocator_arg_t, const _Alloc&,
     : __f_(_VSTD::move(__f.__f_)) {}
 #endif
 
-_LIBCPP_EXPORT_STD template <class _Rp, class... _ArgTypes>
+template <class _Rp, class... _ArgTypes>
 template <class _Fp, class>
 function<_Rp(_ArgTypes...)>::function(_Fp __f) : __f_(_VSTD::move(__f)) {}
 
@@ -1140,7 +1140,7 @@ function<_Rp(_ArgTypes...)>::function(allocator_arg_t, const _Alloc& __a,
     : __f_(_VSTD::move(__f), __a) {}
 #endif
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 function<_Rp(_ArgTypes...)>&
 function<_Rp(_ArgTypes...)>::operator=(const function& __f)
 {
@@ -1148,7 +1148,7 @@ function<_Rp(_ArgTypes...)>::operator=(const function& __f)
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 function<_Rp(_ArgTypes...)>&
 function<_Rp(_ArgTypes...)>::operator=(function&& __f) _NOEXCEPT
 {
@@ -1156,7 +1156,7 @@ function<_Rp(_ArgTypes...)>::operator=(function&& __f) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 function<_Rp(_ArgTypes...)>&
 function<_Rp(_ArgTypes...)>::operator=(nullptr_t) _NOEXCEPT
 {
@@ -1164,7 +1164,7 @@ function<_Rp(_ArgTypes...)>::operator=(nullptr_t) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 template <class _Fp, class>
 function<_Rp(_ArgTypes...)>&
 function<_Rp(_ArgTypes...)>::operator=(_Fp&& __f)
@@ -1173,17 +1173,17 @@ function<_Rp(_ArgTypes...)>::operator=(_Fp&& __f)
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 function<_Rp(_ArgTypes...)>::~function() {}
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 void
 function<_Rp(_ArgTypes...)>::swap(function& __f) _NOEXCEPT
 {
     __f_.swap(__f.__f_);
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 _Rp
 function<_Rp(_ArgTypes...)>::operator()(_ArgTypes... __arg) const
 {
@@ -1192,14 +1192,14 @@ function<_Rp(_ArgTypes...)>::operator()(_ArgTypes... __arg) const
 
 #ifndef _LIBCPP_NO_RTTI
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 const std::type_info&
 function<_Rp(_ArgTypes...)>::target_type() const _NOEXCEPT
 {
     return __f_.target_type();
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 template <typename _Tp>
 _Tp*
 function<_Rp(_ArgTypes...)>::target() _NOEXCEPT
@@ -1207,7 +1207,7 @@ function<_Rp(_ArgTypes...)>::target() _NOEXCEPT
     return (_Tp*)(__f_.template target<_Tp>());
 }
 
-_LIBCPP_EXPORT_STD template<class _Rp, class ..._ArgTypes>
+template<class _Rp, class ..._ArgTypes>
 template <typename _Tp>
 const _Tp*
 function<_Rp(_ArgTypes...)>::target() const _NOEXCEPT
