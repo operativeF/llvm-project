@@ -27,19 +27,19 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 // [incrementable.traits]
 _LIBCPP_EXPORT_STD template<class> struct incrementable_traits {};
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 requires is_object_v<_Tp>
 struct incrementable_traits<_Tp*> {
   using difference_type = ptrdiff_t;
 };
 
-_LIBCPP_EXPORT_STD template<class _Ip>
+template<class _Ip>
 struct incrementable_traits<const _Ip> : incrementable_traits<_Ip> {};
 
 template<class _Tp>
 concept __has_member_difference_type = requires { typename _Tp::difference_type; };
 
-_LIBCPP_EXPORT_STD template<__has_member_difference_type _Tp>
+template<__has_member_difference_type _Tp>
 struct incrementable_traits<_Tp> {
   using difference_type = typename _Tp::difference_type;
 };
@@ -50,7 +50,7 @@ concept __has_integral_minus =
     { __x - __y } -> integral;
   };
 
-_LIBCPP_EXPORT_STD template<__has_integral_minus _Tp>
+template<__has_integral_minus _Tp>
 requires (!__has_member_difference_type<_Tp>)
 struct incrementable_traits<_Tp> {
   using difference_type = make_signed_t<decltype(declval<_Tp>() - declval<_Tp>())>;
