@@ -119,7 +119,7 @@ public:
         {return !(__x == __y);}
 };
 
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 poisson_distribution<_IntType>::param_type::param_type(double __mean)
     // According to the standard `inf` is a valid input, but it causes the
     // distribution to hang, so we replace it with the maximum representable
@@ -154,7 +154,7 @@ poisson_distribution<_IntType>::param_type::param_type(double __mean)
     }
 }
 
-_LIBCPP_EXPORT_STD template <class _IntType>
+template <class _IntType>
 template<class _URNG>
 _IntType
 poisson_distribution<_IntType>::operator()(_URNG& __urng, const param_type& __pr)
