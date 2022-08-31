@@ -313,19 +313,19 @@ private:
                linear_congruential_engine<_Up, _Ap, _Cp, _Np>& __x);
 };
 
-_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::multiplier;
 
-_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::increment;
 
-_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::modulus;
 
-_LIBCPP_EXPORT_STD template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
+template <class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m>
     _LIBCPP_CONSTEXPR const typename linear_congruential_engine<_UIntType, __a, __c, __m>::result_type
     linear_congruential_engine<_UIntType, __a, __c, __m>::default_seed;
 
