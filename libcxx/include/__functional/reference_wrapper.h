@@ -58,7 +58,7 @@ public:
 };
 
 #if _LIBCPP_STD_VER > 14
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 reference_wrapper(_Tp&) -> reference_wrapper<_Tp>;
 #endif
 
