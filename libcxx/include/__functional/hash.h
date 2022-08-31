@@ -379,7 +379,7 @@ inline size_t __hash_combine(size_t __lhs, size_t __rhs) _NOEXCEPT {
     return _HashT()(__p);
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 struct _LIBCPP_TEMPLATE_VIS hash<_Tp*>
     : public __unary_function<_Tp*, size_t>
 {
