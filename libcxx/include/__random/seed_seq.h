@@ -83,7 +83,7 @@ seed_seq::__init(_InputIterator __first, _InputIterator __last)
         __v_.push_back(*__s & 0xFFFFFFFF);
 }
 
-_LIBCPP_EXPORT_STD template<class _RandomAccessIterator>
+template<class _RandomAccessIterator>
 void
 seed_seq::generate(_RandomAccessIterator __first, _RandomAccessIterator __last)
 {
