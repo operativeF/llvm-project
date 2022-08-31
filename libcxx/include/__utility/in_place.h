@@ -29,8 +29,8 @@ _LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS in_place_type_t {
     explicit in_place_type_t() = default;
 };
-template <class _Tp>
-_LIBCPP_EXPORT_STD inline constexpr in_place_type_t<_Tp> in_place_type{};
+_LIBCPP_EXPORT_STD template <class _Tp>
+inline constexpr in_place_type_t<_Tp> in_place_type{};
 
 _LIBCPP_EXPORT_STD template <size_t _Idx>
 struct _LIBCPP_TEMPLATE_VIS in_place_index_t {
