@@ -20,13 +20,13 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 template <class _Tp>
 struct __unwrap_reference { typedef _LIBCPP_NODEBUG _Tp type; };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class reference_wrapper;
 
 template <class _Tp>
 struct __unwrap_reference<reference_wrapper<_Tp> > { typedef _LIBCPP_NODEBUG _Tp& type; };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct decay;
 
 #if _LIBCPP_STD_VER > 17
