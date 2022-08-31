@@ -110,7 +110,7 @@ public:
         {return !(__x == __y);}
 };
 
-_LIBCPP_EXPORT_STD template<class _RealType>
+template<class _RealType>
 template<class _URNG>
 inline
 typename uniform_real_distribution<_RealType>::result_type
