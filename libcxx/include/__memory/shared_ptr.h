@@ -343,7 +343,7 @@ private:
 };
 
 struct __shared_ptr_dummy_rebind_allocator_type;
-_LIBCPP_EXPORT_STD template <>
+template <>
 class _LIBCPP_TEMPLATE_VIS allocator<__shared_ptr_dummy_rebind_allocator_type>
 {
 public:
@@ -918,9 +918,9 @@ private:
 };
 
 #if _LIBCPP_STD_VER > 14
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 shared_ptr(weak_ptr<_Tp>) -> shared_ptr<_Tp>;
-_LIBCPP_EXPORT_STD template<class _Tp, class _Dp>
+template<class _Tp, class _Dp>
 shared_ptr(unique_ptr<_Tp, _Dp>) -> shared_ptr<_Tp>;
 #endif
 
@@ -1483,11 +1483,11 @@ public:
 };
 
 #if _LIBCPP_STD_VER > 14
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 weak_ptr(shared_ptr<_Tp>) -> weak_ptr<_Tp>;
 #endif
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 _LIBCPP_CONSTEXPR
 weak_ptr<_Tp>::weak_ptr() _NOEXCEPT
@@ -1496,7 +1496,7 @@ weak_ptr<_Tp>::weak_ptr() _NOEXCEPT
 {
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr const& __r) _NOEXCEPT
     : __ptr_(__r.__ptr_),
@@ -1506,7 +1506,7 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr const& __r) _NOEXCEPT
         __cntrl_->__add_weak();
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 template<class _Yp>
 inline
 weak_ptr<_Tp>::weak_ptr(shared_ptr<_Yp> const& __r,
@@ -1519,7 +1519,7 @@ weak_ptr<_Tp>::weak_ptr(shared_ptr<_Yp> const& __r,
         __cntrl_->__add_weak();
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 template<class _Yp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp> const& __r,
@@ -1532,7 +1532,7 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp> const& __r,
         __cntrl_->__add_weak();
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr&& __r) _NOEXCEPT
     : __ptr_(__r.__ptr_),
@@ -1542,7 +1542,7 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr&& __r) _NOEXCEPT
     __r.__cntrl_ = nullptr;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 template<class _Yp>
 inline
 weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp>&& __r,
@@ -1555,14 +1555,14 @@ weak_ptr<_Tp>::weak_ptr(weak_ptr<_Yp>&& __r,
     __r.__cntrl_ = nullptr;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 weak_ptr<_Tp>::~weak_ptr()
 {
     if (__cntrl_)
         __cntrl_->__release_weak();
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 weak_ptr<_Tp>&
 weak_ptr<_Tp>::operator=(weak_ptr const& __r) _NOEXCEPT
@@ -1571,7 +1571,7 @@ weak_ptr<_Tp>::operator=(weak_ptr const& __r) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 template<class _Yp>
 inline
 typename enable_if
@@ -1585,7 +1585,7 @@ weak_ptr<_Tp>::operator=(weak_ptr<_Yp> const& __r) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 weak_ptr<_Tp>&
 weak_ptr<_Tp>::operator=(weak_ptr&& __r) _NOEXCEPT
@@ -1594,7 +1594,7 @@ weak_ptr<_Tp>::operator=(weak_ptr&& __r) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 template<class _Yp>
 inline
 typename enable_if
@@ -1608,7 +1608,7 @@ weak_ptr<_Tp>::operator=(weak_ptr<_Yp>&& __r) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 template<class _Yp>
 inline
 typename enable_if
@@ -1622,7 +1622,7 @@ weak_ptr<_Tp>::operator=(shared_ptr<_Yp> const& __r) _NOEXCEPT
     return *this;
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 void
 weak_ptr<_Tp>::swap(weak_ptr& __r) _NOEXCEPT
@@ -1639,7 +1639,7 @@ swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
     __x.swap(__y);
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 inline
 void
 weak_ptr<_Tp>::reset() _NOEXCEPT
@@ -1647,7 +1647,7 @@ weak_ptr<_Tp>::reset() _NOEXCEPT
     weak_ptr().swap(*this);
 }
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 shared_ptr<_Tp>
 weak_ptr<_Tp>::lock() const _NOEXCEPT
 {
@@ -1665,7 +1665,7 @@ template <class _Tp> struct owner_less;
 #endif
 
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS owner_less<shared_ptr<_Tp> >
     : __binary_function<shared_ptr<_Tp>, shared_ptr<_Tp>, bool>
 {
@@ -1680,7 +1680,7 @@ struct _LIBCPP_TEMPLATE_VIS owner_less<shared_ptr<_Tp> >
         {return __x.owner_before(__y);}
 };
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS owner_less<weak_ptr<_Tp> >
     : __binary_function<weak_ptr<_Tp>, weak_ptr<_Tp>, bool>
 {
@@ -1696,7 +1696,7 @@ struct _LIBCPP_TEMPLATE_VIS owner_less<weak_ptr<_Tp> >
 };
 
 #if _LIBCPP_STD_VER > 14
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS owner_less<void>
 {
     template <class _Tp, class _Up>
@@ -1756,7 +1756,7 @@ public:
 
 _LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS hash;
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS hash<shared_ptr<_Tp> >
 {
 #if _LIBCPP_STD_VER <= 17 || defined(_LIBCPP_ENABLE_CXX20_REMOVED_BINDER_TYPEDEFS)
