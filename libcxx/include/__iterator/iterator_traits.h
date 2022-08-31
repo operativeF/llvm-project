@@ -407,7 +407,7 @@ struct _LIBCPP_TEMPLATE_VIS iterator_traits
 };
 #endif // _LIBCPP_STD_VER > 17
 
-_LIBCPP_EXPORT_STD template<class _Tp>
+template<class _Tp>
 #if _LIBCPP_STD_VER > 17
 requires is_object_v<_Tp>
 #endif
