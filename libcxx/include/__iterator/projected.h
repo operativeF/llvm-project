@@ -28,7 +28,7 @@ struct projected {
   indirect_result_t<_Proj&, _It> operator*() const; // not defined
 };
 
-_LIBCPP_EXPORT_STD template<weakly_incrementable _It, class _Proj>
+template<weakly_incrementable _It, class _Proj>
 struct incrementable_traits<projected<_It, _Proj>> {
   using difference_type = iter_difference_t<_It>;
 };
