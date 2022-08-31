@@ -30,7 +30,7 @@ _LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS space_info {
   uintmax_t available;
 
 #  if _LIBCPP_STD_VER > 17
-  _LIBCPP_EXPORT_STD friend _LIBCPP_HIDE_FROM_ABI bool operator==(const space_info&, const space_info&) = default;
+  friend _LIBCPP_HIDE_FROM_ABI bool operator==(const space_info&, const space_info&) = default;
 #  endif
 };
 
