@@ -56,7 +56,7 @@ public:
 };
 
 // Formatter const char*.
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<const _CharT*, _CharT>
     : public __formatter_string<_CharT> {
   using _Base = __formatter_string<_CharT>;
@@ -89,7 +89,7 @@ struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<const _CharT*,
 };
 
 // Formatter char*.
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<_CharT*, _CharT>
     : public formatter<const _CharT*, _CharT> {
   using _Base = formatter<const _CharT*, _CharT>;
@@ -100,7 +100,7 @@ struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<_CharT*, _Char
 };
 
 // Formatter char[].
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT, size_t _Size>
+template <__fmt_char_type _CharT, size_t _Size>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<_CharT[_Size], _CharT>
     : public __formatter_string<_CharT> {
   using _Base = __formatter_string<_CharT>;
@@ -111,7 +111,7 @@ struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<_CharT[_Size],
 };
 
 // Formatter const char[].
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT, size_t _Size>
+template <__fmt_char_type _CharT, size_t _Size>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<const _CharT[_Size], _CharT>
     : public __formatter_string<_CharT> {
   using _Base = __formatter_string<_CharT>;
@@ -122,7 +122,7 @@ struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<const _CharT[_
 };
 
 // Formatter std::string.
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT, class _Traits, class _Allocator>
+template <__fmt_char_type _CharT, class _Traits, class _Allocator>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<basic_string<_CharT, _Traits, _Allocator>, _CharT>
     : public __formatter_string<_CharT> {
   using _Base = __formatter_string<_CharT>;
@@ -135,7 +135,7 @@ struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<basic_string<_
 };
 
 // Formatter std::string_view.
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT, class _Traits>
+template <__fmt_char_type _CharT, class _Traits>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<basic_string_view<_CharT, _Traits>, _CharT>
     : public __formatter_string<_CharT> {
   using _Base = __formatter_string<_CharT>;
