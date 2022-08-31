@@ -127,13 +127,13 @@ public:
                discard_block_engine<_Eng, _Pp, _Rp>& __x);
 };
 
-_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
+template<class _Engine, size_t __p, size_t __r>
     _LIBCPP_CONSTEXPR const size_t discard_block_engine<_Engine, __p, __r>::block_size;
 
-_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
+template<class _Engine, size_t __p, size_t __r>
     _LIBCPP_CONSTEXPR const size_t discard_block_engine<_Engine, __p, __r>::used_block;
 
-_LIBCPP_EXPORT_STD template<class _Engine, size_t __p, size_t __r>
+template<class _Engine, size_t __p, size_t __r>
 typename discard_block_engine<_Engine, __p, __r>::result_type
 discard_block_engine<_Engine, __p, __r>::operator()()
 {
