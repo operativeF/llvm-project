@@ -267,7 +267,7 @@ template <class _It>
 struct __is_cpp17_contiguous_iterator<__wrap_iter<_It> > : true_type {};
 #endif
 
-_LIBCPP_EXPORT_STD template <class _It>
+template <class _It>
 struct _LIBCPP_TEMPLATE_VIS pointer_traits<__wrap_iter<_It> >
 {
     typedef __wrap_iter<_It> pointer;
