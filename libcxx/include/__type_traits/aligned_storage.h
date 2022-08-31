@@ -99,7 +99,7 @@ _LIBCPP_EXPORT_STD template <size_t _Len, size_t _Align = __find_max_align<__all
 #endif
 
 #define _CREATE_ALIGNED_STORAGE_SPECIALIZATION(n) \
-_LIBCPP_EXPORT_STD template <size_t _Len>\
+template <size_t _Len>\
 struct _LIBCPP_TEMPLATE_VIS aligned_storage<_Len, n>\
 {\
     struct _ALIGNAS(n) type\
