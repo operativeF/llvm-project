@@ -104,7 +104,7 @@ struct __pointer_traits_rebind<_Sp<_Tp, _Args...>, _Up, false>
     typedef _Sp<_Up, _Args...> type;
 };
 
-template <class _Ptr>
+_LIBCPP_EXPORT_STD template <class _Ptr>
 struct _LIBCPP_TEMPLATE_VIS pointer_traits
 {
     typedef _Ptr                                                     pointer;
@@ -126,7 +126,7 @@ public:
         {return pointer::pointer_to(__r);}
 };
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS pointer_traits<_Tp*>
 {
     typedef _Tp*      pointer;
