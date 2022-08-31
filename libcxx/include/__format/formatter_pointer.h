@@ -56,10 +56,10 @@ public:
 // - struct formatter<nullptr_t, charT>;
 // - template<> struct formatter<void*, charT>;
 // - template<> struct formatter<const void*, charT>;
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<nullptr_t, _CharT>
     : public __formatter_pointer<_CharT> {};
-_LIBCPP_EXPORT_STD template <__fmt_char_type _CharT>
+template <__fmt_char_type _CharT>
 struct _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FORMAT formatter<void*, _CharT> : public __formatter_pointer<_CharT> {
 };
 template <__fmt_char_type _CharT>
