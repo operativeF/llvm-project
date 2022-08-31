@@ -528,11 +528,11 @@ make_pair(_T1&& __t1, _T2&& __t2)
                (_VSTD::forward<_T1>(__t1), _VSTD::forward<_T2>(__t2));
 }
 
-_LIBCPP_EXPORT_STD template <class _T1, class _T2>
+template <class _T1, class _T2>
   struct _LIBCPP_TEMPLATE_VIS tuple_size<pair<_T1, _T2> >
     : public integral_constant<size_t, 2> {};
 
-_LIBCPP_EXPORT_STD template <size_t _Ip, class _T1, class _T2>
+template <size_t _Ip, class _T1, class _T2>
 struct _LIBCPP_TEMPLATE_VIS tuple_element<_Ip, pair<_T1, _T2> >
 {
     static_assert(_Ip < 2, "Index out of bounds in std::tuple_element<std::pair<T1, T2>>");
