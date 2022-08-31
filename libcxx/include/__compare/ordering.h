@@ -31,9 +31,9 @@ enum class _LIBCPP_ENUM_VIS _NCmpResult : signed char {
   __unordered = -127
 };
 
-class partial_ordering;
-class weak_ordering;
-class strong_ordering;
+_LIBCPP_EXPORT_STD class partial_ordering;
+_LIBCPP_EXPORT_STD class weak_ordering;
+_LIBCPP_EXPORT_STD class strong_ordering;
 
 template<class _Tp, class... _Args>
 inline constexpr bool __one_of_v = (is_same_v<_Tp, _Args> || ...);
@@ -130,10 +130,10 @@ private:
   _ValueT __value_;
 };
 
-_LIBCPP_EXPORT_STD inline constexpr partial_ordering partial_ordering::less(_OrdResult::__less);
-_LIBCPP_EXPORT_STD inline constexpr partial_ordering partial_ordering::equivalent(_OrdResult::__equiv);
-_LIBCPP_EXPORT_STD inline constexpr partial_ordering partial_ordering::greater(_OrdResult::__greater);
-_LIBCPP_EXPORT_STD inline constexpr partial_ordering partial_ordering::unordered(_NCmpResult ::__unordered);
+inline constexpr partial_ordering partial_ordering::less(_OrdResult::__less);
+inline constexpr partial_ordering partial_ordering::equivalent(_OrdResult::__equiv);
+inline constexpr partial_ordering partial_ordering::greater(_OrdResult::__greater);
+inline constexpr partial_ordering partial_ordering::unordered(_NCmpResult ::__unordered);
 
 _LIBCPP_EXPORT_STD class weak_ordering {
   using _ValueT = signed char;
@@ -215,9 +215,9 @@ private:
   _ValueT __value_;
 };
 
-_LIBCPP_EXPORT_STD inline constexpr weak_ordering weak_ordering::less(_OrdResult::__less);
-_LIBCPP_EXPORT_STD inline constexpr weak_ordering weak_ordering::equivalent(_OrdResult::__equiv);
-_LIBCPP_EXPORT_STD inline constexpr weak_ordering weak_ordering::greater(_OrdResult::__greater);
+inline constexpr weak_ordering weak_ordering::less(_OrdResult::__less);
+inline constexpr weak_ordering weak_ordering::equivalent(_OrdResult::__equiv);
+inline constexpr weak_ordering weak_ordering::greater(_OrdResult::__greater);
 
 _LIBCPP_EXPORT_STD class strong_ordering {
   using _ValueT = signed char;
@@ -307,10 +307,10 @@ private:
   _ValueT __value_;
 };
 
-_LIBCPP_EXPORT_STD inline constexpr strong_ordering strong_ordering::less(_OrdResult::__less);
-_LIBCPP_EXPORT_STD inline constexpr strong_ordering strong_ordering::equal(_OrdResult::__equiv);
-_LIBCPP_EXPORT_STD inline constexpr strong_ordering strong_ordering::equivalent(_OrdResult::__equiv);
-_LIBCPP_EXPORT_STD inline constexpr strong_ordering strong_ordering::greater(_OrdResult::__greater);
+inline constexpr strong_ordering strong_ordering::less(_OrdResult::__less);
+inline constexpr strong_ordering strong_ordering::equal(_OrdResult::__equiv);
+inline constexpr strong_ordering strong_ordering::equivalent(_OrdResult::__equiv);
+inline constexpr strong_ordering strong_ordering::greater(_OrdResult::__greater);
 
 /// [cmp.categories.pre]/1
 /// The types partial_ordering, weak_ordering, and strong_ordering are
