@@ -36,7 +36,7 @@ allocation_result<typename allocator_traits<_Alloc>::pointer> allocate_at_least(
   }
 }
 
-_LIBCPP_EXPORT_STD template <class _Alloc>
+template <class _Alloc>
 [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr
 auto __allocate_at_least(_Alloc& __alloc, size_t __n) {
   return std::allocate_at_least(__alloc, __n);
