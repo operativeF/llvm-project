@@ -211,7 +211,7 @@ private:
         }
 };
 
-_LIBCPP_EXPORT_STD template<class _Engine, size_t __k>
+template<class _Engine, size_t __k>
     _LIBCPP_CONSTEXPR const size_t shuffle_order_engine<_Engine, __k>::table_size;
 
 _LIBCPP_EXPORT_STD template<class _Eng, size_t _Kp>
