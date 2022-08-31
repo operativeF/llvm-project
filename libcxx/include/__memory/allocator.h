@@ -172,7 +172,7 @@ public:
 #endif
 };
 
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS allocator<const _Tp>
     : private __non_trivial_if<!is_void<_Tp>::value, allocator<const _Tp> >
 {
