@@ -113,7 +113,7 @@ public:
         {return !(__x == __y);}
 };
 
-_LIBCPP_EXPORT_STD template <class _RealType>
+template <class _RealType>
 template<class _URNG>
 _RealType
 gamma_distribution<_RealType>::operator()(_URNG& __g, const param_type& __p)
