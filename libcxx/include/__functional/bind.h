@@ -53,16 +53,16 @@ namespace placeholders
 template <int _Np> struct __ph {};
 
 #if defined(_LIBCPP_CXX03_LANG) || defined(_LIBCPP_BUILDING_LIBRARY)
-_LIBCPP_FUNC_VIS extern const __ph<1>   _1;
-_LIBCPP_FUNC_VIS extern const __ph<2>   _2;
-_LIBCPP_FUNC_VIS extern const __ph<3>   _3;
-_LIBCPP_FUNC_VIS extern const __ph<4>   _4;
-_LIBCPP_FUNC_VIS extern const __ph<5>   _5;
-_LIBCPP_FUNC_VIS extern const __ph<6>   _6;
-_LIBCPP_FUNC_VIS extern const __ph<7>   _7;
-_LIBCPP_FUNC_VIS extern const __ph<8>   _8;
-_LIBCPP_FUNC_VIS extern const __ph<9>   _9;
-_LIBCPP_FUNC_VIS extern const __ph<10> _10;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<1>   _1;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<2>   _2;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<3>   _3;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<4>   _4;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<5>   _5;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<6>   _6;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<7>   _7;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<8>   _8;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<9>   _9;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS extern const __ph<10> _10;
 #else
 _LIBCPP_EXPORT_STD /* inline */ constexpr __ph<1>   _1{};
 _LIBCPP_EXPORT_STD /* inline */ constexpr __ph<2>   _2{};
@@ -78,7 +78,7 @@ _LIBCPP_EXPORT_STD /* inline */ constexpr __ph<10> _10{};
 
 } // namespace placeholders
 
-_LIBCPP_EXPORT_STD template<int _Np>
+template<int _Np>
 struct is_placeholder<placeholders::__ph<_Np> >
     : public integral_constant<int, _Np> {};
 
@@ -306,7 +306,7 @@ public:
         }
 };
 
-_LIBCPP_EXPORT_STD template<class _Fp, class ..._BoundArgs>
+template<class _Fp, class ..._BoundArgs>
 struct is_bind_expression<__bind<_Fp, _BoundArgs...> > : public true_type {};
 
 template<class _Rp, class _Fp, class ..._BoundArgs>
@@ -361,7 +361,7 @@ public:
         }
 };
 
-_LIBCPP_EXPORT_STD template<class _Rp, class _Fp, class ..._BoundArgs>
+template<class _Rp, class _Fp, class ..._BoundArgs>
 struct is_bind_expression<__bind_r<_Rp, _Fp, _BoundArgs...> > : public true_type {};
 
 _LIBCPP_EXPORT_STD template<class _Fp, class ..._BoundArgs>
