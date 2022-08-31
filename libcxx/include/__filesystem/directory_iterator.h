@@ -150,11 +150,11 @@ _LIBCPP_END_NAMESPACE_FILESYSTEM
 
 #if _LIBCPP_STD_VER > 17
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 _LIBCPP_AVAILABILITY_FILESYSTEM
 inline constexpr bool _VSTD::ranges::enable_borrowed_range<_VSTD_FS::directory_iterator> = true;
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 _LIBCPP_AVAILABILITY_FILESYSTEM
 inline constexpr bool _VSTD::ranges::enable_view<_VSTD_FS::directory_iterator> = true;
 
