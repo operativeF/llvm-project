@@ -126,7 +126,7 @@ inline _LIBCPP_INLINE_VISIBILITY double __libcpp_lgamma(double __d) {
 #endif
 }
 
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 binomial_distribution<_IntType>::param_type::param_type(result_type __t, double __p)
     : __t_(__t), __p_(__p)
 {
@@ -143,7 +143,7 @@ binomial_distribution<_IntType>::param_type::param_type(result_type __t, double 
 
 // Reference: Kemp, C.D. (1986). `A modal method for generating binomial
 //           variables', Commun. Statist. - Theor. Meth. 15(3), 805-813.
-_LIBCPP_EXPORT_STD template<class _IntType>
+template<class _IntType>
 template<class _URNG>
 _IntType
 binomial_distribution<_IntType>::operator()(_URNG& __g, const param_type& __pr)
