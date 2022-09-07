@@ -504,7 +504,7 @@ public:
     scoped_lock& operator=(scoped_lock const&) = delete;
 };
 
-template <class ..._MArgs>
+_LIBCPP_EXPORT_STD template <class ..._MArgs>
 class _LIBCPP_TEMPLATE_VIS scoped_lock
 {
     static_assert(sizeof...(_MArgs) > 1, "At least 2 lock types required");
@@ -547,7 +547,7 @@ _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(scoped_lock);
 #endif // _LIBCPP_STD_VER > 14
 #endif // !_LIBCPP_HAS_NO_THREADS
 
-struct _LIBCPP_TEMPLATE_VIS once_flag;
+_LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS once_flag;
 
 #ifndef _LIBCPP_CXX03_LANG
 
