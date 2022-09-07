@@ -1397,7 +1397,7 @@ template <class _CharT> class __node;
 
 _LIBCPP_EXPORT_STD template <class _BidirectionalIterator> class _LIBCPP_TEMPLATE_VIS sub_match;
 
-template <class _BidirectionalIterator,
+_LIBCPP_EXPORT_STD template <class _BidirectionalIterator,
           class _Allocator = allocator<sub_match<_BidirectionalIterator> > >
 class _LIBCPP_TEMPLATE_VIS match_results;
 
