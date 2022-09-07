@@ -34,7 +34,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 namespace chrono
 {
 
-class year_month_day_last;
+_LIBCPP_EXPORT_STD class year_month_day_last;
 
 _LIBCPP_EXPORT_STD class year_month_day {
 private:
@@ -168,10 +168,10 @@ _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year_month_day operator-(const year_month_day& __lhs, const years& __rhs) noexcept
 { return __lhs + -__rhs; }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day& year_month_day::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
 
 _LIBCPP_EXPORT_STD class year_month_day_last {
 private:
@@ -195,7 +195,7 @@ public:
      _LIBCPP_HIDE_FROM_ABI inline constexpr bool                               ok() const noexcept { return __y_.ok() && __mdl_.ok(); }
 };
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 chrono::day year_month_day_last::day() const noexcept
 {
     constexpr chrono::day __d[] =
@@ -282,16 +282,16 @@ _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year_month_day_last operator-(const year_month_day_last& __lhs, const years& __rhs) noexcept
 { return __lhs + (-__rhs); }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_day_last& year_month_day_last::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 year_month_day::year_month_day(const year_month_day_last& __ymdl) noexcept
     : __y_{__ymdl.year()}, __m_{__ymdl.month()}, __d_{__ymdl.day()} {}
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 bool year_month_day::ok() const noexcept
 {
     if (!__y_.ok() || !__m_.ok()) return false;

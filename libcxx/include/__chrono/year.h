@@ -78,15 +78,15 @@ years operator-(const year& __lhs, const year& __rhs) noexcept
 { return years{static_cast<int>(__lhs) - static_cast<int>(__rhs)}; }
 
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 year& year::operator+=(const years& __dy) noexcept
 { *this = *this + __dy; return *this; }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 year& year::operator-=(const years& __dy) noexcept
 { *this = *this - __dy; return *this; }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool year::ok() const noexcept {
+_LIBCPP_HIDE_FROM_ABI constexpr bool year::ok() const noexcept {
   static_assert(static_cast<int>(std::numeric_limits<decltype(__y_)>::max()) == static_cast<int>(max()));
   return static_cast<int>(min()) <= __y_;
 }

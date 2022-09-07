@@ -71,7 +71,7 @@ public:
 
 } // namespace chrono
 
-_LIBCPP_EXPORT_STD template <class _Clock, class _Duration1, class _Duration2>
+template <class _Clock, class _Duration1, class _Duration2>
 struct _LIBCPP_TEMPLATE_VIS common_type<chrono::time_point<_Clock, _Duration1>,
                                          chrono::time_point<_Clock, _Duration2> >
 {

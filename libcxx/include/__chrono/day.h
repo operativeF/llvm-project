@@ -67,11 +67,11 @@ days operator-(const day& __lhs, const day& __rhs) noexcept
 { return days(static_cast<int>(static_cast<unsigned>(__lhs)) -
               static_cast<int>(static_cast<unsigned>(__rhs))); }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 day& day::operator+=(const days& __dd) noexcept
 { *this = *this + __dd; return *this; }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 day& day::operator-=(const days& __dd) noexcept
 { *this = *this - __dd; return *this; }
 

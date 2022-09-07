@@ -148,10 +148,10 @@ year_month_weekday operator-(const year_month_weekday& __lhs, const years& __rhs
 { return __lhs + (-__rhs); }
 
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday& year_month_weekday::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
 
 _LIBCPP_EXPORT_STD class year_month_weekday_last {
 private:
@@ -241,10 +241,10 @@ _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 year_month_weekday_last operator-(const year_month_weekday_last& __lhs, const years& __rhs) noexcept
 { return __lhs + (-__rhs); }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator+=(const months& __dm) noexcept { *this = *this + __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator-=(const months& __dm) noexcept { *this = *this - __dm; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator+=(const years& __dy)  noexcept { *this = *this + __dy; return *this; }
+_LIBCPP_HIDE_FROM_ABI inline constexpr year_month_weekday_last& year_month_weekday_last::operator-=(const years& __dy)  noexcept { *this = *this - __dy; return *this; }
 
 } // namespace chrono
 

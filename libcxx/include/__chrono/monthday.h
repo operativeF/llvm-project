@@ -40,7 +40,7 @@ public:
     _LIBCPP_HIDE_FROM_ABI constexpr bool ok() const noexcept;
 };
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 bool month_day::ok() const noexcept
 {
     if (!__m_.ok()) return false;

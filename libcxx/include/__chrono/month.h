@@ -73,11 +73,11 @@ months operator-(const month& __lhs, const month& __rhs) noexcept
     return months(__dm <= 11 ? __dm : __dm + 12);
 }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 month& month::operator+=(const months& __dm) noexcept
 { *this = *this + __dm; return *this; }
 
-_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
+_LIBCPP_HIDE_FROM_ABI inline constexpr
 month& month::operator-=(const months& __dm) noexcept
 { *this = *this - __dm; return *this; }
 

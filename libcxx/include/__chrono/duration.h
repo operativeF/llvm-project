@@ -46,7 +46,7 @@ struct __is_duration<const volatile duration<_Rep, _Period> > : true_type  {};
 
 } // namespace chrono
 
-_LIBCPP_EXPORT_STD template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
 struct _LIBCPP_TEMPLATE_VIS common_type<chrono::duration<_Rep1, _Period1>,
                                          chrono::duration<_Rep2, _Period2> >
 {
