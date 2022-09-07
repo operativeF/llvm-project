@@ -636,7 +636,7 @@ struct _LIBCPP_TEMPLATE_VIS __enum_hash<_Tp, false> {
     __enum_hash& operator=(__enum_hash const&) = delete;
 };
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS hash : public __enum_hash<_Tp>
 {
 };
