@@ -307,7 +307,7 @@ struct _LIBCPP_STANDALONE_DEBUG __list_node
     }
 };
 
-template <class _Tp, class _Alloc = allocator<_Tp> > class _LIBCPP_TEMPLATE_VIS list;
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc = allocator<_Tp> > class _LIBCPP_TEMPLATE_VIS list;
 template <class _Tp, class _Alloc> class __list_imp;
 template <class _Tp, class _VoidPtr> class _LIBCPP_TEMPLATE_VIS __list_const_iterator;
 
