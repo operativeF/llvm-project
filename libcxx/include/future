@@ -1021,8 +1021,8 @@ __async_assoc_state<void, _Fp>::__on_zero_shared() _NOEXCEPT
     base::__on_zero_shared();
 }
 
-template <class _Rp> class _LIBCPP_TEMPLATE_VIS promise;
-template <class _Rp> class _LIBCPP_TEMPLATE_VIS shared_future;
+_LIBCPP_EXPORT_STD template <class _Rp> class _LIBCPP_TEMPLATE_VIS promise;
+_LIBCPP_EXPORT_STD template <class _Rp> class _LIBCPP_TEMPLATE_VIS shared_future;
 
 // future
 
