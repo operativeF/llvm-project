@@ -19,7 +19,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #ifndef _LIBCPP_CXX03_LANG
 
-template <class...>
+_LIBCPP_EXPORT_STD template <class...>
 class _LIBCPP_TEMPLATE_VIS tuple;
 
 #endif // _LIBCPP_CXX03_LANG

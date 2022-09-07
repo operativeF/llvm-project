@@ -18,7 +18,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp, size_t _Size>
+_LIBCPP_EXPORT_STD template <class _Tp, size_t _Size>
 struct _LIBCPP_TEMPLATE_VIS array;
 
 _LIBCPP_END_NAMESPACE_STD
