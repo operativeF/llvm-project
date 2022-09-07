@@ -1468,9 +1468,7 @@ struct __ignore_t
     const __ignore_t& operator=(_Tp&&) const {return *this;}
 };
 
-namespace {
-  _LIBCPP_EXPORT_STD constexpr __ignore_t<unsigned char> ignore = __ignore_t<unsigned char>();
-} // namespace
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY constexpr __ignore_t<unsigned char> ignore = __ignore_t<unsigned char>();
 
 _LIBCPP_EXPORT_STD template <class... _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
