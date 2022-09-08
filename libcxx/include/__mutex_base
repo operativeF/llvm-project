@@ -32,7 +32,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #ifndef _LIBCPP_HAS_NO_THREADS
 
-class _LIBCPP_TYPE_VIS _LIBCPP_THREAD_SAFETY_ANNOTATION(capability("mutex")) mutex
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS _LIBCPP_THREAD_SAFETY_ANNOTATION(capability("mutex")) mutex
 {
     __libcpp_mutex_t __m_ = _LIBCPP_MUTEX_INITIALIZER;
 
@@ -60,25 +60,25 @@ public:
 static_assert(is_nothrow_default_constructible<mutex>::value,
               "the default constructor for std::mutex must be nothrow");
 
-struct _LIBCPP_TYPE_VIS defer_lock_t { explicit defer_lock_t() = default; };
-struct _LIBCPP_TYPE_VIS try_to_lock_t { explicit try_to_lock_t() = default; };
-struct _LIBCPP_TYPE_VIS adopt_lock_t { explicit adopt_lock_t() = default; };
+_LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS defer_lock_t { explicit defer_lock_t() = default; };
+_LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS try_to_lock_t { explicit try_to_lock_t() = default; };
+_LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS adopt_lock_t { explicit adopt_lock_t() = default; };
 
 #if defined(_LIBCPP_CXX03_LANG) || defined(_LIBCPP_BUILDING_LIBRARY)
 
-extern _LIBCPP_EXPORTED_FROM_ABI const defer_lock_t  defer_lock;
-extern _LIBCPP_EXPORTED_FROM_ABI const try_to_lock_t try_to_lock;
-extern _LIBCPP_EXPORTED_FROM_ABI const adopt_lock_t  adopt_lock;
+_LIBCPP_EXPORT_STD extern _LIBCPP_EXPORTED_FROM_ABI const defer_lock_t  defer_lock;
+_LIBCPP_EXPORT_STD extern _LIBCPP_EXPORTED_FROM_ABI const try_to_lock_t try_to_lock;
+_LIBCPP_EXPORT_STD extern _LIBCPP_EXPORTED_FROM_ABI const adopt_lock_t  adopt_lock;
 
 #else
 
-/* inline */ constexpr defer_lock_t  defer_lock  = defer_lock_t();
-/* inline */ constexpr try_to_lock_t try_to_lock = try_to_lock_t();
-/* inline */ constexpr adopt_lock_t  adopt_lock  = adopt_lock_t();
+_LIBCPP_EXPORT_STD /* inline */ constexpr defer_lock_t  defer_lock  = defer_lock_t();
+_LIBCPP_EXPORT_STD /* inline */ constexpr try_to_lock_t try_to_lock = try_to_lock_t();
+_LIBCPP_EXPORT_STD /* inline */ constexpr adopt_lock_t  adopt_lock  = adopt_lock_t();
 
 #endif
 
-template <class _Mutex>
+_LIBCPP_EXPORT_STD template <class _Mutex>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_THREAD_SAFETY_ANNOTATION(scoped_lockable)
 lock_guard
 {
@@ -105,7 +105,7 @@ private:
 };
 _LIBCPP_CTAD_SUPPORTED_FOR_TYPE(lock_guard);
 
-template <class _Mutex>
+_LIBCPP_EXPORT_STD template <class _Mutex>
 class _LIBCPP_TEMPLATE_VIS unique_lock
 {
 public:
@@ -258,21 +258,21 @@ unique_lock<_Mutex>::unlock()
     __owns_ = false;
 }
 
-template <class _Mutex>
+_LIBCPP_EXPORT_STD template <class _Mutex>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) _NOEXCEPT
     {__x.swap(__y);}
 
 //enum class cv_status
-_LIBCPP_DECLARE_STRONG_ENUM(cv_status)
+_LIBCPP_EXPORT_STD _LIBCPP_DECLARE_STRONG_ENUM(cv_status)
 {
     no_timeout,
     timeout
 };
 _LIBCPP_DECLARE_STRONG_ENUM_EPILOG(cv_status)
 
-class _LIBCPP_TYPE_VIS condition_variable
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS condition_variable
 {
     __libcpp_condvar_t __cv_ = _LIBCPP_CONDVAR_INITIALIZER;
 public:
