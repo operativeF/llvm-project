@@ -579,7 +579,7 @@ typedef underlying_type<__legacy_memory_order>::type __memory_order_underlying_t
 
 #if _LIBCPP_STD_VER > 17
 
-enum class memory_order : __memory_order_underlying_t {
+_LIBCPP_EXPORT_STD enum class memory_order : __memory_order_underlying_t {
   relaxed = __mo_relaxed,
   consume = __mo_consume,
   acquire = __mo_acquire,
@@ -588,16 +588,16 @@ enum class memory_order : __memory_order_underlying_t {
   seq_cst = __mo_seq_cst
 };
 
-inline constexpr auto memory_order_relaxed = memory_order::relaxed;
-inline constexpr auto memory_order_consume = memory_order::consume;
-inline constexpr auto memory_order_acquire = memory_order::acquire;
-inline constexpr auto memory_order_release = memory_order::release;
-inline constexpr auto memory_order_acq_rel = memory_order::acq_rel;
-inline constexpr auto memory_order_seq_cst = memory_order::seq_cst;
+_LIBCPP_EXPORT_STD inline constexpr auto memory_order_relaxed = memory_order::relaxed;
+_LIBCPP_EXPORT_STD inline constexpr auto memory_order_consume = memory_order::consume;
+_LIBCPP_EXPORT_STD inline constexpr auto memory_order_acquire = memory_order::acquire;
+_LIBCPP_EXPORT_STD inline constexpr auto memory_order_release = memory_order::release;
+_LIBCPP_EXPORT_STD inline constexpr auto memory_order_acq_rel = memory_order::acq_rel;
+_LIBCPP_EXPORT_STD inline constexpr auto memory_order_seq_cst = memory_order::seq_cst;
 
 #else
 
-typedef enum memory_order {
+_LIBCPP_EXPORT_STD typedef enum memory_order {
   memory_order_relaxed = __mo_relaxed,
   memory_order_consume = __mo_consume,
   memory_order_acquire = __mo_acquire,
