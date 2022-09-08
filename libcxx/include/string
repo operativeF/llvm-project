@@ -4488,22 +4488,31 @@ getline(basic_istream<_CharT, _Traits>& __is,
         basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm);
 
 _LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
-inline _LIBCPP_HIDE_FROM_ABI
+inline _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>& __is,
-        basic_string<_CharT, _Traits, _Allocator>& __str);
+        basic_string<_CharT, _Traits, _Allocator>& __str)
+{
+    return getline(__is, __str, __is.widen('\n'));
+}
 
 _LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
-inline _LIBCPP_HIDE_FROM_ABI
+inline _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>&& __is,
-        basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm);
+        basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm)
+{
+    return getline(__is, __str, __dlm);
+}
 
 _LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
-inline _LIBCPP_HIDE_FROM_ABI
+inline _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>&
 getline(basic_istream<_CharT, _Traits>&& __is,
-        basic_string<_CharT, _Traits, _Allocator>& __str);
+        basic_string<_CharT, _Traits, _Allocator>& __str)
+{
+    return getline(__is, __str, __is.widen('\n'));
+}
 
 #if _LIBCPP_STD_VER > 17
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator, class _Up>
