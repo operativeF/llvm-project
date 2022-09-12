@@ -232,7 +232,7 @@ bool operator==(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& _
 }
 
 #if _LIBCPP_STD_VER <= 17
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 bool operator!=(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
 {
@@ -287,7 +287,7 @@ auto operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __
     return __x.base() - __y.base();
 }
 #else
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_HIDE_FROM_ABI
 typename move_iterator<_Iter1>::difference_type
 operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
@@ -305,7 +305,7 @@ move_iterator<_Iter> operator+(iter_difference_t<_Iter> __n, const move_iterator
     return __x + __n;
 }
 #else
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX17
 move_iterator<_Iter>
 operator+(typename move_iterator<_Iter>::difference_type __n, const move_iterator<_Iter>& __x)
