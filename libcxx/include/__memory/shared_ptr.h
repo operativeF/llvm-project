@@ -1170,7 +1170,7 @@ operator==(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
 
 #if _LIBCPP_STD_VER <= 17
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
@@ -1178,7 +1178,7 @@ operator!=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
     return !(__x == __y);
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
@@ -1192,7 +1192,7 @@ operator<(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
 
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
@@ -1200,7 +1200,7 @@ operator>(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
     return __y < __x;
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
@@ -1208,7 +1208,7 @@ operator<=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
     return !(__y < __x);
 }
 
-template<class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template<class _Tp, class _Up>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
@@ -1237,7 +1237,7 @@ operator==(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
 
 #if _LIBCPP_STD_VER <= 17
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
@@ -1245,7 +1245,7 @@ operator==(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
     return !__x;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
@@ -1253,7 +1253,7 @@ operator!=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
     return static_cast<bool>(__x);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
@@ -1261,7 +1261,7 @@ operator!=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
     return static_cast<bool>(__x);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
@@ -1269,7 +1269,7 @@ operator<(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
     return less<_Tp*>()(__x.get(), nullptr);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
@@ -1277,7 +1277,7 @@ operator<(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
     return less<_Tp*>()(nullptr, __x.get());
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
@@ -1285,7 +1285,7 @@ operator>(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
     return nullptr < __x;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
@@ -1293,7 +1293,7 @@ operator>(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
     return __x < nullptr;
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
@@ -1301,7 +1301,7 @@ operator<=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
     return !(nullptr < __x);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator<=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
@@ -1309,7 +1309,7 @@ operator<=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
     return !(__x < nullptr);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
@@ -1317,7 +1317,7 @@ operator>=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
     return !(__x < nullptr);
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator>=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
@@ -1661,7 +1661,7 @@ weak_ptr<_Tp>::lock() const _NOEXCEPT
 #if _LIBCPP_STD_VER > 14
 _LIBCPP_EXPORT_STD template <class _Tp = void> struct owner_less;
 #else
-template <class _Tp> struct owner_less;
+_LIBCPP_EXPORT_STD template <class _Tp> struct owner_less;
 #endif
 
 
