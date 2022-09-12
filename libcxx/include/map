@@ -718,9 +718,9 @@ public:
     }
 };
 
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
     class map;
-template <class _Key, class _Tp, class _Compare, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _Key, class _Tp, class _Compare, class _Allocator>
     class multimap;
 template <class _TreeIterator> class __map_const_iterator;
 
