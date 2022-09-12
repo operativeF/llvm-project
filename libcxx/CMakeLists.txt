@@ -925,6 +925,7 @@ endfunction()
 # Setup Source Code And Tests
 #===============================================================================
 add_subdirectory(include)
+# add_subdirectory(cxx_module)
 add_subdirectory(src)
 add_subdirectory(utils)
 
