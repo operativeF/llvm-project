@@ -299,7 +299,7 @@ operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& _
     return __y.base() - __x.base();
 }
 #else
-template <class _Iter1, class _Iter2>
+_LIBCPP_EXPORT_STD template <class _Iter1, class _Iter2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename reverse_iterator<_Iter1>::difference_type
 operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
