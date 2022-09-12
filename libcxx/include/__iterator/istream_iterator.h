@@ -90,7 +90,7 @@ operator==(const istream_iterator<_Tp, _CharT, _Traits, _Distance>& __x,
 }
 
 #if _LIBCPP_STD_VER <= 17
-template <class _Tp, class _CharT, class _Traits, class _Distance>
+_LIBCPP_EXPORT_STD template <class _Tp, class _CharT, class _Traits, class _Distance>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const istream_iterator<_Tp, _CharT, _Traits, _Distance>& __x,
