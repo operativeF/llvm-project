@@ -358,7 +358,7 @@ namespace this_thread
 
 _LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS void sleep_for(const chrono::nanoseconds& __ns);
 
-template <class _Rep, class _Period>
+_LIBCPP_EXPORT_STD template <class _Rep, class _Period>
 _LIBCPP_HIDE_FROM_ABI void
 sleep_for(const chrono::duration<_Rep, _Period>& __d)
 {
@@ -393,7 +393,7 @@ sleep_until(const chrono::time_point<_Clock, _Duration>& __t)
         __cv.wait_until(__lk, __t);
 }
 
-template <class _Duration>
+_LIBCPP_EXPORT_STD template <class _Duration>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 sleep_until(const chrono::time_point<chrono::steady_clock, _Duration>& __t)
