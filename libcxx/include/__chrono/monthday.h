@@ -59,7 +59,7 @@ _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline constexpr
 bool operator==(const month_day& __lhs, const month_day& __rhs) noexcept
 { return __lhs.month() == __rhs.month() && __lhs.day() == __rhs.day(); }
 
-_LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const month_day& __lhs, const month_day& __rhs) noexcept {
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(const month_day& __lhs, const month_day& __rhs) noexcept {
     if (auto __c = __lhs.month() <=> __rhs.month(); __c != 0)
         return __c;
     return __lhs.day() <=> __rhs.day();
