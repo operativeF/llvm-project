@@ -40,10 +40,10 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class, class, class, class> class _LIBCPP_TEMPLATE_VIS map;
-template <class, class, class, class> class _LIBCPP_TEMPLATE_VIS multimap;
-template <class, class, class> class _LIBCPP_TEMPLATE_VIS set;
-template <class, class, class> class _LIBCPP_TEMPLATE_VIS multiset;
+_LIBCPP_EXPORT_STD template <class, class, class, class> class _LIBCPP_TEMPLATE_VIS map;
+_LIBCPP_EXPORT_STD template <class, class, class, class> class _LIBCPP_TEMPLATE_VIS multimap;
+_LIBCPP_EXPORT_STD template <class, class, class> class _LIBCPP_TEMPLATE_VIS set;
+_LIBCPP_EXPORT_STD template <class, class, class> class _LIBCPP_TEMPLATE_VIS multiset;
 
 template <class _Tp, class _Compare, class _Allocator> class __tree;
 template <class _Tp, class _NodePtr, class _DiffType>
