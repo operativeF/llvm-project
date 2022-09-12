@@ -4089,7 +4089,7 @@ operator<=>(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT
 
 #else // _LIBCPP_STD_VER > 17
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator!=(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
@@ -4098,7 +4098,7 @@ operator!=(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
     return !(__lhs == __rhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator!=(const _CharT* __lhs,
@@ -4107,7 +4107,7 @@ operator!=(const _CharT* __lhs,
     return !(__lhs == __rhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator!=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4118,7 +4118,7 @@ operator!=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
 
 // operator<
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator< (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4127,7 +4127,7 @@ operator< (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return __lhs.compare(__rhs) < 0;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator< (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4136,7 +4136,7 @@ operator< (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return __lhs.compare(__rhs) < 0;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator< (const _CharT* __lhs,
@@ -4147,7 +4147,7 @@ operator< (const _CharT* __lhs,
 
 // operator>
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator> (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4156,7 +4156,7 @@ operator> (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return __rhs < __lhs;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator> (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4165,7 +4165,7 @@ operator> (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return __rhs < __lhs;
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator> (const _CharT* __lhs,
@@ -4176,7 +4176,7 @@ operator> (const _CharT* __lhs,
 
 // operator<=
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator<=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4185,7 +4185,7 @@ operator<=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return !(__rhs < __lhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator<=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4194,7 +4194,7 @@ operator<=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return !(__rhs < __lhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator<=(const _CharT* __lhs,
@@ -4205,7 +4205,7 @@ operator<=(const _CharT* __lhs,
 
 // operator>=
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator>=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4214,7 +4214,7 @@ operator>=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return !(__lhs < __rhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator>=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
@@ -4223,7 +4223,7 @@ operator>=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
     return !(__lhs < __rhs);
 }
 
-template<class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 inline _LIBCPP_HIDE_FROM_ABI
 bool
 operator>=(const _CharT* __lhs,
