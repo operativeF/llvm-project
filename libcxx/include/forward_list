@@ -299,7 +299,7 @@ struct _LIBCPP_STANDALONE_DEBUG __forward_list_node
 };
 
 
-template <class _Tp, class _Alloc = allocator<_Tp> > class _LIBCPP_TEMPLATE_VIS forward_list;
+_LIBCPP_EXPORT_STD template <class _Tp, class _Alloc = allocator<_Tp> > class _LIBCPP_TEMPLATE_VIS forward_list;
 template<class _NodeConstPtr> class _LIBCPP_TEMPLATE_VIS __forward_list_const_iterator;
 
 template <class _NodePtr>
