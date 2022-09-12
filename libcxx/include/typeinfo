@@ -354,7 +354,7 @@ _LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_cast
   const char* what() const _NOEXCEPT override;
 };
 
-class _LIBCPP_EXCEPTION_ABI bad_typeid
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_typeid
     : public exception
 {
  public:
@@ -379,7 +379,7 @@ private:
   bad_cast(const char* const __message) _NOEXCEPT : exception(__message) {}
 };
 
-class bad_typeid : public exception {
+_LIBCPP_EXPORT_STD class bad_typeid : public exception {
 public:
   bad_typeid() _NOEXCEPT : exception("bad typeid") {}
 
