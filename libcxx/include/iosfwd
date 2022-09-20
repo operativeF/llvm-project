@@ -106,7 +106,7 @@ using u32streampos = fpos<char_traits<char32_t>::state_type>;
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS ios_base;
 
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_ios;
@@ -184,7 +184,7 @@ _LIBCPP_EXPORT_STD typedef basic_ofstream<wchar_t>      wofstream;
 _LIBCPP_EXPORT_STD typedef basic_fstream<wchar_t>       wfstream;
 #endif
 
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(ios) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wios)) basic_ios;
 
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
@@ -230,21 +230,6 @@ _LIBCPP_EXPORT_STD typedef long int streamoff;         // for char_traits in <st
 _LIBCPP_EXPORT_STD typedef long long streamoff;        // for char_traits in <string>
 #endif
 
-<<<<<<< HEAD
-=======
-_LIBCPP_EXPORT_STD template <class _CharT,             // for <stdexcept>
-          class _Traits = char_traits<_CharT>,
-          class _Allocator = allocator<_CharT> >
-    class _LIBCPP_TEMPLATE_VIS basic_string;
-_LIBCPP_EXPORT_STD typedef basic_string<char, char_traits<char>, allocator<char> > string;
-#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-_LIBCPP_EXPORT_STD typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t> > wstring;
-#endif
-
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator>
-    class _LIBCPP_PREFERRED_NAME(string) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wstring)) basic_string;
-
->>>>>>> ef09408c954e (Export iosfwd.)
 // Include other forward declarations here
 _LIBCPP_EXPORT_STD template <class _Tp, class _Alloc = allocator<_Tp> >
 class _LIBCPP_TEMPLATE_VIS vector;
