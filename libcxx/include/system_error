@@ -198,14 +198,14 @@ struct _LIBCPP_TEMPLATE_VIS is_error_condition_enum<errc::__lx>
     : true_type { };
 #endif
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS error_condition;
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS error_code;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS error_condition;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS error_code;
 
 // class error_category
 
-class _LIBCPP_HIDDEN __do_message;
+extern "C++" class _LIBCPP_HIDDEN __do_message;
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS error_category
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS error_category
 {
 public:
     virtual ~error_category() _NOEXCEPT;
@@ -246,15 +246,15 @@ public:
     friend class _LIBCPP_HIDDEN __do_message;
 };
 
-class _LIBCPP_HIDDEN __do_message
+extern "C++" class _LIBCPP_HIDDEN __do_message
     : public error_category
 {
 public:
     string message(int __ev) const override;
 };
 
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS const error_category& generic_category() _NOEXCEPT;
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS const error_category& system_category() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS const error_category& generic_category() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS const error_category& system_category() _NOEXCEPT;
 
 namespace __adl_only {
     // Those cause ADL to trigger but they are not viable candidates,
@@ -263,7 +263,7 @@ namespace __adl_only {
     void make_error_code() = delete;
 } // namespace __adl_only
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS error_condition
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS error_condition
 {
     int __val_;
     const error_category* __cat_;
@@ -333,7 +333,7 @@ make_error_condition(errc __e) _NOEXCEPT
 
 // error_code
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS error_code
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS error_code
 {
     int __val_;
     const error_category* __cat_;
@@ -519,7 +519,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<error_condition>
 
 // system_error
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS system_error
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS system_error
     : public runtime_error
 {
     error_code __ec_;
@@ -540,7 +540,7 @@ private:
     static string __init(const error_code&, string);
 };
 
-_LIBCPP_NORETURN _LIBCPP_FUNC_VIS
+extern "C++" _LIBCPP_NORETURN _LIBCPP_FUNC_VIS
 void __throw_system_error(int __ev, const char* __what_arg);
 
 _LIBCPP_END_NAMESPACE_STD
