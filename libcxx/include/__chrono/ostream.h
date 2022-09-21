@@ -86,7 +86,7 @@ _LIBCPP_HIDE_FROM_ABI auto __units_suffix() {
     return std::format(_LIBCPP_STATICALLY_WIDEN(_CharT, "[{}/{}]s"), _Period::num, _Period::den);
 }
 
-template <class _CharT, class _Traits, class _Rep, class _Period>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Rep, class _Period>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_AVAILABILITY_FORMAT basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const duration<_Rep, _Period>& __d) {
   basic_ostringstream<_CharT, _Traits> __s;
@@ -97,7 +97,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const duration<_Rep, _Period>& 
   return __os << __s.str();
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_AVAILABILITY_FORMAT basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const day& __d) {
   return __os
@@ -111,7 +111,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const day& __d) {
               : std::format(_LIBCPP_STATICALLY_WIDEN(_CharT, "{:02} is not a valid day"), static_cast<unsigned>(__d)));
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_AVAILABILITY_FORMAT basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const month& __m) {
   return __os << (__m.ok() ? std::format(__os.getloc(), _LIBCPP_STATICALLY_WIDEN(_CharT, "{:L%b}"), __m)
@@ -120,14 +120,14 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const month& __m) {
                                          static_cast<unsigned>(__m))); // TODO FMT Standard mandated locale isn't used.
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_AVAILABILITY_FORMAT basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const year& __y) {
   return __os << (__y.ok() ? std::format(_LIBCPP_STATICALLY_WIDEN(_CharT, "{:%Y}"), __y)
                            : std::format(_LIBCPP_STATICALLY_WIDEN(_CharT, "{:%Y} is not a valid year"), __y));
 }
 
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI _LIBCPP_AVAILABILITY_FORMAT basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, const weekday& __wd) {
   return __os << (__wd.ok() ? std::format(__os.getloc(), _LIBCPP_STATICALLY_WIDEN(_CharT, "{:L%a}"), __wd)
