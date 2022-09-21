@@ -45,7 +45,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_DIAGNOSTIC_PUSH
 _LIBCPP_CLANG_DIAGNOSTIC_IGNORED("-Wweak-vtables")
-_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_function_call
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI bad_function_call
     : public exception
 {
 public:
