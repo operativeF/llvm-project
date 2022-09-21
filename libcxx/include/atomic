@@ -1433,6 +1433,8 @@ using __cxx_atomic_contention_t = __cxx_atomic_impl<__cxx_contention_t>;
 
 #ifndef _LIBCPP_HAS_NO_THREADS
 
+extern "C++" {
+
 _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI void __cxx_atomic_notify_one(void const volatile*);
 _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI void __cxx_atomic_notify_all(void const volatile*);
 _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI __cxx_contention_t __libcpp_atomic_monitor(void const volatile*);
@@ -1442,6 +1444,8 @@ _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI void __cxx_atomic_notify_one
 _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI void __cxx_atomic_notify_all(__cxx_atomic_contention_t const volatile*);
 _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI __cxx_contention_t __libcpp_atomic_monitor(__cxx_atomic_contention_t const volatile*);
 _LIBCPP_AVAILABILITY_SYNC _LIBCPP_EXPORTED_FROM_ABI void __libcpp_atomic_wait(__cxx_atomic_contention_t const volatile*, __cxx_contention_t);
+
+} // extern "C++"
 
 template <class _Atp, class _Fn>
 struct __libcpp_atomic_wait_backoff_impl {
@@ -1475,6 +1479,8 @@ _LIBCPP_INLINE_VISIBILITY bool __cxx_atomic_wait(_Atp* __a, _Fn && __test_fn)
 
 #else // _LIBCPP_HAS_NO_THREADS
 
+extern "C++" {
+
 template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY void __cxx_atomic_notify_all(__cxx_atomic_impl<_Tp> const volatile*) { }
 template <class _Tp>
@@ -1484,6 +1490,8 @@ _LIBCPP_INLINE_VISIBILITY bool __cxx_atomic_wait(_Atp*, _Fn && __test_fn)
 {
     return __libcpp_thread_poll_with_backoff(__test_fn, __spinning_backoff_policy());
 }
+
+} // extern "C++"
 
 #endif // _LIBCPP_HAS_NO_THREADS
 
