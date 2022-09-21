@@ -106,7 +106,7 @@ __libcpp_atomic_refcount_decrement(_Tp& __t) _NOEXCEPT
 #endif
 }
 
-_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_weak_ptr
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI bad_weak_ptr
     : public std::exception
 {
 public:
@@ -128,7 +128,7 @@ void __throw_bad_weak_ptr()
 
 _LIBCPP_EXPORT_STD template<class _Tp> class _LIBCPP_TEMPLATE_VIS weak_ptr;
 
-class _LIBCPP_TYPE_VIS __shared_count
+extern "C++" class _LIBCPP_TYPE_VIS __shared_count
 {
     __shared_count(const __shared_count&);
     __shared_count& operator=(const __shared_count&);
@@ -167,7 +167,7 @@ public:
     }
 };
 
-class _LIBCPP_TYPE_VIS __shared_weak_count
+extern "C++" class _LIBCPP_TYPE_VIS __shared_weak_count
     : private __shared_count
 {
     long __shared_weak_owners_;
@@ -1779,7 +1779,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, shared_ptr<_Yp> const& __p);
 
 #if !defined(_LIBCPP_HAS_NO_THREADS)
 
-class _LIBCPP_TYPE_VIS __sp_mut
+extern "C++" class _LIBCPP_TYPE_VIS __sp_mut
 {
     void* __lx_;
 public:
@@ -1794,7 +1794,7 @@ private:
     friend _LIBCPP_FUNC_VIS __sp_mut& __get_sp_mut(const void*);
 };
 
-_LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
+extern "C++" _LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_ATOMIC_SHARED_PTR
 __sp_mut& __get_sp_mut(const void*);
 
 _LIBCPP_EXPORT_STD template <class _Tp>
