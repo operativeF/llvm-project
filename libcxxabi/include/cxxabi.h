@@ -27,9 +27,9 @@
 
 namespace std {
 #if defined(_WIN32)
-class _LIBCXXABI_TYPE_VIS type_info; // forward declaration
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCXXABI_TYPE_VIS type_info; // forward declaration
 #else
-class type_info; // forward declaration
+_LIBCPP_EXPORT_STD extern "C++" class type_info; // forward declaration
 #endif
 }
 
