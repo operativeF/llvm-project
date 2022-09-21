@@ -342,9 +342,11 @@ collate<_CharT>::do_hash(const char_type* __lo, const char_type* __hi) const
     return static_cast<long>(__h);
 }
 
+#ifndef _BUILD_STD_MODULE
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS collate<char>;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS collate<wchar_t>;
+#endif
 #endif
 
 // template <class CharT> class collate_byname;
@@ -1509,6 +1511,7 @@ codecvt_byname<_InternT, _ExternT, _StateT>::~codecvt_byname()
 }
 _LIBCPP_SUPPRESS_DEPRECATED_POP
 
+#ifndef _BUILD_STD_MODULE
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS codecvt_byname<char, char, mbstate_t>;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS codecvt_byname<wchar_t, char, mbstate_t>;
@@ -1519,8 +1522,9 @@ extern template class _LIBCPP_DEPRECATED_IN_CXX20 _LIBCPP_EXTERN_TEMPLATE_TYPE_V
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS codecvt_byname<char16_t, char8_t, mbstate_t>; // C++20
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS codecvt_byname<char32_t, char8_t, mbstate_t>; // C++20
 #endif
+#endif
 
-template <size_t _Np>
+extern "C++" template <size_t _Np>
 struct __narrow_to_utf8
 {
     template <class _OutputIterator, class _CharT>

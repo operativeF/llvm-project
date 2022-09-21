@@ -641,6 +641,8 @@ inline _LIBCPP_INLINE_VISIBILITY void __sort(_Tp** __first, _Tp** __last, __less
   std::__sort<__less<uintptr_t>&, uintptr_t*>((uintptr_t*)__first, (uintptr_t*)__last, __comp);
 }
 
+#ifndef _BUILD_STD_MODULE
+
 extern template _LIBCPP_FUNC_VIS void __sort<__less<char>&, char*>(char*, char*, __less<char>&);
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 extern template _LIBCPP_FUNC_VIS void __sort<__less<wchar_t>&, wchar_t*>(wchar_t*, wchar_t*, __less<wchar_t>&);
@@ -678,6 +680,8 @@ extern template _LIBCPP_FUNC_VIS bool __insertion_sort_incomplete<__less<double>
 extern template _LIBCPP_FUNC_VIS bool __insertion_sort_incomplete<__less<long double>&, long double*>(long double*, long double*, __less<long double>&);
 
 extern template _LIBCPP_FUNC_VIS unsigned __sort5<__less<long double>&, long double*>(long double*, long double*, long double*, long double*, long double*, __less<long double>&);
+
+#endif
 
 template <class _AlgPolicy, class _RandomAccessIterator, class _Comp>
 inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20

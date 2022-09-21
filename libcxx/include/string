@@ -1997,6 +1997,8 @@ private:
     friend _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string operator+<>(const basic_string&, value_type);
 };
 
+#ifndef _BUILD_STD_MODULE
+
 // These declarations must appear before any functions are implicitly used
 // so that they have the correct visibility specifier.
 #define _LIBCPP_DECLARE(...) extern template __VA_ARGS__;
@@ -2012,6 +2014,8 @@ private:
 #   endif
 #endif
 #undef _LIBCPP_DECLARE
+
+#endif
 
 
 #if _LIBCPP_STD_VER >= 17

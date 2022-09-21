@@ -1189,9 +1189,11 @@ basic_ostream<char, _Traits>& operator<<(basic_ostream<char, _Traits>&, const ch
 
 #endif // _LIBCPP_STD_VER > 17
 
+#ifndef _BUILD_STD_MODULE
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_ostream<char>;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_ostream<wchar_t>;
+#endif
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

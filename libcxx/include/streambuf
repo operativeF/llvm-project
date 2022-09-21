@@ -492,6 +492,7 @@ basic_streambuf<_CharT, _Traits>::overflow(int_type)
 
 } // extern "C++"
 
+#ifndef _BUILD_STD_MODULE
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_streambuf<char>;
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_ios<char>;
 
