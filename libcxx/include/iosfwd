@@ -113,11 +113,11 @@ _LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
 
 _LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_streambuf;
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_istream;
 _LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_ostream;
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_iostream;
 
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT>,
@@ -189,11 +189,11 @@ _LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
 
 _LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(streambuf) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wstreambuf)) basic_streambuf;
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(istream) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wistream)) basic_istream;
 _LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(ostream) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wostream)) basic_ostream;
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(iostream) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wiostream)) basic_iostream;
 
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator>
