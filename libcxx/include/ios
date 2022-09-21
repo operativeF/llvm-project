@@ -419,7 +419,7 @@ template <>
 struct _LIBCPP_TEMPLATE_VIS is_error_code_enum<io_errc::__lx> : public true_type { };
 #endif
 
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS
 const error_category& iostream_category() _NOEXCEPT;
 
 _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
