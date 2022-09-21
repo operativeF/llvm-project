@@ -261,7 +261,7 @@ condition_variable_any::wait_for(_Lock& __lock,
                       _VSTD::move(__pred));
 }
 
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS
 void notify_all_at_thread_exit(condition_variable&, unique_lock<mutex>);
 
 _LIBCPP_END_NAMESPACE_STD
