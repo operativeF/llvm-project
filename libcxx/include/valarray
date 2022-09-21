@@ -374,9 +374,9 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template<class _Tp> class _LIBCPP_TEMPLATE_VIS valarray;
+_LIBCPP_EXPORT_STD template<class _Tp> class _LIBCPP_TEMPLATE_VIS valarray;
 
-class _LIBCPP_TEMPLATE_VIS slice
+_LIBCPP_EXPORT_STD class _LIBCPP_TEMPLATE_VIS slice
 {
     size_t __start_;
     size_t __size_;
@@ -401,28 +401,28 @@ public:
     _LIBCPP_INLINE_VISIBILITY size_t stride() const {return __stride_;}
 };
 
-template <class _Tp> class _LIBCPP_TEMPLATE_VIS slice_array;
-class _LIBCPP_TYPE_VIS gslice;
-template <class _Tp> class _LIBCPP_TEMPLATE_VIS gslice_array;
-template <class _Tp> class _LIBCPP_TEMPLATE_VIS mask_array;
-template <class _Tp> class _LIBCPP_TEMPLATE_VIS indirect_array;
+_LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS slice_array;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS gslice;
+_LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS gslice_array;
+_LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS mask_array;
+_LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS indirect_array;
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY
 _Tp*
 begin(valarray<_Tp>& __v);
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY
 const _Tp*
 begin(const valarray<_Tp>& __v);
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY
 _Tp*
 end(valarray<_Tp>& __v);
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 _LIBCPP_INLINE_VISIBILITY
 const _Tp*
 end(const valarray<_Tp>& __v);
@@ -828,7 +828,7 @@ struct __is_val_expr<__val_expr<_ValExpr> > : true_type {};
 template<class _Tp>
 struct __is_val_expr<valarray<_Tp> > : true_type {};
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 class _LIBCPP_TEMPLATE_VIS valarray
 {
 public:
@@ -1108,7 +1108,7 @@ template<class _Tp, size_t _Size>
 valarray(const _Tp(&)[_Size], size_t) -> valarray<_Tp>;
 #endif
 
-extern template _LIBCPP_FUNC_VIS void valarray<size_t>::resize(size_t, size_t);
+extern "C++" template _LIBCPP_FUNC_VIS void valarray<size_t>::resize(size_t, size_t);
 
 template <class _Op, class _Tp>
 struct _UnaryOp<_Op, valarray<_Tp> >
@@ -1194,7 +1194,7 @@ struct _BinaryOp<_Op, valarray<_Tp>, valarray<_Tp> >
 
 // slice_array
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS slice_array
 {
 public:
@@ -1526,7 +1526,7 @@ slice_array<_Tp>::operator=(const value_type& __x) const
 
 // gslice
 
-class _LIBCPP_TYPE_VIS gslice
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS gslice
 {
     valarray<size_t> __size_;
     valarray<size_t> __stride_;
@@ -1587,7 +1587,7 @@ private:
 
 // gslice_array
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS gslice_array
 {
 public:
@@ -1922,7 +1922,7 @@ gslice_array<_Tp>::operator=(const value_type& __x) const
 
 // mask_array
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS mask_array
 {
 public:
@@ -2278,7 +2278,7 @@ public:
 
 // indirect_array
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 class _LIBCPP_TEMPLATE_VIS indirect_array
 {
 public:
@@ -3769,7 +3769,7 @@ valarray<_Tp>::resize(size_t __n, value_type __x)
     }
 }
 
-template<class _Tp>
+_LIBCPP_EXPORT_STD template<class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 void
 swap(valarray<_Tp>& __x, valarray<_Tp>& __y) _NOEXCEPT
@@ -3777,7 +3777,7 @@ swap(valarray<_Tp>& __x, valarray<_Tp>& __y) _NOEXCEPT
     __x.swap(__y);
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3791,7 +3791,7 @@ operator*(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(multiplies<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3807,7 +3807,7 @@ operator*(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3823,7 +3823,7 @@ operator*(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3837,7 +3837,7 @@ operator/(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(divides<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3853,7 +3853,7 @@ operator/(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3869,7 +3869,7 @@ operator/(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3883,7 +3883,7 @@ operator%(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(modulus<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3899,7 +3899,7 @@ operator%(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3915,7 +3915,7 @@ operator%(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3929,7 +3929,7 @@ operator+(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(plus<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3945,7 +3945,7 @@ operator+(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3961,7 +3961,7 @@ operator+(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3975,7 +3975,7 @@ operator-(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(minus<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -3991,7 +3991,7 @@ operator-(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4007,7 +4007,7 @@ operator-(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4021,7 +4021,7 @@ operator^(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(bit_xor<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4037,7 +4037,7 @@ operator^(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4053,7 +4053,7 @@ operator^(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4067,7 +4067,7 @@ operator&(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(bit_and<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4083,7 +4083,7 @@ operator&(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4099,7 +4099,7 @@ operator&(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4113,7 +4113,7 @@ operator|(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(bit_or<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4129,7 +4129,7 @@ operator|(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4145,7 +4145,7 @@ operator|(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4159,7 +4159,7 @@ operator<<(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(__bit_shift_left<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4175,7 +4175,7 @@ operator<<(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4191,7 +4191,7 @@ operator<<(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4205,7 +4205,7 @@ operator>>(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(__bit_shift_right<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4221,7 +4221,7 @@ operator>>(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4237,7 +4237,7 @@ operator>>(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4251,7 +4251,7 @@ operator&&(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(logical_and<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4267,7 +4267,7 @@ operator&&(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4283,7 +4283,7 @@ operator&&(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4297,7 +4297,7 @@ operator||(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(logical_or<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4313,7 +4313,7 @@ operator||(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4329,7 +4329,7 @@ operator||(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4343,7 +4343,7 @@ operator==(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(equal_to<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4359,7 +4359,7 @@ operator==(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4375,7 +4375,7 @@ operator==(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4389,7 +4389,7 @@ operator!=(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(not_equal_to<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4405,7 +4405,7 @@ operator!=(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4421,7 +4421,7 @@ operator!=(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4435,7 +4435,7 @@ operator<(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(less<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4451,7 +4451,7 @@ operator<(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4467,7 +4467,7 @@ operator<(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4481,7 +4481,7 @@ operator>(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(greater<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4497,7 +4497,7 @@ operator>(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4513,7 +4513,7 @@ operator>(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4527,7 +4527,7 @@ operator<=(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(less_equal<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4543,7 +4543,7 @@ operator<=(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4559,7 +4559,7 @@ operator<=(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4573,7 +4573,7 @@ operator>=(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(greater_equal<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4589,7 +4589,7 @@ operator>=(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4605,7 +4605,7 @@ operator>=(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4619,7 +4619,7 @@ abs(const _Expr& __x)
     return __val_expr<_Op>(_Op(__abs_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4633,7 +4633,7 @@ acos(const _Expr& __x)
     return __val_expr<_Op>(_Op(__acos_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4647,7 +4647,7 @@ asin(const _Expr& __x)
     return __val_expr<_Op>(_Op(__asin_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4661,7 +4661,7 @@ atan(const _Expr& __x)
     return __val_expr<_Op>(_Op(__atan_expr<value_type>(), __x));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4675,7 +4675,7 @@ atan2(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(__atan2_expr<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4691,7 +4691,7 @@ atan2(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4707,7 +4707,7 @@ atan2(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4721,7 +4721,7 @@ cos(const _Expr& __x)
     return __val_expr<_Op>(_Op(__cos_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4735,7 +4735,7 @@ cosh(const _Expr& __x)
     return __val_expr<_Op>(_Op(__cosh_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4749,7 +4749,7 @@ exp(const _Expr& __x)
     return __val_expr<_Op>(_Op(__exp_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4763,7 +4763,7 @@ log(const _Expr& __x)
     return __val_expr<_Op>(_Op(__log_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4777,7 +4777,7 @@ log10(const _Expr& __x)
     return __val_expr<_Op>(_Op(__log10_expr<value_type>(), __x));
 }
 
-template<class _Expr1, class _Expr2>
+_LIBCPP_EXPORT_STD template<class _Expr1, class _Expr2>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4791,7 +4791,7 @@ pow(const _Expr1& __x, const _Expr2& __y)
     return __val_expr<_Op>(_Op(__pow_expr<value_type>(), __x, __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4807,7 +4807,7 @@ pow(const _Expr& __x, const typename _Expr::value_type& __y)
                            __x, __scalar_expr<value_type>(__y, __x.size())));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4823,7 +4823,7 @@ pow(const typename _Expr::value_type& __x, const _Expr& __y)
                            __scalar_expr<value_type>(__x, __y.size()), __y));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4837,7 +4837,7 @@ sin(const _Expr& __x)
     return __val_expr<_Op>(_Op(__sin_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4851,7 +4851,7 @@ sinh(const _Expr& __x)
     return __val_expr<_Op>(_Op(__sinh_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4865,7 +4865,7 @@ sqrt(const _Expr& __x)
     return __val_expr<_Op>(_Op(__sqrt_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4879,7 +4879,7 @@ tan(const _Expr& __x)
     return __val_expr<_Op>(_Op(__tan_expr<value_type>(), __x));
 }
 
-template<class _Expr>
+_LIBCPP_EXPORT_STD template<class _Expr>
 inline _LIBCPP_INLINE_VISIBILITY
 typename enable_if
 <
@@ -4893,7 +4893,7 @@ tanh(const _Expr& __x)
     return __val_expr<_Op>(_Op(__tanh_expr<value_type>(), __x));
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _Tp*
 begin(valarray<_Tp>& __v)
@@ -4901,7 +4901,7 @@ begin(valarray<_Tp>& __v)
     return __v.__begin_;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 const _Tp*
 begin(const valarray<_Tp>& __v)
@@ -4909,7 +4909,7 @@ begin(const valarray<_Tp>& __v)
     return __v.__begin_;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 _Tp*
 end(valarray<_Tp>& __v)
@@ -4917,7 +4917,7 @@ end(valarray<_Tp>& __v)
     return __v.__end_;
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY
 const _Tp*
 end(const valarray<_Tp>& __v)
