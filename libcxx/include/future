@@ -487,7 +487,7 @@ _LIBCPP_EXPORT_STD _LIBCPP_DECLARE_STRONG_ENUM(future_status)
 };
 _LIBCPP_DECLARE_STRONG_ENUM_EPILOG(future_status)
 
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS
 const error_category& future_category() _NOEXCEPT;
 
 _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
@@ -532,7 +532,7 @@ void __throw_future_error(future_errc __ev)
 #endif
 }
 
-class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_FUTURE __assoc_sub_state
+extern "C++" class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_FUTURE __assoc_sub_state
     : public __shared_count
 {
 protected:
@@ -597,6 +597,8 @@ public:
     virtual void __execute();
 };
 
+extern "C++" {
+
 template <class _Clock, class _Duration>
 future_status
 __assoc_sub_state::wait_until(const chrono::time_point<_Clock, _Duration>& __abs_time) const
@@ -618,6 +620,8 @@ __assoc_sub_state::wait_for(const chrono::duration<_Rep, _Period>& __rel_time) c
 {
     return wait_until(chrono::steady_clock::now() + __rel_time);
 }
+
+} // extern "C++"
 
 template <class _Rp>
 class _LIBCPP_AVAILABILITY_FUTURE _LIBCPP_HIDDEN __assoc_state
@@ -1021,12 +1025,12 @@ __async_assoc_state<void, _Fp>::__on_zero_shared() _NOEXCEPT
     base::__on_zero_shared();
 }
 
-_LIBCPP_EXPORT_STD template <class _Rp> class _LIBCPP_TEMPLATE_VIS promise;
-_LIBCPP_EXPORT_STD template <class _Rp> class _LIBCPP_TEMPLATE_VIS shared_future;
+_LIBCPP_EXPORT_STD extern "C++" template <class _Rp> class _LIBCPP_TEMPLATE_VIS promise;
+_LIBCPP_EXPORT_STD extern "C++" template <class _Rp> class _LIBCPP_TEMPLATE_VIS shared_future;
 
 // future
 
-_LIBCPP_EXPORT_STD template <class _Rp> class _LIBCPP_TEMPLATE_VIS future;
+_LIBCPP_EXPORT_STD extern "C++" template <class _Rp> class _LIBCPP_TEMPLATE_VIS future;
 
 template <class _Rp, class _Fp>
 _LIBCPP_INLINE_VISIBILITY future<_Rp>
@@ -1036,7 +1040,7 @@ template <class _Rp, class _Fp>
 _LIBCPP_INLINE_VISIBILITY future<_Rp>
 __make_async_assoc_state(_Fp&& __f);
 
-_LIBCPP_EXPORT_STD template <class _Rp>
+_LIBCPP_EXPORT_STD extern "C++" template <class _Rp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FUTURE future
 {
     __assoc_state<_Rp>* __state_;
@@ -1094,6 +1098,8 @@ public:
             {return __state_->wait_until(__abs_time);}
 };
 
+extern "C++" {
+
 template <class _Rp>
 future<_Rp>::future(__assoc_state<_Rp>* __state)
     : __state_(__state)
@@ -1101,10 +1107,14 @@ future<_Rp>::future(__assoc_state<_Rp>* __state)
     __state_->__attach_future();
 }
 
+} // extern "C++"
+
 struct __release_shared_count
 {
     void operator()(__shared_count* __p) {__p->__release_shared();}
 };
+
+extern "C++" {
 
 template <class _Rp>
 future<_Rp>::~future()
@@ -1122,6 +1132,8 @@ future<_Rp>::get()
     __state_ = nullptr;
     return __s->move();
 }
+
+} // extern "C++"
 
 template <class _Rp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FUTURE future<_Rp&>
@@ -1275,7 +1287,7 @@ swap(future<_Rp>& __x, future<_Rp>& __y) _NOEXCEPT
 
 _LIBCPP_EXPORT_STD template <class _Callable> class packaged_task;
 
-_LIBCPP_EXPORT_STD template <class _Rp>
+_LIBCPP_EXPORT_STD extern "C++" template <class _Rp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_AVAILABILITY_FUTURE promise
 {
     __assoc_state<_Rp>* __state_;
@@ -1319,6 +1331,8 @@ public:
     void set_value_at_thread_exit(_Rp&& __r);
     void set_exception_at_thread_exit(exception_ptr __p);
 };
+
+extern "C++" {
 
 template <class _Rp>
 promise<_Rp>::promise()
@@ -1416,6 +1430,8 @@ promise<_Rp>::set_exception_at_thread_exit(exception_ptr __p)
         __throw_future_error(future_errc::no_state);
     __state_->set_exception_at_thread_exit(__p);
 }
+
+} // extern "C++"
 
 // promise<R&>
 
@@ -2209,7 +2225,7 @@ async(_Fp&& __f, _Args&&... __args)
 
 // shared_future
 
-_LIBCPP_EXPORT_STD template <class _Rp>
+_LIBCPP_EXPORT_STD extern "C++" template <class _Rp>
 class _LIBCPP_TEMPLATE_VIS shared_future
 {
     __assoc_state<_Rp>* __state_;
@@ -2260,6 +2276,8 @@ public:
             {return __state_->wait_until(__abs_time);}
 };
 
+extern "C++" {
+
 template <class _Rp>
 shared_future<_Rp>::~shared_future()
 {
@@ -2278,6 +2296,8 @@ shared_future<_Rp>::operator=(const shared_future& __rhs) _NOEXCEPT
     __state_ = __rhs.__state_;
     return *this;
 }
+
+} // extern "C++"
 
 template <class _Rp>
 class _LIBCPP_TEMPLATE_VIS shared_future<_Rp&>
@@ -2408,6 +2428,8 @@ swap(shared_future<_Rp>& __x, shared_future<_Rp>& __y) _NOEXCEPT
     __x.swap(__y);
 }
 
+extern "C++" {
+
 template <class _Rp>
 inline
 shared_future<_Rp>
@@ -2415,6 +2437,8 @@ future<_Rp>::share() _NOEXCEPT
 {
     return shared_future<_Rp>(_VSTD::move(*this));
 }
+
+} // extern "C++"
 
 template <class _Rp>
 inline
