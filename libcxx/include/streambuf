@@ -123,7 +123,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_streambuf
 {
 public:
@@ -303,6 +303,8 @@ private:
     char_type* __nout_;
     char_type* __eout_;
 };
+
+extern "C++" {
 
 template <class _CharT, class _Traits>
 basic_streambuf<_CharT, _Traits>::~basic_streambuf()
@@ -487,6 +489,8 @@ basic_streambuf<_CharT, _Traits>::overflow(int_type)
 {
     return traits_type::eof();
 }
+
+} // extern "C++"
 
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_streambuf<char>;
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_ios<char>;

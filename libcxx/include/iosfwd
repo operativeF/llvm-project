@@ -111,7 +111,7 @@ _LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS ios_base;
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_ios;
 
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_streambuf;
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_istream;
@@ -187,7 +187,7 @@ _LIBCPP_EXPORT_STD typedef basic_fstream<wchar_t>       wfstream;
 _LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(ios) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wios)) basic_ios;
 
-_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(streambuf) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wstreambuf)) basic_streambuf;
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
     class _LIBCPP_PREFERRED_NAME(istream) _LIBCPP_IF_WIDE_CHARACTERS(_LIBCPP_PREFERRED_NAME(wistream)) basic_istream;
