@@ -242,7 +242,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #else
 #  define _LIBCPP_GET_C_LOCALE __cloc()
    // Get the C locale object
-   _LIBCPP_FUNC_VIS locale_t __cloc();
+   extern "C++" _LIBCPP_FUNC_VIS locale_t __cloc();
 #define __cloc_defined
 #endif
 

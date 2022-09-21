@@ -109,7 +109,7 @@ struct __libcpp_locale_guard {
 };
 #endif
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS locale;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS locale;
 
 _LIBCPP_EXPORT_STD template <class _Facet>
 _LIBCPP_INLINE_VISIBILITY
@@ -121,7 +121,7 @@ _LIBCPP_INLINE_VISIBILITY
 const _Facet&
 use_facet(const locale&);
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS locale
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS locale
 {
 public:
     // types:
@@ -185,6 +185,7 @@ private:
     template <class _Facet> friend const _Facet& use_facet(const locale&);
 };
 
+extern "C++" {
 class _LIBCPP_TYPE_VIS locale::facet
     : public __shared_count
 {
@@ -237,6 +238,8 @@ locale::combine(const locale& __other) const
 
     return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
 }
+
+} // extern "C++"
 
 _LIBCPP_EXPORT_STD template <class _Facet>
 inline _LIBCPP_INLINE_VISIBILITY
@@ -389,6 +392,8 @@ protected:
 };
 #endif
 
+extern "C++" {
+
 template <class _CharT, class _Traits, class _Allocator>
 bool
 locale::operator()(const basic_string<_CharT, _Traits, _Allocator>& __x,
@@ -399,9 +404,11 @@ locale::operator()(const basic_string<_CharT, _Traits, _Allocator>& __x,
                                        __y.data(), __y.data() + __y.size()) < 0;
 }
 
+} // extern "C++"
+
 // template <class charT> class ctype
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ctype_base
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS ctype_base
 {
 public:
 #if defined(_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE)
@@ -557,7 +564,7 @@ public:
                   "__regex_word can't overlap other bits");
 };
 
-_LIBCPP_EXPORT_STD template <class _CharT> class _LIBCPP_TEMPLATE_VIS ctype;
+_LIBCPP_EXPORT_STD extern "C++" template <class _CharT> class _LIBCPP_TEMPLATE_VIS ctype;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>
@@ -944,7 +951,7 @@ tolower(_CharT __c, const locale& __loc)
 
 // codecvt_base
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS codecvt_base
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS codecvt_base
 {
 public:
     _LIBCPP_INLINE_VISIBILITY codecvt_base() {}
@@ -953,7 +960,7 @@ public:
 
 // template <class internT, class externT, class stateT> class codecvt;
 
-_LIBCPP_EXPORT_STD template <class _InternT, class _ExternT, class _StateT> class _LIBCPP_TEMPLATE_VIS codecvt;
+_LIBCPP_EXPORT_STD extern "C++" template <class _InternT, class _ExternT, class _StateT> class _LIBCPP_TEMPLATE_VIS codecvt;
 
 // template <> class codecvt<char, char, mbstate_t>
 
@@ -1607,7 +1614,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
     }
 };
 
-template <size_t _Np>
+extern "C++" template <size_t _Np>
 struct __widen_from_utf8
 {
     template <class _OutputIterator>
