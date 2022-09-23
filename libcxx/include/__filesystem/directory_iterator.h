@@ -33,8 +33,8 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
-class _LIBCPP_HIDDEN __dir_stream;
-_LIBCPP_EXPORT_STD class directory_iterator {
+extern "C++" class _LIBCPP_HIDDEN __dir_stream;
+_LIBCPP_EXPORT_STD extern "C++" class directory_iterator {
 public:
   typedef directory_entry value_type;
   typedef ptrdiff_t difference_type;
@@ -121,13 +121,13 @@ private:
   shared_ptr<__dir_stream> __imp_;
 };
 
-_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI bool
+_LIBCPP_EXPORT_STD extern "C++" inline _LIBCPP_HIDE_FROM_ABI bool
 operator==(const directory_iterator& __lhs,
            const directory_iterator& __rhs) noexcept {
   return __lhs.__imp_ == __rhs.__imp_;
 }
 
-_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI bool
+_LIBCPP_EXPORT_STD extern "C++" inline _LIBCPP_HIDE_FROM_ABI bool
 operator!=(const directory_iterator& __lhs,
            const directory_iterator& __rhs) noexcept {
   return !(__lhs == __rhs);

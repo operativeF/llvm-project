@@ -29,7 +29,7 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
-class _LIBCPP_TYPE_VIS path::iterator {
+extern "C++" class _LIBCPP_TYPE_VIS path::iterator {
 public:
   enum _ParserState : unsigned char {
     _Singular,
@@ -114,13 +114,13 @@ private:
   _ParserState __state_;
 };
 
-_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY bool operator==(const path::iterator& __lhs,
+_LIBCPP_EXPORT_STD extern "C++" inline _LIBCPP_INLINE_VISIBILITY bool operator==(const path::iterator& __lhs,
                                                  const path::iterator& __rhs) {
   return __lhs.__path_ptr_ == __rhs.__path_ptr_ &&
          __lhs.__entry_.data() == __rhs.__entry_.data();
 }
 
-_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY bool operator!=(const path::iterator& __lhs,
+_LIBCPP_EXPORT_STD extern "C++" inline _LIBCPP_INLINE_VISIBILITY bool operator!=(const path::iterator& __lhs,
                                                  const path::iterator& __rhs) {
   return !(__lhs == __rhs);
 }
