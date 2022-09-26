@@ -3161,7 +3161,6 @@ void Sema::DeclareGlobalAllocationFunction(DeclarationName Name,
     Alloc->setImplicit();
     // Global allocation functions should always be visible.
     Alloc->setVisibleDespiteOwningModule();
-    Alloc->setModuleOwnershipKind(Decl::ModuleOwnershipKind::Unowned);
 
     if (HasBadAllocExceptionSpec && getLangOpts().NewInfallible)
       Alloc->addAttr(
