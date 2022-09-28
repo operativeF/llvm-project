@@ -3154,11 +3154,14 @@ void Sema::DeclareGlobalAllocationFunction(DeclarationName Name,
 
   auto CreateAllocationFunctionDecl = [&](Attr *ExtraAttr) {
     QualType FnType = Context.getFunctionType(Return, Params, EPI);
+    ExportDecl *ED = ExportDecl::Create(Context, GlobalCtx, SourceLocation());
+
     FunctionDecl *Alloc = FunctionDecl::Create(
-        Context, GlobalCtx, SourceLocation(), SourceLocation(), Name, FnType,
+        Context, ED, SourceLocation(), SourceLocation(), Name, FnType,
         /*TInfo=*/nullptr, SC_None, getCurFPFeatures().isFPConstrained(), false,
         true);
     Alloc->setImplicit();
+    Alloc->addDecl(ED);
     // Global allocation functions should always be visible.
     Alloc->setVisibleDespiteOwningModule();
 
