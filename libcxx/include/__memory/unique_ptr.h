@@ -664,20 +664,20 @@ struct __unique_if<_Tp[_Np]>
     typedef void __unique_array_known_bound;
 };
 
-template <class _Tp, class... _Args>
+_LIBCPP_EXPORT_STD template <class _Tp, class... _Args>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 typename __unique_if<_Tp>::__unique_single
 make_unique(_Args&&... __args) {
   return unique_ptr<_Tp>(new _Tp(_VSTD::forward<_Args>(__args)...));
 }
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 typename __unique_if<_Tp>::__unique_array_unknown_bound
 make_unique(size_t __n) {
   typedef __remove_extent_t<_Tp> _Up;
   return unique_ptr<_Tp>(new _Up[__n]());
 }
 
-template<class _Tp, class... _Args>
+_LIBCPP_EXPORT_STD template<class _Tp, class... _Args>
     typename __unique_if<_Tp>::__unique_array_known_bound
     make_unique(_Args&&...) = delete;
 
