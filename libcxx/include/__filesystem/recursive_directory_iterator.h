@@ -142,13 +142,13 @@ private:
   bool __rec_;
 }; // class recursive_directory_iterator
 
-_LIBCPP_EXPORT_STD extern "C++" inline _LIBCPP_INLINE_VISIBILITY bool
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY bool
 operator==(const recursive_directory_iterator& __lhs,
            const recursive_directory_iterator& __rhs) noexcept {
   return __lhs.__imp_ == __rhs.__imp_;
 }
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD _LIBCPP_INLINE_VISIBILITY
 inline bool operator!=(const recursive_directory_iterator& __lhs,
                        const recursive_directory_iterator& __rhs) noexcept {
   return !(__lhs == __rhs);
