@@ -1667,23 +1667,6 @@ bool Sema::CheckRedeclarationModuleOwnership(NamedDecl *New, NamedDecl *Old) {
           OldM->getPrimaryModuleInterfaceName())
     return false;
 
-  bool NewIsModuleInterface = NewM && NewM->isModulePurview();
-  bool OldIsModuleInterface = OldM && OldM->isModulePurview();
-  if (NewIsModuleInterface || OldIsModuleInterface) {
-    // C++ Modules TS [basic.def.odr] 6.2/6.7 [sic]:
-    //   if a declaration of D [...] appears in the purview of a module, all
-    //   other such declarations shall appear in the purview of the same module
-    Diag(New->getLocation(), diag::err_mismatched_owning_module)
-      << New
-      << NewIsModuleInterface
-      << (NewIsModuleInterface ? NewM->getFullModuleName() : "")
-      << OldIsModuleInterface
-      << (OldIsModuleInterface ? OldM->getFullModuleName() : "");
-    Diag(Old->getLocation(), diag::note_previous_declaration);
-    New->setInvalidDecl();
-    return true;
-  }
-
   return false;
 }
 
