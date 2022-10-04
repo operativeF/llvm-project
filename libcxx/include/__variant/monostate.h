@@ -35,15 +35,15 @@ _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr strong_ordering operator<=>(m
 
 #  else // _LIBCPP_STD_VER > 17
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool operator!=(monostate, monostate) noexcept { return false; }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool operator!=(monostate, monostate) noexcept { return false; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool operator<(monostate, monostate) noexcept { return false; }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool operator<(monostate, monostate) noexcept { return false; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool operator>(monostate, monostate) noexcept { return false; }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool operator>(monostate, monostate) noexcept { return false; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool operator<=(monostate, monostate) noexcept { return true; }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool operator<=(monostate, monostate) noexcept { return true; }
 
-_LIBCPP_HIDE_FROM_ABI constexpr bool operator>=(monostate, monostate) noexcept { return true; }
+_LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI constexpr bool operator>=(monostate, monostate) noexcept { return true; }
 
 #  endif // _LIBCPP_STD_VER > 17
 
