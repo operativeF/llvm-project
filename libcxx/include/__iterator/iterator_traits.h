@@ -399,7 +399,7 @@ struct __iterator_traits<_Iter, true>
 //    conforming extension which allows some programs to compile and behave as
 //    the client expects instead of failing at compile time.
 
-template <class _Iter>
+_LIBCPP_EXPORT_STD template <class _Iter>
 struct _LIBCPP_TEMPLATE_VIS iterator_traits
     : __iterator_traits<_Iter, __has_iterator_typedefs<_Iter>::value> {
 
