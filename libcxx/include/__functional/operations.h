@@ -26,7 +26,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS plus
     : __binary_function<_Tp, _Tp, _Tp>
@@ -55,7 +55,7 @@ struct _LIBCPP_TEMPLATE_VIS plus<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS minus
     : __binary_function<_Tp, _Tp, _Tp>
@@ -84,7 +84,7 @@ struct _LIBCPP_TEMPLATE_VIS minus<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS multiplies
     : __binary_function<_Tp, _Tp, _Tp>
@@ -113,7 +113,7 @@ struct _LIBCPP_TEMPLATE_VIS multiplies<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS divides
     : __binary_function<_Tp, _Tp, _Tp>
@@ -142,7 +142,7 @@ struct _LIBCPP_TEMPLATE_VIS divides<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS modulus
     : __binary_function<_Tp, _Tp, _Tp>
@@ -171,7 +171,7 @@ struct _LIBCPP_TEMPLATE_VIS modulus<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS negate
     : __unary_function<_Tp, _Tp>
@@ -202,7 +202,7 @@ struct _LIBCPP_TEMPLATE_VIS negate<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS bit_and
     : __binary_function<_Tp, _Tp, _Tp>
@@ -255,7 +255,7 @@ struct _LIBCPP_TEMPLATE_VIS bit_not<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS bit_or
     : __binary_function<_Tp, _Tp, _Tp>
@@ -284,7 +284,7 @@ struct _LIBCPP_TEMPLATE_VIS bit_or<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS bit_xor
     : __binary_function<_Tp, _Tp, _Tp>
@@ -315,7 +315,7 @@ struct _LIBCPP_TEMPLATE_VIS bit_xor<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS equal_to
     : __binary_function<_Tp, _Tp, bool>
@@ -344,7 +344,7 @@ struct _LIBCPP_TEMPLATE_VIS equal_to<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS not_equal_to
     : __binary_function<_Tp, _Tp, bool>
@@ -373,7 +373,7 @@ struct _LIBCPP_TEMPLATE_VIS not_equal_to<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS less
     : __binary_function<_Tp, _Tp, bool>
@@ -402,7 +402,7 @@ struct _LIBCPP_TEMPLATE_VIS less<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS less_equal
     : __binary_function<_Tp, _Tp, bool>
@@ -431,7 +431,7 @@ struct _LIBCPP_TEMPLATE_VIS less_equal<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS greater_equal
     : __binary_function<_Tp, _Tp, bool>
@@ -460,7 +460,7 @@ struct _LIBCPP_TEMPLATE_VIS greater_equal<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS greater
     : __binary_function<_Tp, _Tp, bool>
@@ -491,7 +491,7 @@ struct _LIBCPP_TEMPLATE_VIS greater<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS logical_and
     : __binary_function<_Tp, _Tp, bool>
@@ -520,7 +520,7 @@ struct _LIBCPP_TEMPLATE_VIS logical_and<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS logical_not
     : __unary_function<_Tp, bool>
@@ -549,7 +549,7 @@ struct _LIBCPP_TEMPLATE_VIS logical_not<void>
 #if _LIBCPP_STD_VER > 11
 _LIBCPP_EXPORT_STD template <class _Tp = void>
 #else
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 #endif
 struct _LIBCPP_TEMPLATE_VIS logical_or
     : __binary_function<_Tp, _Tp, bool>

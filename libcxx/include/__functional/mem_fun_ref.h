@@ -22,7 +22,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 #if _LIBCPP_STD_VER <= 14 || defined(_LIBCPP_ENABLE_CXX17_REMOVED_BINDERS)
 
-template<class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 mem_fun_t
     : public __unary_function<_Tp*, _Sp>
 {
@@ -34,7 +34,7 @@ public:
         {return (__p->*__p_)();}
 };
 
-template<class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp, class _Ap>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 mem_fun1_t
     : public __binary_function<_Tp*, _Ap, _Sp>
 {
@@ -46,19 +46,19 @@ public:
         {return (__p->*__p_)(__x);}
 };
 
-template<class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 mem_fun_t<_Sp,_Tp>
 mem_fun(_Sp (_Tp::*__f)())
     {return mem_fun_t<_Sp,_Tp>(__f);}
 
-template<class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp, class _Ap>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 mem_fun1_t<_Sp,_Tp,_Ap>
 mem_fun(_Sp (_Tp::*__f)(_Ap))
     {return mem_fun1_t<_Sp,_Tp,_Ap>(__f);}
 
-template<class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 mem_fun_ref_t
     : public __unary_function<_Tp, _Sp>
 {
@@ -70,7 +70,7 @@ public:
         {return (__p.*__p_)();}
 };
 
-template<class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp, class _Ap>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 mem_fun1_ref_t
     : public __binary_function<_Tp, _Ap, _Sp>
 {
@@ -82,19 +82,19 @@ public:
         {return (__p.*__p_)(__x);}
 };
 
-template<class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 mem_fun_ref_t<_Sp,_Tp>
 mem_fun_ref(_Sp (_Tp::*__f)())
     {return mem_fun_ref_t<_Sp,_Tp>(__f);}
 
-template<class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template<class _Sp, class _Tp, class _Ap>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 mem_fun1_ref_t<_Sp,_Tp,_Ap>
 mem_fun_ref(_Sp (_Tp::*__f)(_Ap))
     {return mem_fun1_ref_t<_Sp,_Tp,_Ap>(__f);}
 
-template <class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 const_mem_fun_t
     : public __unary_function<const _Tp*, _Sp>
 {
@@ -106,7 +106,7 @@ public:
         {return (__p->*__p_)();}
 };
 
-template <class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp, class _Ap>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 const_mem_fun1_t
     : public __binary_function<const _Tp*, _Ap, _Sp>
 {
@@ -118,19 +118,19 @@ public:
         {return (__p->*__p_)(__x);}
 };
 
-template <class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 const_mem_fun_t<_Sp,_Tp>
 mem_fun(_Sp (_Tp::*__f)() const)
     {return const_mem_fun_t<_Sp,_Tp>(__f);}
 
-template <class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp, class _Ap>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 const_mem_fun1_t<_Sp,_Tp,_Ap>
 mem_fun(_Sp (_Tp::*__f)(_Ap) const)
     {return const_mem_fun1_t<_Sp,_Tp,_Ap>(__f);}
 
-template <class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 const_mem_fun_ref_t
     : public __unary_function<_Tp, _Sp>
 {
@@ -142,7 +142,7 @@ public:
         {return (__p.*__p_)();}
 };
 
-template <class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp, class _Ap>
 class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX11 const_mem_fun1_ref_t
     : public __binary_function<_Tp, _Ap, _Sp>
 {
@@ -154,13 +154,13 @@ public:
         {return (__p.*__p_)(__x);}
 };
 
-template <class _Sp, class _Tp>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 const_mem_fun_ref_t<_Sp,_Tp>
 mem_fun_ref(_Sp (_Tp::*__f)() const)
     {return const_mem_fun_ref_t<_Sp,_Tp>(__f);}
 
-template <class _Sp, class _Tp, class _Ap>
+_LIBCPP_EXPORT_STD template <class _Sp, class _Tp, class _Ap>
 _LIBCPP_DEPRECATED_IN_CXX11 inline _LIBCPP_INLINE_VISIBILITY
 const_mem_fun1_ref_t<_Sp,_Tp,_Ap>
 mem_fun_ref(_Sp (_Tp::*__f)(_Ap) const)
