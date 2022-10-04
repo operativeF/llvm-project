@@ -62,8 +62,6 @@ int feupdateenv(const fenv_t* envp);
 
 #ifdef __cplusplus
 
-extern "C++" {
-
 #ifdef feclearexcept
 #undef feclearexcept
 #endif
@@ -110,8 +108,6 @@ extern "C++" {
 #ifdef feupdateenv
 #undef feupdateenv
 #endif
-
-} // extern "C++"
 
 #endif // defined(__cplusplus)
 
