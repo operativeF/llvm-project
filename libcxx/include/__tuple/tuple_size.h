@@ -22,7 +22,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <class _Tp> struct _LIBCPP_TEMPLATE_VIS tuple_size;
+_LIBCPP_EXPORT_STD template <class _Tp> struct _LIBCPP_TEMPLATE_VIS tuple_size;
 
 #if !defined(_LIBCPP_CXX03_LANG)
 template <class _Tp, class...>

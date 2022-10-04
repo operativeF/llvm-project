@@ -23,7 +23,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-template <size_t _Ip, class _Tp> struct _LIBCPP_TEMPLATE_VIS tuple_element;
+_LIBCPP_EXPORT_STD template <size_t _Ip, class _Tp> struct _LIBCPP_TEMPLATE_VIS tuple_element;
 
 template <size_t _Ip, class _Tp>
 struct _LIBCPP_TEMPLATE_VIS tuple_element<_Ip, const _Tp>
