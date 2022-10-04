@@ -434,7 +434,7 @@ operator<=>(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
 
 #else // _LIBCPP_STD_VER > 17
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 bool
 operator!=(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
@@ -442,7 +442,7 @@ operator!=(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
     return !(__x == __y);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 bool
 operator< (const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
@@ -450,7 +450,7 @@ operator< (const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
     return __x.first < __y.first || (!(__y.first < __x.first) && __x.second < __y.second);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 bool
 operator> (const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
@@ -458,7 +458,7 @@ operator> (const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
     return __y < __x;
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 bool
 operator>=(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
@@ -466,7 +466,7 @@ operator>=(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
     return !(__x < __y);
 }
 
-template <class _T1, class _T2>
+_LIBCPP_EXPORT_STD template <class _T1, class _T2>
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
 bool
 operator<=(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
