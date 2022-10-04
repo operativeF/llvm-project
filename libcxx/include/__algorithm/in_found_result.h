@@ -23,7 +23,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
-template <class _InIter1>
+_LIBCPP_EXPORT_STD template <class _InIter1>
 struct in_found_result {
   _LIBCPP_NO_UNIQUE_ADDRESS _InIter1 in;
   bool found;

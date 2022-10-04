@@ -24,7 +24,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
 
-template <class _InIter1, class _InIter2>
+_LIBCPP_EXPORT_STD template <class _InIter1, class _InIter2>
 struct in_in_result {
   _LIBCPP_NO_UNIQUE_ADDRESS _InIter1 in1;
   _LIBCPP_NO_UNIQUE_ADDRESS _InIter2 in2;

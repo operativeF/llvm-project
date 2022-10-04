@@ -27,7 +27,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 namespace ranges {
 
-template <class _T1>
+_LIBCPP_EXPORT_STD template <class _T1>
 struct min_max_result {
   _LIBCPP_NO_UNIQUE_ADDRESS _T1 min;
   _LIBCPP_NO_UNIQUE_ADDRESS _T1 max;

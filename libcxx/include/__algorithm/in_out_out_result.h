@@ -23,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #if _LIBCPP_STD_VER > 17
 
 namespace ranges {
-template <class _InIter1, class _OutIter1, class _OutIter2>
+_LIBCPP_EXPORT_STD template <class _InIter1, class _OutIter1, class _OutIter2>
 struct in_out_out_result {
   _LIBCPP_NO_UNIQUE_ADDRESS _InIter1 in;
   _LIBCPP_NO_UNIQUE_ADDRESS _OutIter1 out1;
