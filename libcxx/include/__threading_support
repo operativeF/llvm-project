@@ -690,7 +690,7 @@ strong_ordering operator<=>(__thread_id __x, __thread_id __y) noexcept {
 namespace this_thread
 {
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 __thread_id
 get_id() _NOEXCEPT
 {
