@@ -82,9 +82,9 @@ __is_separator(_ECharT __e) {
 }
 
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
-_LIBCPP_EXPORT_STD typedef u8string __u8_string;
+typedef u8string __u8_string;
 #else
-_LIBCPP_EXPORT_STD string __u8_string;
+string __u8_string;
 #endif
 
 struct _NullSentinel {};
