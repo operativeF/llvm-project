@@ -141,7 +141,7 @@ struct __common_reference_sub_bullet1<_Tp, _Up>
 
 // sub-bullet 2 - Otherwise, if basic_common_reference<remove_cvref_t<T1>, remove_cvref_t<T2>, XREF(T1), XREF(T2)>::type
 // is well-formed, then the member typedef `type` denotes that type.
-template <class, class, template <class> class, template <class> class> struct basic_common_reference {};
+_LIBCPP_EXPORT_STD template <class, class, template <class> class, template <class> class> struct basic_common_reference {};
 
 template <class _Tp, class _Up>
 using __basic_common_reference_t = typename basic_common_reference<
@@ -179,7 +179,7 @@ struct common_reference<_Tp, _Up, _Vp, _Rest...>
 {};
 
 // bullet 5 - Otherwise, there shall be no member `type`.
-template <class...> struct common_reference {};
+_LIBCPP_EXPORT_STD template <class...> struct common_reference {};
 
 #endif // _LIBCPP_STD_VER > 17
 

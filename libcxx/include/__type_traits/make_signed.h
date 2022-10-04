@@ -72,7 +72,7 @@ using __make_signed_t = typename __apply_cv<_Tp, typename __make_signed<__remove
 
 #endif // __has_builtin(__make_signed)
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct make_signed {
   using type _LIBCPP_NODEBUG = __make_signed_t<_Tp>;
 };

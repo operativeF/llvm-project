@@ -41,7 +41,7 @@ using __add_pointer_t = typename __add_pointer_impl<_Tp>::type;
 
 #endif // __has_builtin(__add_pointer)
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct add_pointer {
   using type _LIBCPP_NODEBUG = __add_pointer_t<_Tp>;
 };

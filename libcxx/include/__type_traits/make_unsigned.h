@@ -74,7 +74,7 @@ using __make_unsigned_t = typename __apply_cv<_Tp, typename __make_unsigned<__re
 
 #endif // __has_builtin(__make_unsigned)
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct make_unsigned {
   using type _LIBCPP_NODEBUG = __make_unsigned_t<_Tp>;
 };

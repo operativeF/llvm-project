@@ -37,11 +37,11 @@ _LIBCPP_CONSTEXPR const _Tp integral_constant<_Tp, __v>::value;
 _LIBCPP_EXPORT_STD typedef integral_constant<bool, true>  true_type;
 _LIBCPP_EXPORT_STD typedef integral_constant<bool, false> false_type;
 
-_LIBCPP_EXPORT_STD template <bool _Val>
+template <bool _Val>
 using _BoolConstant _LIBCPP_NODEBUG = integral_constant<bool, _Val>;
 
 #if _LIBCPP_STD_VER > 14
-template <bool __b>
+_LIBCPP_EXPORT_STD template <bool __b>
 using bool_constant = integral_constant<bool, __b>;
 #endif
 

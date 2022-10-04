@@ -69,7 +69,7 @@ struct _LIBCPP_TEMPLATE_VIS common_type;
 struct __no_arg;
 template <class _Tp, class _Up, class = __no_arg>
 struct __common_types;
-template <class _Tp = __no_arg, class _Up = __no_arg, class _Vp = __no_arg,
+_LIBCPP_EXPORT_STD template <class _Tp = __no_arg, class _Up = __no_arg, class _Vp = __no_arg,
           class _Unused = __no_arg>
 struct common_type {
   static_assert(sizeof(_Unused) == 0,

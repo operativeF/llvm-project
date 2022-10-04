@@ -32,7 +32,7 @@ inline constexpr size_t extent_v = __array_extent(_Tp, _Ip);
 
 #else // __has_builtin(__array_extent)
 
-template <class _Tp, unsigned _Ip = 0> struct _LIBCPP_TEMPLATE_VIS extent
+_LIBCPP_EXPORT_STD template <class _Tp, unsigned _Ip = 0> struct _LIBCPP_TEMPLATE_VIS extent
     : public integral_constant<size_t, 0> {};
 template <class _Tp> struct _LIBCPP_TEMPLATE_VIS extent<_Tp[], 0>
     : public integral_constant<size_t, 0> {};
@@ -44,7 +44,7 @@ template <class _Tp, size_t _Np, unsigned _Ip> struct _LIBCPP_TEMPLATE_VIS exten
     : public integral_constant<size_t, extent<_Tp, _Ip-1>::value> {};
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp, unsigned _Ip = 0>
+_LIBCPP_EXPORT_STD template <class _Tp, unsigned _Ip = 0>
 inline constexpr size_t extent_v = extent<_Tp, _Ip>::value;
 #endif
 

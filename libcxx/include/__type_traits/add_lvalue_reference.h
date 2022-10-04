@@ -39,7 +39,7 @@ using __add_lvalue_reference_t = typename __add_lvalue_reference_impl<_Tp>::type
 
 #endif // __has_builtin(__add_lvalue_reference)
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct add_lvalue_reference {
   using type _LIBCPP_NODEBUG = __add_lvalue_reference_t<_Tp>;
 };

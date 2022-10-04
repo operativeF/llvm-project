@@ -23,11 +23,11 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 //       Re-enable the branch once https://llvm.org/PR54705 is fixed.
 #if __has_builtin(__is_array) && 0
 
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 struct _LIBCPP_TEMPLATE_VIS is_array : _BoolConstant<__is_array(_Tp)> { };
 
 #if _LIBCPP_STD_VER > 14
-template <class _Tp>
+_LIBCPP_EXPORT_STD template <class _Tp>
 inline constexpr bool is_array_v = __is_array(_Tp);
 #endif
 
