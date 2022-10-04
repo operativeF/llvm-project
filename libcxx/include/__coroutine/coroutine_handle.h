@@ -28,7 +28,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 _LIBCPP_EXPORT_STD template <class _Promise = void>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle;
 
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle<void> {
 public:
     // [coroutine.handle.con], construct/reset
@@ -103,7 +103,7 @@ constexpr strong_ordering operator<=>(coroutine_handle<> __x, coroutine_handle<>
     return compare_three_way()(__x.address(), __y.address());
 }
 
-_LIBCPP_EXPORT_STD template <class _Promise>
+template <class _Promise>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle {
 public:
     // [coroutine.handle.con], construct/reset
@@ -189,7 +189,7 @@ private:
 };
 
 // [coroutine.handle.hash]
-_LIBCPP_EXPORT_STD template <class _Tp>
+template <class _Tp>
 struct hash<coroutine_handle<_Tp>> {
     _LIBCPP_HIDE_FROM_ABI
     size_t operator()(const coroutine_handle<_Tp>& __v) const noexcept { return hash<void*>()(__v.address()); }

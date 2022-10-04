@@ -27,7 +27,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 _LIBCPP_EXPORT_STD struct noop_coroutine_promise {};
 
 // [coroutine.handle.noop]
-_LIBCPP_EXPORT_STD template <>
+template <>
 struct _LIBCPP_TEMPLATE_VIS coroutine_handle<noop_coroutine_promise> {
 public:
     // [coroutine.handle.noop.conv], conversion
