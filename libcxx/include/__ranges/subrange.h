@@ -260,7 +260,7 @@ namespace ranges {
 
 // [range.subrange.general]
 
-using ranges::get;
+_LIBCPP_EXPORT_STD using ranges::get;
 
 // [ranges.syn]
 

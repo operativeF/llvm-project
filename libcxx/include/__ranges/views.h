@@ -26,7 +26,7 @@ namespace views { }
 
 } // namespace ranges
 
-namespace views = ranges::views;
+_LIBCPP_EXPORT_STD namespace views = ranges::views;
 
 #endif // _LIBCPP_STD_VER > 17
 
