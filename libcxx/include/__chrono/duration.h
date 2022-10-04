@@ -603,7 +603,7 @@ inline namespace literals
 } // namespace literals
 
 namespace chrono { // hoist the literals into namespace std::chrono
-   using namespace literals::chrono_literals;
+   _LIBCPP_EXPORT_STD using namespace literals::chrono_literals;
 } // namespace chrono
 
 #endif // _LIBCPP_STD_VER > 11
