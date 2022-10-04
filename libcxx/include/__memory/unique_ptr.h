@@ -507,7 +507,7 @@ operator==(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {
 }
 
 #if _LIBCPP_STD_VER <= 17
-template <class _T1, class _D1, class _T2, class _D2>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1, class _T2, class _D2>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {return !(__x == __y);}
@@ -559,7 +559,7 @@ operator==(const unique_ptr<_T1, _D1>& __x, nullptr_t) _NOEXCEPT {
 }
 
 #if _LIBCPP_STD_VER <= 17
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator==(nullptr_t, const unique_ptr<_T1, _D1>& __x) _NOEXCEPT
@@ -567,7 +567,7 @@ operator==(nullptr_t, const unique_ptr<_T1, _D1>& __x) _NOEXCEPT
     return !__x;
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const unique_ptr<_T1, _D1>& __x, nullptr_t) _NOEXCEPT
@@ -575,7 +575,7 @@ operator!=(const unique_ptr<_T1, _D1>& __x, nullptr_t) _NOEXCEPT
     return static_cast<bool>(__x);
 }
 
-template <class _T1, class _D1>
+_LIBCPP_EXPORT_STD template <class _T1, class _D1>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(nullptr_t, const unique_ptr<_T1, _D1>& __x) _NOEXCEPT
