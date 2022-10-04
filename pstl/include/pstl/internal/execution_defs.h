@@ -24,32 +24,33 @@ inline namespace v1
 {
 
 // 2.4, Sequential execution policy
-class sequenced_policy
+
+_PSTL_EXPORT_STD class sequenced_policy
 {
 };
 
 // 2.5, Parallel execution policy
-class parallel_policy
+_PSTL_EXPORT_STD class parallel_policy
 {
 };
 
 // 2.6, Parallel+Vector execution policy
-class parallel_unsequenced_policy
+_PSTL_EXPORT_STD class parallel_unsequenced_policy
 {
 };
 
-class unsequenced_policy
+_PSTL_EXPORT_STD class unsequenced_policy
 {
 };
 
 // 2.8, Execution policy objects
-constexpr sequenced_policy seq{};
-constexpr parallel_policy par{};
-constexpr parallel_unsequenced_policy par_unseq{};
-constexpr unsequenced_policy unseq{};
+_PSTL_EXPORT_STD constexpr sequenced_policy seq{};
+_PSTL_EXPORT_STD constexpr parallel_policy par{};
+_PSTL_EXPORT_STD constexpr parallel_unsequenced_policy par_unseq{};
+_PSTL_EXPORT_STD constexpr unsequenced_policy unseq{};
 
 // 2.3, Execution policy type trait
-template <class T>
+_PSTL_EXPORT_STD template <class T>
 struct is_execution_policy : std::false_type
 {
 };
@@ -72,7 +73,7 @@ struct is_execution_policy<__pstl::execution::unsequenced_policy> : std::true_ty
 };
 
 #if defined(_PSTL_CPP14_VARIABLE_TEMPLATES_PRESENT)
-template <class T>
+_PSTL_EXPORT_STD template <class T>
 constexpr bool is_execution_policy_v = __pstl::execution::is_execution_policy<T>::value;
 #endif
 

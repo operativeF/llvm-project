@@ -25,7 +25,7 @@ namespace std
 
 // [uninitialized.copy]
 
-template <class _ExecutionPolicy, class _InputIterator, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _InputIterator, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_copy(_ExecutionPolicy&& __exec, _InputIterator __first, _InputIterator __last, _ForwardIterator __result)
 {
@@ -56,7 +56,7 @@ uninitialized_copy(_ExecutionPolicy&& __exec, _InputIterator __first, _InputIter
         });
 }
 
-template <class _ExecutionPolicy, class _InputIterator, class _Size, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _InputIterator, class _Size, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_copy_n(_ExecutionPolicy&& __exec, _InputIterator __first, _Size __n, _ForwardIterator __result)
 {
@@ -89,7 +89,7 @@ uninitialized_copy_n(_ExecutionPolicy&& __exec, _InputIterator __first, _Size __
 
 // [uninitialized.move]
 
-template <class _ExecutionPolicy, class _InputIterator, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _InputIterator, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_move(_ExecutionPolicy&& __exec, _InputIterator __first, _InputIterator __last, _ForwardIterator __result)
 {
@@ -120,7 +120,7 @@ uninitialized_move(_ExecutionPolicy&& __exec, _InputIterator __first, _InputIter
         });
 }
 
-template <class _ExecutionPolicy, class _InputIterator, class _Size, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _InputIterator, class _Size, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_move_n(_ExecutionPolicy&& __exec, _InputIterator __first, _Size __n, _ForwardIterator __result)
 {
@@ -153,7 +153,7 @@ uninitialized_move_n(_ExecutionPolicy&& __exec, _InputIterator __first, _Size __
 
 // [uninitialized.fill]
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Tp>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Tp>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, void>
 uninitialized_fill(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
 {
@@ -181,7 +181,7 @@ uninitialized_fill(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Forward
         });
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Size, class _Tp>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Size, class _Tp>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_fill_n(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Size __n, const _Tp& __value)
 {
@@ -211,7 +211,7 @@ uninitialized_fill_n(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Size 
 
 // [specialized.destroy]
 
-template <class _ExecutionPolicy, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, void>
 destroy(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last)
 {
@@ -229,7 +229,7 @@ destroy(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __
                                         });
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Size>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Size>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 destroy_n(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Size __n)
 {
@@ -250,7 +250,7 @@ destroy_n(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Size __n)
 
 // [uninitialized.construct.default]
 
-template <class _ExecutionPolicy, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, void>
 uninitialized_default_construct(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last)
 {
@@ -268,7 +268,7 @@ uninitialized_default_construct(_ExecutionPolicy&& __exec, _ForwardIterator __fi
                                         });
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Size>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Size>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_default_construct_n(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Size __n)
 {
@@ -289,7 +289,7 @@ uninitialized_default_construct_n(_ExecutionPolicy&& __exec, _ForwardIterator __
 
 // [uninitialized.construct.value]
 
-template <class _ExecutionPolicy, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, void>
 uninitialized_value_construct(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last)
 {
@@ -317,7 +317,7 @@ uninitialized_value_construct(_ExecutionPolicy&& __exec, _ForwardIterator __firs
         });
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Size>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Size>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator>
 uninitialized_value_construct_n(_ExecutionPolicy&& __exec, _ForwardIterator __first, _Size __n)
 {

@@ -201,4 +201,10 @@
 #   define _PSTL_ICC_18_OMP_SIMD_BROKEN
 #endif
 
+#if defined(_BUILD_STD_MODULE)
+#   define _PSTL_EXPORT_STD export
+#else
+#   define _PSTL_EXPORT_STD
+#endif
+
 #endif /* _PSTL_CONFIG_H */

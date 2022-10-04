@@ -25,7 +25,7 @@ namespace std
 
 // [reduce]
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Tp, class _BinaryOperation>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Tp, class _BinaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _Tp>
 reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last, _Tp __init,
        _BinaryOperation __binary_op)
@@ -34,7 +34,7 @@ reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __l
                             __pstl::__internal::__no_op());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Tp>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Tp>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _Tp>
 reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last, _Tp __init)
 {
@@ -42,7 +42,7 @@ reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __l
                             __pstl::__internal::__no_op());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy,
                                                  typename iterator_traits<_ForwardIterator>::value_type>
 reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last)
@@ -54,7 +54,7 @@ reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __l
 
 // [transform.reduce]
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _Tp>
 transform_reduce(_ExecutionPolicy&& __exec, _ForwardIterator1 __first1, _ForwardIterator1 __last1,
                  _ForwardIterator2 __first2, _Tp __init)
@@ -67,7 +67,7 @@ transform_reduce(_ExecutionPolicy&& __exec, _ForwardIterator1 __first1, _Forward
                                                           std::multiplies<_InputType>());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation1,
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation1,
           class _BinaryOperation2>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _Tp>
 transform_reduce(_ExecutionPolicy&& __exec, _ForwardIterator1 __first1, _ForwardIterator1 __last1,
@@ -79,7 +79,7 @@ transform_reduce(_ExecutionPolicy&& __exec, _ForwardIterator1 __first1, _Forward
                                                           __binary_op2);
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator, class _Tp, class _BinaryOperation, class _UnaryOperation>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator, class _Tp, class _BinaryOperation, class _UnaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _Tp>
 transform_reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIterator __last, _Tp __init,
                  _BinaryOperation __binary_op, _UnaryOperation __unary_op)
@@ -91,7 +91,7 @@ transform_reduce(_ExecutionPolicy&& __exec, _ForwardIterator __first, _ForwardIt
 
 // [exclusive.scan]
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 exclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                _ForwardIterator2 __result, _Tp __init)
@@ -104,7 +104,7 @@ exclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIte
                                                 /*inclusive=*/std::false_type());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 exclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                _ForwardIterator2 __result, _Tp __init, _BinaryOperation __binary_op)
@@ -119,7 +119,7 @@ exclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIte
 
 // [inclusive.scan]
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                _ForwardIterator2 __result)
@@ -129,7 +129,7 @@ inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIte
                                     std::plus<_InputType>(), __pstl::__internal::__no_op());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _BinaryOperation>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _BinaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                _ForwardIterator2 __result, _BinaryOperation __binary_op)
@@ -138,7 +138,7 @@ inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIte
                                     __pstl::__internal::__no_op());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                _ForwardIterator2 __result, _BinaryOperation __binary_op, _Tp __init)
@@ -149,7 +149,7 @@ inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIte
 
 // [transform.exclusive.scan]
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation,
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _Tp, class _BinaryOperation,
           class _UnaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 transform_exclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
@@ -165,7 +165,7 @@ transform_exclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _
 
 // [transform.inclusive.scan]
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _BinaryOperation,
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _BinaryOperation,
           class _UnaryOperation, class _Tp>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 transform_inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
@@ -179,7 +179,7 @@ transform_inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _
                                                         /*inclusive=*/std::true_type());
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _UnaryOperation,
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _UnaryOperation,
           class _BinaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 transform_inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
@@ -200,7 +200,7 @@ transform_inclusive_scan(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _
 
 // [adjacent.difference]
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _BinaryOperation>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2, class _BinaryOperation>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 adjacent_difference(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                     _ForwardIterator2 __d_first, _BinaryOperation __op)
@@ -215,7 +215,7 @@ adjacent_difference(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _Forwa
                                                              __first, __last, __d_first, __op);
 }
 
-template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2>
+_PSTL_EXPORT_STD template <class _ExecutionPolicy, class _ForwardIterator1, class _ForwardIterator2>
 __pstl::__internal::__enable_if_execution_policy<_ExecutionPolicy, _ForwardIterator2>
 adjacent_difference(_ExecutionPolicy&& __exec, _ForwardIterator1 __first, _ForwardIterator1 __last,
                     _ForwardIterator2 __d_first)
