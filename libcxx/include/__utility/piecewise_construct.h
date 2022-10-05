@@ -19,7 +19,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_EXPORT_STD struct _LIBCPP_TEMPLATE_VIS piecewise_construct_t { explicit piecewise_construct_t() = default; };
 #if defined(_LIBCPP_CXX03_LANG) || defined(_LIBCPP_BUILDING_LIBRARY)
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_EXPORTED_FROM_ABI const piecewise_construct_t piecewise_construct;// = piecewise_construct_t();
+_LIBCPP_EXPORT_STD extern _LIBCPP_EXPORTED_FROM_ABI const piecewise_construct_t piecewise_construct;// = piecewise_construct_t();
 #else
 _LIBCPP_EXPORT_STD /* inline */ constexpr piecewise_construct_t piecewise_construct = piecewise_construct_t();
 #endif

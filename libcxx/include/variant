@@ -241,7 +241,7 @@ _LIBCPP_PUSH_MACROS
 
 namespace std { // explicitly not using versioning namespace
 
-_LIBCPP_EXPORT_STD extern "C++"
+_LIBCPP_EXPORT_STD
 class _LIBCPP_EXCEPTION_ABI _LIBCPP_AVAILABILITY_BAD_VARIANT_ACCESS bad_variant_access : public exception {
 public:
    const char* what() const _NOEXCEPT override;

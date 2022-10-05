@@ -294,7 +294,7 @@ struct __type_info_implementations {
      __impl;
 };
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI type_info
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI type_info
 {
   type_info& operator=(const type_info&);
   type_info(const type_info&);

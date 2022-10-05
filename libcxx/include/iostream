@@ -51,26 +51,16 @@ extern wostream wclog;
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-extern "C++" _LIBCPP_FUNC_VIS istream cin;
-extern "C++" _LIBCPP_FUNC_VIS ostream cout;
-extern "C++" _LIBCPP_FUNC_VIS ostream cerr;
-extern "C++" _LIBCPP_FUNC_VIS ostream clog;
-
-_LIBCPP_EXPORT_STD using std::cin;
-_LIBCPP_EXPORT_STD using std::cout;
-_LIBCPP_EXPORT_STD using std::cerr;
-_LIBCPP_EXPORT_STD using std::clog;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS istream cin;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS ostream cout;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS ostream cerr;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS ostream clog;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-extern "C++" _LIBCPP_FUNC_VIS wistream wcin;
-extern "C++" _LIBCPP_FUNC_VIS wostream wcout;
-extern "C++" _LIBCPP_FUNC_VIS wostream wcerr;
-extern "C++" _LIBCPP_FUNC_VIS wostream wclog;
-
-_LIBCPP_EXPORT_STD using std::wcin;
-_LIBCPP_EXPORT_STD using std::wcout;
-_LIBCPP_EXPORT_STD using std::wcerr;
-_LIBCPP_EXPORT_STD using std::wclog;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wistream wcin;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wostream wcout;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wostream wcerr;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS wostream wclog;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

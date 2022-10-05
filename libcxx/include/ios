@@ -240,7 +240,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_EXPORT_STD typedef ptrdiff_t streamsize;
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS ios_base
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base
 {
 public:
     class _LIBCPP_EXCEPTION_ABI failure;
@@ -419,7 +419,7 @@ template <>
 struct _LIBCPP_TEMPLATE_VIS is_error_code_enum<io_errc::__lx> : public true_type { };
 #endif
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS
 const error_category& iostream_category() _NOEXCEPT;
 
 _LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
@@ -436,7 +436,7 @@ make_error_condition(io_errc __e) _NOEXCEPT
     return error_condition(static_cast<int>(__e), iostream_category());
 }
 
-extern "C++" class _LIBCPP_EXCEPTION_ABI ios_base::failure
+class _LIBCPP_EXCEPTION_ABI ios_base::failure
     : public system_error
 {
 public:
@@ -456,7 +456,7 @@ void __throw_failure(char const* __msg) {
 #endif
 }
 
-extern "C++" class _LIBCPP_TYPE_VIS ios_base::Init
+class _LIBCPP_TYPE_VIS ios_base::Init
 {
 public:
     Init();
@@ -464,8 +464,6 @@ public:
 };
 
 // fmtflags
-
-extern "C++" {
 
 inline _LIBCPP_INLINE_VISIBILITY
 ios_base::fmtflags
@@ -604,9 +602,7 @@ ios_base::exceptions(iostate __iostate)
     clear(__rdstate_);
 }
 
-} // extern "C++"
-
-_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_ios
     : public ios_base
 {
@@ -694,8 +690,6 @@ private:
     basic_ostream<char_type, traits_type>* __tie_;
     mutable int_type __fill_;
 };
-
-extern "C++" {
 
 template <class _CharT, class _Traits>
 inline _LIBCPP_INLINE_VISIBILITY
@@ -849,8 +843,6 @@ basic_ios<_CharT, _Traits>::set_rdbuf(basic_streambuf<char_type, traits_type>* _
 {
     ios_base::set_rdbuf(__sb);
 }
-
-} // extern "C++"
 
 _LIBCPP_EXPORT_STD _LIBCPP_HIDE_FROM_ABI inline
 ios_base&

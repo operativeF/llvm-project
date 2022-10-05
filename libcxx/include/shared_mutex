@@ -145,7 +145,6 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-extern "C++"
 struct _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX _LIBCPP_THREAD_SAFETY_ANNOTATION(capability("shared_mutex"))
 __shared_mutex_base
 {
@@ -205,7 +204,7 @@ public:
 #endif
 
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX shared_timed_mutex
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS _LIBCPP_AVAILABILITY_SHARED_MUTEX shared_timed_mutex
 {
     __shared_mutex_base __base_;
 public:
@@ -247,8 +246,6 @@ public:
         try_lock_shared_until(const chrono::time_point<_Clock, _Duration>& __abs_time);
     void unlock_shared();
 };
-
-extern "C++" {
 
 template <class _Clock, class _Duration>
 bool
@@ -309,8 +306,6 @@ shared_timed_mutex::try_lock_shared_until(
     __base_.__state_ |= __num_readers;
     return true;
 }
-
-} // extern "C++"
 
 _LIBCPP_EXPORT_STD template <class _Mutex>
 class shared_lock

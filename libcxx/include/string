@@ -4402,25 +4402,25 @@ swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
     __lhs.swap(__rhs);
 }
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS int                stoi  (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS long               stol  (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS unsigned long      stoul (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS long long          stoll (const string& __str, size_t* __idx = nullptr, int __base = 10);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS unsigned long long stoull(const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS int                stoi  (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long               stol  (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unsigned long      stoul (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long long          stoll (const string& __str, size_t* __idx = nullptr, int __base = 10);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS unsigned long long stoull(const string& __str, size_t* __idx = nullptr, int __base = 10);
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS float       stof (const string& __str, size_t* __idx = nullptr);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS double      stod (const string& __str, size_t* __idx = nullptr);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS long double stold(const string& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS float       stof (const string& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS double      stod (const string& __str, size_t* __idx = nullptr);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS long double stold(const string& __str, size_t* __idx = nullptr);
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(int __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(unsigned __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(long __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(unsigned long __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(long long __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(unsigned long long __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(float __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(double __val);
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS string to_string(long double __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(int __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(unsigned __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(unsigned long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(long long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(unsigned long long __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(float __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(double __val);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS string to_string(long double __val);
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 _LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS int                stoi  (const wstring& __str, size_t* __idx = nullptr, int __base = 10);

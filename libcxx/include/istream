@@ -175,7 +175,7 @@ _LIBCPP_PUSH_MACROS
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_istream
     : virtual public basic_ios<_CharT, _Traits>
 {
@@ -288,8 +288,6 @@ public:
     basic_istream& seekg(off_type __off, ios_base::seekdir __dir);
 };
 
-extern "C++" {
-
 template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_istream<_CharT, _Traits>::sentry
 {
@@ -354,8 +352,6 @@ basic_istream<_CharT, _Traits>::~basic_istream()
 {
 }
 
-} // extern "C++"
-
 template <class _Tp, class _CharT, class _Traits>
 _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>&
@@ -387,8 +383,6 @@ __input_arithmetic(basic_istream<_CharT, _Traits>& __is, _Tp& __n) {
     }
     return __is;
 }
-
-extern "C++" {
 
 template <class _CharT, class _Traits>
 basic_istream<_CharT, _Traits>&
@@ -467,8 +461,6 @@ basic_istream<_CharT, _Traits>::operator>>(void*& __n)
     return _VSTD::__input_arithmetic<void*>(*this, __n);
 }
 
-} // extern "C++"
-
 template <class _Tp, class _CharT, class _Traits>
 _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>&
@@ -516,8 +508,6 @@ __input_arithmetic_with_numeric_limits(basic_istream<_CharT, _Traits>& __is, _Tp
     return __is;
 }
 
-extern "C++" {
-
 template <class _CharT, class _Traits>
 basic_istream<_CharT, _Traits>&
 basic_istream<_CharT, _Traits>::operator>>(short& __n)
@@ -531,8 +521,6 @@ basic_istream<_CharT, _Traits>::operator>>(int& __n)
 {
     return _VSTD::__input_arithmetic_with_numeric_limits<int>(*this, __n);
 }
-
-} // extern "C++"
 
 template<class _CharT, class _Traits>
 _LIBCPP_INLINE_VISIBILITY
@@ -693,8 +681,6 @@ operator>>(basic_istream<char, _Traits>& __is, signed char& __c)
 {
     return __is >> (char&)__c;
 }
-
-extern "C++" {
 
 template<class _CharT, class _Traits>
 basic_istream<_CharT, _Traits>&
@@ -1342,8 +1328,6 @@ basic_istream<_CharT, _Traits>::seekg(off_type __off, ios_base::seekdir __dir)
     return *this;
 }
 
-} // extern "C++"
-
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
 ws(basic_istream<_CharT, _Traits>& __is)
@@ -1405,7 +1389,7 @@ _Stream&& operator>>(_Stream&& __is, _Tp&& __x)
     return _VSTD::move(__is);
 }
 
-_LIBCPP_EXPORT_STD extern "C++" template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_TEMPLATE_VIS basic_iostream
     : public basic_istream<_CharT, _Traits>,
       public basic_ostream<_CharT, _Traits>
@@ -1438,8 +1422,6 @@ protected:
     { basic_istream<char_type, traits_type>::swap(__rhs); }
 };
 
-extern "C++" {
-
 template <class _CharT, class _Traits>
 basic_iostream<_CharT, _Traits>::basic_iostream(basic_iostream&& __rhs)
     : basic_istream<_CharT, _Traits>(_VSTD::move(__rhs))
@@ -1458,8 +1440,6 @@ template <class _CharT, class _Traits>
 basic_iostream<_CharT, _Traits>::~basic_iostream()
 {
 }
-
-} // extern "C++"
 
 _LIBCPP_EXPORT_STD template<class _CharT, class _Traits, class _Allocator>
 _LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&

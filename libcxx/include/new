@@ -122,9 +122,9 @@ namespace std  // purposefully not using versioning namespace
 
 #if !defined(_LIBCPP_ABI_VCRUNTIME)
 _LIBCPP_EXPORT_STD struct _LIBCPP_TYPE_VIS nothrow_t { explicit nothrow_t() = default; };
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS const nothrow_t nothrow;
+_LIBCPP_EXPORT_STD extern _LIBCPP_FUNC_VIS const nothrow_t nothrow;
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI bad_alloc
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_alloc
     : public exception
 {
 public:
@@ -133,7 +133,7 @@ public:
     const char* what() const _NOEXCEPT override;
 };
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI bad_array_new_length
+_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_array_new_length
     : public bad_alloc
 {
 public:
@@ -143,8 +143,8 @@ public:
 };
 
 typedef void (*new_handler)();
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS new_handler set_new_handler(new_handler) _NOEXCEPT;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS new_handler get_new_handler() _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS new_handler set_new_handler(new_handler) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS new_handler get_new_handler() _NOEXCEPT;
 
 #elif defined(_HAS_EXCEPTIONS) && _HAS_EXCEPTIONS == 0 // !_LIBCPP_ABI_VCRUNTIME
 
@@ -166,7 +166,7 @@ public:
 };
 #endif // defined(_LIBCPP_ABI_VCRUNTIME) && defined(_HAS_EXCEPTIONS) && _HAS_EXCEPTIONS == 0
 
-extern "C++" _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void __throw_bad_alloc();  // not in C++ spec
+_LIBCPP_NORETURN _LIBCPP_FUNC_VIS void __throw_bad_alloc();  // not in C++ spec
 
 _LIBCPP_NORETURN inline _LIBCPP_INLINE_VISIBILITY
 void __throw_bad_array_new_length()
@@ -206,38 +206,38 @@ _LIBCPP_EXPORT_STD inline constexpr destroying_delete_t destroying_delete{};
 
 #if !defined(_LIBCPP_ABI_VCRUNTIME)
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz) _THROW_BAD_ALLOC;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p) _NOEXCEPT;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz) _THROW_BAD_ALLOC;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz) _THROW_BAD_ALLOC;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz) _THROW_BAD_ALLOC;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p) _NOEXCEPT;
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p, const std::nothrow_t&) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p, const std::nothrow_t&) _NOEXCEPT;
 #ifndef _LIBCPP_HAS_NO_LIBRARY_SIZED_DEALLOCATION
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete(void* __p, std::size_t __sz) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete(void* __p, std::size_t __sz) _NOEXCEPT;
 #endif
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p, const std::nothrow_t&) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p, const std::nothrow_t&) _NOEXCEPT;
 #ifndef _LIBCPP_HAS_NO_LIBRARY_SIZED_DEALLOCATION
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete[](void* __p, std::size_t __sz) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete[](void* __p, std::size_t __sz) _NOEXCEPT;
 #endif
 
 #ifndef _LIBCPP_HAS_NO_LIBRARY_ALIGNED_ALLOCATION
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz, std::align_val_t) _THROW_BAD_ALLOC;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz, std::align_val_t, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p, std::align_val_t) _NOEXCEPT;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p, std::align_val_t, const std::nothrow_t&) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz, std::align_val_t) _THROW_BAD_ALLOC;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new(std::size_t __sz, std::align_val_t, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p, std::align_val_t) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete(void* __p, std::align_val_t, const std::nothrow_t&) _NOEXCEPT;
 #ifndef _LIBCPP_HAS_NO_LIBRARY_SIZED_DEALLOCATION
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete(void* __p, std::size_t __sz, std::align_val_t) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete(void* __p, std::size_t __sz, std::align_val_t) _NOEXCEPT;
 #endif
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz, std::align_val_t) _THROW_BAD_ALLOC;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz, std::align_val_t, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p, std::align_val_t) _NOEXCEPT;
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p, std::align_val_t, const std::nothrow_t&) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz, std::align_val_t) _THROW_BAD_ALLOC;
+_LIBCPP_EXPORT_STD _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_OVERRIDABLE_FUNC_VIS void* operator new[](std::size_t __sz, std::align_val_t, const std::nothrow_t&) _NOEXCEPT _LIBCPP_NOALIAS;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p, std::align_val_t) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS void  operator delete[](void* __p, std::align_val_t, const std::nothrow_t&) _NOEXCEPT;
 #ifndef _LIBCPP_HAS_NO_LIBRARY_SIZED_DEALLOCATION
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete[](void* __p, std::size_t __sz, std::align_val_t) _NOEXCEPT;
+_LIBCPP_EXPORT_STD _LIBCPP_OVERRIDABLE_FUNC_VIS _LIBCPP_AVAILABILITY_SIZED_NEW_DELETE void  operator delete[](void* __p, std::size_t __sz, std::align_val_t) _NOEXCEPT;
 #endif
 #endif
 

@@ -119,8 +119,8 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class _Tp> class __thread_specific_ptr;
 class _LIBCPP_TYPE_VIS __thread_struct;
-extern "C++" class _LIBCPP_HIDDEN __thread_struct_imp;
-extern "C++" class __assoc_sub_state;
+class _LIBCPP_HIDDEN __thread_struct_imp;
+class __assoc_sub_state;
 
 _LIBCPP_FUNC_VIS __thread_specific_ptr<__thread_struct>& __thread_local_data();
 
@@ -219,7 +219,7 @@ basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, __thread_id __id)
 {return __os << __id.__id_;}
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS thread
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS thread
 {
     __libcpp_thread_t __t_;
 
@@ -294,7 +294,7 @@ void* __thread_proxy(void* __vp)
     return nullptr;
 }
 
-extern "C++" template <class _Fp, class ..._Args,
+template <class _Fp, class ..._Args,
           class
          >
 thread::thread(_Fp&& __f, _Args&&... __args)
@@ -356,7 +356,7 @@ void swap(thread& __x, thread& __y) _NOEXCEPT {__x.swap(__y);}
 namespace this_thread
 {
 
-_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS void sleep_for(const chrono::nanoseconds& __ns);
+_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS void sleep_for(const chrono::nanoseconds& __ns);
 
 _LIBCPP_EXPORT_STD template <class _Rep, class _Period>
 _LIBCPP_HIDE_FROM_ABI void

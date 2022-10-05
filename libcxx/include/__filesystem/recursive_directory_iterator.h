@@ -32,7 +32,7 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
-_LIBCPP_EXPORT_STD extern "C++" class recursive_directory_iterator {
+_LIBCPP_EXPORT_STD class recursive_directory_iterator {
 public:
   using value_type = directory_entry;
   using difference_type = ptrdiff_t;

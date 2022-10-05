@@ -74,7 +74,7 @@ _LIBCPP_EXPORT_STD enum _LIBCPP_DEPRECATED_IN_CXX17 codecvt_mode
 
 // codecvt_utf8
 
-extern "C++" template <class _Elem> class __codecvt_utf8;
+template <class _Elem> class __codecvt_utf8;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>
@@ -199,7 +199,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 
 // codecvt_utf16
 
-extern "C++" template <class _Elem, bool _LittleEndian> class __codecvt_utf16;
+template <class _Elem, bool _LittleEndian> class __codecvt_utf16;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>
@@ -428,7 +428,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 
 // codecvt_utf8_utf16
 
-extern "C++" template <class _Elem> class __codecvt_utf8_utf16;
+template <class _Elem> class __codecvt_utf8_utf16;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>

@@ -28,7 +28,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_AVAILABILITY_FILESYSTEM _LIBCPP_EXCEPTION_ABI filesystem_error : public system_error {
+_LIBCPP_EXPORT_STD class _LIBCPP_AVAILABILITY_FILESYSTEM _LIBCPP_EXCEPTION_ABI filesystem_error : public system_error {
 public:
   _LIBCPP_INLINE_VISIBILITY
   filesystem_error(const string& __what, error_code __ec)

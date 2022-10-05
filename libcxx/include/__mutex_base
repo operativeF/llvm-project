@@ -272,7 +272,7 @@ _LIBCPP_EXPORT_STD _LIBCPP_DECLARE_STRONG_ENUM(cv_status)
 };
 _LIBCPP_DECLARE_STRONG_ENUM_EPILOG(cv_status)
 
-_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS condition_variable
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS condition_variable
 {
     __libcpp_condvar_t __cv_ = _LIBCPP_CONDVAR_INITIALIZER;
 public:
@@ -392,8 +392,6 @@ __safe_nanosecond_cast(chrono::duration<_Rep, _Period> __d)
 }
 
 #ifndef _LIBCPP_HAS_NO_THREADS
-extern "C++" {
-
 template <class _Predicate>
 void
 condition_variable::wait(unique_lock<mutex>& __lk, _Predicate __pred)
@@ -515,8 +513,6 @@ condition_variable::__do_timed_wait(unique_lock<mutex>& __lk,
 {
     wait_for(__lk, __tp - _Clock::now());
 }
-
-} // extern "C++"
 
 #endif // !_LIBCPP_HAS_NO_THREADS
 
