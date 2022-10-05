@@ -83,7 +83,7 @@ public:
     }
 };
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 __iom_t1
 resetiosflags(ios_base::fmtflags __mask)
 {
@@ -120,7 +120,7 @@ public:
     }
 };
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 __iom_t2
 setiosflags(ios_base::fmtflags __mask)
 {
@@ -163,7 +163,7 @@ public:
     }
 };
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 __iom_t3
 setbase(int __base)
 {
@@ -191,7 +191,7 @@ public:
     }
 };
 
-template<class _CharT>
+_LIBCPP_EXPORT_STD template<class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 __iom_t4<_CharT>
 setfill(_CharT __c)
@@ -229,7 +229,7 @@ public:
     }
 };
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 __iom_t5
 setprecision(int __n)
 {
@@ -266,7 +266,7 @@ public:
     }
 };
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 __iom_t6
 setw(int __n)
 {
@@ -325,7 +325,7 @@ operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t7<_MoneyT>& __x)
     return __is;
 }
 
-template <class _MoneyT>
+_LIBCPP_EXPORT_STD template <class _MoneyT>
 inline _LIBCPP_INLINE_VISIBILITY
 __iom_t7<_MoneyT>
 get_money(_MoneyT& __mon, bool __intl = false)
@@ -384,7 +384,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t8<_MoneyT>& __x)
     return __os;
 }
 
-template <class _MoneyT>
+_LIBCPP_EXPORT_STD template <class _MoneyT>
 inline _LIBCPP_INLINE_VISIBILITY
 __iom_t8<_MoneyT>
 put_money(const _MoneyT& __mon, bool __intl = false)
@@ -445,7 +445,7 @@ operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t9<_CharT>& __x)
     return __is;
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 __iom_t9<_CharT>
 get_time(tm* __tm, const _CharT* __fmt)
@@ -505,7 +505,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t10<_CharT>& __x)
     return __os;
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 inline _LIBCPP_INLINE_VISIBILITY
 __iom_t10<_CharT>
 put_time(const tm* __tm, const _CharT* __fmt)
