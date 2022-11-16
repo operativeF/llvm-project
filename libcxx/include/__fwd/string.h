@@ -81,7 +81,7 @@ _LIBCPP_EXPORT_STD using u32string = basic_string<char32_t>;
 #endif // _LIBCPP_STD_VER >= 17
 
 // clang-format off
-template <class _CharT, class _Traits, class _Allocator>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits, class _Allocator>
 class _LIBCPP_PREFERRED_NAME(string)
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
       _LIBCPP_PREFERRED_NAME(wstring)

@@ -33,7 +33,7 @@ _LIBCPP_EXPORT_STD typedef basic_string_view<wchar_t>  wstring_view;
 #endif
 
 // clang-format off
-template <class _CharT, class _Traits>
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits>
 class _LIBCPP_PREFERRED_NAME(string_view)
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
       _LIBCPP_PREFERRED_NAME(wstring_view)
