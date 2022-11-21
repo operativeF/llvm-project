@@ -106,7 +106,7 @@ using u32streampos = fpos<char_traits<char32_t>::state_type>;
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS ios_base;
 
 _LIBCPP_EXPORT_STD template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_ios;

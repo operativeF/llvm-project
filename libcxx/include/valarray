@@ -402,7 +402,7 @@ public:
 };
 
 _LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS slice_array;
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS gslice;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS gslice;
 _LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS gslice_array;
 _LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS mask_array;
 _LIBCPP_EXPORT_STD template <class _Tp> class _LIBCPP_TEMPLATE_VIS indirect_array;
@@ -1526,7 +1526,7 @@ slice_array<_Tp>::operator=(const value_type& __x) const
 
 // gslice
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS gslice
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS gslice
 {
     valarray<size_t> __size_;
     valarray<size_t> __stride_;

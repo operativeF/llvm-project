@@ -118,13 +118,13 @@ _LIBCPP_PUSH_MACROS
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class _Tp> class __thread_specific_ptr;
-class _LIBCPP_TYPE_VIS __thread_struct;
+extern "C++" class _LIBCPP_TYPE_VIS __thread_struct;
 class _LIBCPP_HIDDEN __thread_struct_imp;
-class __assoc_sub_state;
+extern "C++" class __assoc_sub_state;
 
-_LIBCPP_FUNC_VIS __thread_specific_ptr<__thread_struct>& __thread_local_data();
+extern "C++" _LIBCPP_FUNC_VIS __thread_specific_ptr<__thread_struct>& __thread_local_data();
 
-class _LIBCPP_TYPE_VIS __thread_struct
+extern "C++" class _LIBCPP_TYPE_VIS __thread_struct
 {
     __thread_struct_imp* __p_;
 
@@ -219,7 +219,7 @@ basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os, __thread_id __id)
 {return __os << __id.__id_;}
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS thread
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS thread
 {
     __libcpp_thread_t __t_;
 

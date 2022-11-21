@@ -37,7 +37,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-struct _LIBCPP_TYPE_VIS __c_node;
+extern "C++" struct _LIBCPP_TYPE_VIS __c_node;
 
 struct _LIBCPP_TYPE_VIS __i_node
 {
@@ -54,7 +54,7 @@ struct _LIBCPP_TYPE_VIS __i_node
     ~__i_node();
 };
 
-struct _LIBCPP_TYPE_VIS __c_node
+extern "C++" struct _LIBCPP_TYPE_VIS __c_node
 {
     void* __c_;
     __c_node* __next_;

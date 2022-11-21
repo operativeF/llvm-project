@@ -798,31 +798,31 @@ from_chars(const char* __first, const char* __last, _Tp& __value, int __base)
     return __from_chars_integral(__first, __last, __value, __base);
 }
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, float __value);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, double __value);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, long double __value);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, float __value, chars_format __fmt);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, double __value, chars_format __fmt);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, long double __value, chars_format __fmt);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, float __value, chars_format __fmt, int __precision);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, double __value, chars_format __fmt, int __precision);
 
-_LIBCPP_EXPORT_STD _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_AVAILABILITY_TO_CHARS_FLOATING_POINT _LIBCPP_FUNC_VIS
 to_chars_result to_chars(char* __first, char* __last, long double __value, chars_format __fmt, int __precision);
 
 #endif // _LIBCPP_STD_VER > 14

@@ -439,7 +439,7 @@ struct _PathExport<char8_t> {
 #endif /* !_LIBCPP_HAS_NO_CHAR8_T */
 #endif /* _LIBCPP_WIN32API */
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS path {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS path {
   template <class _SourceOrIter, class _Tp = path&>
   using _EnableIfPathable =
       typename enable_if<__is_pathable<_SourceOrIter>::value, _Tp>::type;

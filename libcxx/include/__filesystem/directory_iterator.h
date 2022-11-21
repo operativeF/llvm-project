@@ -34,7 +34,8 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
 class _LIBCPP_HIDDEN __dir_stream;
-_LIBCPP_EXPORT_STD class directory_iterator {
+
+_LIBCPP_EXPORT_STD extern "C++" class directory_iterator {
 public:
   typedef directory_entry value_type;
   typedef ptrdiff_t difference_type;

@@ -128,7 +128,7 @@ void __throw_bad_weak_ptr()
 
 _LIBCPP_EXPORT_STD template<class _Tp> class _LIBCPP_TEMPLATE_VIS weak_ptr;
 
-class _LIBCPP_TYPE_VIS __shared_count
+extern "C++" class _LIBCPP_TYPE_VIS __shared_count
 {
     __shared_count(const __shared_count&);
     __shared_count& operator=(const __shared_count&);
@@ -167,7 +167,7 @@ public:
     }
 };
 
-class _LIBCPP_TYPE_VIS __shared_weak_count
+extern "C++" class _LIBCPP_TYPE_VIS __shared_weak_count
     : private __shared_count
 {
     long __shared_weak_owners_;

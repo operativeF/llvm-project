@@ -240,7 +240,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 _LIBCPP_EXPORT_STD typedef ptrdiff_t streamsize;
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS ios_base
 {
 public:
     class _LIBCPP_EXCEPTION_ABI failure;
@@ -403,6 +403,8 @@ private:
     size_t          __parray_size_;
     size_t          __parray_cap_;
 };
+
+_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS ios_base;
 
 //enum class io_errc
 _LIBCPP_EXPORT_STD _LIBCPP_DECLARE_STRONG_ENUM(io_errc)

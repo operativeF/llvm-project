@@ -41,7 +41,7 @@ _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 _LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
 
-_LIBCPP_EXPORT_STD class directory_entry {
+_LIBCPP_EXPORT_STD extern "C++" class directory_entry {
   typedef _VSTD_FS::path _Path;
 
 public:

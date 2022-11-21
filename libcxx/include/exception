@@ -114,7 +114,7 @@ struct __std_exception_data {
   bool _DoFree;
 };
 
-_LIBCPP_EXPORT_STD class exception { // base of all library exceptions
+_LIBCPP_EXPORT_STD extern "C++" class exception { // base of all library exceptions
 public:
   exception() _NOEXCEPT : __data_() {}
 
@@ -144,7 +144,7 @@ public:
 // On all other platforms, we define our own std::exception and std::bad_exception types
 // regardless of whether exceptions are turned on as a language feature.
 
-_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI exception {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI exception {
 public:
   _LIBCPP_INLINE_VISIBILITY exception() _NOEXCEPT {}
   _LIBCPP_INLINE_VISIBILITY exception(const exception&) _NOEXCEPT = default;
@@ -153,7 +153,7 @@ public:
   virtual const char* what() const _NOEXCEPT;
 };
 
-_LIBCPP_EXPORT_STD class _LIBCPP_EXCEPTION_ABI bad_exception : public exception {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI bad_exception : public exception {
 public:
   _LIBCPP_INLINE_VISIBILITY bad_exception() _NOEXCEPT {}
   ~bad_exception() _NOEXCEPT override;
@@ -172,22 +172,23 @@ _LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void unexpected();
 
 #endif
 
-typedef void (*terminate_handler)();
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS terminate_handler set_terminate(terminate_handler) _NOEXCEPT;
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS terminate_handler get_terminate() _NOEXCEPT;
-_LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void terminate() _NOEXCEPT;
+extern "C++" typedef void (*terminate_handler)();
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS terminate_handler set_terminate(terminate_handler) _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS terminate_handler get_terminate() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void terminate() _NOEXCEPT;
 
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS bool uncaught_exception() _NOEXCEPT;
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_UNCAUGHT_EXCEPTIONS int uncaught_exceptions() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS bool uncaught_exception() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_UNCAUGHT_EXCEPTIONS int uncaught_exceptions() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS _LIBCPP_AVAILABILITY_UNCAUGHT_EXCEPTIONS int uncaught_exceptions() _NOEXCEPT;
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS exception_ptr;
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS exception_ptr;
 
-_LIBCPP_EXPORT_STD _LIBCPP_FUNC_VIS exception_ptr current_exception() _NOEXCEPT;
-_LIBCPP_EXPORT_STD _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_FUNC_VIS exception_ptr current_exception() _NOEXCEPT;
+_LIBCPP_EXPORT_STD extern "C++" _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void rethrow_exception(exception_ptr);
 
 #ifndef _LIBCPP_ABI_MICROSOFT
 
-_LIBCPP_EXPORT_STD class _LIBCPP_TYPE_VIS exception_ptr
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS exception_ptr
 {
     void* __ptr_;
 public:
