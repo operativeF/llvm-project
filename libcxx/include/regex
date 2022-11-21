@@ -810,7 +810,7 @@ namespace regex_constants
 
 // syntax_option_type
 
-enum syntax_option_type
+_LIBCPP_EXPORT_STD enum syntax_option_type
 {
     icase      = 1 << 0,
     nosubs     = 1 << 1,
@@ -840,7 +840,7 @@ syntax_option_type __get_grammar(syntax_option_type __g)
 #endif
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 syntax_option_type
 operator~(syntax_option_type __x)
@@ -848,7 +848,7 @@ operator~(syntax_option_type __x)
     return syntax_option_type(~int(__x) & 0x1FF);
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 syntax_option_type
 operator&(syntax_option_type __x, syntax_option_type __y)
@@ -856,7 +856,7 @@ operator&(syntax_option_type __x, syntax_option_type __y)
     return syntax_option_type(int(__x) & int(__y));
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 syntax_option_type
 operator|(syntax_option_type __x, syntax_option_type __y)
@@ -864,7 +864,7 @@ operator|(syntax_option_type __x, syntax_option_type __y)
     return syntax_option_type(int(__x) | int(__y));
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 syntax_option_type
 operator^(syntax_option_type __x, syntax_option_type __y)
@@ -872,7 +872,7 @@ operator^(syntax_option_type __x, syntax_option_type __y)
     return syntax_option_type(int(__x) ^ int(__y));
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 syntax_option_type&
 operator&=(syntax_option_type& __x, syntax_option_type __y)
 {
@@ -880,7 +880,7 @@ operator&=(syntax_option_type& __x, syntax_option_type __y)
     return __x;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 syntax_option_type&
 operator|=(syntax_option_type& __x, syntax_option_type __y)
 {
@@ -888,7 +888,7 @@ operator|=(syntax_option_type& __x, syntax_option_type __y)
     return __x;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 syntax_option_type&
 operator^=(syntax_option_type& __x, syntax_option_type __y)
 {
@@ -898,7 +898,7 @@ operator^=(syntax_option_type& __x, syntax_option_type __y)
 
 // match_flag_type
 
-enum match_flag_type
+_LIBCPP_EXPORT_STD enum match_flag_type
 {
     match_default     = 0,
     match_not_bol     = 1 << 0,
@@ -917,7 +917,7 @@ enum match_flag_type
     __full_match      = 1 << 12
 };
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 match_flag_type
 operator~(match_flag_type __x)
@@ -925,7 +925,7 @@ operator~(match_flag_type __x)
     return match_flag_type(~int(__x) & 0x0FFF);
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 match_flag_type
 operator&(match_flag_type __x, match_flag_type __y)
@@ -933,7 +933,7 @@ operator&(match_flag_type __x, match_flag_type __y)
     return match_flag_type(int(__x) & int(__y));
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 match_flag_type
 operator|(match_flag_type __x, match_flag_type __y)
@@ -941,7 +941,7 @@ operator|(match_flag_type __x, match_flag_type __y)
     return match_flag_type(int(__x) | int(__y));
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR
 match_flag_type
 operator^(match_flag_type __x, match_flag_type __y)
@@ -949,7 +949,7 @@ operator^(match_flag_type __x, match_flag_type __y)
     return match_flag_type(int(__x) ^ int(__y));
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 match_flag_type&
 operator&=(match_flag_type& __x, match_flag_type __y)
 {
@@ -957,7 +957,7 @@ operator&=(match_flag_type& __x, match_flag_type __y)
     return __x;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 match_flag_type&
 operator|=(match_flag_type& __x, match_flag_type __y)
 {
@@ -965,7 +965,7 @@ operator|=(match_flag_type& __x, match_flag_type __y)
     return __x;
 }
 
-inline _LIBCPP_INLINE_VISIBILITY
+_LIBCPP_EXPORT_STD inline _LIBCPP_INLINE_VISIBILITY
 match_flag_type&
 operator^=(match_flag_type& __x, match_flag_type __y)
 {
@@ -973,7 +973,7 @@ operator^=(match_flag_type& __x, match_flag_type __y)
     return __x;
 }
 
-enum error_type
+_LIBCPP_EXPORT_STD extern "C++" enum error_type
 {
     error_collate = 1,
     error_ctype,
@@ -996,7 +996,7 @@ enum error_type
 
 } // namespace regex_constants
 
-class _LIBCPP_EXCEPTION_ABI regex_error
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_EXCEPTION_ABI regex_error
     : public runtime_error
 {
     regex_constants::error_type __code_;
@@ -1019,7 +1019,7 @@ void __throw_regex_error()
 #endif
 }
 
-template <class _CharT>
+_LIBCPP_EXPORT_STD template <class _CharT>
 struct _LIBCPP_TEMPLATE_VIS regex_traits
 {
 public:
@@ -1221,7 +1221,7 @@ regex_traits<_CharT>::__transform_primary(_ForwardIterator __f,
 
 // lookup_collatename is very FreeBSD-specific
 
-_LIBCPP_FUNC_VIS string __get_collation_name(const char* __s);
+extern "C++" _LIBCPP_FUNC_VIS string __get_collation_name(const char* __s);
 
 template <class _CharT>
 template <class _ForwardIterator>
@@ -1284,7 +1284,7 @@ regex_traits<_CharT>::__lookup_collatename(_ForwardIterator __f,
 
 // lookup_classname
 
-regex_traits<char>::char_class_type _LIBCPP_FUNC_VIS
+extern "C++" regex_traits<char>::char_class_type _LIBCPP_FUNC_VIS
 __get_classname(const char* __s, bool __icase);
 
 template <class _CharT>
@@ -1401,7 +1401,7 @@ _LIBCPP_EXPORT_STD template <class _BidirectionalIterator,
           class _Allocator = allocator<sub_match<_BidirectionalIterator> > >
 class _LIBCPP_TEMPLATE_VIS match_results;
 
-template <class _CharT>
+extern "C++" template <class _CharT>
 struct __state
 {
     enum
@@ -2185,7 +2185,7 @@ __match_any<_CharT>::__exec(__state& __s) const
 
 // __match_any_but_newline
 
-template <class _CharT>
+extern "C++" template <class _CharT>
 class __match_any_but_newline
     : public __owns_one_state<_CharT>
 {
@@ -2201,9 +2201,9 @@ public:
     void __exec(__state&) const override;
 };
 
-template <> _LIBCPP_FUNC_VIS void __match_any_but_newline<char>::__exec(__state&) const;
+extern "C++" template <> _LIBCPP_FUNC_VIS void __match_any_but_newline<char>::__exec(__state&) const;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-template <> _LIBCPP_FUNC_VIS void __match_any_but_newline<wchar_t>::__exec(__state&) const;
+extern "C++" template <> _LIBCPP_FUNC_VIS void __match_any_but_newline<wchar_t>::__exec(__state&) const;
 #endif
 
 // __match_char
@@ -2607,12 +2607,12 @@ __exit:
 
 template <class _CharT, class _Traits> class __lookahead;
 
-template <class _CharT, class _Traits = regex_traits<_CharT> >
+_LIBCPP_EXPORT_STD template <class _CharT, class _Traits = regex_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS basic_regex;
 
-typedef basic_regex<char>    regex;
+_LIBCPP_EXPORT_STD typedef basic_regex<char>    regex;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-typedef basic_regex<wchar_t> wregex;
+_LIBCPP_EXPORT_STD typedef basic_regex<wchar_t> wregex;
 #endif
 
 template <class _CharT, class _Traits>
