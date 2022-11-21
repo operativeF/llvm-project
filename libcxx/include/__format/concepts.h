@@ -54,7 +54,7 @@ concept __formattable =
     };
 
 #  if _LIBCPP_STD_VER > 20
-template <class _Tp, class _CharT>
+_LIBCPP_EXPORT_STD template <class _Tp, class _CharT>
 concept formattable = __formattable<_Tp, _CharT>;
 #  endif //_LIBCPP_STD_VER > 20
 #endif //_LIBCPP_STD_VER > 17
