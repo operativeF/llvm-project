@@ -24,7 +24,7 @@ namespace pmr {
 
 // [mem.res.class]
 
-class _LIBCPP_TYPE_VIS memory_resource {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS memory_resource {
   static const size_t __max_align = alignof(max_align_t);
 
 public:
@@ -50,20 +50,20 @@ private:
 
 // [mem.res.eq]
 
-inline _LIBCPP_HIDE_FROM_ABI bool operator==(const memory_resource& __lhs, const memory_resource& __rhs) noexcept {
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI bool operator==(const memory_resource& __lhs, const memory_resource& __rhs) noexcept {
   return &__lhs == &__rhs || __lhs.is_equal(__rhs);
 }
 
-inline _LIBCPP_HIDE_FROM_ABI bool operator!=(const memory_resource& __lhs, const memory_resource& __rhs) noexcept {
+_LIBCPP_EXPORT_STD inline _LIBCPP_HIDE_FROM_ABI bool operator!=(const memory_resource& __lhs, const memory_resource& __rhs) noexcept {
   return !(__lhs == __rhs);
 }
 
 // [mem.res.global]
 
-[[__gnu__::__returns_nonnull__]] _LIBCPP_FUNC_VIS memory_resource* get_default_resource() noexcept;
-[[__gnu__::__returns_nonnull__]] _LIBCPP_FUNC_VIS memory_resource* set_default_resource(memory_resource*) noexcept;
-[[using __gnu__: __returns_nonnull__, __const__]] _LIBCPP_FUNC_VIS memory_resource* new_delete_resource() noexcept;
-[[using __gnu__: __returns_nonnull__, __const__]] _LIBCPP_FUNC_VIS memory_resource* null_memory_resource() noexcept;
+_LIBCPP_EXPORT_STD extern "C++" [[__gnu__::__returns_nonnull__]] _LIBCPP_FUNC_VIS memory_resource* get_default_resource() noexcept;
+_LIBCPP_EXPORT_STD extern "C++" [[__gnu__::__returns_nonnull__]] _LIBCPP_FUNC_VIS memory_resource* set_default_resource(memory_resource*) noexcept;
+_LIBCPP_EXPORT_STD extern "C++" [[using __gnu__: __returns_nonnull__, __const__]] _LIBCPP_FUNC_VIS memory_resource* new_delete_resource() noexcept;
+_LIBCPP_EXPORT_STD extern "C++" [[using __gnu__: __returns_nonnull__, __const__]] _LIBCPP_FUNC_VIS memory_resource* null_memory_resource() noexcept;
 
 } // namespace pmr
 

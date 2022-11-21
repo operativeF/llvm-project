@@ -27,7 +27,7 @@ namespace pmr {
 
 // [mem.res.pool.overview]
 
-class _LIBCPP_TYPE_VIS unsynchronized_pool_resource : public memory_resource {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS unsynchronized_pool_resource : public memory_resource {
   class __fixed_pool;
 
   class __adhoc_pool {

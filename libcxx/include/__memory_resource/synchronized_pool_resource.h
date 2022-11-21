@@ -30,7 +30,7 @@ namespace pmr {
 
 // [mem.res.pool.overview]
 
-class _LIBCPP_TYPE_VIS synchronized_pool_resource : public memory_resource {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS synchronized_pool_resource : public memory_resource {
 public:
   _LIBCPP_HIDE_FROM_ABI synchronized_pool_resource(const pool_options& __opts, memory_resource* __upstream)
       : __unsync_(__opts, __upstream) {}

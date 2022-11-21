@@ -26,7 +26,7 @@ namespace pmr {
 
 // [mem.res.monotonic.buffer]
 
-class _LIBCPP_TYPE_VIS monotonic_buffer_resource : public memory_resource {
+_LIBCPP_EXPORT_STD extern "C++" class _LIBCPP_TYPE_VIS monotonic_buffer_resource : public memory_resource {
   static const size_t __default_buffer_capacity  = 1024;
   static const size_t __default_buffer_alignment = 16;
 

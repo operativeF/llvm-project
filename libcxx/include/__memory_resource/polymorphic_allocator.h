@@ -33,7 +33,7 @@ namespace pmr {
 
 // [mem.poly.allocator.class]
 
-template <class _ValueType>
+_LIBCPP_EXPORT_STD template <class _ValueType>
 class _LIBCPP_TEMPLATE_VIS polymorphic_allocator {
 public:
   using value_type = _ValueType;
@@ -155,13 +155,13 @@ private:
 
 // [mem.poly.allocator.eq]
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline _LIBCPP_HIDE_FROM_ABI bool
 operator==(const polymorphic_allocator<_Tp>& __lhs, const polymorphic_allocator<_Up>& __rhs) noexcept {
   return *__lhs.resource() == *__rhs.resource();
 }
 
-template <class _Tp, class _Up>
+_LIBCPP_EXPORT_STD template <class _Tp, class _Up>
 inline _LIBCPP_HIDE_FROM_ABI bool
 operator!=(const polymorphic_allocator<_Tp>& __lhs, const polymorphic_allocator<_Up>& __rhs) noexcept {
   return !(__lhs == __rhs);
