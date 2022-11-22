@@ -496,6 +496,7 @@ extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_ios<char>;
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_streambuf<wchar_t>;
 extern template class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_ios<wchar_t>;
 #endif
+#endif
 
 _LIBCPP_END_NAMESPACE_STD
 
