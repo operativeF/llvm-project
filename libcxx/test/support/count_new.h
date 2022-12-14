@@ -12,6 +12,7 @@
 # include <cstdlib>
 # include <cassert>
 # include <new>
+#include <__type_traits/is_constant_evaluated.h>
 
 #include "test_macros.h"
 

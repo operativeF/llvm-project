@@ -485,6 +485,7 @@ erase_if(multiset<Key, Compare, Allocator>& c, Predicate pred);  // C++20
 #include <__node_handle>
 #include <__tree>
 #include <__type_traits/is_allocator.h>
+#include <__type_traits/type_identity.h>
 #include <__utility/forward.h>
 #include <version>
 
@@ -1600,6 +1601,7 @@ _LIBCPP_END_NAMESPACE_STD
 #  include <concepts>
 #  include <functional>
 #  include <iterator>
+#  include <type_traits>
 #endif
 
 #endif // _LIBCPP_SET

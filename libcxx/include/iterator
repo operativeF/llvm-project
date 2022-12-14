@@ -719,7 +719,6 @@ template <class E> constexpr const E* data(initializer_list<E> il) noexcept;    
 #include <__memory/pointer_traits.h>
 #include <cstddef>
 #include <initializer_list>
-#include <type_traits>
 #include <version>
 
 // standard-mandated includes

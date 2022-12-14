@@ -67,8 +67,8 @@ namespace std {
 #include <__bits> // __libcpp_clz
 #include <__concepts/arithmetic.h>
 #include <__config>
+#include <__type_traits/is_unsigned_integer.h>
 #include <limits>
-#include <type_traits>
 #include <version>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)

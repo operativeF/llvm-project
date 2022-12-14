@@ -14,6 +14,10 @@
 // nor does the dynamic library shipped with z/OS.
 // UNSUPPORTED: target={{.+}}-zos{{.*}}
 
+#include <__type_traits/is_constructible.h>
+#include <__type_traits/is_enum.h>
+#include <__type_traits/is_same.h>
+#include <__type_traits/underlying_type.h>
 #include <new>
 
 #include "test_macros.h"

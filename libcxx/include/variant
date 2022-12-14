@@ -224,7 +224,6 @@ namespace std {
 #include <limits>
 #include <new>
 #include <tuple>
-#include <type_traits>
 #include <version>
 
 // standard-mandated includes
