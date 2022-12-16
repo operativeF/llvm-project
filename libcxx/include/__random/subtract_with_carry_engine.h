@@ -14,11 +14,11 @@
 #include <__config>
 #include <__random/is_seed_sequence.h>
 #include <__random/linear_congruential_engine.h>
+#include <__type_traits/enable_if.h>
 #include <cstddef>
 #include <cstdint>
 #include <iosfwd>
 #include <limits>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

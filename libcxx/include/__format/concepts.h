@@ -16,9 +16,9 @@
 #include <__format/format_fwd.h>
 #include <__format/format_parse_context.h>
 #include <__type_traits/is_specialization.h>
+#include <__type_traits/remove_cvref.h>
 #include <__utility/pair.h>
 #include <tuple>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

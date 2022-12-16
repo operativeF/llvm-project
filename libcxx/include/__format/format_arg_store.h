@@ -19,11 +19,14 @@
 #include <__config>
 #include <__format/concepts.h>
 #include <__format/format_arg.h>
+#include <__type_traits/extent.h>
+#include <__type_traits/is_array.h>
+#include <__type_traits/remove_cvref.h>
 #include <__utility/forward.h>
+#include <cstddef>
 #include <cstring>
 #include <string>
 #include <string_view>
-#include <type_traits>
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 

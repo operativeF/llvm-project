@@ -225,9 +225,15 @@ template <class T, class Container, class Compare>
 #include <__functional/operations.h>
 #include <__iterator/iterator_traits.h>
 #include <__memory/uses_allocator.h>
+#include <__type_traits/enable_if.h>
+#include <__type_traits/is_allocator.h>
+#include <__type_traits/is_nothrow_default_constructible.h>
+#include <__type_traits/is_nothrow_move_assignable.h>
+#include <__type_traits/is_nothrow_move_constructible.h>
+#include <__type_traits/is_same.h>
+#include <__type_traits/is_swappable.h>
 #include <__utility/forward.h>
 #include <deque>
-#include <type_traits>
 #include <vector>
 #include <version>
 

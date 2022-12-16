@@ -27,11 +27,12 @@
 #include <__format/format_parse_context.h>
 #include <__format/format_string.h>
 #include <__format/unicode.h>
+#include <__type_traits/common_type.h>
+#include <__type_traits/is_trivially_copyable.h>
 #include <__variant/monostate.h>
 #include <bit>
 #include <cstdint>
 #include <string_view>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

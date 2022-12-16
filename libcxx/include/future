@@ -2446,6 +2446,7 @@ _LIBCPP_END_NAMESPACE_STD
 
 #if !defined(_LIBCPP_REMOVE_TRANSITIVE_INCLUDES) && _LIBCPP_STD_VER <= 17
 #  include <chrono>
+#  include <type_traits>
 #endif
 
 #endif // _LIBCPP_FUTURE

@@ -29,6 +29,20 @@
 #include <__memory/pointer_traits.h>
 #include <__memory/uninitialized_algorithms.h>
 #include <__memory/unique_ptr.h>
+#include <__type_traits/add_lvalue_reference.h>
+#include <__type_traits/common_type.h>
+#include <__type_traits/enable_if.h>
+#include <__type_traits/is_array.h>
+#include <__type_traits/is_bounded_array.h>
+#include <__type_traits/is_convertible.h>
+#include <__type_traits/is_function.h>
+#include <__type_traits/is_move_constructible.h>
+#include <__type_traits/is_reference.h>
+#include <__type_traits/is_unbounded_array.h>
+#include <__type_traits/remove_cv.h>
+#include <__type_traits/remove_extent.h>
+#include <__type_traits/remove_reference.h>
+#include <__utility/declval.h>
 #include <__utility/forward.h>
 #include <__utility/move.h>
 #include <__utility/swap.h>
@@ -37,7 +51,6 @@
 #include <iosfwd>
 #include <new>
 #include <stdexcept>
-#include <type_traits>
 #include <typeinfo>
 #if !defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)
 #  include <atomic>

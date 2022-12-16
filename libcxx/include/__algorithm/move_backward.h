@@ -12,9 +12,13 @@
 #include <__algorithm/iterator_operations.h>
 #include <__algorithm/unwrap_iter.h>
 #include <__config>
+#include <__type_traits/enable_if.h>
+#include <__type_traits/is_constant_evaluated.h>
+#include <__type_traits/is_same.h>
+#include <__type_traits/is_trivially_move_assignable.h>
+#include <__type_traits/remove_const.h>
 #include <__utility/move.h>
 #include <cstring>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

@@ -141,11 +141,15 @@ template<class R>
 #include <__ranges/enable_borrowed_range.h>
 #include <__ranges/enable_view.h>
 #include <__ranges/size.h>
+#include <__type_traits/is_array.h>
+#include <__type_traits/is_const.h>
+#include <__type_traits/is_convertible.h>
+#include <__type_traits/remove_cv.h>
+#include <__type_traits/remove_cvref.h>
 #include <__utility/forward.h>
 #include <array>        // for array
 #include <cstddef>      // for byte
 #include <limits>
-#include <type_traits>  // for remove_cv, etc
 #include <version>
 
 // standard-mandated includes

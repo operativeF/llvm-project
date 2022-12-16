@@ -10,9 +10,11 @@
 #define _LIBCPP___RANDOM_CLAMP_TO_INTEGRAL_H
 
 #include <__config>
+#include <__type_traits/is_floating_point.h>
+#include <__type_traits/is_integral.h>
+#include <__type_traits/is_same.h>
 #include <cmath>
 #include <limits>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

@@ -13,9 +13,19 @@
 #include <__config>
 #include <__functional/invoke.h>
 #include <__functional/weak_result_type.h>
+#include <__type_traits/conditional.h>
+#include <__type_traits/decay.h>
+#include <__type_traits/enable_if.h>
+#include <__type_traits/integral_constant.h>
+#include <__type_traits/is_constructible.h>
+#include <__type_traits/is_convertible.h>
+#include <__type_traits/is_reference_wrapper.h>
+#include <__type_traits/is_same.h>
+#include <__type_traits/is_void.h>
+#include <__type_traits/remove_cvref.h>
+#include <__type_traits/remove_reference.h>
 #include <cstddef>
 #include <tuple>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

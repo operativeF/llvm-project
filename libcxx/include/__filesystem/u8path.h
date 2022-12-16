@@ -14,8 +14,9 @@
 #include <__availability>
 #include <__config>
 #include <__filesystem/path.h>
+#include <__type_traits/enable_if.h>
+#include <__type_traits/is_same.h>
 #include <string>
-#include <type_traits>
 
 // Only required on Windows for __widen_from_utf8, and included conservatively
 // because it requires support for localization.
