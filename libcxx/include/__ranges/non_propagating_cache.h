@@ -14,9 +14,9 @@
 #include <__iterator/concepts.h>        // indirectly_readable
 #include <__iterator/iterator_traits.h> // iter_reference_t
 #include <__memory/addressof.h>
+#include <__type_traits/is_object.h>
 #include <__utility/forward.h>
 #include <optional>
-#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header

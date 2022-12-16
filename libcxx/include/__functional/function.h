@@ -23,6 +23,16 @@
 #include <__memory/builtin_new_allocator.h>
 #include <__memory/compressed_pair.h>
 #include <__memory/unique_ptr.h>
+#include <__type_traits/conditional.h>
+#include <__type_traits/decay.h>
+#include <__type_traits/enable_if.h>
+#include <__type_traits/is_core_convertible.h>
+#include <__type_traits/is_nothrow_copy_constructible.h>
+#include <__type_traits/is_same.h>
+#include <__type_traits/is_scalar.h>
+#include <__type_traits/is_trivially_copy_constructible.h>
+#include <__type_traits/is_trivially_destructible.h>
+#include <__type_traits/is_void.h>
 #include <__type_traits/strip_signature.h>
 #include <__utility/forward.h>
 #include <__utility/move.h>
@@ -31,7 +41,6 @@
 #include <exception>
 #include <new>
 #include <tuple>
-#include <type_traits>
 #include <typeinfo>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
